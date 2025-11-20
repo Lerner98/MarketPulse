@@ -229,6 +229,46 @@ FRONTEND_URL: http://localhost:3000  # CORS allowed origin
 2. **Implement request ID tracing earlier** - Debugging across logs is harder without correlation IDs
 3. **Create shared response wrapper earlier** - Some duplication in current code (error response structure repeated)
 
+### Critical Miss: CI/CD Validation
+
+**Issue**: After implementing Phase 3 and committing, CI/CD pipeline was still failing but I didn't verify it was running successfully before declaring completion.
+
+**What Went Wrong** (Commits `552428d` → `5067592`):
+
+1. **First attempt (commit `552428d`)**:
+   - Created `backend/requirements.txt` to fix Docker build
+   - Fixed deprecated datetime methods
+   - Removed test failure masking in CI workflow
+   - **MISTAKE**: Declared success without verifying GitHub Actions actually ran
+
+2. **Path mismatch discovered by code review**:
+   - CI workflow still pointed to `requirements.txt` (root)
+   - But file was created at `backend/requirements.txt`
+   - Result: `pip install -r requirements.txt` would fail (file not found)
+
+3. **Second fix (commit `5067592`)**:
+   - Updated workflow to use `backend/requirements.txt` path
+   - Fixed both cache key and install command
+
+**Root Cause**: Incomplete verification process. I tested:
+- ✅ Local test execution (65 tests passing)
+- ✅ Docker build success
+- ❌ **Did NOT verify**: GitHub Actions workflow actually completed
+
+**Lesson Learned**:
+- **ALWAYS verify CI/CD pipeline runs to completion** before declaring phase complete
+- **Test the integration, not just components**: Local success ≠ CI success
+- **Path mismatches are easy to miss**: When creating files, verify all references are updated
+- **Don't assume—validate**: Should have checked GitHub Actions logs or waited for green checkmark
+
+**Prevention for Future Phases**:
+1. After pushing commits, **wait for GitHub Actions to complete**
+2. Check actions page: `https://github.com/{repo}/actions`
+3. If no `gh` CLI, use web browser to verify
+4. Only declare phase complete after **green checkmarks visible**
+
+This was caught by user code review, not automated testing. Human oversight remains critical.
+
 ### Technical Debt Identified
 
 1. **Error messages could be more specific**:
