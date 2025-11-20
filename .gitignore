@@ -68,3 +68,4 @@ yarn-error.log*
 *.tmp
 *.temp
 .cache/
+mcp-config.json
