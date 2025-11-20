@@ -4,6 +4,8 @@ E-commerce analytics platform with ETL pipeline, REST API, and interactive visua
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.108+-green.svg)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7+-3178C6.svg)](https://www.typescriptlang.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue.svg)](https://www.postgresql.org/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
 [![CI/CD](https://github.com/Lerner98/MarketPulse/workflows/MarketPulse%20CI/CD/badge.svg)](https://github.com/Lerner98/MarketPulse/actions)
@@ -37,24 +39,41 @@ Frontend (React) → Backend (FastAPI) → Database (PostgreSQL) + Cache (Redis)
 ### Prerequisites
 - Docker Desktop
 - Python 3.11+
+- Node.js 18+
 - Git
 
-### Installation
+### Automated Setup (Recommended)
 
 ```bash
 # Clone repository
 git clone https://github.com/Lerner98/MarketPulse.git
 cd MarketPulse
 
-# Start infrastructure
+# Run setup script (sets up everything)
+bash scripts/setup-dev.sh
+```
+
+### Manual Installation
+
+```bash
+# 1. Set up infrastructure
 docker-compose up -d
 
-# Set up Python environment
+# 2. Set up backend
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-# Run ETL pipeline
+# 3. Set up frontend
+cd frontend
+npm install
+cd ..
+
+# 4. Install pre-commit hooks (IMPORTANT!)
+pip install pre-commit
+pre-commit install
+
+# 5. Run ETL pipeline
 python backend/data_pipeline/cleaner.py
 ```
 
@@ -64,8 +83,9 @@ python backend/data_pipeline/cleaner.py
 # Check services
 docker-compose ps
 
-# Verify database
-python -c "from backend.models.database import DatabaseManager; db = DatabaseManager(); print('✓' if db.test_connection() else '✗')"
+# Run tests
+pytest backend/tests/unit -v
+cd frontend && npm test -- --run
 ```
 
 ## Project Structure
@@ -96,6 +116,20 @@ MarketPulse/
 
 ## Development Status
 
+**Phase 4 Complete (Frontend Development):**
+- ✅ React 18 + TypeScript + Vite setup
+- ✅ Tailwind CSS styling
+- ✅ API integration with Axios + custom hooks
+- ✅ Dashboard with real-time metrics
+- ✅ Revenue trend chart (Recharts)
+- ✅ Product performance chart (Recharts)
+- ✅ Customer Journey Sankey diagram (D3.js)
+- ✅ Responsive design (mobile + desktop)
+- ✅ Error boundaries and loading states
+- ✅ Test suite (15 unit tests + E2E tests)
+- ✅ Docker + Nginx configuration
+- ✅ CI/CD integration
+
 **Phase 3 Complete (Backend API):**
 - ✅ Infrastructure setup (Docker, PostgreSQL, Redis)
 - ✅ ETL pipeline (10,000 transactions processed)
@@ -108,14 +142,10 @@ MarketPulse/
 - ✅ Connection pooling and environment-based configuration
 - ✅ API documentation (Swagger UI at /docs)
 
-**In Progress:**
-- 🔄 Frontend Development (Phase 4)
-
 **Planned:**
-- ⏳ React frontend with Vite
-- ⏳ D3.js visualizations (Sankey diagrams, time-series)
-- ⏳ Redis caching layer
-- ⏳ JWT authentication
+- ⏳ JWT authentication (Phase 5)
+- ⏳ User account management
+- ⏳ Advanced filtering and data export
 
 ## Technology Stack
 
@@ -127,9 +157,15 @@ MarketPulse/
 - Pandas (data processing)
 
 **Frontend:**
-- React 18
-- D3.js (visualization)
+- React 18 + TypeScript
 - Vite (build tool)
+- Tailwind CSS (styling)
+- Recharts (standard charts)
+- D3.js + d3-sankey (visualizations)
+- React Router (navigation)
+- Axios (HTTP client)
+- Vitest + React Testing Library (testing)
+- Playwright (E2E testing)
 
 **Infrastructure:**
 - Docker Compose
@@ -215,11 +251,16 @@ docker-compose -f .github/workflows/docker-compose.test.yml up
 
 ## Documentation
 
+### Implementation Guides
 - [Phase 2 Complete](docs/PHASE2_COMPLETE.md) - ETL pipeline implementation
 - [Phase 3 Complete](docs/PHASE3_COMPLETE.md) - Backend API implementation
+- [Phase 4 Frontend](docs/PHASE4_FRONTEND.md) - React + D3.js frontend
 - [Quick Reference](docs/QUICK_REFERENCE.md) - Architecture and commands
+
+### Development Guides
+- [Contributing Guide](CONTRIBUTING.md) - **START HERE** for local development workflow
+- [CI/CD Best Practices](docs/CI_CD_BEST_PRACTICES.md) - Industry-standard testing approach
 - [CI/CD Setup](docs/CI_CD_SETUP.md) - Pipeline configuration and lessons learned
-- [Architecture Decisions](docs/ADR/) - Technical decisions (planned)
 
 ## Security
 
@@ -238,17 +279,28 @@ docker-compose -f .github/workflows/docker-compose.test.yml up
 
 ## CI/CD Pipeline
 
+**Philosophy**: Shift-Left Testing (catch issues locally before CI)
+
 **Jobs:**
-- Backend tests (PostgreSQL + Redis services)
-- Frontend tests (Node.js 18)
+- Backend tests (pytest + coverage + linting)
+- Frontend tests (Vitest + TypeScript + build validation)
 - Docker build validation
 - Trivy security scanning
+
+**Pre-Commit Hooks** (automatic on every commit):
+- Code formatting (Black, Prettier)
+- Linting (Flake8, ESLint)
+- Fast unit tests
+- Secret scanning (Gitleaks)
+- TypeScript type checking
 
 **Triggers:**
 - Push to `main` or `develop`
 - Pull requests to `main`
 
 **View Results:** [GitHub Actions](https://github.com/Lerner98/MarketPulse/actions)
+
+**Learn More:** [CI/CD Best Practices](docs/CI_CD_BEST_PRACTICES.md)
 
 ## Author
 
