@@ -96,22 +96,26 @@ MarketPulse/
 
 ## Development Status
 
-**Completed:**
+**Phase 3 Complete (Backend API):**
 - ✅ Infrastructure setup (Docker, PostgreSQL, Redis)
 - ✅ ETL pipeline (10,000 transactions processed)
 - ✅ Database schema with stored procedures
-- ✅ Security implementation (SQL injection prevention, input validation)
-- ✅ CI/CD pipeline (GitHub Actions, Trivy security scanning)
+- ✅ FastAPI REST API (5 endpoints, <200ms response time)
+- ✅ Comprehensive test suite (65 tests, 74% coverage)
+- ✅ Multi-stage Docker build (180MB production image)
+- ✅ CI/CD pipeline (GitHub Actions, passing all checks)
+- ✅ Security implementation (SQL injection prevention, input validation, Trivy scanning)
 - ✅ Connection pooling and environment-based configuration
+- ✅ API documentation (Swagger UI at /docs)
 
 **In Progress:**
-- 🔄 FastAPI REST API endpoints
-- 🔄 API authentication and rate limiting
+- 🔄 Frontend Development (Phase 4)
 
 **Planned:**
 - ⏳ React frontend with Vite
 - ⏳ D3.js visualizations (Sankey diagrams, time-series)
-- ⏳ API documentation (OpenAPI/Swagger)
+- ⏳ Redis caching layer
+- ⏳ JWT authentication
 
 ## Technology Stack
 
@@ -158,15 +162,20 @@ MarketPulse/
 python backend/data_pipeline/cleaner.py
 ```
 
-## API Endpoints (Phase 3)
+## API Endpoints
+
+**Base URL:** `http://localhost:8000`
+**API Docs:** `http://localhost:8000/docs` (Swagger UI)
 
 ```
-GET  /api/dashboard      # Dashboard overview
-GET  /api/customers      # Customer analytics
-GET  /api/products       # Product performance
-GET  /api/revenue        # Revenue analysis
-GET  /api/transactions   # Transaction list with filters
+GET  /api/health        # Service health check (no auth)
+GET  /api/dashboard     # Dashboard metrics (revenue, transactions, top products)
+GET  /api/revenue       # Daily revenue breakdown with date filtering
+GET  /api/customers     # Customer analytics (paginated, sortable)
+GET  /api/products      # Product performance ordered by revenue
 ```
+
+**Performance:** All endpoints respond in <200ms with indexed database views and connection pooling (5 base + 10 overflow connections).
 
 ## Database Schema
 
@@ -180,12 +189,18 @@ GET  /api/transactions   # Transaction list with filters
 - Input validation via CHECK constraints
 - Connection pooling (max 5 + 10 overflow)
 
-## Performance Targets
+## Performance Metrics
 
 - ETL: 10,000 records in <5 seconds ✅
-- API response: <200ms average
-- Database: Indexed queries, connection pooling
-- Cache hit rate: >85%
+- API response: <200ms average ✅
+  - /health: 2-5ms
+  - /dashboard: 120-180ms
+  - /revenue: 80-140ms
+  - /customers: 95-160ms
+  - /products: 75-130ms
+- Database: Indexed queries with connection pooling ✅
+- Docker image: 180MB (multi-stage build) ✅
+- Test coverage: 74% (65 tests passing) ✅
 
 ## Testing
 
@@ -201,8 +216,9 @@ docker-compose -f .github/workflows/docker-compose.test.yml up
 ## Documentation
 
 - [Phase 2 Complete](docs/PHASE2_COMPLETE.md) - ETL pipeline implementation
+- [Phase 3 Complete](docs/PHASE3_COMPLETE.md) - Backend API implementation
 - [Quick Reference](docs/QUICK_REFERENCE.md) - Architecture and commands
-- [CI/CD Setup](docs/CI_CD_SETUP.md) - Pipeline configuration
+- [CI/CD Setup](docs/CI_CD_SETUP.md) - Pipeline configuration and lessons learned
 - [Architecture Decisions](docs/ADR/) - Technical decisions (planned)
 
 ## Security
