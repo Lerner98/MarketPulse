@@ -41,9 +41,10 @@ class DatabaseManager:
         Initialize database connection
 
         Args:
-            database_url: PostgreSQL connection string (optional, reads from env if not provided)
+            database_url: PostgreSQL connection string
+                (optional, reads from env if not provided)
         """
-        self.database_url = database_url or os.getenv('DATABASE_URL')
+        self.database_url = database_url or os.getenv("DATABASE_URL")
 
         if not self.database_url:
             raise ValueError("DATABASE_URL environment variable not set")
@@ -65,9 +66,7 @@ class DatabaseManager:
 
         # Create session factory
         self.SessionLocal = sessionmaker(
-            autocommit=False,
-            autoflush=False,
-            bind=self.engine
+            autocommit=False, autoflush=False, bind=self.engine
         )
 
         # Add connection event listeners
@@ -84,11 +83,11 @@ class DatabaseManager:
             return "No URL configured"
 
         # Redact password from URL
-        parts = self.database_url.split('@')
+        parts = self.database_url.split("@")
         if len(parts) > 1:
-            user_pass = parts[0].split('//')[-1]
-            if ':' in user_pass:
-                user = user_pass.split(':')[0]
+            user_pass = parts[0].split("//")[-1]
+            if ":" in user_pass:
+                user = user_pass.split(":")[0]
                 return f"postgresql://{user}:****@{parts[1]}"
         return "postgresql://****:****@localhost"
 
@@ -149,7 +148,7 @@ class DatabaseManager:
             file_path: Path to SQL file
         """
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 sql_content = f.read()
 
             with self.engine.begin() as connection:
@@ -224,7 +223,7 @@ if __name__ == "__main__":
         print("✓ Database connection successful!")
 
         # Initialize schema
-        schema_path = os.path.join(os.path.dirname(__file__), 'schema.sql')
+        schema_path = os.path.join(os.path.dirname(__file__), "schema.sql")
         if os.path.exists(schema_path):
             db.execute_sql_file(schema_path)
             print("✓ Database schema initialized!")

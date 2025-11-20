@@ -13,24 +13,24 @@ Author: MarketPulse Team
 Created: 2025-11-20
 """
 
-import pandas as pd
-import numpy as np
-from datetime import datetime
-from typing import Optional, Dict, List, Tuple
 import logging
 import os
 import sys
+from datetime import datetime
 from pathlib import Path
+from typing import Dict, Optional, Tuple
+
+import numpy as np
+import pandas as pd
 
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent))
 
-from models.database import DatabaseManager
+from models.database import DatabaseManager  # noqa: E402
 
 # Configure logging
 logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
 
@@ -48,18 +48,18 @@ class EcommerceDataCleaner:
     """
 
     # Valid status values (whitelist approach for security)
-    VALID_STATUSES = {'completed', 'pending', 'cancelled'}
+    VALID_STATUSES = {"completed", "pending", "cancelled"}
 
     # Valid currency codes
-    VALID_CURRENCIES = {'ILS', 'USD', 'EUR'}
+    VALID_CURRENCIES = {"ILS", "USD", "EUR"}
 
     # Valid product names (Hebrew)
     VALID_PRODUCTS = {
-        'מחשב נייד',  # Laptop
-        'טלפון סלולרי',  # Mobile phone
-        'אוזניות',  # Headphones
-        'מקלדת',  # Keyboard
-        'עכבר'  # Mouse
+        "מחשב נייד",  # Laptop
+        "טלפון סלולרי",  # Mobile phone
+        "אוזניות",  # Headphones
+        "מקלדת",  # Keyboard
+        "עכבר",  # Mouse
     }
 
     def __init__(self, db_manager: Optional[DatabaseManager] = None):
@@ -71,11 +71,11 @@ class EcommerceDataCleaner:
         """
         self.db_manager = db_manager or DatabaseManager()
         self.stats = {
-            'total_records': 0,
-            'valid_records': 0,
-            'invalid_records': 0,
-            'duplicates_removed': 0,
-            'records_loaded': 0
+            "total_records": 0,
+            "valid_records": 0,
+            "invalid_records": 0,
+            "duplicates_removed": 0,
+            "records_loaded": 0,
         }
 
     def load_csv(self, file_path: str) -> pd.DataFrame:
@@ -99,12 +99,12 @@ class EcommerceDataCleaner:
 
         try:
             # Load with UTF-8-sig encoding to handle BOM and Hebrew characters
-            df = pd.read_csv(file_path, encoding='utf-8-sig')
+            df = pd.read_csv(file_path, encoding="utf-8-sig")
 
             if df.empty:
                 raise ValueError("CSV file is empty")
 
-            self.stats['total_records'] = len(df)
+            self.stats["total_records"] = len(df)
             logger.info(f"Loaded {len(df)} records from CSV")
 
             return df
@@ -126,30 +126,30 @@ class EcommerceDataCleaner:
             Tuple of (is_valid, error_message)
         """
         # Check transaction_id
-        if pd.isna(row['transaction_id']):
+        if pd.isna(row["transaction_id"]):
             return False, "Missing transaction_id"
-        if not isinstance(row['transaction_id'], (int, np.integer)):
+        if not isinstance(row["transaction_id"], (int, np.integer)):
             return False, "Invalid transaction_id type"
-        if row['transaction_id'] < 0:
+        if row["transaction_id"] < 0:
             return False, "Negative transaction_id"
 
         # Check customer_name
-        if pd.isna(row['customer_name']) or not row['customer_name'].strip():
+        if pd.isna(row["customer_name"]) or not row["customer_name"].strip():
             return False, "Missing customer_name"
-        if len(row['customer_name']) > 255:
+        if len(row["customer_name"]) > 255:
             return False, "Customer name too long"
 
         # Check product (whitelist validation)
-        if pd.isna(row['product']):
+        if pd.isna(row["product"]):
             return False, "Missing product"
-        if row['product'] not in self.VALID_PRODUCTS:
+        if row["product"] not in self.VALID_PRODUCTS:
             return False, f"Invalid product: {row['product']}"
 
         # Check amount
-        if pd.isna(row['amount']):
+        if pd.isna(row["amount"]):
             return False, "Missing amount"
         try:
-            amount = float(row['amount'])
+            amount = float(row["amount"])
             if amount < 0:
                 return False, "Negative amount"
             if amount > 1000000:  # Reasonable upper limit
@@ -158,28 +158,28 @@ class EcommerceDataCleaner:
             return False, "Invalid amount format"
 
         # Check currency (whitelist validation)
-        if pd.isna(row['currency']):
+        if pd.isna(row["currency"]):
             return False, "Missing currency"
-        if row['currency'] not in self.VALID_CURRENCIES:
+        if row["currency"] not in self.VALID_CURRENCIES:
             return False, f"Invalid currency: {row['currency']}"
 
         # Check date
-        if pd.isna(row['date']):
+        if pd.isna(row["date"]):
             return False, "Missing date"
         try:
-            date_obj = pd.to_datetime(row['date'])
+            date_obj = pd.to_datetime(row["date"])
             # Validate date range (not in future, not too old)
             if date_obj > datetime.now():
                 return False, "Future date not allowed"
             if date_obj.year < 2020:
                 return False, "Date too old"
-        except:
+        except Exception:
             return False, "Invalid date format"
 
         # Check status (whitelist validation)
-        if pd.isna(row['status']):
+        if pd.isna(row["status"]):
             return False, "Missing status"
-        if row['status'] not in self.VALID_STATUSES:
+        if row["status"] not in self.VALID_STATUSES:
             return False, f"Invalid status: {row['status']}"
 
         return True, None
@@ -202,44 +202,37 @@ class EcommerceDataCleaner:
         df_clean.columns = df_clean.columns.str.lower().str.strip()
 
         # Convert transaction_id to integer
-        df_clean['transaction_id'] = pd.to_numeric(
-            df_clean['transaction_id'],
-            errors='coerce'
-        ).astype('Int64')
+        df_clean["transaction_id"] = pd.to_numeric(
+            df_clean["transaction_id"], errors="coerce"
+        ).astype("Int64")
 
         # Clean customer names (strip whitespace, normalize)
-        df_clean['customer_name'] = df_clean['customer_name'].astype(str).str.strip()
+        df_clean["customer_name"] = df_clean["customer_name"].astype(str).str.strip()
 
         # Clean product names (strip whitespace)
-        df_clean['product'] = df_clean['product'].astype(str).str.strip()
+        df_clean["product"] = df_clean["product"].astype(str).str.strip()
 
         # Convert amount to float with 2 decimal places
-        df_clean['amount'] = pd.to_numeric(
-            df_clean['amount'],
-            errors='coerce'
-        ).round(2)
+        df_clean["amount"] = pd.to_numeric(df_clean["amount"], errors="coerce").round(2)
 
         # Normalize currency (uppercase)
-        df_clean['currency'] = df_clean['currency'].astype(str).str.upper().str.strip()
+        df_clean["currency"] = df_clean["currency"].astype(str).str.upper().str.strip()
 
         # Convert date to datetime
-        df_clean['date'] = pd.to_datetime(df_clean['date'], errors='coerce')
+        df_clean["date"] = pd.to_datetime(df_clean["date"], errors="coerce")
 
         # Normalize status (lowercase)
-        df_clean['status'] = df_clean['status'].astype(str).str.lower().str.strip()
+        df_clean["status"] = df_clean["status"].astype(str).str.lower().str.strip()
 
         # Validate each record
-        valid_mask = df_clean.apply(
-            lambda row: self.validate_record(row)[0],
-            axis=1
-        )
+        valid_mask = df_clean.apply(lambda row: self.validate_record(row)[0], axis=1)
 
         # Separate valid and invalid records
         df_valid = df_clean[valid_mask].copy()
         df_invalid = df_clean[~valid_mask].copy()
 
-        self.stats['valid_records'] = len(df_valid)
-        self.stats['invalid_records'] = len(df_invalid)
+        self.stats["valid_records"] = len(df_valid)
+        self.stats["invalid_records"] = len(df_invalid)
 
         if len(df_invalid) > 0:
             logger.warning(f"Found {len(df_invalid)} invalid records")
@@ -269,10 +262,10 @@ class EcommerceDataCleaner:
         initial_count = len(df)
 
         # Remove duplicates based on transaction_id (keep first occurrence)
-        df_dedup = df.drop_duplicates(subset=['transaction_id'], keep='first')
+        df_dedup = df.drop_duplicates(subset=["transaction_id"], keep="first")
 
         duplicates_removed = initial_count - len(df_dedup)
-        self.stats['duplicates_removed'] = duplicates_removed
+        self.stats["duplicates_removed"] = duplicates_removed
 
         if duplicates_removed > 0:
             logger.warning(f"Removed {duplicates_removed} duplicate records")
@@ -300,21 +293,21 @@ class EcommerceDataCleaner:
         try:
             # Rename columns to match database schema
             df_to_load = df.copy()
-            df_to_load = df_to_load.rename(columns={'date': 'transaction_date'})
+            df_to_load = df_to_load.rename(columns={"date": "transaction_date"})
 
-            with self.db_manager.get_session() as session:
+            with self.db_manager.get_session():
                 # Use pandas to_sql with SQLAlchemy for secure insertion
                 # This uses prepared statements internally
                 df_to_load.to_sql(
-                    'transactions',
+                    "transactions",
                     con=self.db_manager.engine,
-                    if_exists='append',
+                    if_exists="append",
                     index=False,
-                    method='multi',
-                    chunksize=batch_size
+                    method="multi",
+                    chunksize=batch_size,
                 )
 
-                self.stats['records_loaded'] = len(df)
+                self.stats["records_loaded"] = len(df)
                 logger.info(f"Successfully loaded {len(df)} records to database")
 
         except Exception as e:
@@ -322,9 +315,7 @@ class EcommerceDataCleaner:
             raise
 
     def run_pipeline(
-        self,
-        input_file: str,
-        output_file: Optional[str] = None
+        self, input_file: str, output_file: Optional[str] = None
     ) -> Dict[str, int]:
         """
         Run complete ETL pipeline
@@ -351,7 +342,7 @@ class EcommerceDataCleaner:
 
         # Step 4: Save cleaned data (optional)
         if output_file:
-            df_dedup.to_csv(output_file, index=False, encoding='utf-8-sig')
+            df_dedup.to_csv(output_file, index=False, encoding="utf-8-sig")
             logger.info(f"Cleaned data saved to {output_file}")
 
         # Step 5: Load to database
@@ -375,9 +366,9 @@ def main():
     """Main entry point for ETL pipeline"""
     # Paths
     project_root = Path(__file__).parent.parent.parent
-    input_file = project_root / 'data' / 'raw' / 'transactions.csv'
-    output_file = project_root / 'data' / 'processed' / 'transactions_clean.csv'
-    schema_file = project_root / 'backend' / 'models' / 'schema.sql'
+    input_file = project_root / "data" / "raw" / "transactions.csv"
+    output_file = project_root / "data" / "processed" / "transactions_clean.csv"
+    schema_file = project_root / "backend" / "models" / "schema.sql"
 
     # Ensure output directory exists
     output_file.parent.mkdir(parents=True, exist_ok=True)
@@ -388,14 +379,17 @@ def main():
 
         # Test connection
         if not db.test_connection():
-            logger.error("Database connection failed. Please check your connection settings.")
+            logger.error(
+                "Database connection failed. Please check your connection settings."
+            )
             return
 
         # Check if schema already initialized
-        with db.engine.connect() as conn:
-            from sqlalchemy import text, inspect
+        with db.engine.connect():
+            from sqlalchemy import inspect  # noqa: E402
+
             inspector = inspect(db.engine)
-            if 'transactions' not in inspector.get_table_names():
+            if "transactions" not in inspector.get_table_names():
                 # Initialize schema
                 if schema_file.exists():
                     logger.info("Initializing database schema")
@@ -407,7 +401,7 @@ def main():
 
         # Run ETL pipeline
         cleaner = EcommerceDataCleaner(db)
-        stats = cleaner.run_pipeline(str(input_file), str(output_file))
+        cleaner.run_pipeline(str(input_file), str(output_file))
 
         # Success
         logger.info("ETL pipeline completed successfully!")
@@ -417,5 +411,5 @@ def main():
         raise
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

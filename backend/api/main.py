@@ -10,7 +10,7 @@ import os
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from decimal import Decimal
-from typing import List, Optional
+# Removed unused typing imports
 
 from fastapi import FastAPI, HTTPException, Query, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -31,8 +31,6 @@ from api.models import (
     PaginationInfo,
     ProductsResponse,
     ProductItem,
-    ErrorResponse,
-    ErrorDetail
 )
 from models.database import DatabaseManager
 
@@ -41,8 +39,7 @@ from models.database import DatabaseManager
 # =============================================================================
 
 logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
 
@@ -53,6 +50,7 @@ db_manager = DatabaseManager()
 # =============================================================================
 # Lifespan Context Manager
 # =============================================================================
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -85,12 +83,15 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="MarketPulse API",
-    description="E-commerce analytics platform providing REST endpoints for business intelligence",
+    description=(
+        "E-commerce analytics platform providing "
+        "REST endpoints for business intelligence"
+    ),
     version="1.0.0",
     lifespan=lifespan,
     docs_url="/docs",
     redoc_url="/redoc",
-    openapi_url="/openapi.json"
+    openapi_url="/openapi.json",
 )
 
 
@@ -123,6 +124,7 @@ app.add_middleware(
 # Dependency Injection
 # =============================================================================
 
+
 def get_db_session() -> Session:
     """
     Dependency to get database session.
@@ -140,6 +142,7 @@ def get_db_session() -> Session:
 # Error Handlers
 # =============================================================================
 
+
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request, exc: HTTPException):
     """Handle HTTP exceptions with standard error format."""
@@ -149,9 +152,9 @@ async def http_exception_handler(request, exc: HTTPException):
             "error": {
                 "code": f"HTTP_{exc.status_code}",
                 "message": exc.detail,
-                "timestamp": datetime.now(timezone.utc).isoformat()
+                "timestamp": datetime.now(timezone.utc).isoformat(),
             }
-        }
+        },
     )
 
 
@@ -165,9 +168,9 @@ async def database_exception_handler(request, exc: SQLAlchemyError):
             "error": {
                 "code": "DATABASE_ERROR",
                 "message": "A database error occurred",
-                "timestamp": datetime.now(timezone.utc).isoformat()
+                "timestamp": datetime.now(timezone.utc).isoformat(),
             }
-        }
+        },
     )
 
 
@@ -181,9 +184,9 @@ async def general_exception_handler(request, exc: Exception):
             "error": {
                 "code": "INTERNAL_ERROR",
                 "message": "An unexpected error occurred",
-                "timestamp": datetime.now(timezone.utc).isoformat()
+                "timestamp": datetime.now(timezone.utc).isoformat(),
             }
-        }
+        },
     )
 
 
@@ -191,12 +194,13 @@ async def general_exception_handler(request, exc: Exception):
 # API Endpoints
 # =============================================================================
 
+
 @app.get(
     "/api/health",
     response_model=HealthResponse,
     tags=["Health"],
     summary="Health check endpoint",
-    description="Check API and database connectivity status"
+    description="Check API and database connectivity status",
 )
 def health_check(db: Session = Depends(get_db_session)) -> HealthResponse:
     """
@@ -216,7 +220,7 @@ def health_check(db: Session = Depends(get_db_session)) -> HealthResponse:
         status="healthy" if db_status == "connected" else "degraded",
         timestamp=datetime.now(timezone.utc),
         database=db_status,
-        version="1.0.0"
+        version="1.0.0",
     )
 
 
@@ -225,7 +229,10 @@ def health_check(db: Session = Depends(get_db_session)) -> HealthResponse:
     response_model=DashboardResponse,
     tags=["Analytics"],
     summary="Get dashboard overview",
-    description="Aggregated metrics including revenue, transactions, top products, and trends"
+    description=(
+        "Aggregated metrics including revenue, transactions, "
+        "top products, and trends"
+    ),
 )
 def get_dashboard(db: Session = Depends(get_db_session)) -> DashboardResponse:
     """
@@ -239,31 +246,41 @@ def get_dashboard(db: Session = Depends(get_db_session)) -> DashboardResponse:
     """
     try:
         # Get overall statistics
-        overall_query = text("""
+        overall_query = text(
+            """
             SELECT
                 COUNT(*) as total_transactions,
-                SUM(CASE WHEN status = 'completed' THEN 1 ELSE 0 END) as completed_transactions,
-                SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) as pending_transactions,
-                SUM(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END) as cancelled_transactions,
-                SUM(CASE WHEN status = 'completed' THEN amount ELSE 0 END) as total_revenue,
-                AVG(CASE WHEN status = 'completed' THEN amount ELSE NULL END) as avg_order_value
+                SUM(CASE WHEN status = 'completed'
+                    THEN 1 ELSE 0 END) as completed_transactions,
+                SUM(CASE WHEN status = 'pending'
+                    THEN 1 ELSE 0 END) as pending_transactions,
+                SUM(CASE WHEN status = 'cancelled'
+                    THEN 1 ELSE 0 END) as cancelled_transactions,
+                SUM(CASE WHEN status = 'completed'
+                    THEN amount ELSE 0 END) as total_revenue,
+                AVG(CASE WHEN status = 'completed'
+                    THEN amount ELSE NULL END) as avg_order_value
             FROM transactions
-        """)
+        """
+        )
         overall_result = db.execute(overall_query).fetchone()
 
         # Get top 5 products by revenue
-        top_products_query = text("""
+        top_products_query = text(
+            """
             SELECT product, SUM(amount) as revenue
             FROM transactions
             WHERE status = 'completed'
             GROUP BY product
             ORDER BY revenue DESC
             LIMIT 5
-        """)
+        """
+        )
         top_products_results = db.execute(top_products_query).fetchall()
 
         # Get last 7 days trend
-        trend_query = text("""
+        trend_query = text(
+            """
             SELECT
                 transaction_date as date,
                 SUM(amount) as revenue,
@@ -274,7 +291,8 @@ def get_dashboard(db: Session = Depends(get_db_session)) -> DashboardResponse:
             GROUP BY transaction_date
             ORDER BY transaction_date DESC
             LIMIT 7
-        """)
+        """
+        )
         trend_results = db.execute(trend_query).fetchall()
 
         # Build response
@@ -293,17 +311,17 @@ def get_dashboard(db: Session = Depends(get_db_session)) -> DashboardResponse:
                 RecentTrendItem(
                     transaction_date=row.date,
                     revenue=Decimal(str(row.revenue)),
-                    transaction_count=row.transaction_count
+                    transaction_count=row.transaction_count,
                 )
                 for row in trend_results
-            ]
+            ],
         )
 
     except SQLAlchemyError as e:
         logger.error(f"Dashboard query error: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to retrieve dashboard data"
+            detail="Failed to retrieve dashboard data",
         )
 
 
@@ -312,11 +330,13 @@ def get_dashboard(db: Session = Depends(get_db_session)) -> DashboardResponse:
     response_model=RevenueResponse,
     tags=["Analytics"],
     summary="Get revenue analytics",
-    description="Daily revenue breakdown with aggregations and trends"
+    description="Daily revenue breakdown with aggregations and trends",
 )
 def get_revenue(
-    limit: int = Query(default=30, ge=1, le=365, description="Number of days to retrieve"),
-    db: Session = Depends(get_db_session)
+    limit: int = Query(
+        default=30, ge=1, le=365, description="Number of days to retrieve"
+    ),
+    db: Session = Depends(get_db_session),
 ) -> RevenueResponse:
     """
     Revenue analytics endpoint using v_daily_revenue view.
@@ -328,7 +348,8 @@ def get_revenue(
     """
     try:
         # Query v_daily_revenue view
-        revenue_query = text("""
+        revenue_query = text(
+            """
             SELECT
                 transaction_date,
                 total_revenue,
@@ -338,7 +359,8 @@ def get_revenue(
             FROM v_daily_revenue
             ORDER BY transaction_date DESC
             LIMIT :limit
-        """)
+        """
+        )
 
         results = db.execute(revenue_query, {"limit": limit}).fetchall()
 
@@ -354,20 +376,20 @@ def get_revenue(
                     total_revenue=Decimal(str(row.total_revenue)),
                     transaction_count=row.transaction_count,
                     avg_transaction_value=Decimal(str(row.avg_transaction_value)),
-                    unique_customers=row.unique_customers
+                    unique_customers=row.unique_customers,
                 )
                 for row in results
             ],
             total_revenue=total_revenue,
             total_transactions=total_transactions,
-            avg_daily_revenue=avg_daily_revenue
+            avg_daily_revenue=avg_daily_revenue,
         )
 
     except SQLAlchemyError as e:
         logger.error(f"Revenue query error: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to retrieve revenue data"
+            detail="Failed to retrieve revenue data",
         )
 
 
@@ -376,14 +398,16 @@ def get_revenue(
     response_model=CustomersResponse,
     tags=["Analytics"],
     summary="Get customer analytics",
-    description="Customer behavior analysis with pagination"
+    description="Customer behavior analysis with pagination",
 )
 def get_customers(
     limit: int = Query(default=10, ge=1, le=100, description="Results per page"),
     offset: int = Query(default=0, ge=0, description="Pagination offset"),
-    sort_by: str = Query(default="total_spent", pattern="^(total_spent|transaction_count|last_purchase)$"),
+    sort_by: str = Query(
+        default="total_spent", pattern="^(total_spent|transaction_count|last_purchase)$"
+    ),
     order: str = Query(default="desc", pattern="^(asc|desc)$"),
-    db: Session = Depends(get_db_session)
+    db: Session = Depends(get_db_session),
 ) -> CustomersResponse:
     """
     Customer analytics endpoint using v_customer_analytics view.
@@ -402,7 +426,8 @@ def get_customers(
         total_count = db.execute(count_query).fetchone().total
 
         # Get paginated results
-        customers_query = text(f"""
+        customers_query = text(
+            f"""
             SELECT
                 customer_name,
                 transaction_count,
@@ -413,11 +438,11 @@ def get_customers(
             FROM v_customer_analytics
             ORDER BY {sort_by} {order.upper()}
             LIMIT :limit OFFSET :offset
-        """)
+        """
+        )
 
         results = db.execute(
-            customers_query,
-            {"limit": limit, "offset": offset}
+            customers_query, {"limit": limit, "offset": offset}
         ).fetchall()
 
         return CustomersResponse(
@@ -428,22 +453,18 @@ def get_customers(
                     total_spent=Decimal(str(row.total_spent)),
                     avg_transaction=Decimal(str(row.avg_transaction)),
                     first_purchase=row.first_purchase,
-                    last_purchase=row.last_purchase
+                    last_purchase=row.last_purchase,
                 )
                 for row in results
             ],
-            pagination=PaginationInfo(
-                limit=limit,
-                offset=offset,
-                total=total_count
-            )
+            pagination=PaginationInfo(limit=limit, offset=offset, total=total_count),
         )
 
     except SQLAlchemyError as e:
         logger.error(f"Customers query error: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to retrieve customer data"
+            detail="Failed to retrieve customer data",
         )
 
 
@@ -452,7 +473,7 @@ def get_customers(
     response_model=ProductsResponse,
     tags=["Analytics"],
     summary="Get product performance",
-    description="Product sales metrics and performance analysis"
+    description="Product sales metrics and performance analysis",
 )
 def get_products(db: Session = Depends(get_db_session)) -> ProductsResponse:
     """
@@ -465,7 +486,8 @@ def get_products(db: Session = Depends(get_db_session)) -> ProductsResponse:
     """
     try:
         # Query v_product_performance view
-        products_query = text("""
+        products_query = text(
+            """
             SELECT
                 product,
                 total_transactions,
@@ -474,7 +496,8 @@ def get_products(db: Session = Depends(get_db_session)) -> ProductsResponse:
                 unique_customers
             FROM v_product_performance
             ORDER BY total_revenue DESC
-        """)
+        """
+        )
 
         results = db.execute(products_query).fetchall()
 
@@ -485,7 +508,7 @@ def get_products(db: Session = Depends(get_db_session)) -> ProductsResponse:
                     total_transactions=row.total_transactions,
                     total_revenue=Decimal(str(row.total_revenue)),
                     avg_price=Decimal(str(row.avg_price)),
-                    unique_customers=row.unique_customers
+                    unique_customers=row.unique_customers,
                 )
                 for row in results
             ]
@@ -495,7 +518,7 @@ def get_products(db: Session = Depends(get_db_session)) -> ProductsResponse:
         logger.error(f"Products query error: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to retrieve product data"
+            detail="Failed to retrieve product data",
         )
 
 
@@ -503,11 +526,12 @@ def get_products(db: Session = Depends(get_db_session)) -> ProductsResponse:
 # Root Endpoint
 # =============================================================================
 
+
 @app.get(
     "/",
     tags=["Info"],
     summary="API information",
-    description="Get basic API information and available endpoints"
+    description="Get basic API information and available endpoints",
 )
 def root():
     """Root endpoint providing API information."""
@@ -521,6 +545,6 @@ def root():
             "dashboard": "/api/dashboard",
             "revenue": "/api/revenue",
             "customers": "/api/customers",
-            "products": "/api/products"
-        }
+            "products": "/api/products",
+        },
     }

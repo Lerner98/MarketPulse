@@ -16,12 +16,15 @@ from pydantic import BaseModel, Field, ConfigDict
 # Health Check Models
 # =============================================================================
 
+
 class HealthResponse(BaseModel):
     """Health check response."""
 
     status: str = Field(..., description="Service status", examples=["healthy"])
     timestamp: datetime = Field(..., description="Current server timestamp")
-    database: str = Field(..., description="Database connection status", examples=["connected"])
+    database: str = Field(
+        ..., description="Database connection status", examples=["connected"]
+    )
     version: str = Field(default="1.0.0", description="API version")
 
     model_config = ConfigDict(
@@ -30,7 +33,7 @@ class HealthResponse(BaseModel):
                 "status": "healthy",
                 "timestamp": "2025-11-20T12:00:00Z",
                 "database": "connected",
-                "version": "1.0.0"
+                "version": "1.0.0",
             }
         }
     )
@@ -40,6 +43,7 @@ class HealthResponse(BaseModel):
 # Dashboard Models
 # =============================================================================
 
+
 class TopProductItem(BaseModel):
     """Individual product in top products list."""
 
@@ -47,12 +51,7 @@ class TopProductItem(BaseModel):
     revenue: Decimal = Field(..., description="Total revenue for product", ge=0)
 
     model_config = ConfigDict(
-        json_schema_extra={
-            "example": {
-                "product": "מחשב נייד",
-                "revenue": 5234567.89
-            }
-        }
+        json_schema_extra={"example": {"product": "מחשב נייד", "revenue": 5234567.89}}
     )
 
 
@@ -69,30 +68,36 @@ class RecentTrendItem(BaseModel):
             "example": {
                 "date": "2025-11-20",
                 "revenue": 123456.78,
-                "transaction_count": 87
+                "transaction_count": 87,
             }
-        }
+        },
     )
 
 
 class DashboardResponse(BaseModel):
     """Aggregated dashboard metrics."""
 
-    total_revenue: Decimal = Field(..., description="Total revenue across all transactions", ge=0)
+    total_revenue: Decimal = Field(
+        ..., description="Total revenue across all transactions", ge=0
+    )
     total_transactions: int = Field(..., description="Total transaction count", ge=0)
-    avg_order_value: Decimal = Field(..., description="Average transaction amount", ge=0)
-    completed_transactions: int = Field(..., description="Number of completed transactions", ge=0)
-    pending_transactions: int = Field(..., description="Number of pending transactions", ge=0)
-    cancelled_transactions: int = Field(..., description="Number of cancelled transactions", ge=0)
+    avg_order_value: Decimal = Field(
+        ..., description="Average transaction amount", ge=0
+    )
+    completed_transactions: int = Field(
+        ..., description="Number of completed transactions", ge=0
+    )
+    pending_transactions: int = Field(
+        ..., description="Number of pending transactions", ge=0
+    )
+    cancelled_transactions: int = Field(
+        ..., description="Number of cancelled transactions", ge=0
+    )
     top_products: List[TopProductItem] = Field(
-        ...,
-        description="Top 5 products by revenue",
-        max_length=5
+        ..., description="Top 5 products by revenue", max_length=5
     )
     recent_trend: List[RecentTrendItem] = Field(
-        ...,
-        description="Last 7 days revenue trend",
-        max_length=7
+        ..., description="Last 7 days revenue trend", max_length=7
     )
 
     model_config = ConfigDict(
@@ -106,11 +111,15 @@ class DashboardResponse(BaseModel):
                 "cancelled_transactions": 3299,
                 "top_products": [
                     {"product": "מחשב נייד", "revenue": 5234567.89},
-                    {"product": "טלפון סלולרי", "revenue": 4123456.78}
+                    {"product": "טלפון סלולרי", "revenue": 4123456.78},
                 ],
                 "recent_trend": [
-                    {"date": "2025-11-20", "revenue": 123456.78, "transaction_count": 87}
-                ]
+                    {
+                        "date": "2025-11-20",
+                        "revenue": 123456.78,
+                        "transaction_count": 87,
+                    }
+                ],
             }
         }
     )
@@ -120,14 +129,19 @@ class DashboardResponse(BaseModel):
 # Revenue Models
 # =============================================================================
 
+
 class RevenueDayItem(BaseModel):
     """Daily revenue aggregation."""
 
     transaction_date: date = Field(..., description="Transaction date", alias="date")
     total_revenue: Decimal = Field(..., description="Total revenue for date", ge=0)
     transaction_count: int = Field(..., description="Number of transactions", ge=0)
-    avg_transaction_value: Decimal = Field(..., description="Average transaction value", ge=0)
-    unique_customers: int = Field(..., description="Unique customers on this date", ge=0)
+    avg_transaction_value: Decimal = Field(
+        ..., description="Average transaction value", ge=0
+    )
+    unique_customers: int = Field(
+        ..., description="Unique customers on this date", ge=0
+    )
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -137,9 +151,9 @@ class RevenueDayItem(BaseModel):
                 "total_revenue": 123456.78,
                 "transaction_count": 87,
                 "avg_transaction_value": 1419.04,
-                "unique_customers": 65
+                "unique_customers": 65,
             }
-        }
+        },
     )
 
 
@@ -147,8 +161,12 @@ class RevenueResponse(BaseModel):
     """Revenue analytics response."""
 
     data: List[RevenueDayItem] = Field(..., description="Daily revenue data")
-    total_revenue: Decimal = Field(..., description="Sum of all revenue in period", ge=0)
-    total_transactions: int = Field(..., description="Total transactions in period", ge=0)
+    total_revenue: Decimal = Field(
+        ..., description="Sum of all revenue in period", ge=0
+    )
+    total_transactions: int = Field(
+        ..., description="Total transactions in period", ge=0
+    )
     avg_daily_revenue: Decimal = Field(..., description="Average daily revenue", ge=0)
 
     model_config = ConfigDict(
@@ -160,12 +178,12 @@ class RevenueResponse(BaseModel):
                         "total_revenue": 123456.78,
                         "transaction_count": 87,
                         "avg_transaction_value": 1419.04,
-                        "unique_customers": 65
+                        "unique_customers": 65,
                     }
                 ],
                 "total_revenue": 15234567.89,
                 "total_transactions": 10000,
-                "avg_daily_revenue": 41736.35
+                "avg_daily_revenue": 41736.35,
             }
         }
     )
@@ -175,13 +193,18 @@ class RevenueResponse(BaseModel):
 # Customer Models
 # =============================================================================
 
+
 class CustomerItem(BaseModel):
     """Individual customer analytics."""
 
     customer_name: str = Field(..., description="Customer name", max_length=255)
-    transaction_count: int = Field(..., description="Total transactions by customer", ge=0)
+    transaction_count: int = Field(
+        ..., description="Total transactions by customer", ge=0
+    )
     total_spent: Decimal = Field(..., description="Total amount spent", ge=0)
-    avg_transaction: Decimal = Field(..., description="Average transaction amount", ge=0)
+    avg_transaction: Decimal = Field(
+        ..., description="Average transaction amount", ge=0
+    )
     first_purchase: date = Field(..., description="Date of first purchase")
     last_purchase: date = Field(..., description="Date of most recent purchase")
 
@@ -193,7 +216,7 @@ class CustomerItem(BaseModel):
                 "total_spent": 12345.67,
                 "avg_transaction": 823.04,
                 "first_purchase": "2024-06-15",
-                "last_purchase": "2025-11-18"
+                "last_purchase": "2025-11-18",
             }
         }
     )
@@ -207,13 +230,7 @@ class PaginationInfo(BaseModel):
     total: int = Field(..., description="Total number of results available", ge=0)
 
     model_config = ConfigDict(
-        json_schema_extra={
-            "example": {
-                "limit": 10,
-                "offset": 0,
-                "total": 5432
-            }
-        }
+        json_schema_extra={"example": {"limit": 10, "offset": 0, "total": 5432}}
     )
 
 
@@ -233,14 +250,10 @@ class CustomersResponse(BaseModel):
                         "total_spent": 12345.67,
                         "avg_transaction": 823.04,
                         "first_purchase": "2024-06-15",
-                        "last_purchase": "2025-11-18"
+                        "last_purchase": "2025-11-18",
                     }
                 ],
-                "pagination": {
-                    "limit": 10,
-                    "offset": 0,
-                    "total": 5432
-                }
+                "pagination": {"limit": 10, "offset": 0, "total": 5432},
             }
         }
     )
@@ -249,6 +262,7 @@ class CustomersResponse(BaseModel):
 # =============================================================================
 # Product Models
 # =============================================================================
+
 
 class ProductItem(BaseModel):
     """Individual product performance metrics."""
@@ -266,7 +280,7 @@ class ProductItem(BaseModel):
                 "total_transactions": 2134,
                 "total_revenue": 5234567.89,
                 "avg_price": 2453.21,
-                "unique_customers": 1876
+                "unique_customers": 1876,
             }
         }
     )
@@ -286,15 +300,15 @@ class ProductsResponse(BaseModel):
                         "total_transactions": 2134,
                         "total_revenue": 5234567.89,
                         "avg_price": 2453.21,
-                        "unique_customers": 1876
+                        "unique_customers": 1876,
                     },
                     {
                         "product": "טלפון סלולרי",
                         "total_transactions": 1987,
                         "total_revenue": 4123456.78,
                         "avg_price": 2076.89,
-                        "unique_customers": 1654
-                    }
+                        "unique_customers": 1654,
+                    },
                 ]
             }
         }
@@ -305,13 +319,19 @@ class ProductsResponse(BaseModel):
 # Error Models
 # =============================================================================
 
+
 class ErrorDetail(BaseModel):
     """Detailed error information."""
 
-    code: str = Field(..., description="Machine-readable error code", examples=["VALIDATION_ERROR"])
+    code: str = Field(
+        ..., description="Machine-readable error code", examples=["VALIDATION_ERROR"]
+    )
     message: str = Field(..., description="Human-readable error message")
     details: Optional[dict] = Field(None, description="Additional error details")
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc), description="Error timestamp")
+    timestamp: datetime = Field(
+        default_factory=lambda: datetime.now(timezone.utc),
+        description="Error timestamp",
+    )
 
     model_config = ConfigDict(
         json_schema_extra={
@@ -319,7 +339,7 @@ class ErrorDetail(BaseModel):
                 "code": "VALIDATION_ERROR",
                 "message": "Invalid input data",
                 "details": {"field": "limit", "error": "Must be between 1 and 100"},
-                "timestamp": "2025-11-20T12:00:00Z"
+                "timestamp": "2025-11-20T12:00:00Z",
             }
         }
     )
@@ -336,7 +356,7 @@ class ErrorResponse(BaseModel):
                 "error": {
                     "code": "INTERNAL_ERROR",
                     "message": "An unexpected error occurred",
-                    "timestamp": "2025-11-20T12:00:00Z"
+                    "timestamp": "2025-11-20T12:00:00Z",
                 }
             }
         }
