@@ -68,7 +68,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Check if frontend exists
+        id: check-frontend
+        run: |
+          if [ -f "frontend/package.json" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "Frontend not implemented yet (Phase 4) - skipping"
+          fi
+
       - name: Set up Node.js
+        if: steps.check-frontend.outputs.exists == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: '18'
@@ -76,14 +87,16 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
+        if: steps.check-frontend.outputs.exists == 'true'
         run: |
           cd frontend
-          npm ci || echo "Frontend not ready yet"
+          npm ci
 
       - name: Run tests
+        if: steps.check-frontend.outputs.exists == 'true'
         run: |
           cd frontend
-          npm test || echo "Tests not configured yet"
+          npm test
 
   docker-build:
     runs-on: ubuntu-latest
