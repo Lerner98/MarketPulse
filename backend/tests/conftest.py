@@ -29,9 +29,10 @@ from models.database import DatabaseManager
 @pytest.fixture(scope="session")
 def test_database_url() -> str:
     """Test database URL from environment or default."""
+    # CI/CD uses DATABASE_URL, local dev uses TEST_DATABASE_URL or fallback to 5433
     return os.getenv(
-        'TEST_DATABASE_URL',
-        'postgresql://marketpulse_user:dev123@localhost:5433/marketpulse'
+        'DATABASE_URL',
+        os.getenv('TEST_DATABASE_URL', 'postgresql://marketpulse_user:dev123@localhost:5433/marketpulse')
     )
 
 
