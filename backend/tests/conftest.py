@@ -52,6 +52,51 @@ def db_engine(test_database_url: str):
     engine.dispose()
 
 
+@pytest.fixture(scope="session", autouse=True)
+def setup_test_database(db_engine):
+    """
+    Create database schema before running tests.
+
+    Reads and executes schema.sql to create tables, indexes, and views.
+    Runs once per test session (autouse=True means it runs automatically).
+    """
+    schema_path = os.path.join(
+        os.path.dirname(__file__),
+        '..',
+        'models',
+        'schema.sql'
+    )
+
+    # Read schema file
+    with open(schema_path, 'r', encoding='utf-8') as f:
+        schema_sql = f.read()
+
+    # Execute schema creation using raw connection
+    # Need to use psycopg2 directly because SQLAlchemy's execute() doesn't support
+    # multi-statement SQL with dollar-quoted strings (functions/triggers)
+    raw_conn = db_engine.raw_connection()
+    try:
+        cursor = raw_conn.cursor()
+
+        # Clean up existing schema first (in case of previous failed test run)
+        cursor.execute("DROP SCHEMA IF EXISTS public CASCADE; CREATE SCHEMA public;")
+        raw_conn.commit()
+
+        # Create fresh schema
+        cursor.execute(schema_sql)
+        raw_conn.commit()
+        cursor.close()
+    finally:
+        raw_conn.close()
+
+    yield
+
+    # Cleanup: Drop all tables after tests complete
+    with db_engine.connect() as conn:
+        conn.execute(text("DROP SCHEMA public CASCADE; CREATE SCHEMA public;"))
+        conn.commit()
+
+
 @pytest.fixture(scope="function")
 def db_session(db_engine):
     """
