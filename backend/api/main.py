@@ -10,6 +10,7 @@ import os
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from decimal import Decimal
+
 # Removed unused typing imports
 
 from fastapi import FastAPI, HTTPException, Query, Depends, status
@@ -131,11 +132,8 @@ def get_db_session() -> Session:
 
     Creates a new session for each request and ensures cleanup.
     """
-    session = db_manager.get_session()
-    try:
+    with db_manager.get_session() as session:
         yield session
-    finally:
-        session.close()
 
 
 # =============================================================================

@@ -14,6 +14,7 @@ from models.database import DatabaseManager
 # DatabaseManager Tests
 # =============================================================================
 
+
 class TestDatabaseManager:
     """Test DatabaseManager class."""
 
@@ -58,12 +59,15 @@ class TestDatabaseManager:
 # Error Handling Tests
 # =============================================================================
 
+
 class TestDatabaseErrorHandling:
     """Test database error handling."""
 
     def test_invalid_connection_string(self):
         """Test DatabaseManager handles invalid connection string."""
-        db = DatabaseManager(database_url="postgresql://invalid:invalid@localhost:9999/invalid")
+        db = DatabaseManager(
+            database_url="postgresql://invalid:invalid@localhost:9999/invalid"
+        )
 
         # Should not crash on initialization
         assert db is not None

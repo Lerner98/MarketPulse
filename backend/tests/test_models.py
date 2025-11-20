@@ -23,13 +23,14 @@ from api.models import (
     ProductsResponse,
     ProductItem,
     ErrorResponse,
-    ErrorDetail
+    ErrorDetail,
 )
 
 
 # =============================================================================
 # Health Check Model Tests
 # =============================================================================
+
 
 class TestHealthResponse:
     """Test HealthResponse model validation."""
@@ -40,7 +41,7 @@ class TestHealthResponse:
             "status": "healthy",
             "timestamp": datetime.now(),
             "database": "connected",
-            "version": "1.0.0"
+            "version": "1.0.0",
         }
         response = HealthResponse(**data)
 
@@ -53,7 +54,7 @@ class TestHealthResponse:
         data = {
             "status": "healthy",
             "timestamp": datetime.now(),
-            "database": "connected"
+            "database": "connected",
         }
         response = HealthResponse(**data)
 
@@ -64,7 +65,7 @@ class TestHealthResponse:
         data = {
             "status": "healthy",
             "timestamp": datetime(2025, 11, 20, 12, 0, 0),
-            "database": "connected"
+            "database": "connected",
         }
         response = HealthResponse(**data)
         json_data = response.model_dump()
@@ -76,6 +77,7 @@ class TestHealthResponse:
 # =============================================================================
 # Dashboard Model Tests
 # =============================================================================
+
 
 class TestTopProductItem:
     """Test TopProductItem model validation."""
@@ -106,7 +108,7 @@ class TestRecentTrendItem:
         data = {
             "date": date(2025, 11, 20),
             "revenue": Decimal("5000.00"),
-            "transaction_count": 50
+            "transaction_count": 50,
         }
         item = RecentTrendItem(**data)
 
@@ -119,7 +121,7 @@ class TestRecentTrendItem:
         data = {
             "date": date(2025, 11, 20),
             "revenue": Decimal("5000.00"),
-            "transaction_count": -5
+            "transaction_count": -5,
         }
 
         with pytest.raises(ValidationError) as exc_info:
@@ -160,7 +162,7 @@ class TestDashboardResponse:
             {
                 "date": date(2025, 11, i),
                 "revenue": Decimal("1000.00"),
-                "transaction_count": 10
+                "transaction_count": 10,
             }
             for i in range(1, 9)
         ]
@@ -175,6 +177,7 @@ class TestDashboardResponse:
 # Revenue Model Tests
 # =============================================================================
 
+
 class TestRevenueDayItem:
     """Test RevenueDayItem model validation."""
 
@@ -185,7 +188,7 @@ class TestRevenueDayItem:
             "total_revenue": Decimal("10000.00"),
             "transaction_count": 100,
             "avg_transaction_value": Decimal("100.00"),
-            "unique_customers": 75
+            "unique_customers": 75,
         }
         item = RevenueDayItem(**data)
 
@@ -199,7 +202,7 @@ class TestRevenueDayItem:
             "total_revenue": Decimal("10000.00"),
             "transaction_count": 100,
             "avg_transaction_value": Decimal("100.00"),
-            "unique_customers": 75
+            "unique_customers": 75,
         }
         item = RevenueDayItem(**data)
 
@@ -215,7 +218,7 @@ class TestRevenueResponse:
             "data": sample_revenue_data,
             "total_revenue": Decimal("233691.34"),
             "total_transactions": 166,
-            "avg_daily_revenue": Decimal("116845.67")
+            "avg_daily_revenue": Decimal("116845.67"),
         }
         response = RevenueResponse(**data)
 
@@ -228,6 +231,7 @@ class TestRevenueResponse:
 # Customer Model Tests
 # =============================================================================
 
+
 class TestCustomerItem:
     """Test CustomerItem model validation."""
 
@@ -239,7 +243,7 @@ class TestCustomerItem:
             "total_spent": Decimal("12345.67"),
             "avg_transaction": Decimal("823.04"),
             "first_purchase": date(2024, 6, 15),
-            "last_purchase": date(2025, 11, 18)
+            "last_purchase": date(2025, 11, 18),
         }
         item = CustomerItem(**data)
 
@@ -254,7 +258,7 @@ class TestCustomerItem:
             "total_spent": Decimal("100.00"),
             "avg_transaction": Decimal("100.00"),
             "first_purchase": date(2024, 1, 1),
-            "last_purchase": date(2024, 1, 1)
+            "last_purchase": date(2024, 1, 1),
         }
 
         with pytest.raises(ValidationError) as exc_info:
@@ -310,7 +314,7 @@ class TestCustomersResponse:
         """Test creating valid customers response."""
         data = {
             "customers": sample_customer_data,
-            "pagination": {"limit": 10, "offset": 0, "total": 5432}
+            "pagination": {"limit": 10, "offset": 0, "total": 5432},
         }
         response = CustomersResponse(**data)
 
@@ -322,6 +326,7 @@ class TestCustomersResponse:
 # Product Model Tests
 # =============================================================================
 
+
 class TestProductItem:
     """Test ProductItem model validation."""
 
@@ -332,7 +337,7 @@ class TestProductItem:
             "total_transactions": 100,
             "total_revenue": Decimal("50000.00"),
             "avg_price": Decimal("500.00"),
-            "unique_customers": 80
+            "unique_customers": 80,
         }
         item = ProductItem(**data)
 
@@ -356,6 +361,7 @@ class TestProductsResponse:
 # Error Model Tests
 # =============================================================================
 
+
 class TestErrorDetail:
     """Test ErrorDetail model validation."""
 
@@ -364,7 +370,7 @@ class TestErrorDetail:
         data = {
             "code": "VALIDATION_ERROR",
             "message": "Invalid input",
-            "details": {"field": "email", "error": "Invalid format"}
+            "details": {"field": "email", "error": "Invalid format"},
         }
         error = ErrorDetail(**data)
 
@@ -374,10 +380,7 @@ class TestErrorDetail:
 
     def test_error_detail_timestamp_auto_generated(self):
         """Test that timestamp is auto-generated if not provided."""
-        data = {
-            "code": "INTERNAL_ERROR",
-            "message": "Something went wrong"
-        }
+        data = {"code": "INTERNAL_ERROR", "message": "Something went wrong"}
         error = ErrorDetail(**data)
 
         assert error.timestamp is not None
@@ -389,12 +392,7 @@ class TestErrorResponse:
 
     def test_valid_error_response(self):
         """Test creating valid error response."""
-        data = {
-            "error": {
-                "code": "NOT_FOUND",
-                "message": "Resource not found"
-            }
-        }
+        data = {"error": {"code": "NOT_FOUND", "message": "Resource not found"}}
         response = ErrorResponse(**data)
 
         assert response.error.code == "NOT_FOUND"

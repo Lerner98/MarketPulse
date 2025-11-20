@@ -17,6 +17,7 @@ from fastapi.testclient import TestClient
 # Health Endpoint Tests
 # =============================================================================
 
+
 class TestHealthEndpoint:
     """Test /api/health endpoint."""
 
@@ -32,7 +33,9 @@ class TestHealthEndpoint:
         assert data["version"] == "1.0.0"
         assert "timestamp" in data
 
-    def test_health_check_response_time(self, test_client: TestClient, assert_response_time):
+    def test_health_check_response_time(
+        self, test_client: TestClient, assert_response_time
+    ):
         """Test health check responds within 200ms."""
         start_time = datetime.now()
         response = test_client.get("/api/health")
@@ -44,6 +47,7 @@ class TestHealthEndpoint:
 # =============================================================================
 # Dashboard Endpoint Tests
 # =============================================================================
+
 
 class TestDashboardEndpoint:
     """Test /api/dashboard endpoint."""
@@ -70,7 +74,9 @@ class TestDashboardEndpoint:
         assert isinstance(data["top_products"], list)
         assert isinstance(data["recent_trend"], list)
 
-    def test_dashboard_top_products_structure(self, test_client: TestClient, seed_test_transactions):
+    def test_dashboard_top_products_structure(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test top products have correct structure."""
         response = test_client.get("/api/dashboard")
 
@@ -83,7 +89,9 @@ class TestDashboardEndpoint:
             assert "revenue" in product
             assert isinstance(product["product"], str)
 
-    def test_dashboard_recent_trend_structure(self, test_client: TestClient, seed_test_transactions):
+    def test_dashboard_recent_trend_structure(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test recent trend has correct structure."""
         response = test_client.get("/api/dashboard")
 
@@ -96,7 +104,9 @@ class TestDashboardEndpoint:
             assert "revenue" in trend_item
             assert "transaction_count" in trend_item
 
-    def test_dashboard_response_time(self, test_client: TestClient, seed_test_transactions, assert_response_time):
+    def test_dashboard_response_time(
+        self, test_client: TestClient, seed_test_transactions, assert_response_time
+    ):
         """Test dashboard responds within 200ms."""
         start_time = datetime.now()
         response = test_client.get("/api/dashboard")
@@ -109,10 +119,13 @@ class TestDashboardEndpoint:
 # Revenue Endpoint Tests
 # =============================================================================
 
+
 class TestRevenueEndpoint:
     """Test /api/revenue endpoint."""
 
-    def test_revenue_default_params(self, test_client: TestClient, seed_test_transactions):
+    def test_revenue_default_params(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test revenue with default parameters."""
         response = test_client.get("/api/revenue")
 
@@ -147,7 +160,9 @@ class TestRevenueEndpoint:
 
         assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
 
-    def test_revenue_data_structure(self, test_client: TestClient, seed_test_transactions):
+    def test_revenue_data_structure(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test revenue data items have correct structure."""
         response = test_client.get("/api/revenue?limit=5")
 
@@ -162,7 +177,9 @@ class TestRevenueEndpoint:
             assert "avg_transaction_value" in item
             assert "unique_customers" in item
 
-    def test_revenue_response_time(self, test_client: TestClient, seed_test_transactions, assert_response_time):
+    def test_revenue_response_time(
+        self, test_client: TestClient, seed_test_transactions, assert_response_time
+    ):
         """Test revenue responds within 200ms."""
         start_time = datetime.now()
         response = test_client.get("/api/revenue?limit=30")
@@ -175,10 +192,13 @@ class TestRevenueEndpoint:
 # Customers Endpoint Tests
 # =============================================================================
 
+
 class TestCustomersEndpoint:
     """Test /api/customers endpoint."""
 
-    def test_customers_default_params(self, test_client: TestClient, seed_test_transactions):
+    def test_customers_default_params(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test customers with default parameters."""
         response = test_client.get("/api/customers")
 
@@ -190,7 +210,9 @@ class TestCustomersEndpoint:
 
         assert isinstance(data["customers"], list)
 
-    def test_customers_pagination(self, test_client: TestClient, seed_test_transactions, validate_pagination):
+    def test_customers_pagination(
+        self, test_client: TestClient, seed_test_transactions, validate_pagination
+    ):
         """Test customers pagination structure."""
         response = test_client.get("/api/customers?limit=5&offset=0")
 
@@ -218,7 +240,9 @@ class TestCustomersEndpoint:
 
         assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
 
-    def test_customers_sort_by_total_spent(self, test_client: TestClient, seed_test_transactions):
+    def test_customers_sort_by_total_spent(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test customers can be sorted by total_spent."""
         response = test_client.get("/api/customers?sort_by=total_spent&order=desc")
 
@@ -227,16 +251,23 @@ class TestCustomersEndpoint:
 
         # Verify descending order if multiple customers
         if len(data["customers"]) >= 2:
-            assert Decimal(data["customers"][0]["total_spent"]) >= \
-                   Decimal(data["customers"][1]["total_spent"])
+            assert Decimal(data["customers"][0]["total_spent"]) >= Decimal(
+                data["customers"][1]["total_spent"]
+            )
 
-    def test_customers_sort_by_transaction_count(self, test_client: TestClient, seed_test_transactions):
+    def test_customers_sort_by_transaction_count(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test customers can be sorted by transaction_count."""
-        response = test_client.get("/api/customers?sort_by=transaction_count&order=desc")
+        response = test_client.get(
+            "/api/customers?sort_by=transaction_count&order=desc"
+        )
 
         assert response.status_code == status.HTTP_200_OK
 
-    def test_customers_sort_by_last_purchase(self, test_client: TestClient, seed_test_transactions):
+    def test_customers_sort_by_last_purchase(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test customers can be sorted by last_purchase."""
         response = test_client.get("/api/customers?sort_by=last_purchase&order=desc")
 
@@ -254,7 +285,9 @@ class TestCustomersEndpoint:
 
         assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
 
-    def test_customers_data_structure(self, test_client: TestClient, seed_test_transactions):
+    def test_customers_data_structure(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test customer items have correct structure."""
         response = test_client.get("/api/customers?limit=1")
 
@@ -270,7 +303,9 @@ class TestCustomersEndpoint:
             assert "first_purchase" in customer
             assert "last_purchase" in customer
 
-    def test_customers_response_time(self, test_client: TestClient, seed_test_transactions, assert_response_time):
+    def test_customers_response_time(
+        self, test_client: TestClient, seed_test_transactions, assert_response_time
+    ):
         """Test customers responds within 200ms."""
         start_time = datetime.now()
         response = test_client.get("/api/customers?limit=10")
@@ -282,6 +317,7 @@ class TestCustomersEndpoint:
 # =============================================================================
 # Products Endpoint Tests
 # =============================================================================
+
 
 class TestProductsEndpoint:
     """Test /api/products endpoint."""
@@ -296,7 +332,9 @@ class TestProductsEndpoint:
         assert "products" in data
         assert isinstance(data["products"], list)
 
-    def test_products_data_structure(self, test_client: TestClient, seed_test_transactions):
+    def test_products_data_structure(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test product items have correct structure."""
         response = test_client.get("/api/products")
 
@@ -311,7 +349,9 @@ class TestProductsEndpoint:
             assert "avg_price" in product
             assert "unique_customers" in product
 
-    def test_products_sorted_by_revenue(self, test_client: TestClient, seed_test_transactions):
+    def test_products_sorted_by_revenue(
+        self, test_client: TestClient, seed_test_transactions
+    ):
         """Test products are sorted by revenue descending."""
         response = test_client.get("/api/products")
 
@@ -320,10 +360,13 @@ class TestProductsEndpoint:
 
         # Verify descending order by revenue if multiple products
         if len(data["products"]) >= 2:
-            assert Decimal(data["products"][0]["total_revenue"]) >= \
-                   Decimal(data["products"][1]["total_revenue"])
+            assert Decimal(data["products"][0]["total_revenue"]) >= Decimal(
+                data["products"][1]["total_revenue"]
+            )
 
-    def test_products_response_time(self, test_client: TestClient, seed_test_transactions, assert_response_time):
+    def test_products_response_time(
+        self, test_client: TestClient, seed_test_transactions, assert_response_time
+    ):
         """Test products responds within 200ms."""
         start_time = datetime.now()
         response = test_client.get("/api/products")
@@ -335,6 +378,7 @@ class TestProductsEndpoint:
 # =============================================================================
 # Root Endpoint Tests
 # =============================================================================
+
 
 class TestRootEndpoint:
     """Test / root endpoint."""
@@ -356,6 +400,7 @@ class TestRootEndpoint:
 # Error Handling Tests
 # =============================================================================
 
+
 class TestErrorHandling:
     """Test API error handling."""
 
@@ -376,24 +421,25 @@ class TestErrorHandling:
 # CORS Tests
 # =============================================================================
 
+
 class TestCORS:
     """Test CORS middleware configuration."""
 
     def test_cors_headers_present(self, test_client: TestClient):
         """Test CORS headers are present in responses."""
         response = test_client.options(
-            "/api/health",
-            headers={"Origin": "http://localhost:3000"}
+            "/api/health", headers={"Origin": "http://localhost:3000"}
         )
 
-        assert "access-control-allow-origin" in response.headers or \
-               response.status_code == status.HTTP_200_OK
+        assert (
+            "access-control-allow-origin" in response.headers
+            or response.status_code == status.HTTP_200_OK
+        )
 
     def test_cors_allows_localhost_3000(self, test_client: TestClient):
         """Test CORS allows requests from localhost:3000."""
         response = test_client.get(
-            "/api/health",
-            headers={"Origin": "http://localhost:3000"}
+            "/api/health", headers={"Origin": "http://localhost:3000"}
         )
 
         assert response.status_code == status.HTTP_200_OK

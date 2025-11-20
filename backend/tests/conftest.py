@@ -17,7 +17,7 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 
 # Add parent directory to path for imports
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from models.database import DatabaseManager
 
@@ -26,13 +26,17 @@ from models.database import DatabaseManager
 # Environment Configuration
 # =============================================================================
 
+
 @pytest.fixture(scope="session")
 def test_database_url() -> str:
     """Test database URL from environment or default."""
     # CI/CD uses DATABASE_URL, local dev uses TEST_DATABASE_URL or fallback to 5433
     return os.getenv(
-        'DATABASE_URL',
-        os.getenv('TEST_DATABASE_URL', 'postgresql://marketpulse_user:dev123@localhost:5433/marketpulse')
+        "DATABASE_URL",
+        os.getenv(
+            "TEST_DATABASE_URL",
+            "postgresql://marketpulse_user:dev123@localhost:5433/marketpulse",
+        ),
     )
 
 
@@ -40,13 +44,14 @@ def test_database_url() -> str:
 # Database Fixtures
 # =============================================================================
 
+
 @pytest.fixture(scope="session")
 def db_engine(test_database_url: str):
     """Create test database engine (session-scoped)."""
     engine = create_engine(
         test_database_url,
         pool_pre_ping=True,
-        echo=False  # Set to True for SQL query logging
+        echo=False,  # Set to True for SQL query logging
     )
     yield engine
     engine.dispose()
@@ -60,15 +65,10 @@ def setup_test_database(db_engine):
     Reads and executes schema.sql to create tables, indexes, and views.
     Runs once per test session (autouse=True means it runs automatically).
     """
-    schema_path = os.path.join(
-        os.path.dirname(__file__),
-        '..',
-        'models',
-        'schema.sql'
-    )
+    schema_path = os.path.join(os.path.dirname(__file__), "..", "models", "schema.sql")
 
     # Read schema file
-    with open(schema_path, 'r', encoding='utf-8') as f:
+    with open(schema_path, "r", encoding="utf-8") as f:
         schema_sql = f.read()
 
     # Execute schema creation using raw connection
@@ -127,6 +127,7 @@ def db_manager(test_database_url: str) -> DatabaseManager:
 # Test Data Fixtures
 # =============================================================================
 
+
 @pytest.fixture
 def sample_transaction_data() -> dict:
     """Sample transaction record for testing."""
@@ -137,7 +138,7 @@ def sample_transaction_data() -> dict:
         "amount": Decimal("1500.50"),
         "currency": "ILS",
         "transaction_date": date(2025, 11, 20),
-        "status": "completed"
+        "status": "completed",
     }
 
 
@@ -153,15 +154,15 @@ def sample_dashboard_response() -> dict:
         "cancelled_transactions": 3299,
         "top_products": [
             {"product": "מחשב נייד", "revenue": Decimal("5234567.89")},
-            {"product": "טלפון סלולרי", "revenue": Decimal("4123456.78")}
+            {"product": "טלפון סלולרי", "revenue": Decimal("4123456.78")},
         ],
         "recent_trend": [
             {
                 "transaction_date": date(2025, 11, 20),
                 "revenue": Decimal("123456.78"),
-                "transaction_count": 87
+                "transaction_count": 87,
             }
-        ]
+        ],
     }
 
 
@@ -174,15 +175,15 @@ def sample_revenue_data() -> list:
             "total_revenue": Decimal("123456.78"),
             "transaction_count": 87,
             "avg_transaction_value": Decimal("1419.04"),
-            "unique_customers": 65
+            "unique_customers": 65,
         },
         {
             "transaction_date": date(2025, 11, 19),
             "total_revenue": Decimal("110234.56"),
             "transaction_count": 79,
             "avg_transaction_value": Decimal("1394.87"),
-            "unique_customers": 62
-        }
+            "unique_customers": 62,
+        },
     ]
 
 
@@ -196,7 +197,7 @@ def sample_customer_data() -> list:
             "total_spent": Decimal("12345.67"),
             "avg_transaction": Decimal("823.04"),
             "first_purchase": date(2024, 6, 15),
-            "last_purchase": date(2025, 11, 18)
+            "last_purchase": date(2025, 11, 18),
         },
         {
             "customer_name": "שרה לוי",
@@ -204,8 +205,8 @@ def sample_customer_data() -> list:
             "total_spent": Decimal("9876.54"),
             "avg_transaction": Decimal("823.05"),
             "first_purchase": date(2024, 7, 10),
-            "last_purchase": date(2025, 11, 15)
-        }
+            "last_purchase": date(2025, 11, 15),
+        },
     ]
 
 
@@ -218,21 +219,22 @@ def sample_product_data() -> list:
             "total_transactions": 2134,
             "total_revenue": Decimal("5234567.89"),
             "avg_price": Decimal("2453.21"),
-            "unique_customers": 1876
+            "unique_customers": 1876,
         },
         {
             "product": "טלפון סלולרי",
             "total_transactions": 1987,
             "total_revenue": Decimal("4123456.78"),
             "avg_price": Decimal("2076.89"),
-            "unique_customers": 1654
-        }
+            "unique_customers": 1654,
+        },
     ]
 
 
 # =============================================================================
 # Test Client Fixtures
 # =============================================================================
+
 
 @pytest.fixture(scope="function")
 def test_client(db_session) -> Generator[TestClient, None, None]:
@@ -259,6 +261,7 @@ def test_client(db_session) -> Generator[TestClient, None, None]:
 # Database Seeding Fixtures
 # =============================================================================
 
+
 @pytest.fixture
 def seed_test_transactions(db_session, sample_transaction_data):
     """
@@ -269,11 +272,12 @@ def seed_test_transactions(db_session, sample_transaction_data):
     # Insert test transactions
     for i in range(5):
         transaction = sample_transaction_data.copy()
-        transaction['transaction_id'] = 99990 + i
-        transaction['customer_name'] = f"Test Customer {i+1}"
+        transaction["transaction_id"] = 99990 + i
+        transaction["customer_name"] = f"Test Customer {i+1}"
 
         db_session.execute(
-            text("""
+            text(
+                """
                 INSERT INTO transactions
                 (transaction_id, customer_name, product, amount, currency,
                  transaction_date, status)
@@ -281,8 +285,9 @@ def seed_test_transactions(db_session, sample_transaction_data):
                 (:transaction_id, :customer_name, :product, :amount, :currency,
                  :transaction_date, :status)
                 ON CONFLICT (transaction_id) DO NOTHING
-            """),
-            transaction
+            """
+            ),
+            transaction,
         )
 
     db_session.commit()
@@ -300,6 +305,7 @@ def seed_test_transactions(db_session, sample_transaction_data):
 # Utility Fixtures
 # =============================================================================
 
+
 @pytest.fixture
 def assert_response_time():
     """
@@ -308,9 +314,12 @@ def assert_response_time():
     Usage:
         assert_response_time(start_time, target_ms=200)
     """
+
     def _assert(start_time: datetime, target_ms: int = 200):
         duration_ms = (datetime.now() - start_time).total_seconds() * 1000
-        assert duration_ms < target_ms, f"Response time {duration_ms:.2f}ms exceeds target {target_ms}ms"
+        assert (
+            duration_ms < target_ms
+        ), f"Response time {duration_ms:.2f}ms exceeds target {target_ms}ms"
 
     return _assert
 
@@ -323,6 +332,7 @@ def validate_pagination():
     Usage:
         validate_pagination(response_data, expected_limit=10)
     """
+
     def _validate(data: dict, expected_limit: int = 10, expected_offset: int = 0):
         assert "pagination" in data
         pagination = data["pagination"]
@@ -338,6 +348,7 @@ def validate_pagination():
 # Mock Fixtures
 # =============================================================================
 
+
 @pytest.fixture
 def mock_db_connection_error(monkeypatch):
     """
@@ -346,10 +357,13 @@ def mock_db_connection_error(monkeypatch):
     Usage:
         mock_db_connection_error(DatabaseManager, 'test_connection', False)
     """
+
     def _mock(cls, method_name: str, return_value=False):
         def mock_method(*args, **kwargs):
             return return_value
 
-        monkeypatch.setattr(f"{cls.__module__}.{cls.__name__}.{method_name}", mock_method)
+        monkeypatch.setattr(
+            f"{cls.__module__}.{cls.__name__}.{method_name}", mock_method
+        )
 
     return _mock
