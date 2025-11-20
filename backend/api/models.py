@@ -5,7 +5,7 @@ These models define the structure and validation rules for all API endpoints,
 ensuring type safety and automatic documentation in FastAPI.
 """
 
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from decimal import Decimal
 from typing import List, Optional
 
@@ -311,7 +311,7 @@ class ErrorDetail(BaseModel):
     code: str = Field(..., description="Machine-readable error code", examples=["VALIDATION_ERROR"])
     message: str = Field(..., description="Human-readable error message")
     details: Optional[dict] = Field(None, description="Additional error details")
-    timestamp: datetime = Field(default_factory=datetime.utcnow, description="Error timestamp")
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc), description="Error timestamp")
 
     model_config = ConfigDict(
         json_schema_extra={
