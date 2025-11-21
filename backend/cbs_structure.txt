@@ -1,0 +1,27 @@
+File: הוצאות לתצרוכת למשק בית מוצרים מפורטים.xlsx
+Size: 115.0 KB
+============================================================
+Sheets: 1
+Sheet name: לוח 1.1 
+Dimensions: 1377 rows x 12 columns
+============================================================
+
+First 15 rows:
+Row  1: ['TABLE 1.1 MONTHLY INCOME ', 'NULL', 'NULL', 'NULL', 'לוח 1.1 הכנסה והוצאה חודש', 'NULL']
+Row  2: ['                 (SPECIFI', 'NULL', 'NULL', '                (מוצרים מ', 'NULL', 'NULL']
+Row  3: ['                 BY QUINT', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL']
+Row  4: ['                 PER STAN', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL']
+Row  5: ['NULL', 'NULL', 'NULL', '2022', 'NULL', 'NULL']
+Row  6: ['NULL', ' Quintiles', 'NULL', 'NULL', ' חמישונים', 'NULL']
+Row  7: ['NULL', '5', '4', '3', '2', '1']
+Row  8: ['Households in sample', '1,162', '1,087', '1,061', '1,116', '1,052']
+Row  9: ['Households in population ', '584.5', '583.9', '584.2', '584.1', '583.9']
+Row 10: ['NULL', '±10.5', '±10.5', '±10.5', '±10.5', '±10.5']
+Row 11: ['Average persons in househ', '2.56', '2.93', '3.08', '3.2', '4.09']
+Row 12: ['NULL', '±0.1', '±0.1', '±0.1', '±0.1', '±0.2']
+Row 13: ['Average standard persons ', '2.3', '2.52', '2.6', '2.65', '3.13']
+Row 14: ['NULL', '±0.1', '±0.1', '±0.1', '±0.1', '±0.1']
+Row 15: ['Average earners in househ', '1.58', '1.66', '1.53', '1.28', '0.98']
+
+============================================================
+Total data rows available: 1377

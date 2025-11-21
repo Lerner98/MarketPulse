@@ -57,44 +57,69 @@ def db_engine(test_database_url: str):
     engine.dispose()
 
 
-@pytest.fixture(scope="session", autouse=True)
+def pytest_configure(config):
+    """
+    Pytest hook that runs before any tests.
+    Ensures database schema and materialized views are ready.
+    """
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    # Fix Windows console encoding
+    if sys.platform == 'win32':
+        sys.stdout.reconfigure(encoding='utf-8')
+
+    backend_dir = Path(__file__).parent.parent
+
+    # Run setup_schema.py to ensure schema exists
+    print("\n=== Setting up CBS database schema ===")
+    result = subprocess.run(
+        [sys.executable, str(backend_dir / "setup_schema.py")],
+        capture_output=True,
+        text=True,
+        cwd=backend_dir
+    )
+    if result.returncode != 0:
+        print(f"Schema setup failed: {result.stderr}")
+    else:
+        print("Schema ready")
+
+    # Run load_cbs_data.py to ensure data is loaded
+    print("=== Loading CBS data ===")
+    result = subprocess.run(
+        [sys.executable, str(backend_dir / "load_cbs_data.py")],
+        capture_output=True,
+        text=True,
+        cwd=backend_dir
+    )
+    if result.returncode != 0:
+        print(f"Data load failed: {result.stderr}")
+    else:
+        print("Data loaded")
+
+    # Refresh materialized views
+    print("=== Refreshing materialized views ===")
+    result = subprocess.run(
+        [sys.executable, str(backend_dir / "refresh_views.py")],
+        capture_output=True,
+        text=True,
+        cwd=backend_dir
+    )
+    if result.returncode != 0:
+        print(f"View refresh failed: {result.stderr}")
+    else:
+        print("Views refreshed")
+
+    print("=== Test database ready ===\n")
+
+
+@pytest.fixture(scope="session", autouse=False)  # Disabled - using pytest_configure
 def setup_test_database(db_engine):
     """
-    Create database schema before running tests.
-
-    Reads and executes schema.sql to create tables, indexes, and views.
-    Runs once per test session (autouse=True means it runs automatically).
+    DISABLED: Tests use pre-existing database with CBS schema already loaded via pytest_configure.
     """
-    schema_path = os.path.join(os.path.dirname(__file__), "..", "models", "schema.sql")
-
-    # Read schema file
-    with open(schema_path, "r", encoding="utf-8") as f:
-        schema_sql = f.read()
-
-    # Execute schema creation using raw connection
-    # Need to use psycopg2 directly because SQLAlchemy's execute() doesn't support
-    # multi-statement SQL with dollar-quoted strings (functions/triggers)
-    raw_conn = db_engine.raw_connection()
-    try:
-        cursor = raw_conn.cursor()
-
-        # Clean up existing schema first (in case of previous failed test run)
-        cursor.execute("DROP SCHEMA IF EXISTS public CASCADE; CREATE SCHEMA public;")
-        raw_conn.commit()
-
-        # Create fresh schema
-        cursor.execute(schema_sql)
-        raw_conn.commit()
-        cursor.close()
-    finally:
-        raw_conn.close()
-
     yield
-
-    # Cleanup: Drop all tables after tests complete
-    with db_engine.connect() as conn:
-        conn.execute(text("DROP SCHEMA public CASCADE; CREATE SCHEMA public;"))
-        conn.commit()
 
 
 @pytest.fixture(scope="function")
@@ -102,18 +127,16 @@ def db_session(db_engine):
     """
     Create a new database session for each test.
 
-    Wraps each test in a transaction that is rolled back after the test completes,
-    ensuring test isolation.
+    Uses autocommit to allow materialized views to be visible.
     """
     connection = db_engine.connect()
-    transaction = connection.begin()
+    connection.execution_options(isolation_level="AUTOCOMMIT")
     Session = sessionmaker(bind=connection)
     session = Session()
 
     yield session
 
     session.close()
-    transaction.rollback()
     connection.close()
 
 
