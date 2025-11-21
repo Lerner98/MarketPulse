@@ -40,6 +40,11 @@ const Revenue = () => {
       percentage: parseFloat(parseFloat(cat.market_share_pct).toFixed(1)),
     }));
 
+  // Get categories included in "Other"
+  const otherCategories = categoriesData.categories
+    .slice(7)
+    .map(cat => cat.category);
+
   // Calculate total revenue
   const totalRevenue = categoriesData.categories.reduce(
     (sum, cat) => sum + parseFloat(cat.total_revenue),
@@ -135,7 +140,7 @@ const Revenue = () => {
       </div>
 
       {/* Category Pie Chart */}
-      <CategoryPieChart data={chartData} title="פילוח הכנסות לפי קטגוריה" />
+      <CategoryPieChart data={chartData} title="פילוח הכנסות לפי קטגוריה" otherCategories={otherCategories} />
 
       {/* Top Categories Table */}
       <div className="bg-card rounded-lg shadow-md p-6">

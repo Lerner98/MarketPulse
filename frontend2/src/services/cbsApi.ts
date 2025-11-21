@@ -90,6 +90,9 @@ export interface CBSInsights {
     top_20_pct_products_revenue_share: string;
     top_20_pct_customers_revenue_share: string;
   };
+  monthly_trend?: {
+    [month: string]: string;
+  };
 }
 
 /**

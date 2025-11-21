@@ -6,6 +6,7 @@ import { CategoryBreakdown } from '@/lib/types';
 interface CategoryPieChartProps {
   data: CategoryBreakdown[];
   title?: string;
+  otherCategories?: string[];
 }
 
 const COLORS = [
@@ -32,7 +33,7 @@ const CustomTooltip = ({ active, payload }: TooltipProps<number, string>) => {
   return null;
 };
 
-export const CategoryPieChart = ({ data, title = 'חלוקה לפי קטגוריה' }: CategoryPieChartProps) => {
+export const CategoryPieChart = ({ data, title = 'חלוקה לפי קטגוריה', otherCategories }: CategoryPieChartProps) => {
   return (
     <div className={GLOBAL_STYLES.charts.container}>
       <h3 className={GLOBAL_STYLES.charts.title} dir="rtl">{title}</h3>
@@ -71,6 +72,15 @@ export const CategoryPieChart = ({ data, title = 'חלוקה לפי קטגורי
             </div>
           ))}
         </div>
+
+        {/* Explanation for "Other" category */}
+        {data.some(item => item.category === 'אחר') && (
+          <div className="mt-4 pt-3 border-t border-border">
+            <p className="text-sm text-muted-foreground text-center" dir="rtl">
+              <span className="font-semibold">אחר:</span> כולל קטגוריות הוצאה משניות נוספות שלא סווגו בקטגוריות העיקריות - כגון ריהוט, טיפוח אישי, תקשורת ותחביבים
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

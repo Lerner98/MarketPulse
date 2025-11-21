@@ -1,5 +1,6 @@
 import { DataTable } from '@/components/DataTable';
 import { InsightCard } from '@/components/InsightCard';
+import { BusinessInsight } from '@/components/BusinessInsight';
 import { formatCurrency, formatNumber } from '@/lib/utils/hebrew';
 import { TrendingUp, Lightbulb, AlertTriangle, Package } from 'lucide-react';
 import { useCategories } from '@/hooks/useCBSData';
@@ -88,6 +89,15 @@ const Products = () => {
         </p>
       </div>
 
+      {/* Business Insight */}
+      <BusinessInsight
+        title="אופטימיזציית תמהיל מוצרים"
+        insight={`קטגוריית ${topCategory.category} מובילה בהכנסות עם ${formatNumber(topCategory.transaction_count)} עסקאות ונתח שוק של ${parseFloat(topCategory.market_share_pct).toFixed(1)}%.`}
+        action="אסטרטגיה: התמקד בקטגוריות מובילות תוך פיתוח קטגוריות נישה עם מרווח גבוה למקסום רווחיות כוללת."
+        color="purple"
+        icon="📦"
+      />
+
       {/* Insights Section */}
       <div>
         <h2 className="text-2xl font-bold mb-4" dir="rtl">תובנות עיקריות</h2>
@@ -150,6 +160,31 @@ const Products = () => {
       <div>
         <h2 className="text-xl font-semibold mb-4" dir="rtl">כל הקטגוריות</h2>
         <DataTable data={categoriesData.categories} columns={columns} />
+      </div>
+
+      {/* Business Insights & Conclusions */}
+      <div className="bg-gradient-to-br from-purple-50 to-violet-50 border-2 border-purple-200 rounded-lg p-6" dir="rtl">
+        <h2 className="text-2xl font-bold mb-4 text-purple-900 flex items-center gap-2">
+          <span className="text-3xl">📦</span>
+          תובנות עסקיות ומסקנות
+        </h2>
+        <div className="space-y-3 text-gray-800 leading-relaxed">
+          <p className="text-base">
+            <strong>דומיננטיות קטגורית ברורה:</strong> קטגוריית {topCategory.category} שולטת בשוק עם {parseFloat(topCategory.market_share_pct).toFixed(1)}% נתח שוק ו-{formatNumber(topCategory.transaction_count)} עסקאות, מה שהופך אותה לנדבך המרכזי של כל אסטרטגיה עסקית בתחום.
+          </p>
+          <p className="text-base">
+            <strong>זנב ארוך של קטגוריות נישה:</strong> מעבר ל-Top 3 קטגוריות, קיימות {categoriesData.categories.length - 3} קטגוריות נוספות עם נתחי שוק קטנים יותר - ״הזנב הארוך״ הזה מהווה הזדמנות למיצוב ייחודי ומרווחים גבוהים.
+          </p>
+          <p className="text-base">
+            <strong>פוטנציאל למכירות צולבות:</strong> עם {categoriesData.categories.length} קטגוריות פעילות וסך {formatCurrency(totalRevenue)} הכנסות, קיים פוטנציאל משמעותי להגדלת ערך סל קנייה ממוצע דרך המלצות חכמות והצעות bundle מותאמות אישית.
+          </p>
+          <p className="text-base">
+            <strong>ריווחיות מול היקף:</strong> בעוד שקטגוריות מובילות מייצרות היקפי מכירות גבוהים, חשוב לנתח את מרווח הרווח בכל קטגוריה - לעיתים קטגוריות קטנות יותר מניבות ROI טוב יותר בשל תחרות נמוכה יותר ומחירי פרימיום.
+          </p>
+          <p className="text-base">
+            <strong>המלצה אסטרטגית:</strong> אמץ אסטרטגיית ״עוגן + נישה״ - השקע 60-70% מהמשאבים בקטגוריות מובילות לשמירה על נתח שוק, ו-30-40% בפיתוח קטגוריות נישה עם מרווח גבוה ופוטנציאל צמיחה, תוך מינוף טכנולוגיות recommendation למכירות צולבות.
+          </p>
+        </div>
       </div>
     </div>
   );
