@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-21T06:38:14.003349",
+    "data_source": "Israeli Central Bureau of Statistics",
+    "analysis_period": "2024",
+    "version": "1.0"
+  },
+  "data_summary": {
+    "total_transactions": 10000,
+    "total_volume": 1272842.89598369,
+    "average_transaction": 127.284289598369,
+    "median_transaction": 45.94,
+    "date_range": {
+      "start": "2024-01-01T00:00:00",
+      "end": "2024-12-31T00:00:00"
+    },
+    "unique_products": 117,
+    "unique_categories": 7,
+    "unique_cities": 11
+  },
+  "income_quintile_analysis": {
+    "quintile_1": {
+      "total_spending": 189248.25949252318,
+      "avg_transaction": 93.82660361552959,
+      "transaction_count": 2017,
+      "percentage_of_total": 14.8681553779869
+    },
+    "quintile_2": {
+      "total_spending": 220899.593975758,
+      "avg_transaction": 109.51888645302826,
+      "transaction_count": 2017,
+      "percentage_of_total": 17.354820038889432
+    },
+    "quintile_3": {
+      "total_spending": 240236.97707761455,
+      "avg_transaction": 123.89735795647991,
+      "transaction_count": 1939,
+      "percentage_of_total": 18.874047836984033
+    },
+    "quintile_4": {
+      "total_spending": 291932.0031394494,
+      "avg_transaction": 147.36597836418446,
+      "transaction_count": 1981,
+      "percentage_of_total": 22.93543092086285
+    },
+    "quintile_5": {
+      "total_spending": 330526.062298345,
+      "avg_transaction": 161.5474400285166,
+      "transaction_count": 2046,
+      "percentage_of_total": 25.9675458252768
+    },
+    "key_insight": "High-income households (Q5) spend 1.72x more per transaction than low-income (Q1)"
+  },
+  "top_categories": {
+    "אחר": 720707.1165447007,
+    "מזון ומשקאות": 219410.67568898934,
+    "תחבורה ותקשורת": 137229.74,
+    "דיור": 78017.745,
+    "בריאות": 74284.25625,
+    "חינוך ותרבות": 38144.295,
+    "ביגוד והנעלה": 5049.0675
+  },
+  "top_products": {
+    "הלבשה והנעלה": 40826.0075,
+    "מוצרים ושירותים אחרים": 40750.845,
+    "חינוך, תרבות ובידור": 39506.59125,
+    "ירקות ופירות": 38814.7975,
+    "ריהוט וציוד לבית": 38154.18625,
+    "בשר ועופות": 37727.80875,
+    "ארנונה": 37663.12,
+    "דלק ושמנים לכלי רכב": 36356.02375,
+    "בריאות(25)": 36327.9,
+    "חשמל, גז ודלק לבית": 35225.015,
+    "ארוחות מחוץ לבית": 33296.1375,
+    "מיסים עירוניים": 32829.03875,
+    "תחזוקת  הדירה ומשק הבית": 32695.11,
+    "מוצרי מזון שונים": 31844.41125,
+    "חשמל, צריכה שוטפת": 31133.525,
+    "תחבורה ותקשורת": 30424.61625,
+    "דיור": 30424.61625,
+    "לחם, דגנים ומוצרי בצק": 29918.454999999998,
+    "חלב ומוצריו, ביצים": 29890.09875,
+    "ביטוח בריאות": 26928.71375
+  },
+  "top_cities": {
+    "תל אביב": {
+      "total_spending": 412495.605816072,
+      "avg_transaction": 128.4632842778175,
+      "transaction_count": 3211,
+      "market_share_pct": 32.40742491611924
+    },
+    "ירושלים": {
+      "total_spending": 192856.09272575798,
+      "avg_transaction": 129.86942271094813,
+      "transaction_count": 1485,
+      "market_share_pct": 15.151602238916784
+    },
+    "חיפה": {
+      "total_spending": 146668.37937998457,
+      "avg_transaction": 124.71800967685763,
+      "transaction_count": 1176,
+      "market_share_pct": 11.522897275286672
+    },
+    "באר שבע": {
+      "total_spending": 105008.06715210386,
+      "avg_transaction": 131.91968235188926,
+      "transaction_count": 796,
+      "market_share_pct": 8.249884371704065
+    },
+    "רמת גן": {
+      "total_spending": 64147.947499999995,
+      "avg_transaction": 127.53071073558647,
+      "transaction_count": 503,
+      "market_share_pct": 5.039738030703671
+    },
+    "ראשון לציון": {
+      "total_spending": 63021.09229834496,
+      "avg_transaction": 127.05865382730839,
+      "transaction_count": 496,
+      "market_share_pct": 4.951207450440333
+    },
+    "פתח תקווה": {
+      "total_spending": 56260.965207261936,
+      "avg_transaction": 117.94751615778183,
+      "transaction_count": 477,
+      "market_share_pct": 4.42010285674587
+    },
+    "חולון": {
+      "total_spending": 56287.86750000001,
+      "avg_transaction": 119.76142021276597,
+      "transaction_count": 470,
+      "market_share_pct": 4.42221641630793
+    },
+    "נתניה": {
+      "total_spending": 58050.56178003413,
+      "avg_transaction": 125.3791831102249,
+      "transaction_count": 463,
+      "market_share_pct": 4.560701243115394
+    },
+    "רחובות": {
+      "total_spending": 58832.22782858559,
+      "avg_transaction": 127.06744671400774,
+      "transaction_count": 463,
+      "market_share_pct": 4.622112282216757
+    }
+  },
+  "monthly_trend": {
+    "1": 116931.6427537475,
+    "2": 106494.0428251215,
+    "3": 113049.03307904319,
+    "4": 109654.7175,
+    "5": 119977.725,
+    "6": 109025.22760146362,
+    "7": 64667.47125,
+    "8": 71371.2375,
+    "9": 110377.86550249305,
+    "10": 122449.14873366019,
+    "11": 113247.702988161,
+    "12": 115597.08125
+  },
+  "seasonal_insights": {
+    "peak_month": 10,
+    "low_month": 7,
+    "peak_spending": 122449.14873366019,
+    "low_spending": 64667.47125,
+    "seasonal_variation_pct": 89.35199779233702
+  },
+  "pareto_analysis": {
+    "products_for_80pct_revenue": 39,
+    "total_products": 117,
+    "concentration_ratio": 33.33333333333333
+  },
+  "business_recommendations": [
+    "Focus on Tel Aviv (32.4%), Jerusalem (15.1%), and Haifa (11.5%) for 60%+ of market coverage",
+    "Develop tiered product strategy: value products for Q1-Q2, premium for Q4-Q5",
+    "Plan inventory around Jewish holiday calendar - peak in October (Rosh Hashanah), low in July-August",
+    "Top 33% of products generate 80% of revenue - optimize inventory investment accordingly",
+    "High-income households (Q4-Q5) account for 48.9% of total spending despite being 40% of population",
+    "Food & Beverages category (17.2% of market) - consider subscription models and home delivery",
+    "Education & Culture has highest average transaction (ILS 454) - premium positioning opportunity",
+    "Mobile-first approach critical - optimize for Israeli mobile shopping behavior",
+    "Kosher certification is table-stakes in Jerusalem market (15.1% market share)",
+    "Summer months (July-August) show 89% drop from peak - adjust operations accordingly"
+  ],
+  "key_metrics": {
+    "market_concentration": {
+      "top_city_share": 32.40742491611924,
+      "top_3_cities_share": 59.081924430322694,
+      "top_category_share": 56.621843812681796,
+      "top_3_categories_share": 84.64104530363777
+    },
+    "income_disparity": {
+      "q5_to_q1_ratio": 1.7217658297691838,
+      "high_income_share": 48.90297674613965,
+      "low_income_share": 32.22297541687633
+    }
+  }
+}

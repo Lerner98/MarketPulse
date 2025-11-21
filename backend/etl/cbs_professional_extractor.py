@@ -157,6 +157,9 @@ class CBSExcelExtractor:
         # Calculate average spending across all quintiles
         df['avg_spending'] = df[['quintile_1', 'quintile_2', 'quintile_3', 'quintile_4', 'quintile_5']].mean(axis=1)
 
+        # Add unified 'category' column (use Hebrew as primary, matches database schema)
+        df['category'] = df['category_hebrew']
+
         logger.info(f"  Extracted {len(df)} product categories")
         self.extraction_log.append(f"Extracted {len(df)} categories from main expenditure file")
 
@@ -351,7 +354,7 @@ def main():
     print()
 
     # Save intermediate data
-    categories_file = output_dir / 'cbs_categories.csv'
+    categories_file = output_dir / 'cbs_categories_FIXED.csv'
     df_categories.to_csv(categories_file, index=False, encoding='utf-8-sig')
     print(f"[+] Saved categories to: {categories_file}")
 
