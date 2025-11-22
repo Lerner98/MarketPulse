@@ -34,7 +34,6 @@ from api.models import (
     ProductItem,
 )
 from models.database import DatabaseManager
-from api import cbs_endpoints  # CBS-specific endpoints
 
 # =============================================================================
 # Configuration & Logging
@@ -124,10 +123,27 @@ app.add_middleware(
 )
 
 # =============================================================================
-# Include CBS Router
+# Include ONLY Strategic CBS Routers (REAL DATA ONLY)
 # =============================================================================
 
-app.include_router(cbs_endpoints.router)
+# REMOVED: cbs_endpoints.router - uses FAKE synthetic transaction data
+# ONLY strategic endpoints serve REAL CBS Excel data
+
+# Import and register strategic V9 endpoints (REAL CBS DATA - V9 PRODUCTION)
+try:
+    from api.strategic_endpoints_v9 import router as strategic_router
+    app.include_router(strategic_router)
+    logger.info("Strategic CBS V9 endpoints registered successfully (REAL DATA - V9 PRODUCTION)")
+except Exception as e:
+    logger.error(f"Failed to import strategic V9 endpoints: {e}")
+
+# Import and register V10 segmentation endpoints (NORMALIZED STAR SCHEMA - V10)
+try:
+    from api.segmentation_endpoints_v10 import router as v10_router
+    app.include_router(v10_router)
+    logger.info("V10 segmentation endpoints registered successfully (NORMALIZED STAR SCHEMA)")
+except Exception as e:
+    logger.error(f"Failed to import V10 segmentation endpoints: {e}")
 
 
 # =============================================================================

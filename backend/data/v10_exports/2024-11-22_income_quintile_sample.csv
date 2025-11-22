@@ -1,0 +1,2744 @@
+﻿segment_type,segment_value,item_name,expenditure_value,is_income_metric,is_consumption_metric
+Income Quintile,1,Academic institutions (incl. The Open University),139.4,False,False
+Income Quintile,2,Academic institutions (incl. The Open University),112.0,False,False
+Income Quintile,3,Academic institutions (incl. The Open University),157.2,False,False
+Income Quintile,4,Academic institutions (incl. The Open University),166.9,False,False
+Income Quintile,5,Academic institutions (incl. The Open University),123.3,False,False
+Income Quintile,Total,Academic institutions (incl. The Open University),139.7,False,False
+Income Quintile,1,Afternoon care for children,54.7,False,False
+Income Quintile,2,Afternoon care for children,63.6,False,False
+Income Quintile,3,Afternoon care for children,98.1,False,False
+Income Quintile,4,Afternoon care for children,97.8,False,False
+Income Quintile,5,Afternoon care for children,79.3,False,False
+Income Quintile,Total,Afternoon care for children,78.7,False,False
+Income Quintile,2,"Air conditioning system, air conditioner, and fan",23.1,False,False
+Income Quintile,Total,"Air conditioning system, air conditioner, and fan",35.5,False,False
+Income Quintile,1,Alcoholic beverages,34.3,False,False
+Income Quintile,2,Alcoholic beverages,43.0,False,False
+Income Quintile,3,Alcoholic beverages,46.0,False,False
+Income Quintile,4,Alcoholic beverages,66.4,False,False
+Income Quintile,5,Alcoholic beverages,100.6,False,False
+Income Quintile,Total,Alcoholic beverages,58.1,False,False
+Income Quintile,5,Almond milk ,1.9,False,False
+Income Quintile,Total,Almond milk ,1.8,False,False
+Income Quintile,1,Almonds,3.4,False,False
+Income Quintile,2,Almonds,4.0,False,False
+Income Quintile,3,Almonds,4.6,False,False
+Income Quintile,4,Almonds,7.2,False,False
+Income Quintile,5,Almonds,11.4,False,False
+Income Quintile,Total,Almonds,6.1,False,False
+Income Quintile,3,Alternative medicine,25.1,False,False
+Income Quintile,4,Alternative medicine,35.0,False,False
+Income Quintile,5,Alternative medicine,49.8,False,False
+Income Quintile,Total,Alternative medicine,29.0,False,False
+Income Quintile,3,Aluminium foil,1.5,False,False
+Income Quintile,Total,Aluminium foil,2.1,False,False
+Income Quintile,5,"An attorney for administrative issues – inheritance, wills",41.0,False,False
+Income Quintile,Total,"An attorney for administrative issues – inheritance, wills",28.2,False,False
+Income Quintile,1,Apples,15.3,False,False
+Income Quintile,2,Apples,20.5,False,False
+Income Quintile,3,Apples,16.1,False,False
+Income Quintile,4,Apples,19.7,False,False
+Income Quintile,5,Apples,22.4,False,False
+Income Quintile,Total,Apples,18.8,False,False
+Income Quintile,2,Apricots,2.6,False,False
+Income Quintile,3,Apricots,1.6,False,False
+Income Quintile,4,Apricots,1.9,False,False
+Income Quintile,5,Apricots,1.8,False,False
+Income Quintile,Total,Apricots,1.9,False,False
+Income Quintile,5,"Architect, engineer and interior decorator ",48.9,False,False
+Income Quintile,Total,"Architect, engineer and interior decorator ",21.2,False,False
+Income Quintile,1,At coffee shops,18.3,False,False
+Income Quintile,2,At coffee shops,27.4,False,False
+Income Quintile,3,At coffee shops,48.8,False,False
+Income Quintile,4,At coffee shops,91.9,False,False
+Income Quintile,5,At coffee shops,132.4,False,False
+Income Quintile,Total,At coffee shops,63.7,False,False
+Income Quintile,1,At fast food restaurants,50.5,False,False
+Income Quintile,2,At fast food restaurants,75.0,False,False
+Income Quintile,3,At fast food restaurants,69.3,False,False
+Income Quintile,4,At fast food restaurants,88.6,False,False
+Income Quintile,5,At fast food restaurants,102.2,False,False
+Income Quintile,Total,At fast food restaurants,77.1,False,False
+Income Quintile,1,At kiosks and cafeterias,29.1,False,False
+Income Quintile,2,At kiosks and cafeterias,39.4,False,False
+Income Quintile,3,At kiosks and cafeterias,35.5,False,False
+Income Quintile,4,At kiosks and cafeterias,53.5,False,False
+Income Quintile,5,At kiosks and cafeterias,53.4,False,False
+Income Quintile,Total,At kiosks and cafeterias,42.2,False,False
+Income Quintile,Total,At pubs,8.3,False,False
+Income Quintile,1,At restaurants ,99.9,False,False
+Income Quintile,2,At restaurants ,170.9,False,False
+Income Quintile,3,At restaurants ,241.0,False,False
+Income Quintile,4,At restaurants ,335.1,False,False
+Income Quintile,5,At restaurants ,588.2,False,False
+Income Quintile,Total,At restaurants ,287.1,False,False
+Income Quintile,3,At work,20.3,False,False
+Income Quintile,4,At work,38.2,False,False
+Income Quintile,5,At work,31.9,False,False
+Income Quintile,Total,At work,20.0,False,False
+Income Quintile,1,Average age of economic head of  household,42.2,False,False
+Income Quintile,2,Average age of economic head of  household,47.9,False,False
+Income Quintile,3,Average age of economic head of  household,47.8,False,False
+Income Quintile,4,Average age of economic head of  household,49.7,False,False
+Income Quintile,5,Average age of economic head of  household,54.0,False,False
+Income Quintile,Total,Average age of economic head of  household,48.4,False,False
+Income Quintile,1,Average earners in household,0.98,False,False
+Income Quintile,2,Average earners in household,1.28,False,False
+Income Quintile,3,Average earners in household,1.53,False,False
+Income Quintile,4,Average earners in household,1.66,False,False
+Income Quintile,5,Average earners in household,1.58,False,False
+Income Quintile,Total,Average earners in household,1.41,False,False
+Income Quintile,1,Average persons in household,4.09,False,False
+Income Quintile,2,Average persons in household,3.2,False,False
+Income Quintile,3,Average persons in household,3.08,False,False
+Income Quintile,4,Average persons in household,2.93,False,False
+Income Quintile,5,Average persons in household,2.56,False,False
+Income Quintile,Total,Average persons in household,3.17,False,False
+Income Quintile,1,Average standard persons in household,3.13,False,False
+Income Quintile,2,Average standard persons in household,2.65,False,False
+Income Quintile,3,Average standard persons in household,2.6,False,False
+Income Quintile,4,Average standard persons in household,2.52,False,False
+Income Quintile,5,Average standard persons in household,2.3,False,False
+Income Quintile,Total,Average standard persons in household,2.64,False,False
+Income Quintile,1,Average years of schooling of economic head of  household,12.9,False,False
+Income Quintile,2,Average years of schooling of economic head of  household,13.6,False,False
+Income Quintile,3,Average years of schooling of economic head of  household,14.0,False,False
+Income Quintile,4,Average years of schooling of economic head of  household,14.7,False,False
+Income Quintile,5,Average years of schooling of economic head of  household,15.8,False,False
+Income Quintile,Total,Average years of schooling of economic head of  household,14.2,False,False
+Income Quintile,1,Avocados,7.6,False,False
+Income Quintile,2,Avocados,9.4,False,False
+Income Quintile,3,Avocados,10.3,False,False
+Income Quintile,4,Avocados,11.3,False,False
+Income Quintile,5,Avocados,16.2,False,False
+Income Quintile,Total,Avocados,11.0,False,False
+Income Quintile,Total,Baby clothes,8.3,False,False
+Income Quintile,2,Baby formula,23.7,False,False
+Income Quintile,3,Baby formula,16.5,False,False
+Income Quintile,Total,Baby formula,25.1,False,False
+Income Quintile,1,Baby products  ,6.5,False,False
+Income Quintile,Total,Baby products  ,6.2,False,False
+Income Quintile,1,Baby room furniture and equipment,25.5,False,False
+Income Quintile,2,Baby room furniture and equipment,17.9,False,False
+Income Quintile,4,Baby room furniture and equipment,10.8,False,False
+Income Quintile,5,Baby room furniture and equipment,13.2,False,False
+Income Quintile,Total,Baby room furniture and equipment,16.3,False,False
+Income Quintile,1,Bagels,5.0,False,False
+Income Quintile,2,Bagels,3.2,False,False
+Income Quintile,3,Bagels,4.2,False,False
+Income Quintile,4,Bagels,4.4,False,False
+Income Quintile,5,Bagels,4.7,False,False
+Income Quintile,Total,Bagels,4.3,False,False
+Income Quintile,Total,"Bags, backpacks, satchels, and suitcases",10.2,False,False
+Income Quintile,1,Baking materials,2.4,False,False
+Income Quintile,2,Baking materials,3.5,False,False
+Income Quintile,3,Baking materials,2.3,False,False
+Income Quintile,4,Baking materials,3.7,False,False
+Income Quintile,5,Baking materials,2.8,False,False
+Income Quintile,Total,Baking materials,2.9,False,False
+Income Quintile,1,Baking paper,1.3,False,False
+Income Quintile,2,Baking paper,1.5,False,False
+Income Quintile,4,Baking paper,1.9,False,False
+Income Quintile,5,Baking paper,3.0,False,False
+Income Quintile,Total,Baking paper,1.8,False,False
+Income Quintile,1,Bananas,12.6,False,False
+Income Quintile,2,Bananas,15.9,False,False
+Income Quintile,3,Bananas,13.5,False,False
+Income Quintile,4,Bananas,16.4,False,False
+Income Quintile,5,Bananas,16.2,False,False
+Income Quintile,Total,Bananas,14.9,False,False
+Income Quintile,1,Bath soap,9.7,False,False
+Income Quintile,2,Bath soap,14.7,False,False
+Income Quintile,3,Bath soap,13.7,False,False
+Income Quintile,4,Bath soap,15.1,False,False
+Income Quintile,5,Bath soap,18.3,False,False
+Income Quintile,Total,Bath soap,14.3,False,False
+Income Quintile,2,Bath towels,2.6,False,False
+Income Quintile,3,Bath towels,2.8,False,False
+Income Quintile,4,Bath towels,3.9,False,False
+Income Quintile,5,Bath towels,3.6,False,False
+Income Quintile,Total,Bath towels,3.2,False,False
+Income Quintile,Total,Battery replacement(30),4.3,False,False
+Income Quintile,1,"Beans, dried",1.7,False,False
+Income Quintile,2,"Beans, dried",1.6,False,False
+Income Quintile,3,"Beans, dried",1.6,False,False
+Income Quintile,4,"Beans, dried",1.5,False,False
+Income Quintile,5,"Beans, dried",1.9,False,False
+Income Quintile,Total,"Beans, dried",1.7,False,False
+Income Quintile,1,Bedding and towels,27.5,False,False
+Income Quintile,2,Bedding and towels,38.3,False,False
+Income Quintile,3,Bedding and towels,34.4,False,False
+Income Quintile,4,Bedding and towels,43.9,False,False
+Income Quintile,5,Bedding and towels,52.3,False,False
+Income Quintile,Total,Bedding and towels,39.3,False,False
+Income Quintile,1,Bedroom furniture,65.7,False,False
+Income Quintile,2,Bedroom furniture,81.8,False,False
+Income Quintile,3,Bedroom furniture,67.2,False,False
+Income Quintile,4,Bedroom furniture,112.5,False,False
+Income Quintile,5,Bedroom furniture,106.5,False,False
+Income Quintile,Total,Bedroom furniture,86.8,False,False
+Income Quintile,Total,Beef liver and internal parts,4.5,False,False
+Income Quintile,1,Beef(6),165.1,False,False
+Income Quintile,2,Beef(6),146.2,False,False
+Income Quintile,3,Beef(6),140.8,False,False
+Income Quintile,4,Beef(6),166.4,False,False
+Income Quintile,5,Beef(6),130.3,False,False
+Income Quintile,Total,Beef(6),149.7,False,False
+Income Quintile,1,"Beef, minced(7)",51.5,False,False
+Income Quintile,2,"Beef, minced(7)",38.6,False,False
+Income Quintile,3,"Beef, minced(7)",54.4,False,False
+Income Quintile,4,"Beef, minced(7)",34.3,False,False
+Income Quintile,5,"Beef, minced(7)",33.4,False,False
+Income Quintile,Total,"Beef, minced(7)",42.5,False,False
+Income Quintile,1,Beer,5.0,False,False
+Income Quintile,2,Beer,9.4,False,False
+Income Quintile,3,Beer,10.5,False,False
+Income Quintile,4,Beer,17.3,False,False
+Income Quintile,5,Beer,16.8,False,False
+Income Quintile,Total,Beer,11.8,False,False
+Income Quintile,1,Beetroot,0.9,False,False
+Income Quintile,2,Beetroot,2.6,False,False
+Income Quintile,3,Beetroot,2.4,False,False
+Income Quintile,4,Beetroot,2.8,False,False
+Income Quintile,5,Beetroot,2.8,False,False
+Income Quintile,Total,Beetroot,2.3,False,False
+Income Quintile,Total,Bicycles,7.6,False,False
+Income Quintile,1,Blouse,36.2,False,False
+Income Quintile,2,Blouse,46.1,False,False
+Income Quintile,3,Blouse,47.7,False,False
+Income Quintile,4,Blouse,49.4,False,False
+Income Quintile,5,Blouse,62.1,False,False
+Income Quintile,Total,Blouse,48.3,False,False
+Income Quintile,1,"Blouse, shirt",23.4,False,False
+Income Quintile,2,"Blouse, shirt",28.1,False,False
+Income Quintile,3,"Blouse, shirt",23.6,False,False
+Income Quintile,4,"Blouse, shirt",18.6,False,False
+Income Quintile,5,"Blouse, shirt",13.3,False,False
+Income Quintile,Total,"Blouse, shirt",21.4,False,False
+Income Quintile,Total,Bracelets(33),14.5,False,False
+Income Quintile,3,"Brandy, liqueur, cognac, and other alcoholic beverages",13.7,False,False
+Income Quintile,Total,"Brandy, liqueur, cognac, and other alcoholic beverages",15.3,False,False
+Income Quintile,1,Bread crumbs,2.0,False,False
+Income Quintile,2,Bread crumbs,2.8,False,False
+Income Quintile,3,Bread crumbs,4.4,False,False
+Income Quintile,4,Bread crumbs,4.5,False,False
+Income Quintile,5,Bread crumbs,3.6,False,False
+Income Quintile,Total,Bread crumbs,3.5,False,False
+Income Quintile,1,"Bread, cereals, and pastry products",383.4,False,False
+Income Quintile,2,"Bread, cereals, and pastry products",389.3,False,False
+Income Quintile,3,"Bread, cereals, and pastry products",368.7,False,False
+Income Quintile,4,"Bread, cereals, and pastry products",372.0,False,False
+Income Quintile,5,"Bread, cereals, and pastry products",343.6,False,False
+Income Quintile,Total,"Bread, cereals, and pastry products",371.4,False,False
+Income Quintile,1,Breakfast cereals ,14.8,False,False
+Income Quintile,2,Breakfast cereals ,18.8,False,False
+Income Quintile,3,Breakfast cereals ,16.4,False,False
+Income Quintile,4,Breakfast cereals ,18.8,False,False
+Income Quintile,5,Breakfast cereals ,12.6,False,False
+Income Quintile,Total,Breakfast cereals ,16.3,False,False
+Income Quintile,1,Brined cheese,10.1,False,False
+Income Quintile,2,Brined cheese,18.2,False,False
+Income Quintile,3,Brined cheese,17.4,False,False
+Income Quintile,4,Brined cheese,27.6,False,False
+Income Quintile,5,Brined cheese,35.7,False,False
+Income Quintile,Total,Brined cheese,21.8,False,False
+Income Quintile,1,"Broccoli, fava beans, okra, and other vegetables",5.1,False,False
+Income Quintile,2,"Broccoli, fava beans, okra, and other vegetables",5.7,False,False
+Income Quintile,3,"Broccoli, fava beans, okra, and other vegetables",5.0,False,False
+Income Quintile,4,"Broccoli, fava beans, okra, and other vegetables",6.8,False,False
+Income Quintile,5,"Broccoli, fava beans, okra, and other vegetables",6.7,False,False
+Income Quintile,Total,"Broccoli, fava beans, okra, and other vegetables",5.9,False,False
+Income Quintile,1,Brooms and brushes,2.3,False,False
+Income Quintile,Total,Brooms and brushes,2.2,False,False
+Income Quintile,1,Building committee fees,48.2,False,False
+Income Quintile,2,Building committee fees,94.9,False,False
+Income Quintile,3,Building committee fees,115.0,False,False
+Income Quintile,4,Building committee fees,146.7,False,False
+Income Quintile,5,Building committee fees,201.9,False,False
+Income Quintile,Total,Building committee fees,121.4,False,False
+Income Quintile,Total,Bulbs,5.3,False,False
+Income Quintile,1,Butter,6.1,False,False
+Income Quintile,2,Butter,8.6,False,False
+Income Quintile,3,Butter,10.0,False,False
+Income Quintile,4,Butter,10.4,False,False
+Income Quintile,5,Butter,13.7,False,False
+Income Quintile,Total,Butter,9.8,False,False
+Income Quintile,1,Buying a car ,395.9,False,False
+Income Quintile,2,Buying a car ,538.6,False,False
+Income Quintile,3,Buying a car ,678.0,False,False
+Income Quintile,4,Buying a car ,987.2,False,False
+Income Quintile,5,Buying a car ,1335.4,False,False
+Income Quintile,Total,Buying a car ,787.1,False,False
+Income Quintile,5,Buying a car and monthly payments for private leasing,63.8,False,False
+Income Quintile,Total,Buying a car and monthly payments for private leasing,38.8,False,False
+Income Quintile,1,Buying pets and expenses for their care,16.9,False,False
+Income Quintile,3,Buying pets and expenses for their care,25.9,False,False
+Income Quintile,4,Buying pets and expenses for their care,49.4,False,False
+Income Quintile,5,Buying pets and expenses for their care,28.6,False,False
+Income Quintile,Total,Buying pets and expenses for their care,30.5,False,False
+Income Quintile,1,Cabbage,8.0,False,False
+Income Quintile,2,Cabbage,7.1,False,False
+Income Quintile,3,Cabbage,5.3,False,False
+Income Quintile,4,Cabbage,6.0,False,False
+Income Quintile,5,Cabbage,6.3,False,False
+Income Quintile,Total,Cabbage,6.5,False,False
+Income Quintile,1,Cakes,23.9,False,False
+Income Quintile,2,Cakes,24.9,False,False
+Income Quintile,3,Cakes,29.8,False,False
+Income Quintile,4,Cakes,39.8,False,False
+Income Quintile,5,Cakes,30.0,False,False
+Income Quintile,Total,Cakes,29.7,False,False
+Income Quintile,1,Candies ,9.1,False,False
+Income Quintile,2,Candies ,9.7,False,False
+Income Quintile,3,Candies ,10.8,False,False
+Income Quintile,4,Candies ,10.2,False,False
+Income Quintile,5,Candies ,9.0,False,False
+Income Quintile,Total,Candies ,9.8,False,False
+Income Quintile,1,Candles,6.5,False,False
+Income Quintile,2,Candles,3.4,False,False
+Income Quintile,3,Candles,4.5,False,False
+Income Quintile,4,Candles,2.4,False,False
+Income Quintile,Total,Candles,4.3,False,False
+Income Quintile,1,Canned beans and corn ,6.1,False,False
+Income Quintile,2,Canned beans and corn ,4.4,False,False
+Income Quintile,3,Canned beans and corn ,5.0,False,False
+Income Quintile,4,Canned beans and corn ,3.6,False,False
+Income Quintile,5,Canned beans and corn ,3.4,False,False
+Income Quintile,Total,Canned beans and corn ,4.5,False,False
+Income Quintile,1,Canned mushrooms ,1.5,False,False
+Income Quintile,2,Canned mushrooms ,1.3,False,False
+Income Quintile,4,Canned mushrooms ,1.1,False,False
+Income Quintile,Total,Canned mushrooms ,1.1,False,False
+Income Quintile,1,Canola oil ,16.3,False,False
+Income Quintile,2,Canola oil ,14.7,False,False
+Income Quintile,3,Canola oil ,15.0,False,False
+Income Quintile,4,Canola oil ,18.7,False,False
+Income Quintile,5,Canola oil ,12.8,False,False
+Income Quintile,Total,Canola oil ,15.5,False,False
+Income Quintile,1,Car expenses for another household(30),13.5,False,False
+Income Quintile,4,Car expenses for another household(30),8.7,False,False
+Income Quintile,5,Car expenses for another household(30),13.9,False,False
+Income Quintile,Total,Car expenses for another household(30),11.3,False,False
+Income Quintile,1,Car registration,71.5,False,False
+Income Quintile,2,Car registration,99.8,False,False
+Income Quintile,3,Car registration,126.4,False,False
+Income Quintile,4,Car registration,158.1,False,False
+Income Quintile,5,Car registration,181.6,False,False
+Income Quintile,Total,Car registration,127.5,False,False
+Income Quintile,5,Car wash,6.5,False,False
+Income Quintile,Total,Car wash,5.5,False,False
+Income Quintile,1,Carpets,9.4,False,False
+Income Quintile,2,Carpets,10.6,False,False
+Income Quintile,4,Carpets,9.5,False,False
+Income Quintile,5,Carpets,15.4,False,False
+Income Quintile,Total,Carpets,10.4,False,False
+Income Quintile,1,Carrots,6.3,False,False
+Income Quintile,2,Carrots,5.1,False,False
+Income Quintile,3,Carrots,5.3,False,False
+Income Quintile,4,Carrots,4.8,False,False
+Income Quintile,5,Carrots,6.4,False,False
+Income Quintile,Total,Carrots,5.6,False,False
+Income Quintile,1,Cauliflower,6.2,False,False
+Income Quintile,2,Cauliflower,5.5,False,False
+Income Quintile,3,Cauliflower,2.9,False,False
+Income Quintile,4,Cauliflower,5.2,False,False
+Income Quintile,5,Cauliflower,6.6,False,False
+Income Quintile,Total,Cauliflower,5.3,False,False
+Income Quintile,1,"Celebrations (halls, catering)",85.1,False,False
+Income Quintile,2,"Celebrations (halls, catering)",104.9,False,False
+Income Quintile,4,"Celebrations (halls, catering)",187.4,False,False
+Income Quintile,5,"Celebrations (halls, catering)",171.7,False,False
+Income Quintile,Total,"Celebrations (halls, catering)",136.1,False,False
+Income Quintile,1,"Celery, including root ",1.3,False,False
+Income Quintile,2,"Celery, including root ",2.4,False,False
+Income Quintile,3,"Celery, including root ",2.2,False,False
+Income Quintile,4,"Celery, including root ",3.1,False,False
+Income Quintile,5,"Celery, including root ",4.3,False,False
+Income Quintile,Total,"Celery, including root ",2.7,False,False
+Income Quintile,2,Changing tires(30),10.5,False,False
+Income Quintile,3,Changing tires(30),10.9,False,False
+Income Quintile,4,Changing tires(30),11.5,False,False
+Income Quintile,5,Changing tires(30),13.2,False,False
+Income Quintile,Total,Changing tires(30),10.4,False,False
+Income Quintile,1,Cheese or milk substitutes(13),4.1,False,False
+Income Quintile,2,Cheese or milk substitutes(13),4.7,False,False
+Income Quintile,3,Cheese or milk substitutes(13),11.2,False,False
+Income Quintile,4,Cheese or milk substitutes(13),9.6,False,False
+Income Quintile,5,Cheese or milk substitutes(13),13.0,False,False
+Income Quintile,Total,Cheese or milk substitutes(13),8.5,False,False
+Income Quintile,5,Cherries ,3.2,False,False
+Income Quintile,Total,Cherries ,2.0,False,False
+Income Quintile,1,Chewing gum,2.4,False,False
+Income Quintile,2,Chewing gum,2.5,False,False
+Income Quintile,3,Chewing gum,2.8,False,False
+Income Quintile,4,Chewing gum,3.6,False,False
+Income Quintile,5,Chewing gum,4.6,False,False
+Income Quintile,Total,Chewing gum,3.2,False,False
+Income Quintile,2,Chick-peas,2.4,False,False
+Income Quintile,4,Chick-peas,2.3,False,False
+Income Quintile,5,Chick-peas,1.3,False,False
+Income Quintile,Total,Chick-peas,1.8,False,False
+Income Quintile,1,Chicken and turkey breast,42.3,False,False
+Income Quintile,2,Chicken and turkey breast,54.6,False,False
+Income Quintile,3,Chicken and turkey breast,74.6,False,False
+Income Quintile,4,Chicken and turkey breast,62.7,False,False
+Income Quintile,5,Chicken and turkey breast,61.7,False,False
+Income Quintile,Total,Chicken and turkey breast,59.2,False,False
+Income Quintile,2,Chicken and turkey liver,3.1,False,False
+Income Quintile,3,Chicken and turkey liver,3.3,False,False
+Income Quintile,4,Chicken and turkey liver,3.6,False,False
+Income Quintile,5,Chicken and turkey liver,2.8,False,False
+Income Quintile,Total,Chicken and turkey liver,3.1,False,False
+Income Quintile,4,Chicken and turkey – minced,7.5,False,False
+Income Quintile,Total,Chicken and turkey – minced,4.0,False,False
+Income Quintile,1,Chicken leg quarters,20.7,False,False
+Income Quintile,2,Chicken leg quarters,37.0,False,False
+Income Quintile,3,Chicken leg quarters,37.6,False,False
+Income Quintile,4,Chicken leg quarters,38.2,False,False
+Income Quintile,5,Chicken leg quarters,33.7,False,False
+Income Quintile,Total,Chicken leg quarters,33.4,False,False
+Income Quintile,1,Children's and babies' outerwear,106.5,False,False
+Income Quintile,2,Children's and babies' outerwear,96.9,False,False
+Income Quintile,3,Children's and babies' outerwear,84.0,False,False
+Income Quintile,4,Children's and babies' outerwear,70.7,False,False
+Income Quintile,5,Children's and babies' outerwear,41.7,False,False
+Income Quintile,Total,Children's and babies' outerwear,80.0,False,False
+Income Quintile,1,Children's pants,24.4,False,False
+Income Quintile,2,Children's pants,22.3,False,False
+Income Quintile,3,Children's pants,22.6,False,False
+Income Quintile,4,Children's pants,16.6,False,False
+Income Quintile,5,Children's pants,9.3,False,False
+Income Quintile,Total,Children's pants,19.0,False,False
+Income Quintile,1,Children's shoes,16.2,False,False
+Income Quintile,2,Children's shoes,8.9,False,False
+Income Quintile,3,Children's shoes,10.0,False,False
+Income Quintile,4,Children's shoes,6.4,False,False
+Income Quintile,5,Children's shoes,6.6,False,False
+Income Quintile,Total,Children's shoes,9.6,False,False
+Income Quintile,1,Children's sport shoes,30.6,False,False
+Income Quintile,2,Children's sport shoes,21.6,False,False
+Income Quintile,3,Children's sport shoes,18.6,False,False
+Income Quintile,4,Children's sport shoes,15.6,False,False
+Income Quintile,5,Children's sport shoes,13.5,False,False
+Income Quintile,Total,Children's sport shoes,20.0,False,False
+Income Quintile,1,Children's suit and coat,14.0,False,False
+Income Quintile,Total,Children's suit and coat,6.6,False,False
+Income Quintile,1,Children's track suit,9.1,False,False
+Income Quintile,3,Children's track suit,8.7,False,False
+Income Quintile,Total,Children's track suit,7.2,False,False
+Income Quintile,1,Chocolate and chocolate-boxes,27.4,False,False
+Income Quintile,2,Chocolate and chocolate-boxes,28.2,False,False
+Income Quintile,3,Chocolate and chocolate-boxes,31.3,False,False
+Income Quintile,4,Chocolate and chocolate-boxes,37.0,False,False
+Income Quintile,5,Chocolate and chocolate-boxes,37.3,False,False
+Income Quintile,Total,Chocolate and chocolate-boxes,32.2,False,False
+Income Quintile,1,"Chocolate drink, cocoa, and coffee",11.1,False,False
+Income Quintile,2,"Chocolate drink, cocoa, and coffee",7.9,False,False
+Income Quintile,3,"Chocolate drink, cocoa, and coffee",8.2,False,False
+Income Quintile,4,"Chocolate drink, cocoa, and coffee",7.3,False,False
+Income Quintile,5,"Chocolate drink, cocoa, and coffee",6.1,False,False
+Income Quintile,Total,"Chocolate drink, cocoa, and coffee",8.1,False,False
+Income Quintile,1,Chocolate spread and cocoa spread,8.2,False,False
+Income Quintile,2,Chocolate spread and cocoa spread,8.0,False,False
+Income Quintile,3,Chocolate spread and cocoa spread,5.5,False,False
+Income Quintile,4,Chocolate spread and cocoa spread,3.6,False,False
+Income Quintile,5,Chocolate spread and cocoa spread,4.7,False,False
+Income Quintile,Total,Chocolate spread and cocoa spread,6.0,False,False
+Income Quintile,1,Cigarettes,168.9,False,False
+Income Quintile,2,Cigarettes,132.5,False,False
+Income Quintile,3,Cigarettes,117.5,False,False
+Income Quintile,4,Cigarettes,74.4,False,False
+Income Quintile,5,Cigarettes,46.9,False,False
+Income Quintile,Total,Cigarettes,108.1,False,False
+Income Quintile,1,"Cigarettes, tobacco, and accessories",182.6,False,False
+Income Quintile,2,"Cigarettes, tobacco, and accessories",144.2,False,False
+Income Quintile,3,"Cigarettes, tobacco, and accessories",126.8,False,False
+Income Quintile,4,"Cigarettes, tobacco, and accessories",86.6,False,False
+Income Quintile,5,"Cigarettes, tobacco, and accessories",52.0,False,False
+Income Quintile,Total,"Cigarettes, tobacco, and accessories",118.4,False,False
+Income Quintile,Total,Cigars and tobacco,7.9,False,False
+Income Quintile,Total,Cleaning and laundry outside home,3.3,False,False
+Income Quintile,4,Cleaning gloves ,3.2,False,False
+Income Quintile,Total,Cleaning gloves ,2.6,False,False
+Income Quintile,1,Clothing and footwear,539.3,False,False
+Income Quintile,2,Clothing and footwear,572.4,False,False
+Income Quintile,3,Clothing and footwear,541.4,False,False
+Income Quintile,4,Clothing and footwear,552.3,False,False
+Income Quintile,5,Clothing and footwear,690.4,False,False
+Income Quintile,Total,Clothing and footwear,579.2,False,False
+Income Quintile,1,Cocoa powder,2.1,False,False
+Income Quintile,2,Cocoa powder,2.2,False,False
+Income Quintile,3,Cocoa powder,2.2,False,False
+Income Quintile,Total,Cocoa powder,1.9,False,False
+Income Quintile,4,"Coconut milk, cream, and water ",1.9,False,False
+Income Quintile,5,"Coconut milk, cream, and water ",2.5,False,False
+Income Quintile,Total,"Coconut milk, cream, and water ",1.3,False,False
+Income Quintile,5,Coffee capsules ,17.9,False,False
+Income Quintile,Total,Coffee capsules ,9.2,False,False
+Income Quintile,1,Comprehensive auto insurance,74.7,False,False
+Income Quintile,2,Comprehensive auto insurance,137.4,False,False
+Income Quintile,3,Comprehensive auto insurance,172.2,False,False
+Income Quintile,4,Comprehensive auto insurance,224.1,False,False
+Income Quintile,5,Comprehensive auto insurance,273.4,False,False
+Income Quintile,Total,Comprehensive auto insurance,176.4,False,False
+Income Quintile,1,Compulsory auto insurance,66.0,False,False
+Income Quintile,2,Compulsory auto insurance,91.1,False,False
+Income Quintile,3,Compulsory auto insurance,113.1,False,False
+Income Quintile,4,Compulsory auto insurance,135.6,False,False
+Income Quintile,5,Compulsory auto insurance,145.7,False,False
+Income Quintile,Total,Compulsory auto insurance,110.3,False,False
+Income Quintile,1,Compulsory payments – total,484.0,False,False
+Income Quintile,2,Compulsory payments – total,1023.0,False,False
+Income Quintile,3,Compulsory payments – total,2259.0,False,False
+Income Quintile,4,Compulsory payments – total,4341.0,False,False
+Income Quintile,5,Compulsory payments – total,10767.0,False,False
+Income Quintile,Total,Compulsory payments – total,3776.0,False,False
+Income Quintile,5,Computer,41.8,False,False
+Income Quintile,Total,Computer,25.5,False,False
+Income Quintile,4,Computer accessories,7.1,False,False
+Income Quintile,Total,Computer accessories,5.5,False,False
+Income Quintile,1,"Computer, internet and their products",30.1,False,False
+Income Quintile,2,"Computer, internet and their products",24.3,False,False
+Income Quintile,3,"Computer, internet and their products",44.4,False,False
+Income Quintile,4,"Computer, internet and their products",48.8,False,False
+Income Quintile,5,"Computer, internet and their products",71.1,False,False
+Income Quintile,Total,"Computer, internet and their products",43.7,False,False
+Income Quintile,1,Consumption expenditures – total,12495.0,False,False
+Income Quintile,2,Consumption expenditures – total,14247.0,False,False
+Income Quintile,3,Consumption expenditures – total,16492.0,False,False
+Income Quintile,4,Consumption expenditures – total,19644.0,False,False
+Income Quintile,5,Consumption expenditures – total,25115.0,False,False
+Income Quintile,Total,Consumption expenditures – total,17600.0,False,False
+Income Quintile,1,Consumption of housing services  ,1458.6,False,False
+Income Quintile,2,Consumption of housing services  ,2122.5,False,False
+Income Quintile,3,Consumption of housing services  ,2720.3,False,False
+Income Quintile,4,Consumption of housing services  ,3640.7,False,False
+Income Quintile,5,Consumption of housing services  ,4714.0,False,False
+Income Quintile,Total,Consumption of housing services  ,2931.5,False,False
+Income Quintile,1,Cookies and biscuits,38.3,False,False
+Income Quintile,2,Cookies and biscuits,40.9,False,False
+Income Quintile,3,Cookies and biscuits,35.8,False,False
+Income Quintile,4,Cookies and biscuits,34.0,False,False
+Income Quintile,5,Cookies and biscuits,33.4,False,False
+Income Quintile,Total,Cookies and biscuits,36.5,False,False
+Income Quintile,Total,Cooking and baking utensils,9.4,False,False
+Income Quintile,1,Coriander ,2.4,False,False
+Income Quintile,2,Coriander ,3.4,False,False
+Income Quintile,3,Coriander ,3.3,False,False
+Income Quintile,4,Coriander ,4.4,False,False
+Income Quintile,5,Coriander ,4.0,False,False
+Income Quintile,Total,Coriander ,3.5,False,False
+Income Quintile,3,Corn cobs,2.0,False,False
+Income Quintile,4,Corn cobs,2.5,False,False
+Income Quintile,5,Corn cobs,3.3,False,False
+Income Quintile,Total,Corn cobs,1.9,False,False
+Income Quintile,1,Corn oil(5),8.0,False,False
+Income Quintile,2,Corn oil(5),3.8,False,False
+Income Quintile,Total,Corn oil(5),2.8,False,False
+Income Quintile,2,Cosmetic treatments,23.0,False,False
+Income Quintile,3,Cosmetic treatments,36.3,False,False
+Income Quintile,4,Cosmetic treatments,40.3,False,False
+Income Quintile,5,Cosmetic treatments,52.9,False,False
+Income Quintile,Total,Cosmetic treatments,32.9,False,False
+Income Quintile,1,Cosmetics and make-up (including other items),42.3,False,False
+Income Quintile,2,Cosmetics and make-up (including other items),58.6,False,False
+Income Quintile,3,Cosmetics and make-up (including other items),66.5,False,False
+Income Quintile,4,Cosmetics and make-up (including other items),88.7,False,False
+Income Quintile,5,Cosmetics and make-up (including other items),78.8,False,False
+Income Quintile,Total,Cosmetics and make-up (including other items),67.0,False,False
+Income Quintile,1,Cottage cheese ,8.5,False,False
+Income Quintile,2,Cottage cheese ,11.2,False,False
+Income Quintile,3,Cottage cheese ,15.2,False,False
+Income Quintile,4,Cottage cheese ,17.7,False,False
+Income Quintile,5,Cottage cheese ,19.0,False,False
+Income Quintile,Total,Cottage cheese ,14.3,False,False
+Income Quintile,1,"Cotton wool, tampons, and bandages",8.0,False,False
+Income Quintile,2,"Cotton wool, tampons, and bandages",11.3,False,False
+Income Quintile,3,"Cotton wool, tampons, and bandages",11.9,False,False
+Income Quintile,4,"Cotton wool, tampons, and bandages",12.8,False,False
+Income Quintile,5,"Cotton wool, tampons, and bandages",9.5,False,False
+Income Quintile,Total,"Cotton wool, tampons, and bandages",10.7,False,False
+Income Quintile,1,Couscous,1.4,False,False
+Income Quintile,2,Couscous,1.9,False,False
+Income Quintile,3,Couscous,1.6,False,False
+Income Quintile,4,Couscous,1.6,False,False
+Income Quintile,5,Couscous,1.6,False,False
+Income Quintile,Total,Couscous,1.6,False,False
+Income Quintile,1,Crackers,5.1,False,False
+Income Quintile,2,Crackers,6.4,False,False
+Income Quintile,3,Crackers,6.0,False,False
+Income Quintile,4,Crackers,8.9,False,False
+Income Quintile,5,Crackers,8.7,False,False
+Income Quintile,Total,Crackers,7.0,False,False
+Income Quintile,5,Cranberries,3.1,False,False
+Income Quintile,Total,Cranberries,1.9,False,False
+Income Quintile,1,Cucumbers,22.4,False,False
+Income Quintile,2,Cucumbers,21.0,False,False
+Income Quintile,3,Cucumbers,18.7,False,False
+Income Quintile,4,Cucumbers,19.1,False,False
+Income Quintile,5,Cucumbers,22.5,False,False
+Income Quintile,Total,Cucumbers,20.8,False,False
+Income Quintile,1,"Culture, sports, and entertainment ",149.7,False,False
+Income Quintile,2,"Culture, sports, and entertainment ",203.8,False,False
+Income Quintile,3,"Culture, sports, and entertainment ",291.1,False,False
+Income Quintile,4,"Culture, sports, and entertainment ",404.8,False,False
+Income Quintile,5,"Culture, sports, and entertainment ",474.7,False,False
+Income Quintile,Total,"Culture, sports, and entertainment ",304.9,False,False
+Income Quintile,1,Cumulative life insurance premiums,23.6,False,False
+Income Quintile,2,Cumulative life insurance premiums,36.8,False,False
+Income Quintile,3,Cumulative life insurance premiums,63.9,False,False
+Income Quintile,4,Cumulative life insurance premiums,93.1,False,False
+Income Quintile,5,Cumulative life insurance premiums,139.1,False,False
+Income Quintile,Total,Cumulative life insurance premiums,71.3,False,False
+Income Quintile,Total,Curtains,6.3,False,False
+Income Quintile,1,Cut vegetables for salad ,1.6,False,False
+Income Quintile,2,Cut vegetables for salad ,1.5,False,False
+Income Quintile,3,Cut vegetables for salad ,4.3,False,False
+Income Quintile,4,Cut vegetables for salad ,3.9,False,False
+Income Quintile,5,Cut vegetables for salad ,5.3,False,False
+Income Quintile,Total,Cut vegetables for salad ,3.3,False,False
+Income Quintile,3,Daily newspaper,1.7,False,False
+Income Quintile,4,Daily newspaper,1.8,False,False
+Income Quintile,5,Daily newspaper,2.2,False,False
+Income Quintile,Total,Daily newspaper,1.6,False,False
+Income Quintile,2,Dancing lessons and courses,8.1,False,False
+Income Quintile,3,Dancing lessons and courses,10.9,False,False
+Income Quintile,4,Dancing lessons and courses,13.6,False,False
+Income Quintile,5,Dancing lessons and courses,19.2,False,False
+Income Quintile,Total,Dancing lessons and courses,11.3,False,False
+Income Quintile,1,Dates,4.1,False,False
+Income Quintile,2,Dates,6.7,False,False
+Income Quintile,3,Dates,4.6,False,False
+Income Quintile,4,Dates,6.6,False,False
+Income Quintile,5,Dates,5.2,False,False
+Income Quintile,Total,Dates,5.5,False,False
+Income Quintile,1,Dental and oral hygiene products ,7.9,False,False
+Income Quintile,2,Dental and oral hygiene products ,14.4,False,False
+Income Quintile,3,Dental and oral hygiene products ,16.0,False,False
+Income Quintile,4,Dental and oral hygiene products ,17.8,False,False
+Income Quintile,5,Dental and oral hygiene products ,23.3,False,False
+Income Quintile,Total,Dental and oral hygiene products ,15.9,False,False
+Income Quintile,2,Dental insurance,4.6,False,False
+Income Quintile,3,Dental insurance,9.1,False,False
+Income Quintile,4,Dental insurance,12.0,False,False
+Income Quintile,5,Dental insurance,17.9,False,False
+Income Quintile,Total,Dental insurance,8.8,False,False
+Income Quintile,1,Dental treatment,160.2,False,False
+Income Quintile,1,Dental treatment,109.0,False,False
+Income Quintile,2,Dental treatment,127.1,False,False
+Income Quintile,2,Dental treatment,197.1,False,False
+Income Quintile,3,Dental treatment,215.2,False,False
+Income Quintile,3,Dental treatment,280.8,False,False
+Income Quintile,4,Dental treatment,277.9,False,False
+Income Quintile,4,Dental treatment,201.1,False,False
+Income Quintile,5,Dental treatment,360.4,False,False
+Income Quintile,5,Dental treatment,215.1,False,False
+Income Quintile,Total,Dental treatment,255.3,False,False
+Income Quintile,Total,Dental treatment,173.5,False,False
+Income Quintile,1,Deodorizers and air fresheners,3.4,False,False
+Income Quintile,2,Deodorizers and air fresheners,4.0,False,False
+Income Quintile,Total,Deodorizers and air fresheners,3.7,False,False
+Income Quintile,1,Diapers (all kinds) ,38.2,False,False
+Income Quintile,2,Diapers (all kinds) ,34.4,False,False
+Income Quintile,3,Diapers (all kinds) ,18.9,False,False
+Income Quintile,4,Diapers (all kinds) ,10.9,False,False
+Income Quintile,5,Diapers (all kinds) ,13.3,False,False
+Income Quintile,Total,Diapers (all kinds) ,23.2,False,False
+Income Quintile,1,Dill ,0.8,False,False
+Income Quintile,2,Dill ,1.5,False,False
+Income Quintile,3,Dill ,1.3,False,False
+Income Quintile,4,Dill ,1.3,False,False
+Income Quintile,5,Dill ,1.9,False,False
+Income Quintile,Total,Dill ,1.4,False,False
+Income Quintile,1,Dishwashing materials,10.7,False,False
+Income Quintile,2,Dishwashing materials,13.1,False,False
+Income Quintile,3,Dishwashing materials,11.0,False,False
+Income Quintile,4,Dishwashing materials,13.4,False,False
+Income Quintile,5,Dishwashing materials,13.5,False,False
+Income Quintile,Total,Dishwashing materials,12.3,False,False
+Income Quintile,1,Disinfectants and house cleaning materials(18),48.4,False,False
+Income Quintile,2,Disinfectants and house cleaning materials(18),49.7,False,False
+Income Quintile,3,Disinfectants and house cleaning materials(18),30.6,False,False
+Income Quintile,4,Disinfectants and house cleaning materials(18),28.7,False,False
+Income Quintile,5,Disinfectants and house cleaning materials(18),37.4,False,False
+Income Quintile,Total,Disinfectants and house cleaning materials(18),38.9,False,False
+Income Quintile,1,Disposable bags,1.2,False,False
+Income Quintile,2,Disposable bags,1.7,False,False
+Income Quintile,3,Disposable bags,1.1,False,False
+Income Quintile,4,Disposable bags,1.5,False,False
+Income Quintile,5,Disposable bags,0.9,False,False
+Income Quintile,Total,Disposable bags,1.3,False,False
+Income Quintile,1,"Disposable plates, cups, and cutlery",42.9,False,False
+Income Quintile,2,"Disposable plates, cups, and cutlery",37.1,False,False
+Income Quintile,3,"Disposable plates, cups, and cutlery",33.9,False,False
+Income Quintile,4,"Disposable plates, cups, and cutlery",31.6,False,False
+Income Quintile,5,"Disposable plates, cups, and cutlery",25.0,False,False
+Income Quintile,Total,"Disposable plates, cups, and cutlery",34.1,False,False
+Income Quintile,1,Domestic help,29.9,False,False
+Income Quintile,2,Domestic help,69.2,False,False
+Income Quintile,3,Domestic help,203.9,False,False
+Income Quintile,4,Domestic help,255.7,False,False
+Income Quintile,5,Domestic help,541.4,False,False
+Income Quintile,Total,Domestic help,220.1,False,False
+Income Quintile,1,Domestic help and cook,18.4,False,False
+Income Quintile,2,Domestic help and cook,38.7,False,False
+Income Quintile,3,Domestic help and cook,96.5,False,False
+Income Quintile,4,Domestic help and cook,130.2,False,False
+Income Quintile,5,Domestic help and cook,339.7,False,False
+Income Quintile,Total,Domestic help and cook,124.8,False,False
+Income Quintile,1,Donations to organizations and institutions,95.4,False,False
+Income Quintile,2,Donations to organizations and institutions,90.9,False,False
+Income Quintile,3,Donations to organizations and institutions,102.3,False,False
+Income Quintile,4,Donations to organizations and institutions,113.7,False,False
+Income Quintile,5,Donations to organizations and institutions,207.6,False,False
+Income Quintile,Total,Donations to organizations and institutions,122.0,False,False
+Income Quintile,Total,Dormitory payments ,4.8,False,False
+Income Quintile,1,Dress,54.2,False,False
+Income Quintile,2,Dress,51.8,False,False
+Income Quintile,3,Dress,47.3,False,False
+Income Quintile,4,Dress,39.0,False,False
+Income Quintile,Total,Dress,54.6,False,False
+Income Quintile,1,Dress and skirt ,16.6,False,False
+Income Quintile,2,Dress and skirt ,10.8,False,False
+Income Quintile,Total,Dress and skirt ,8.4,False,False
+Income Quintile,1,Dried fruit spreads,2.0,False,False
+Income Quintile,4,Dried fruit spreads,3.4,False,False
+Income Quintile,5,Dried fruit spreads,4.3,False,False
+Income Quintile,Total,Dried fruit spreads,3.5,False,False
+Income Quintile,1,Driving lessons,37.8,False,False
+Income Quintile,2,Driving lessons,31.6,False,False
+Income Quintile,3,Driving lessons,28.6,False,False
+Income Quintile,5,Driving lessons,14.7,False,False
+Income Quintile,Total,Driving lessons,25.1,False,False
+Income Quintile,1,Dry fava beans and lentils(12),2.0,False,False
+Income Quintile,2,Dry fava beans and lentils(12),2.4,False,False
+Income Quintile,3,Dry fava beans and lentils(12),1.9,False,False
+Income Quintile,4,Dry fava beans and lentils(12),2.1,False,False
+Income Quintile,5,Dry fava beans and lentils(12),2.4,False,False
+Income Quintile,Total,Dry fava beans and lentils(12),2.2,False,False
+Income Quintile,1,Dust cloths and floor mops,3.3,False,False
+Income Quintile,2,Dust cloths and floor mops,3.7,False,False
+Income Quintile,3,Dust cloths and floor mops,3.7,False,False
+Income Quintile,4,Dust cloths and floor mops,4.3,False,False
+Income Quintile,5,Dust cloths and floor mops,6.6,False,False
+Income Quintile,Total,Dust cloths and floor mops,4.3,False,False
+Income Quintile,1,Dwelling and household maintenance,1140.0,False,False
+Income Quintile,2,Dwelling and household maintenance,1305.0,False,False
+Income Quintile,3,Dwelling and household maintenance,1571.3,False,False
+Income Quintile,4,Dwelling and household maintenance,1814.6,False,False
+Income Quintile,5,Dwelling and household maintenance,2379.0,False,False
+Income Quintile,Total,Dwelling and household maintenance,1642.1,False,False
+Income Quintile,2,Earphones ,1.2,False,False
+Income Quintile,5,Earphones ,6.7,False,False
+Income Quintile,Total,Earphones ,3.4,False,False
+Income Quintile,1,Earrings(33),2.4,False,False
+Income Quintile,3,Earrings(33),6.6,False,False
+Income Quintile,4,Earrings(33),6.6,False,False
+Income Quintile,5,Earrings(33),24.5,False,False
+Income Quintile,Total,Earrings(33),9.4,False,False
+Income Quintile,1,Education services,897.3,False,False
+Income Quintile,2,Education services,763.1,False,False
+Income Quintile,3,Education services,978.0,False,False
+Income Quintile,4,Education services,1178.1,False,False
+Income Quintile,5,Education services,1199.8,False,False
+Income Quintile,Total,Education services,1003.3,False,False
+Income Quintile,1,"Education, culture, and entertainment",1408.3,False,False
+Income Quintile,2,"Education, culture, and entertainment",1414.9,False,False
+Income Quintile,3,"Education, culture, and entertainment",1836.6,False,False
+Income Quintile,4,"Education, culture, and entertainment",2306.6,False,False
+Income Quintile,5,"Education, culture, and entertainment",2685.9,False,False
+Income Quintile,Total,"Education, culture, and entertainment",1930.6,False,False
+Income Quintile,1,Eggplant salad,1.4,False,False
+Income Quintile,2,Eggplant salad,2.8,False,False
+Income Quintile,3,Eggplant salad,2.4,False,False
+Income Quintile,4,Eggplant salad,3.4,False,False
+Income Quintile,5,Eggplant salad,3.2,False,False
+Income Quintile,Total,Eggplant salad,2.6,False,False
+Income Quintile,1,Eggplants,7.4,False,False
+Income Quintile,2,Eggplants,5.5,False,False
+Income Quintile,3,Eggplants,5.3,False,False
+Income Quintile,4,Eggplants,5.8,False,False
+Income Quintile,5,Eggplants,5.6,False,False
+Income Quintile,Total,Eggplants,5.9,False,False
+Income Quintile,1,Eggs,37.2,False,False
+Income Quintile,2,Eggs,44.4,False,False
+Income Quintile,3,Eggs,39.6,False,False
+Income Quintile,4,Eggs,36.7,False,False
+Income Quintile,5,Eggs,35.7,False,False
+Income Quintile,Total,Eggs,38.7,False,False
+Income Quintile,1,Electric kettle,2.4,False,False
+Income Quintile,2,Electric kettle,2.0,False,False
+Income Quintile,3,Electric kettle,1.2,False,False
+Income Quintile,4,Electric kettle,1.8,False,False
+Income Quintile,5,Electric kettle,1.8,False,False
+Income Quintile,Total,Electric kettle,1.8,False,False
+Income Quintile,1,"Electricity, current consumption",374.2,False,False
+Income Quintile,2,"Electricity, current consumption",364.6,False,False
+Income Quintile,3,"Electricity, current consumption",410.9,False,False
+Income Quintile,4,"Electricity, current consumption",424.8,False,False
+Income Quintile,5,"Electricity, current consumption",438.9,False,False
+Income Quintile,Total,"Electricity, current consumption",402.7,False,False
+Income Quintile,1,"Electricity, gas and fuel for dwelling",423.9,False,False
+Income Quintile,2,"Electricity, gas and fuel for dwelling",435.7,False,False
+Income Quintile,3,"Electricity, gas and fuel for dwelling",476.7,False,False
+Income Quintile,4,"Electricity, gas and fuel for dwelling",481.6,False,False
+Income Quintile,5,"Electricity, gas and fuel for dwelling",487.5,False,False
+Income Quintile,Total,"Electricity, gas and fuel for dwelling",461.1,False,False
+Income Quintile,1,Energy drinks,6.1,False,False
+Income Quintile,2,Energy drinks,2.6,False,False
+Income Quintile,3,Energy drinks,3.7,False,False
+Income Quintile,4,Energy drinks,2.3,False,False
+Income Quintile,Total,Energy drinks,3.5,False,False
+Income Quintile,1,Entertainment durable goods,71.5,False,False
+Income Quintile,2,Entertainment durable goods,109.9,False,False
+Income Quintile,3,Entertainment durable goods,141.0,False,False
+Income Quintile,4,Entertainment durable goods,194.8,False,False
+Income Quintile,5,Entertainment durable goods,246.1,False,False
+Income Quintile,Total,Entertainment durable goods,152.7,False,False
+Income Quintile,3,Entrance fees to amusement and water parks,2.4,False,False
+Income Quintile,4,Entrance fees to amusement and water parks,2.0,False,False
+Income Quintile,Total,Entrance fees to amusement and water parks,2.1,False,False
+Income Quintile,2,Entrance fees to gimbories and escape rooms,1.6,False,False
+Income Quintile,3,Entrance fees to gimbories and escape rooms,3.6,False,False
+Income Quintile,Total,Entrance fees to gimbories and escape rooms,2.9,False,False
+Income Quintile,1,Entrance fees to zoos,2.3,False,False
+Income Quintile,2,Entrance fees to zoos,1.8,False,False
+Income Quintile,3,Entrance fees to zoos,1.5,False,False
+Income Quintile,4,Entrance fees to zoos,2.5,False,False
+Income Quintile,Total,Entrance fees to zoos,1.8,False,False
+Income Quintile,Total,Entrance to night clubs and other entertainment venues,4.9,False,False
+Income Quintile,2,Entrance to sites ,1.4,False,False
+Income Quintile,3,Entrance to sites ,1.6,False,False
+Income Quintile,4,Entrance to sites ,3.4,False,False
+Income Quintile,5,Entrance to sites ,3.8,False,False
+Income Quintile,Total,Entrance to sites ,2.4,False,False
+Income Quintile,2,"Envelopes, paper, and other writing supplies ",3.5,False,False
+Income Quintile,4,"Envelopes, paper, and other writing supplies ",4.4,False,False
+Income Quintile,5,"Envelopes, paper, and other writing supplies ",6.3,False,False
+Income Quintile,Total,"Envelopes, paper, and other writing supplies ",6.9,False,False
+Income Quintile,1,Expenditures on health services,75.3,False,False
+Income Quintile,2,Expenditures on health services,82.3,False,False
+Income Quintile,3,Expenditures on health services,125.4,False,False
+Income Quintile,4,Expenditures on health services,210.2,False,False
+Income Quintile,5,Expenditures on health services,298.9,False,False
+Income Quintile,Total,Expenditures on health services,158.4,False,False
+Income Quintile,1,Expenditures on stay abroad ,95.6,False,False
+Income Quintile,2,Expenditures on stay abroad ,173.2,False,False
+Income Quintile,3,Expenditures on stay abroad ,291.5,False,False
+Income Quintile,4,Expenditures on stay abroad ,394.3,False,False
+Income Quintile,5,Expenditures on stay abroad ,706.9,False,False
+Income Quintile,Total,Expenditures on stay abroad ,332.3,False,False
+Income Quintile,1,Expenditures on vehicles,1176.3,False,False
+Income Quintile,2,Expenditures on vehicles,1531.8,False,False
+Income Quintile,3,Expenditures on vehicles,1917.0,False,False
+Income Quintile,4,Expenditures on vehicles,2507.7,False,False
+Income Quintile,5,Expenditures on vehicles,3117.4,False,False
+Income Quintile,Total,Expenditures on vehicles,2050.2,False,False
+Income Quintile,4,Expenses on two-wheel vehicle (31),16.5,False,False
+Income Quintile,5,Expenses on two-wheel vehicle (31),23.4,False,False
+Income Quintile,Total,Expenses on two-wheel vehicle (31),10.9,False,False
+Income Quintile,1,Fees for private physician or specialist at health funds,15.1,False,False
+Income Quintile,2,Fees for private physician or specialist at health funds,15.2,False,False
+Income Quintile,3,Fees for private physician or specialist at health funds,18.8,False,False
+Income Quintile,4,Fees for private physician or specialist at health funds,33.0,False,False
+Income Quintile,5,Fees for private physician or specialist at health funds,43.9,False,False
+Income Quintile,Total,Fees for private physician or specialist at health funds,25.2,False,False
+Income Quintile,Total,"Fines, fees, and payment for permits",24.4,False,False
+Income Quintile,1,Fish,84.5,False,False
+Income Quintile,2,Fish,116.3,False,False
+Income Quintile,3,Fish,101.8,False,False
+Income Quintile,4,Fish,151.1,False,False
+Income Quintile,5,Fish,135.6,False,False
+Income Quintile,Total,Fish,117.9,False,False
+Income Quintile,1,"Fish, domestically grown(10)",15.2,False,False
+Income Quintile,2,"Fish, domestically grown(10)",28.2,False,False
+Income Quintile,3,"Fish, domestically grown(10)",19.4,False,False
+Income Quintile,4,"Fish, domestically grown(10)",35.0,False,False
+Income Quintile,5,"Fish, domestically grown(10)",31.4,False,False
+Income Quintile,Total,"Fish, domestically grown(10)",25.9,False,False
+Income Quintile,1,"Fish, grown abroad(11)",22.5,False,False
+Income Quintile,2,"Fish, grown abroad(11)",36.9,False,False
+Income Quintile,3,"Fish, grown abroad(11)",38.2,False,False
+Income Quintile,4,"Fish, grown abroad(11)",61.5,False,False
+Income Quintile,5,"Fish, grown abroad(11)",47.7,False,False
+Income Quintile,Total,"Fish, grown abroad(11)",41.4,False,False
+Income Quintile,3,Flowers and plants,21.4,False,False
+Income Quintile,5,Flowers and plants,45.7,False,False
+Income Quintile,Total,Flowers and plants,24.7,False,False
+Income Quintile,1,Food (excl. vegetables and fruit),2332.0,False,False
+Income Quintile,2,Food (excl. vegetables and fruit),2387.0,False,False
+Income Quintile,3,Food (excl. vegetables and fruit),2464.0,False,False
+Income Quintile,4,Food (excl. vegetables and fruit),2640.0,False,False
+Income Quintile,5,Food (excl. vegetables and fruit),2930.0,False,False
+Income Quintile,Total,Food (excl. vegetables and fruit),2551.0,False,False
+Income Quintile,Total,Food home delivery ,18.3,False,False
+Income Quintile,1,Footwear,130.1,False,False
+Income Quintile,2,Footwear,124.3,False,False
+Income Quintile,3,Footwear,122.3,False,False
+Income Quintile,4,Footwear,148.1,False,False
+Income Quintile,5,Footwear,168.0,False,False
+Income Quintile,Total,Footwear,138.5,False,False
+Income Quintile,1,For key money dwelling or free housing ,186.2,False,False
+Income Quintile,2,For key money dwelling or free housing ,148.3,False,False
+Income Quintile,3,For key money dwelling or free housing ,127.7,False,False
+Income Quintile,4,For key money dwelling or free housing ,155.0,False,False
+Income Quintile,5,For key money dwelling or free housing ,215.9,False,False
+Income Quintile,Total,For key money dwelling or free housing ,166.6,False,False
+Income Quintile,1,For owned dwelling,1272.4,False,False
+Income Quintile,2,For owned dwelling,1974.2,False,False
+Income Quintile,3,For owned dwelling,2592.6,False,False
+Income Quintile,4,For owned dwelling,3485.7,False,False
+Income Quintile,5,For owned dwelling,4498.0,False,False
+Income Quintile,Total,For owned dwelling,2764.9,False,False
+Income Quintile,1,For rented dwelling or room,1246.0,False,False
+Income Quintile,2,For rented dwelling or room,1255.8,False,False
+Income Quintile,3,For rented dwelling or room,1323.7,False,False
+Income Quintile,4,For rented dwelling or room,1067.2,False,False
+Income Quintile,5,For rented dwelling or room,1183.7,False,False
+Income Quintile,Total,For rented dwelling or room,1215.3,False,False
+Income Quintile,1,Freight and other expenses ,2.8,False,False
+Income Quintile,2,Freight and other expenses ,5.5,False,False
+Income Quintile,3,Freight and other expenses ,5.8,False,False
+Income Quintile,4,Freight and other expenses ,5.4,False,False
+Income Quintile,5,Freight and other expenses ,16.0,False,False
+Income Quintile,Total,Freight and other expenses ,7.1,False,False
+Income Quintile,1,Fresh mushrooms  ,3.9,False,False
+Income Quintile,2,Fresh mushrooms  ,7.3,False,False
+Income Quintile,3,Fresh mushrooms  ,7.1,False,False
+Income Quintile,4,Fresh mushrooms  ,12.4,False,False
+Income Quintile,5,Fresh mushrooms  ,12.5,False,False
+Income Quintile,Total,Fresh mushrooms  ,8.6,False,False
+Income Quintile,1,Fresh ready made food,15.6,False,False
+Income Quintile,2,Fresh ready made food,22.1,False,False
+Income Quintile,4,Fresh ready made food,35.7,False,False
+Income Quintile,5,Fresh ready made food,73.0,False,False
+Income Quintile,Total,Fresh ready made food,33.7,False,False
+Income Quintile,1,From National Insurance Institute,1882.0,False,False
+Income Quintile,2,From National Insurance Institute,2162.0,False,False
+Income Quintile,3,From National Insurance Institute,2011.0,False,False
+Income Quintile,4,From National Insurance Institute,1992.0,False,False
+Income Quintile,5,From National Insurance Institute,2232.0,False,False
+Income Quintile,Total,From National Insurance Institute,2056.0,False,False
+Income Quintile,1,From allowances and assistance,2539.0,False,False
+Income Quintile,2,From allowances and assistance,2736.0,False,False
+Income Quintile,3,From allowances and assistance,2609.0,False,False
+Income Quintile,4,From allowances and assistance,2534.0,False,False
+Income Quintile,5,From allowances and assistance,3158.0,False,False
+Income Quintile,Total,From allowances and assistance,2715.0,False,False
+Income Quintile,1,From capital,111.0,False,False
+Income Quintile,2,From capital,207.0,False,False
+Income Quintile,3,From capital,374.0,False,False
+Income Quintile,4,From capital,773.0,False,False
+Income Quintile,5,From capital,3593.0,False,False
+Income Quintile,Total,From capital,1012.0,False,False
+Income Quintile,1,From households and other ,264.0,False,False
+Income Quintile,2,From households and other ,292.0,False,False
+Income Quintile,3,From households and other ,303.0,False,False
+Income Quintile,4,From households and other ,302.0,False,False
+Income Quintile,Total,From households and other ,308.0,False,False
+Income Quintile,1,From other institutions in Israel,393.0,False,False
+Income Quintile,2,From other institutions in Israel,282.0,False,False
+Income Quintile,3,From other institutions in Israel,296.0,False,False
+Income Quintile,4,From other institutions in Israel,241.0,False,False
+Income Quintile,5,From other institutions in Israel,548.0,False,False
+Income Quintile,Total,From other institutions in Israel,352.0,False,False
+Income Quintile,1,From pensions and social insurance funds,63.0,False,False
+Income Quintile,2,From pensions and social insurance funds,353.0,False,False
+Income Quintile,3,From pensions and social insurance funds,657.0,False,False
+Income Quintile,4,From pensions and social insurance funds,1767.0,False,False
+Income Quintile,5,From pensions and social insurance funds,4478.0,False,False
+Income Quintile,Total,From pensions and social insurance funds,1464.0,False,False
+Income Quintile,1,From self-employment and occasional work,821.0,False,False
+Income Quintile,2,From self-employment and occasional work,1346.0,False,False
+Income Quintile,3,From self-employment and occasional work,2124.0,False,False
+Income Quintile,4,From self-employment and occasional work,3486.0,False,False
+Income Quintile,5,From self-employment and occasional work,5415.0,False,False
+Income Quintile,Total,From self-employment and occasional work,2639.0,False,False
+Income Quintile,1,From wages and salary,4460.0,False,False
+Income Quintile,2,From wages and salary,8171.0,False,False
+Income Quintile,3,From wages and salary,13000.0,False,False
+Income Quintile,4,From wages and salary,17557.0,False,False
+Income Quintile,5,From wages and salary,27714.0,False,False
+Income Quintile,Total,From wages and salary,14182.0,False,False
+Income Quintile,1,From work,5281.0,False,False
+Income Quintile,2,From work,9517.0,False,False
+Income Quintile,3,From work,15124.0,False,False
+Income Quintile,4,From work,21043.0,False,False
+Income Quintile,5,From work,33128.0,False,False
+Income Quintile,Total,From work,16821.0,False,False
+Income Quintile,1,Frozen dough,3.0,False,False
+Income Quintile,2,Frozen dough,3.3,False,False
+Income Quintile,3,Frozen dough,4.4,False,False
+Income Quintile,4,Frozen dough,5.0,False,False
+Income Quintile,5,Frozen dough,7.4,False,False
+Income Quintile,Total,Frozen dough,4.6,False,False
+Income Quintile,1,Frozen pizza(4),6.6,False,False
+Income Quintile,2,Frozen pizza(4),7.2,False,False
+Income Quintile,3,Frozen pizza(4),5.2,False,False
+Income Quintile,4,Frozen pizza(4),5.4,False,False
+Income Quintile,5,Frozen pizza(4),4.4,False,False
+Income Quintile,Total,Frozen pizza(4),5.8,False,False
+Income Quintile,3,Frozen vegetables – mixed ,1.8,False,False
+Income Quintile,5,Frozen vegetables – mixed ,2.8,False,False
+Income Quintile,Total,Frozen vegetables – mixed ,2.4,False,False
+Income Quintile,1,Frozen vegetables – single ,10.6,False,False
+Income Quintile,2,Frozen vegetables – single ,10.3,False,False
+Income Quintile,3,Frozen vegetables – single ,14.1,False,False
+Income Quintile,4,Frozen vegetables – single ,12.7,False,False
+Income Quintile,5,Frozen vegetables – single ,18.9,False,False
+Income Quintile,Total,Frozen vegetables – single ,13.3,False,False
+Income Quintile,1,"Fruit juices, natural",17.8,False,False
+Income Quintile,2,"Fruit juices, natural",13.1,False,False
+Income Quintile,3,"Fruit juices, natural",17.2,False,False
+Income Quintile,4,"Fruit juices, natural",12.7,False,False
+Income Quintile,5,"Fruit juices, natural",16.2,False,False
+Income Quintile,Total,"Fruit juices, natural",15.4,False,False
+Income Quintile,1,"Fruit, dried",46.0,False,False
+Income Quintile,2,"Fruit, dried",61.3,False,False
+Income Quintile,3,"Fruit, dried",51.2,False,False
+Income Quintile,4,"Fruit, dried",62.1,False,False
+Income Quintile,5,"Fruit, dried",73.6,False,False
+Income Quintile,Total,"Fruit, dried",58.8,False,False
+Income Quintile,1,"Fruit, fresh",188.7,False,False
+Income Quintile,2,"Fruit, fresh",198.1,False,False
+Income Quintile,3,"Fruit, fresh",186.7,False,False
+Income Quintile,4,"Fruit, fresh",199.4,False,False
+Income Quintile,5,"Fruit, fresh",232.7,False,False
+Income Quintile,Total,"Fruit, fresh",201.1,False,False
+Income Quintile,1,"Fruit, preserved and frozen",4.5,False,False
+Income Quintile,2,"Fruit, preserved and frozen",3.7,False,False
+Income Quintile,3,"Fruit, preserved and frozen",4.2,False,False
+Income Quintile,4,"Fruit, preserved and frozen",4.1,False,False
+Income Quintile,5,"Fruit, preserved and frozen",3.6,False,False
+Income Quintile,Total,"Fruit, preserved and frozen",4.0,False,False
+Income Quintile,1,Fuel and lubricants for vehicles,363.7,False,False
+Income Quintile,2,Fuel and lubricants for vehicles,402.3,False,False
+Income Quintile,3,Fuel and lubricants for vehicles,492.5,False,False
+Income Quintile,4,Fuel and lubricants for vehicles,500.9,False,False
+Income Quintile,5,Fuel and lubricants for vehicles,490.8,False,False
+Income Quintile,Total,Fuel and lubricants for vehicles,450.0,False,False
+Income Quintile,1,Furniture,222.0,False,False
+Income Quintile,2,Furniture,168.7,False,False
+Income Quintile,3,Furniture,174.5,False,False
+Income Quintile,4,Furniture,279.0,False,False
+Income Quintile,5,Furniture,324.0,False,False
+Income Quintile,Total,Furniture,233.7,False,False
+Income Quintile,1,Furniture and household equipment,560.4,False,False
+Income Quintile,2,Furniture and household equipment,550.9,False,False
+Income Quintile,3,Furniture and household equipment,540.7,False,False
+Income Quintile,4,Furniture and household equipment,753.8,False,False
+Income Quintile,5,Furniture and household equipment,894.1,False,False
+Income Quintile,Total,Furniture and household equipment,660.0,False,False
+Income Quintile,2,Games,15.6,False,False
+Income Quintile,3,Games,13.2,False,False
+Income Quintile,4,Games,16.8,False,False
+Income Quintile,5,Games,16.4,False,False
+Income Quintile,Total,Games,15.2,False,False
+Income Quintile,1,Garbage bags,5.3,False,False
+Income Quintile,2,Garbage bags,4.2,False,False
+Income Quintile,3,Garbage bags,4.1,False,False
+Income Quintile,4,Garbage bags,5.6,False,False
+Income Quintile,5,Garbage bags,6.2,False,False
+Income Quintile,Total,Garbage bags,5.1,False,False
+Income Quintile,1,Garlic,5.0,False,False
+Income Quintile,2,Garlic,6.9,False,False
+Income Quintile,3,Garlic,4.4,False,False
+Income Quintile,4,Garlic,5.2,False,False
+Income Quintile,5,Garlic,5.2,False,False
+Income Quintile,Total,Garlic,5.4,False,False
+Income Quintile,1,Gas in containers,19.1,False,False
+Income Quintile,2,Gas in containers,20.1,False,False
+Income Quintile,3,Gas in containers,15.9,False,False
+Income Quintile,4,Gas in containers,14.0,False,False
+Income Quintile,5,Gas in containers,9.7,False,False
+Income Quintile,Total,Gas in containers,15.8,False,False
+Income Quintile,1,"Gas, central installation",24.9,False,False
+Income Quintile,2,"Gas, central installation",31.0,False,False
+Income Quintile,3,"Gas, central installation",35.5,False,False
+Income Quintile,4,"Gas, central installation",36.1,False,False
+Income Quintile,5,"Gas, central installation",34.4,False,False
+Income Quintile,Total,"Gas, central installation",32.4,False,False
+Income Quintile,1,General secondary schools,51.4,False,False
+Income Quintile,2,General secondary schools,41.6,False,False
+Income Quintile,3,General secondary schools,32.8,False,False
+Income Quintile,4,General secondary schools,31.0,False,False
+Income Quintile,5,General secondary schools,28.2,False,False
+Income Quintile,Total,General secondary schools,37.0,False,False
+Income Quintile,1,Glasses and contact lenses,33.1,False,False
+Income Quintile,2,Glasses and contact lenses,43.8,False,False
+Income Quintile,3,Glasses and contact lenses,46.4,False,False
+Income Quintile,4,Glasses and contact lenses,76.0,False,False
+Income Quintile,5,Glasses and contact lenses,102.9,False,False
+Income Quintile,Total,Glasses and contact lenses,60.4,False,False
+Income Quintile,5,Government taxes,80.6,False,False
+Income Quintile,Total,Government taxes,40.1,False,False
+Income Quintile,1,Grapes,11.9,False,False
+Income Quintile,2,Grapes,14.7,False,False
+Income Quintile,3,Grapes,12.9,False,False
+Income Quintile,4,Grapes,16.6,False,False
+Income Quintile,5,Grapes,22.8,False,False
+Income Quintile,Total,Grapes,15.8,False,False
+Income Quintile,4,Gratuities,5.0,False,False
+Income Quintile,5,Gratuities,8.6,False,False
+Income Quintile,Total,Gratuities,3.3,False,False
+Income Quintile,1,Green and red peppers ,11.7,False,False
+Income Quintile,2,Green and red peppers ,14.1,False,False
+Income Quintile,3,Green and red peppers ,14.5,False,False
+Income Quintile,4,Green and red peppers ,17.3,False,False
+Income Quintile,5,Green and red peppers ,20.9,False,False
+Income Quintile,Total,Green and red peppers ,15.7,False,False
+Income Quintile,1,Gross money income – total,7994.0,False,False
+Income Quintile,2,Gross money income – total,12813.0,False,False
+Income Quintile,3,Gross money income – total,18765.0,False,False
+Income Quintile,4,Gross money income – total,26117.0,False,False
+Income Quintile,5,Gross money income – total,44358.0,False,False
+Income Quintile,Total,Gross money income – total,22013.0,False,False
+Income Quintile,1,Guarding fee ,4.9,False,False
+Income Quintile,2,Guarding fee ,4.7,False,False
+Income Quintile,3,Guarding fee ,4.8,False,False
+Income Quintile,4,Guarding fee ,5.4,False,False
+Income Quintile,5,Guarding fee ,6.0,False,False
+Income Quintile,Total,Guarding fee ,5.2,False,False
+Income Quintile,1,Hair accessories,1.9,False,False
+Income Quintile,3,Hair accessories,1.9,False,False
+Income Quintile,4,Hair accessories,3.2,False,False
+Income Quintile,Total,Hair accessories,1.9,False,False
+Income Quintile,1,Hair products,23.2,False,False
+Income Quintile,2,Hair products,24.5,False,False
+Income Quintile,3,Hair products,29.6,False,False
+Income Quintile,4,Hair products,23.2,False,False
+Income Quintile,5,Hair products,25.7,False,False
+Income Quintile,Total,Hair products,25.2,False,False
+Income Quintile,1,Halvah,2.4,False,False
+Income Quintile,2,Halvah,1.5,False,False
+Income Quintile,3,Halvah,2.1,False,False
+Income Quintile,4,Halvah,1.8,False,False
+Income Quintile,5,Halvah,2.5,False,False
+Income Quintile,Total,Halvah,2.1,False,False
+Income Quintile,1,"Handkerchiefs (paper, linen)",6.7,False,False
+Income Quintile,2,"Handkerchiefs (paper, linen)",7.5,False,False
+Income Quintile,3,"Handkerchiefs (paper, linen)",6.6,False,False
+Income Quintile,4,"Handkerchiefs (paper, linen)",5.3,False,False
+Income Quintile,5,"Handkerchiefs (paper, linen)",5.8,False,False
+Income Quintile,Total,"Handkerchiefs (paper, linen)",6.4,False,False
+Income Quintile,1,Hard cheese,34.1,False,False
+Income Quintile,2,Hard cheese,44.7,False,False
+Income Quintile,3,Hard cheese,54.7,False,False
+Income Quintile,4,Hard cheese,59.0,False,False
+Income Quintile,5,Hard cheese,69.6,False,False
+Income Quintile,Total,Hard cheese,52.4,False,False
+Income Quintile,1,"Hats, hoods, scarves, and kerchiefs",5.3,False,False
+Income Quintile,Total,"Hats, hoods, scarves, and kerchiefs",4.2,False,False
+Income Quintile,1,Health funds complementary insurance,145.6,False,False
+Income Quintile,2,Health funds complementary insurance,210.9,False,False
+Income Quintile,3,Health funds complementary insurance,254.1,False,False
+Income Quintile,4,Health funds complementary insurance,316.9,False,False
+Income Quintile,5,Health funds complementary insurance,364.5,False,False
+Income Quintile,Total,Health funds complementary insurance,258.4,False,False
+Income Quintile,1,Health insurance,186.7,False,False
+Income Quintile,2,Health insurance,295.3,False,False
+Income Quintile,3,Health insurance,411.1,False,False
+Income Quintile,4,Health insurance,567.5,False,False
+Income Quintile,5,Health insurance,733.0,False,False
+Income Quintile,Total,Health insurance,438.8,False,False
+Income Quintile,1,Health insurance in insurance company,36.7,False,False
+Income Quintile,2,Health insurance in insurance company,74.7,False,False
+Income Quintile,3,Health insurance in insurance company,135.6,False,False
+Income Quintile,4,Health insurance in insurance company,203.8,False,False
+Income Quintile,5,Health insurance in insurance company,293.9,False,False
+Income Quintile,Total,Health insurance in insurance company,149.0,False,False
+Income Quintile,1,Health(25),634.7,False,False
+Income Quintile,2,Health(25),849.6,False,False
+Income Quintile,3,Health(25),1090.2,False,False
+Income Quintile,4,Health(25),1341.9,False,False
+Income Quintile,5,Health(25),1747.6,False,False
+Income Quintile,Total,Health(25),1132.9,False,False
+Income Quintile,1,Healthy snacks,2.4,False,False
+Income Quintile,2,Healthy snacks,5.3,False,False
+Income Quintile,3,Healthy snacks,7.7,False,False
+Income Quintile,4,Healthy snacks,7.6,False,False
+Income Quintile,5,Healthy snacks,9.9,False,False
+Income Quintile,Total,Healthy snacks,6.6,False,False
+Income Quintile,Total,Heating expenses (incl. kerosene),10.3,False,False
+Income Quintile,1,High Yeshiva,25.4,False,False
+Income Quintile,2,High Yeshiva,14.9,False,False
+Income Quintile,3,High Yeshiva,10.5,False,False
+Income Quintile,Total,High Yeshiva,10.9,False,False
+Income Quintile,1,"Hobbies, sports and camping equipment",177.3,False,False
+Income Quintile,2,"Hobbies, sports and camping equipment",167.5,False,False
+Income Quintile,3,"Hobbies, sports and camping equipment",165.1,False,False
+Income Quintile,4,"Hobbies, sports and camping equipment",234.5,False,False
+Income Quintile,5,"Hobbies, sports and camping equipment",226.3,False,False
+Income Quintile,Total,"Hobbies, sports and camping equipment",194.2,False,False
+Income Quintile,1,Home day care up to age 3,44.4,False,False
+Income Quintile,2,Home day care up to age 3,26.2,False,False
+Income Quintile,Total,Home day care up to age 3,29.4,False,False
+Income Quintile,1,Home decorations,43.6,False,False
+Income Quintile,2,Home decorations,36.4,False,False
+Income Quintile,3,Home decorations,54.8,False,False
+Income Quintile,4,Home decorations,80.1,False,False
+Income Quintile,5,Home decorations,106.4,False,False
+Income Quintile,Total,Home decorations,64.2,False,False
+Income Quintile,5,Home electrical equipment insurance,4.3,False,False
+Income Quintile,Total,Home electrical equipment insurance,2.4,False,False
+Income Quintile,1,Honey,3.7,False,False
+Income Quintile,2,Honey,4.7,False,False
+Income Quintile,3,Honey,5.1,False,False
+Income Quintile,4,Honey,4.0,False,False
+Income Quintile,5,Honey,4.5,False,False
+Income Quintile,Total,Honey,4.4,False,False
+Income Quintile,1,Hot dogs,8.8,False,False
+Income Quintile,2,Hot dogs,13.4,False,False
+Income Quintile,3,Hot dogs,11.4,False,False
+Income Quintile,4,Hot dogs,11.2,False,False
+Income Quintile,5,Hot dogs,9.0,False,False
+Income Quintile,Total,Hot dogs,10.8,False,False
+Income Quintile,1,Hot peppers,1.2,False,False
+Income Quintile,2,Hot peppers,1.8,False,False
+Income Quintile,3,Hot peppers,1.6,False,False
+Income Quintile,4,Hot peppers,2.1,False,False
+Income Quintile,5,Hot peppers,1.8,False,False
+Income Quintile,Total,Hot peppers,1.7,False,False
+Income Quintile,1,Hotels,22.4,False,False
+Income Quintile,2,Hotels,58.8,False,False
+Income Quintile,3,Hotels,99.9,False,False
+Income Quintile,4,Hotels,116.2,False,False
+Income Quintile,5,Hotels,206.0,False,False
+Income Quintile,Total,Hotels,100.7,False,False
+Income Quintile,1,Household electrical equipment,169.5,False,False
+Income Quintile,2,Household electrical equipment,207.7,False,False
+Income Quintile,3,Household electrical equipment,190.7,False,False
+Income Quintile,4,Household electrical equipment,254.4,False,False
+Income Quintile,5,Household electrical equipment,313.0,False,False
+Income Quintile,Total,Household electrical equipment,227.1,False,False
+Income Quintile,1,Households in population (thousands),583.9,False,False
+Income Quintile,2,Households in population (thousands),584.1,False,False
+Income Quintile,3,Households in population (thousands),584.2,False,False
+Income Quintile,4,Households in population (thousands),583.9,False,False
+Income Quintile,5,Households in population (thousands),584.5,False,False
+Income Quintile,Total,Households in population (thousands),2920.8,False,False
+Income Quintile,1,Households in sample,1052.0,False,False
+Income Quintile,2,Households in sample,1116.0,False,False
+Income Quintile,3,Households in sample,1061.0,False,False
+Income Quintile,4,Households in sample,1087.0,False,False
+Income Quintile,5,Households in sample,1162.0,False,False
+Income Quintile,Total,Households in sample,5478.0,False,False
+Income Quintile,1,Housing,2782.6,False,False
+Income Quintile,2,Housing,3535.7,False,False
+Income Quintile,3,Housing,4174.1,False,False
+Income Quintile,4,Housing,4947.7,False,False
+Income Quintile,5,Housing,6369.0,False,False
+Income Quintile,Total,Housing,4362.1,False,False
+Income Quintile,1,Humus salad ,13.5,False,False
+Income Quintile,2,Humus salad ,9.8,False,False
+Income Quintile,3,Humus salad ,8.5,False,False
+Income Quintile,4,Humus salad ,9.4,False,False
+Income Quintile,5,Humus salad ,9.7,False,False
+Income Quintile,Total,Humus salad ,10.2,False,False
+Income Quintile,Total,Hygienic masks – fabric and paper,1.0,False,False
+Income Quintile,1,Ice cream and popsicles,19.0,False,False
+Income Quintile,2,Ice cream and popsicles,19.1,False,False
+Income Quintile,3,Ice cream and popsicles,18.1,False,False
+Income Quintile,4,Ice cream and popsicles,26.7,False,False
+Income Quintile,5,Ice cream and popsicles,31.9,False,False
+Income Quintile,Total,Ice cream and popsicles,23.0,False,False
+Income Quintile,2,Imputed expenses on unowned car ,18.0,False,False
+Income Quintile,3,Imputed expenses on unowned car ,86.7,False,False
+Income Quintile,4,Imputed expenses on unowned car ,184.5,False,False
+Income Quintile,5,Imputed expenses on unowned car ,325.6,False,False
+Income Quintile,Total,Imputed expenses on unowned car ,127.8,False,False
+Income Quintile,1,Income tax,83.0,False,False
+Income Quintile,2,Income tax,356.0,False,False
+Income Quintile,3,Income tax,1083.0,False,False
+Income Quintile,4,Income tax,2516.0,False,False
+Income Quintile,5,Income tax,7852.0,False,False
+Income Quintile,Total,Income tax,2379.0,False,False
+Income Quintile,1,Instant coffee,10.4,False,False
+Income Quintile,2,Instant coffee,9.6,False,False
+Income Quintile,3,Instant coffee,14.5,False,False
+Income Quintile,4,Instant coffee,10.0,False,False
+Income Quintile,5,Instant coffee,14.3,False,False
+Income Quintile,Total,Instant coffee,11.8,False,False
+Income Quintile,1,Instant meals (not frozen),2.1,False,False
+Income Quintile,3,Instant meals (not frozen),2.8,False,False
+Income Quintile,4,Instant meals (not frozen),3.4,False,False
+Income Quintile,5,Instant meals (not frozen),2.8,False,False
+Income Quintile,Total,Instant meals (not frozen),3.2,False,False
+Income Quintile,2,Insurance for travel abroad,3.9,False,False
+Income Quintile,3,Insurance for travel abroad,3.8,False,False
+Income Quintile,4,Insurance for travel abroad,11.0,False,False
+Income Quintile,5,Insurance for travel abroad,22.5,False,False
+Income Quintile,Total,Insurance for travel abroad,8.4,False,False
+Income Quintile,1,Insurance on dwelling and contents,8.8,False,False
+Income Quintile,2,Insurance on dwelling and contents,22.1,False,False
+Income Quintile,3,Insurance on dwelling and contents,50.1,False,False
+Income Quintile,4,Insurance on dwelling and contents,92.8,False,False
+Income Quintile,5,Insurance on dwelling and contents,153.6,False,False
+Income Quintile,Total,Insurance on dwelling and contents,65.5,False,False
+Income Quintile,1,Internet subscription ,57.0,False,False
+Income Quintile,2,Internet subscription ,71.4,False,False
+Income Quintile,3,Internet subscription ,86.2,False,False
+Income Quintile,4,Internet subscription ,90.3,False,False
+Income Quintile,5,Internet subscription ,100.0,False,False
+Income Quintile,Total,Internet subscription ,81.0,False,False
+Income Quintile,1,"Iron, vacuum cleaner, dryer, and washing machine",25.2,False,False
+Income Quintile,2,"Iron, vacuum cleaner, dryer, and washing machine",46.1,False,False
+Income Quintile,3,"Iron, vacuum cleaner, dryer, and washing machine",44.6,False,False
+Income Quintile,4,"Iron, vacuum cleaner, dryer, and washing machine",41.8,False,False
+Income Quintile,5,"Iron, vacuum cleaner, dryer, and washing machine",52.3,False,False
+Income Quintile,Total,"Iron, vacuum cleaner, dryer, and washing machine",42.0,False,False
+Income Quintile,2,Jam and confiture,2.0,False,False
+Income Quintile,3,Jam and confiture,2.3,False,False
+Income Quintile,4,Jam and confiture,3.2,False,False
+Income Quintile,5,Jam and confiture,2.7,False,False
+Income Quintile,Total,Jam and confiture,2.3,False,False
+Income Quintile,1,Jewellery and watches,44.2,False,False
+Income Quintile,2,Jewellery and watches,63.0,False,False
+Income Quintile,3,Jewellery and watches,92.9,False,False
+Income Quintile,5,Jewellery and watches,128.1,False,False
+Income Quintile,Total,Jewellery and watches,87.4,False,False
+Income Quintile,1,Ketchup ,4.0,False,False
+Income Quintile,2,Ketchup ,3.5,False,False
+Income Quintile,3,Ketchup ,3.9,False,False
+Income Quintile,4,Ketchup ,3.2,False,False
+Income Quintile,5,Ketchup ,2.1,False,False
+Income Quintile,Total,Ketchup ,3.3,False,False
+Income Quintile,1,Kitchen and dining room furniture(21),38.2,False,False
+Income Quintile,4,Kitchen and dining room furniture(21),24.8,False,False
+Income Quintile,5,Kitchen and dining room furniture(21),18.3,False,False
+Income Quintile,Total,Kitchen and dining room furniture(21),23.2,False,False
+Income Quintile,1,Kiwi ,3.0,False,False
+Income Quintile,2,Kiwi ,2.0,False,False
+Income Quintile,4,Kiwi ,1.6,False,False
+Income Quintile,5,Kiwi ,3.6,False,False
+Income Quintile,Total,Kiwi ,2.3,False,False
+Income Quintile,1,Kohlrabi ,0.8,False,False
+Income Quintile,2,Kohlrabi ,1.5,False,False
+Income Quintile,3,Kohlrabi ,1.3,False,False
+Income Quintile,4,Kohlrabi ,1.7,False,False
+Income Quintile,5,Kohlrabi ,2.2,False,False
+Income Quintile,Total,Kohlrabi ,1.5,False,False
+Income Quintile,Total,Lab tests and x-rays,5.5,False,False
+Income Quintile,1,Lamb and goat meat,98.8,False,False
+Income Quintile,2,Lamb and goat meat,49.0,False,False
+Income Quintile,Total,Lamb and goat meat,42.3,False,False
+Income Quintile,3,"Lamps, chandeliers, and lamp shades",5.1,False,False
+Income Quintile,4,"Lamps, chandeliers, and lamp shades",11.0,False,False
+Income Quintile,Total,"Lamps, chandeliers, and lamp shades",7.8,False,False
+Income Quintile,Total,Language courses,7.0,False,False
+Income Quintile,1,Laundry detergent,29.5,False,False
+Income Quintile,2,Laundry detergent,24.1,False,False
+Income Quintile,3,Laundry detergent,21.2,False,False
+Income Quintile,4,Laundry detergent,14.7,False,False
+Income Quintile,5,Laundry detergent,14.5,False,False
+Income Quintile,Total,Laundry detergent,20.8,False,False
+Income Quintile,1,Legal and other services,172.7,False,False
+Income Quintile,2,Legal and other services,117.8,False,False
+Income Quintile,3,Legal and other services,84.1,False,False
+Income Quintile,4,Legal and other services,127.7,False,False
+Income Quintile,Total,Legal and other services,211.4,False,False
+Income Quintile,1,Lemons,7.1,False,False
+Income Quintile,2,Lemons,6.3,False,False
+Income Quintile,3,Lemons,5.9,False,False
+Income Quintile,4,Lemons,6.2,False,False
+Income Quintile,5,Lemons,7.6,False,False
+Income Quintile,Total,Lemons,6.6,False,False
+Income Quintile,1,Lettuce,5.0,False,False
+Income Quintile,2,Lettuce,7.1,False,False
+Income Quintile,3,Lettuce,7.5,False,False
+Income Quintile,4,Lettuce,10.1,False,False
+Income Quintile,5,Lettuce,13.5,False,False
+Income Quintile,Total,Lettuce,8.6,False,False
+Income Quintile,1,Living room furniture,85.2,False,False
+Income Quintile,2,Living room furniture,63.1,False,False
+Income Quintile,3,Living room furniture,66.7,False,False
+Income Quintile,4,Living room furniture,124.1,False,False
+Income Quintile,5,Living room furniture,143.6,False,False
+Income Quintile,Total,Living room furniture,96.5,False,False
+Income Quintile,3,Long-term care insurance ,14.7,False,False
+Income Quintile,4,Long-term care insurance ,36.7,False,False
+Income Quintile,5,Long-term care insurance ,63.7,False,False
+Income Quintile,Total,Long-term care insurance ,25.1,False,False
+Income Quintile,Total,Lotteries,4.8,False,False
+Income Quintile,1,Lower secondary schools,22.4,False,False
+Income Quintile,2,Lower secondary schools,15.7,False,False
+Income Quintile,3,Lower secondary schools,25.1,False,False
+Income Quintile,4,Lower secondary schools,22.2,False,False
+Income Quintile,5,Lower secondary schools,20.8,False,False
+Income Quintile,Total,Lower secondary schools,21.2,False,False
+Income Quintile,1,Maintenance and renovation,136.2,False,False
+Income Quintile,2,Maintenance and renovation,192.5,False,False
+Income Quintile,3,Maintenance and renovation,210.5,False,False
+Income Quintile,4,Maintenance and renovation,279.2,False,False
+Income Quintile,5,Maintenance and renovation,414.6,False,False
+Income Quintile,Total,Maintenance and renovation,246.7,False,False
+Income Quintile,Total,Malt beer,0.8,False,False
+Income Quintile,3,Mangos,2.8,False,False
+Income Quintile,4,Mangos,3.5,False,False
+Income Quintile,5,Mangos,3.6,False,False
+Income Quintile,Total,Mangos,2.9,False,False
+Income Quintile,1,Margarine,1.9,False,False
+Income Quintile,2,Margarine,1.7,False,False
+Income Quintile,3,Margarine,1.4,False,False
+Income Quintile,4,Margarine,1.8,False,False
+Income Quintile,5,Margarine,1.3,False,False
+Income Quintile,Total,Margarine,1.6,False,False
+Income Quintile,2,Martial arts class,8.5,False,False
+Income Quintile,3,Martial arts class,11.3,False,False
+Income Quintile,4,Martial arts class,9.6,False,False
+Income Quintile,5,Martial arts class,12.7,False,False
+Income Quintile,Total,Martial arts class,8.9,False,False
+Income Quintile,1,Mayonnaise,4.2,False,False
+Income Quintile,2,Mayonnaise,5.4,False,False
+Income Quintile,3,Mayonnaise,5.9,False,False
+Income Quintile,4,Mayonnaise,6.0,False,False
+Income Quintile,5,Mayonnaise,5.5,False,False
+Income Quintile,Total,Mayonnaise,5.4,False,False
+Income Quintile,1,Meals away from home,209.7,False,False
+Income Quintile,2,Meals away from home,326.0,False,False
+Income Quintile,3,Meals away from home,422.9,False,False
+Income Quintile,4,Meals away from home,615.1,False,False
+Income Quintile,5,Meals away from home,920.8,False,False
+Income Quintile,Total,Meals away from home,499.0,False,False
+Income Quintile,1,Meat and poultry,582.0,False,False
+Income Quintile,2,Meat and poultry,504.4,False,False
+Income Quintile,3,Meat and poultry,518.7,False,False
+Income Quintile,4,Meat and poultry,456.7,False,False
+Income Quintile,5,Meat and poultry,392.6,False,False
+Income Quintile,Total,Meat and poultry,490.9,False,False
+Income Quintile,1,Meat and poultry products – frozen,12.2,False,False
+Income Quintile,2,Meat and poultry products – frozen,11.1,False,False
+Income Quintile,3,Meat and poultry products – frozen,18.9,False,False
+Income Quintile,4,Meat and poultry products – frozen,11.8,False,False
+Income Quintile,5,Meat and poultry products – frozen,15.0,False,False
+Income Quintile,Total,Meat and poultry products – frozen,13.8,False,False
+Income Quintile,1,"Meat roll, shwarma, chicken and turkey pieces",16.5,False,False
+Income Quintile,2,"Meat roll, shwarma, chicken and turkey pieces",25.2,False,False
+Income Quintile,3,"Meat roll, shwarma, chicken and turkey pieces",32.2,False,False
+Income Quintile,4,"Meat roll, shwarma, chicken and turkey pieces",31.7,False,False
+Income Quintile,5,"Meat roll, shwarma, chicken and turkey pieces",32.8,False,False
+Income Quintile,Total,"Meat roll, shwarma, chicken and turkey pieces",27.7,False,False
+Income Quintile,1,Meat substitutes and vegetarian products,7.1,False,False
+Income Quintile,2,Meat substitutes and vegetarian products,6.4,False,False
+Income Quintile,3,Meat substitutes and vegetarian products,7.8,False,False
+Income Quintile,4,Meat substitutes and vegetarian products,13.3,False,False
+Income Quintile,5,Meat substitutes and vegetarian products,12.7,False,False
+Income Quintile,Total,Meat substitutes and vegetarian products,9.5,False,False
+Income Quintile,1,Median of  gross money income per household,7427.0,False,False
+Income Quintile,2,Median of  gross money income per household,12293.0,False,False
+Income Quintile,3,Median of  gross money income per household,17867.0,False,False
+Income Quintile,4,Median of  gross money income per household,24437.0,False,False
+Income Quintile,5,Median of  gross money income per household,37960.0,False,False
+Income Quintile,Total,Median of  gross money income per household,16470.0,False,False
+Income Quintile,1,Medications from pharmacies,43.7,False,False
+Income Quintile,2,Medications from pharmacies,54.7,False,False
+Income Quintile,3,Medications from pharmacies,40.0,False,False
+Income Quintile,4,Medications from pharmacies,26.0,False,False
+Income Quintile,5,Medications from pharmacies,21.4,False,False
+Income Quintile,Total,Medications from pharmacies,37.1,False,False
+Income Quintile,1,Medications n.e.c.,24.9,False,False
+Income Quintile,2,Medications n.e.c.,25.8,False,False
+Income Quintile,3,Medications n.e.c.,21.5,False,False
+Income Quintile,4,Medications n.e.c.,35.0,False,False
+Income Quintile,5,Medications n.e.c.,49.6,False,False
+Income Quintile,Total,Medications n.e.c.,31.4,False,False
+Income Quintile,1,Medications through health funds,71.7,False,False
+Income Quintile,2,Medications through health funds,84.8,False,False
+Income Quintile,3,Medications through health funds,95.7,False,False
+Income Quintile,4,Medications through health funds,66.7,False,False
+Income Quintile,5,Medications through health funds,93.7,False,False
+Income Quintile,Total,Medications through health funds,82.5,False,False
+Income Quintile,1,"Membership dues to Histadrut, professional organization, ",2.6,False,False
+Income Quintile,2,"Membership dues to Histadrut, professional organization, ",5.2,False,False
+Income Quintile,3,"Membership dues to Histadrut, professional organization, ",9.6,False,False
+Income Quintile,4,"Membership dues to Histadrut, professional organization, ",11.4,False,False
+Income Quintile,5,"Membership dues to Histadrut, professional organization, ",23.6,False,False
+Income Quintile,Total,"Membership dues to Histadrut, professional organization, ",10.5,False,False
+Income Quintile,1,"Membership in a social club, health club, or swimming pool",20.8,False,False
+Income Quintile,2,"Membership in a social club, health club, or swimming pool",38.4,False,False
+Income Quintile,3,"Membership in a social club, health club, or swimming pool",51.9,False,False
+Income Quintile,4,"Membership in a social club, health club, or swimming pool",87.6,False,False
+Income Quintile,5,"Membership in a social club, health club, or swimming pool",96.5,False,False
+Income Quintile,Total,"Membership in a social club, health club, or swimming pool",59.0,False,False
+Income Quintile,1,Men's and children's haircuts(32),9.1,False,False
+Income Quintile,Total,Men's and children's haircuts(32),7.2,False,False
+Income Quintile,1,Men's outerwear,114.1,False,False
+Income Quintile,2,Men's outerwear,117.2,False,False
+Income Quintile,3,Men's outerwear,121.5,False,False
+Income Quintile,4,Men's outerwear,119.5,False,False
+Income Quintile,5,Men's outerwear,169.9,False,False
+Income Quintile,Total,Men's outerwear,128.4,False,False
+Income Quintile,1,Men's shoes,13.6,False,False
+Income Quintile,3,Men's shoes,17.8,False,False
+Income Quintile,4,Men's shoes,19.8,False,False
+Income Quintile,5,Men's shoes,33.7,False,False
+Income Quintile,Total,Men's shoes,21.4,False,False
+Income Quintile,1,Men's sport shoes,29.0,False,False
+Income Quintile,2,Men's sport shoes,22.3,False,False
+Income Quintile,3,Men's sport shoes,27.2,False,False
+Income Quintile,4,Men's sport shoes,35.0,False,False
+Income Quintile,5,Men's sport shoes,36.9,False,False
+Income Quintile,Total,Men's sport shoes,30.1,False,False
+Income Quintile,1,Men's suit and overcoat,23.6,False,False
+Income Quintile,2,Men's suit and overcoat,20.6,False,False
+Income Quintile,4,Men's suit and overcoat,13.8,False,False
+Income Quintile,Total,Men's suit and overcoat,22.8,False,False
+Income Quintile,1,Men's track suit,7.8,False,False
+Income Quintile,Total,Men's track suit,6.8,False,False
+Income Quintile,Total,Men's underwear,3.2,False,False
+Income Quintile,1,Milk and cheese delicacies,26.3,False,False
+Income Quintile,2,Milk and cheese delicacies,32.3,False,False
+Income Quintile,3,Milk and cheese delicacies,36.4,False,False
+Income Quintile,4,Milk and cheese delicacies,32.9,False,False
+Income Quintile,5,Milk and cheese delicacies,27.3,False,False
+Income Quintile,Total,Milk and cheese delicacies,31.0,False,False
+Income Quintile,1,"Milk, milk products, and eggs",301.8,False,False
+Income Quintile,2,"Milk, milk products, and eggs",329.6,False,False
+Income Quintile,3,"Milk, milk products, and eggs",352.9,False,False
+Income Quintile,4,"Milk, milk products, and eggs",362.6,False,False
+Income Quintile,5,"Milk, milk products, and eggs",387.4,False,False
+Income Quintile,Total,"Milk, milk products, and eggs",346.9,False,False
+Income Quintile,1,Mineral water,15.8,False,False
+Income Quintile,2,Mineral water,16.8,False,False
+Income Quintile,3,Mineral water,12.2,False,False
+Income Quintile,4,Mineral water,16.7,False,False
+Income Quintile,5,Mineral water,16.8,False,False
+Income Quintile,Total,Mineral water,15.7,False,False
+Income Quintile,1,Mint ,0.9,False,False
+Income Quintile,2,Mint ,1.3,False,False
+Income Quintile,3,Mint ,0.9,False,False
+Income Quintile,4,Mint ,1.6,False,False
+Income Quintile,5,Mint ,1.2,False,False
+Income Quintile,Total,Mint ,1.2,False,False
+Income Quintile,1,Miscellaneous clothing articles,8.0,False,False
+Income Quintile,2,Miscellaneous clothing articles,10.0,False,False
+Income Quintile,Total,Miscellaneous clothing articles,14.4,False,False
+Income Quintile,1,Miscellaneous food products,448.5,False,False
+Income Quintile,2,Miscellaneous food products,407.7,False,False
+Income Quintile,3,Miscellaneous food products,416.1,False,False
+Income Quintile,4,Miscellaneous food products,405.3,False,False
+Income Quintile,5,Miscellaneous food products,438.1,False,False
+Income Quintile,Total,Miscellaneous food products,423.1,False,False
+Income Quintile,1,Miscellaneous goods and services,735.1,False,False
+Income Quintile,2,Miscellaneous goods and services,703.5,False,False
+Income Quintile,3,Miscellaneous goods and services,735.6,False,False
+Income Quintile,4,Miscellaneous goods and services,774.2,False,False
+Income Quintile,5,Miscellaneous goods and services,1349.2,False,False
+Income Quintile,Total,Miscellaneous goods and services,859.6,False,False
+Income Quintile,1,Miscellaneous household articles,142.8,False,False
+Income Quintile,2,Miscellaneous household articles,140.0,False,False
+Income Quintile,3,Miscellaneous household articles,118.3,False,False
+Income Quintile,4,Miscellaneous household articles,112.0,False,False
+Income Quintile,5,Miscellaneous household articles,131.7,False,False
+Income Quintile,Total,Miscellaneous household articles,129.0,False,False
+Income Quintile,2,Mobile phone for persons outside the household,3.1,False,False
+Income Quintile,3,Mobile phone for persons outside the household,2.1,False,False
+Income Quintile,4,Mobile phone for persons outside the household,2.2,False,False
+Income Quintile,5,Mobile phone for persons outside the household,4.7,False,False
+Income Quintile,Total,Mobile phone for persons outside the household,2.9,False,False
+Income Quintile,1,"Mobile phone, current account",98.1,False,False
+Income Quintile,2,"Mobile phone, current account",96.6,False,False
+Income Quintile,3,"Mobile phone, current account",101.2,False,False
+Income Quintile,4,"Mobile phone, current account",97.0,False,False
+Income Quintile,5,"Mobile phone, current account",98.8,False,False
+Income Quintile,Total,"Mobile phone, current account",98.3,False,False
+Income Quintile,1,"Mobile phone, purchase",38.0,False,False
+Income Quintile,2,"Mobile phone, purchase",57.2,False,False
+Income Quintile,3,"Mobile phone, purchase",70.9,False,False
+Income Quintile,4,"Mobile phone, purchase",89.9,False,False
+Income Quintile,5,"Mobile phone, purchase",94.5,False,False
+Income Quintile,Total,"Mobile phone, purchase",70.1,False,False
+Income Quintile,1,Money expenditure per household,10979.0,False,True
+Income Quintile,2,Money expenditure per household,12078.0,False,True
+Income Quintile,3,Money expenditure per household,13681.0,False,True
+Income Quintile,4,Money expenditure per household,15813.0,False,True
+Income Quintile,5,Money expenditure per household,20076.0,False,True
+Income Quintile,Total,Money expenditure per household,14526.0,False,True
+Income Quintile,1,Money expenditure per person ,2685.0,False,False
+Income Quintile,2,Money expenditure per person ,3774.0,False,False
+Income Quintile,3,Money expenditure per person ,4448.0,False,False
+Income Quintile,4,Money expenditure per person ,5396.0,False,False
+Income Quintile,5,Money expenditure per person ,7829.0,False,False
+Income Quintile,Total,Money expenditure per person ,4580.0,False,False
+Income Quintile,1,Monthly rent,1284.2,False,False
+Income Quintile,2,Monthly rent,1312.5,False,False
+Income Quintile,3,Monthly rent,1346.1,False,False
+Income Quintile,4,Monthly rent,1089.4,False,False
+Income Quintile,5,Monthly rent,1269.2,False,False
+Income Quintile,Total,Monthly rent,1260.3,False,False
+Income Quintile,1,Mortgage payments (principal+interest),464.5,False,False
+Income Quintile,2,Mortgage payments (principal+interest),776.7,False,False
+Income Quintile,3,Mortgage payments (principal+interest),1099.4,False,False
+Income Quintile,4,Mortgage payments (principal+interest),1483.2,False,False
+Income Quintile,5,Mortgage payments (principal+interest),2283.6,False,False
+Income Quintile,Total,Mortgage payments (principal+interest),1221.7,False,False
+Income Quintile,5,Movie tickets and cultural events,48.3,False,False
+Income Quintile,Total,Movie tickets and cultural events,25.1,False,False
+Income Quintile,1,Moving of dwelling's content,8.9,False,False
+Income Quintile,2,Moving of dwelling's content,10.2,False,False
+Income Quintile,4,Moving of dwelling's content,11.0,False,False
+Income Quintile,5,Moving of dwelling's content,11.2,False,False
+Income Quintile,Total,Moving of dwelling's content,9.1,False,False
+Income Quintile,3,Multi-use bags,0.6,False,False
+Income Quintile,5,Multi-use bags,1.2,False,False
+Income Quintile,Total,Multi-use bags,0.8,False,False
+Income Quintile,1,Municipal  property taxes ,250.5,False,False
+Income Quintile,2,Municipal  property taxes ,318.7,False,False
+Income Quintile,3,Municipal  property taxes ,395.9,False,False
+Income Quintile,4,Municipal  property taxes ,489.1,False,False
+Income Quintile,5,Municipal  property taxes ,593.9,False,False
+Income Quintile,Total,Municipal  property taxes ,409.6,False,False
+Income Quintile,1,Municipal pre-compulsory or compulsory kindergarten,24.5,False,False
+Income Quintile,2,Municipal pre-compulsory or compulsory kindergarten,26.1,False,False
+Income Quintile,4,Municipal pre-compulsory or compulsory kindergarten,15.9,False,False
+Income Quintile,Total,Municipal pre-compulsory or compulsory kindergarten,20.9,False,False
+Income Quintile,1,Municipal property taxes,260.8,False,False
+Income Quintile,2,Municipal property taxes,333.0,False,False
+Income Quintile,3,Municipal property taxes,423.5,False,False
+Income Quintile,4,Municipal property taxes,536.6,False,False
+Income Quintile,5,Municipal property taxes,637.3,False,False
+Income Quintile,Total,Municipal property taxes,438.2,False,False
+Income Quintile,1,Municipal taxes(20),5.4,False,False
+Income Quintile,2,Municipal taxes(20),9.6,False,False
+Income Quintile,3,Municipal taxes(20),22.8,False,False
+Income Quintile,4,Municipal taxes(20),42.1,False,False
+Income Quintile,5,Municipal taxes(20),37.4,False,False
+Income Quintile,Total,Municipal taxes(20),23.4,False,False
+Income Quintile,2,Museum and exhibition fees,1.1,False,False
+Income Quintile,3,Museum and exhibition fees,1.7,False,False
+Income Quintile,4,Museum and exhibition fees,3.0,False,False
+Income Quintile,5,Museum and exhibition fees,4.1,False,False
+Income Quintile,Total,Museum and exhibition fees,2.3,False,False
+Income Quintile,2,Music lessons and courses ,10.9,False,False
+Income Quintile,4,Music lessons and courses ,18.0,False,False
+Income Quintile,5,Music lessons and courses ,20.0,False,False
+Income Quintile,Total,Music lessons and courses ,13.6,False,False
+Income Quintile,Total,Musical instruments ,5.5,False,False
+Income Quintile,5,Mustard ,1.6,False,False
+Income Quintile,Total,Mustard ,0.9,False,False
+Income Quintile,1,"Napkins (cloth and paper), disposable tablecloths",8.7,False,False
+Income Quintile,2,"Napkins (cloth and paper), disposable tablecloths",8.8,False,False
+Income Quintile,3,"Napkins (cloth and paper), disposable tablecloths",10.8,False,False
+Income Quintile,4,"Napkins (cloth and paper), disposable tablecloths",11.8,False,False
+Income Quintile,5,"Napkins (cloth and paper), disposable tablecloths",12.9,False,False
+Income Quintile,Total,"Napkins (cloth and paper), disposable tablecloths",10.6,False,False
+Income Quintile,1,National health insurance,257.0,False,False
+Income Quintile,2,National health insurance,376.0,False,False
+Income Quintile,3,National health insurance,592.0,False,False
+Income Quintile,4,National health insurance,848.0,False,False
+Income Quintile,5,National health insurance,1276.0,False,False
+Income Quintile,Total,National health insurance,670.0,False,False
+Income Quintile,1,National insurance payments,143.0,False,False
+Income Quintile,2,National insurance payments,290.0,False,False
+Income Quintile,3,National insurance payments,584.0,False,False
+Income Quintile,4,National insurance payments,978.0,False,False
+Income Quintile,5,National insurance payments,1639.0,False,False
+Income Quintile,Total,National insurance payments,727.0,False,False
+Income Quintile,2,Necklaces(33),13.3,False,False
+Income Quintile,5,Necklaces(33),12.8,False,False
+Income Quintile,Total,Necklaces(33),22.8,False,False
+Income Quintile,1,Net income per household,9037.0,False,False
+Income Quintile,2,Net income per household,13968.0,False,False
+Income Quintile,3,Net income per household,19338.0,False,False
+Income Quintile,4,Net income per household,25649.0,False,False
+Income Quintile,5,Net income per household,38717.0,False,False
+Income Quintile,Total,Net income per household,21345.0,False,False
+Income Quintile,1,Net income per standard person,2890.0,False,False
+Income Quintile,2,Net income per standard person,5264.0,False,False
+Income Quintile,3,Net income per standard person,7448.0,False,False
+Income Quintile,4,Net income per standard person,10162.0,False,False
+Income Quintile,5,Net income per standard person,16824.0,False,False
+Income Quintile,Total,Net income per standard person,8084.0,False,False
+Income Quintile,1,Net money income per household,7510.0,True,False
+Income Quintile,2,Net money income per household,11791.0,True,False
+Income Quintile,3,Net money income per household,16506.0,True,False
+Income Quintile,4,Net money income per household,21775.0,True,False
+Income Quintile,5,Net money income per household,33591.0,True,False
+Income Quintile,Total,Net money income per household,18237.0,True,False
+Income Quintile,1,Net money income per person ,1837.0,False,False
+Income Quintile,2,Net money income per person ,3684.0,False,False
+Income Quintile,3,Net money income per person ,5367.0,False,False
+Income Quintile,4,Net money income per person ,7431.0,False,False
+Income Quintile,5,Net money income per person ,13100.0,False,False
+Income Quintile,Total,Net money income per person ,5750.0,False,False
+Income Quintile,1,"Newspapers, books, and stationery",21.8,False,False
+Income Quintile,2,"Newspapers, books, and stationery",15.5,False,False
+Income Quintile,4,"Newspapers, books, and stationery",33.1,False,False
+Income Quintile,5,"Newspapers, books, and stationery",79.4,False,False
+Income Quintile,Total,"Newspapers, books, and stationery",39.4,False,False
+Income Quintile,1,Non-electrical equipment,97.8,False,False
+Income Quintile,2,Non-electrical equipment,99.8,False,False
+Income Quintile,3,Non-electrical equipment,86.3,False,False
+Income Quintile,4,Non-electrical equipment,96.4,False,False
+Income Quintile,5,Non-electrical equipment,98.4,False,False
+Income Quintile,Total,Non-electrical equipment,95.7,False,False
+Income Quintile,2,Non-prescription vitamins ,17.3,False,False
+Income Quintile,3,Non-prescription vitamins ,13.6,False,False
+Income Quintile,4,Non-prescription vitamins ,21.9,False,False
+Income Quintile,5,Non-prescription vitamins ,21.2,False,False
+Income Quintile,Total,Non-prescription vitamins ,16.2,False,False
+Income Quintile,1,Noodles and pasta,15.5,False,False
+Income Quintile,2,Noodles and pasta,14.3,False,False
+Income Quintile,3,Noodles and pasta,15.4,False,False
+Income Quintile,4,Noodles and pasta,16.2,False,False
+Income Quintile,5,Noodles and pasta,16.9,False,False
+Income Quintile,Total,Noodles and pasta,15.7,False,False
+Income Quintile,5,Nursing caregiver at home,169.2,False,False
+Income Quintile,Total,Nursing caregiver at home,79.3,False,False
+Income Quintile,1,Nuts,6.8,False,False
+Income Quintile,2,Nuts,10.7,False,False
+Income Quintile,3,Nuts,10.7,False,False
+Income Quintile,4,Nuts,16.2,False,False
+Income Quintile,5,Nuts,18.4,False,False
+Income Quintile,Total,Nuts,12.6,False,False
+Income Quintile,2,Oatmeal,2.3,False,False
+Income Quintile,3,Oatmeal,2.1,False,False
+Income Quintile,4,Oatmeal,2.6,False,False
+Income Quintile,5,Oatmeal,2.9,False,False
+Income Quintile,Total,Oatmeal,2.2,False,False
+Income Quintile,1,Olive oil,17.3,False,False
+Income Quintile,2,Olive oil,38.5,False,False
+Income Quintile,4,Olive oil,14.1,False,False
+Income Quintile,5,Olive oil,18.7,False,False
+Income Quintile,Total,Olive oil,22.7,False,False
+Income Quintile,1,Olives,6.4,False,False
+Income Quintile,2,Olives,5.8,False,False
+Income Quintile,3,Olives,7.2,False,False
+Income Quintile,4,Olives,7.9,False,False
+Income Quintile,5,Olives,10.5,False,False
+Income Quintile,Total,Olives,7.6,False,False
+Income Quintile,1,Onions and scallions,15.7,False,False
+Income Quintile,2,Onions and scallions,14.3,False,False
+Income Quintile,3,Onions and scallions,12.9,False,False
+Income Quintile,4,Onions and scallions,13.2,False,False
+Income Quintile,5,Onions and scallions,15.5,False,False
+Income Quintile,Total,Onions and scallions,14.3,False,False
+Income Quintile,1,Oranges,7.5,False,False
+Income Quintile,2,Oranges,7.3,False,False
+Income Quintile,3,Oranges,8.1,False,False
+Income Quintile,4,Oranges,6.6,False,False
+Income Quintile,5,Oranges,6.0,False,False
+Income Quintile,Total,Oranges,7.1,False,False
+Income Quintile,4,Organic eggs ,5.0,False,False
+Income Quintile,5,Organic eggs ,8.3,False,False
+Income Quintile,Total,Organic eggs ,3.9,False,False
+Income Quintile,1,Organization dues and donations,98.0,False,False
+Income Quintile,2,Organization dues and donations,96.0,False,False
+Income Quintile,3,Organization dues and donations,112.0,False,False
+Income Quintile,4,Organization dues and donations,125.1,False,False
+Income Quintile,5,Organization dues and donations,231.3,False,False
+Income Quintile,Total,Organization dues and donations,132.5,False,False
+Income Quintile,5,Organized tour abroad,189.3,False,False
+Income Quintile,Total,Organized tour abroad,77.7,False,False
+Income Quintile,1,Other books,13.3,False,False
+Income Quintile,4,Other books,15.6,False,False
+Income Quintile,5,Other books,36.7,False,False
+Income Quintile,Total,Other books,22.4,False,False
+Income Quintile,1,Other canned vegetables(15),2.0,False,False
+Income Quintile,2,Other canned vegetables(15),1.5,False,False
+Income Quintile,3,Other canned vegetables(15),1.8,False,False
+Income Quintile,4,Other canned vegetables(15),2.0,False,False
+Income Quintile,5,Other canned vegetables(15),1.6,False,False
+Income Quintile,Total,Other canned vegetables(15),1.8,False,False
+Income Quintile,1,Other car repairs,32.0,False,False
+Income Quintile,2,Other car repairs,39.0,False,False
+Income Quintile,3,Other car repairs,59.3,False,False
+Income Quintile,4,Other car repairs,49.4,False,False
+Income Quintile,5,Other car repairs,45.3,False,False
+Income Quintile,Total,Other car repairs,45.0,False,False
+Income Quintile,1,Other cleaning materials,2.9,False,False
+Income Quintile,2,Other cleaning materials,3.5,False,False
+Income Quintile,4,Other cleaning materials,4.1,False,False
+Income Quintile,Total,Other cleaning materials,4.0,False,False
+Income Quintile,1,Other dental expenditures(26),50.7,False,False
+Income Quintile,2,Other dental expenditures(26),65.4,False,False
+Income Quintile,3,Other dental expenditures(26),56.5,False,False
+Income Quintile,4,Other dental expenditures(26),64.7,False,False
+Income Quintile,Total,Other dental expenditures(26),73.0,False,False
+Income Quintile,5,Other dried fruit ,4.2,False,False
+Income Quintile,Total,Other dried fruit ,2.8,False,False
+Income Quintile,1,Other electric kitchen appliances(23),33.7,False,False
+Income Quintile,2,Other electric kitchen appliances(23),29.4,False,False
+Income Quintile,3,Other electric kitchen appliances(23),36.6,False,False
+Income Quintile,4,Other electric kitchen appliances(23),44.7,False,False
+Income Quintile,5,Other electric kitchen appliances(23),51.0,False,False
+Income Quintile,Total,Other electric kitchen appliances(23),39.1,False,False
+Income Quintile,1,Other expenditures,67.0,False,False
+Income Quintile,2,Other expenditures,71.3,False,False
+Income Quintile,3,Other expenditures,64.3,False,False
+Income Quintile,4,Other expenditures,67.7,False,False
+Income Quintile,5,Other expenditures,97.8,False,False
+Income Quintile,Total,Other expenditures,73.6,False,False
+Income Quintile,1,Other expenditures on celebrations,24.8,False,False
+Income Quintile,2,Other expenditures on celebrations,30.5,False,False
+Income Quintile,Total,Other expenditures on celebrations,38.3,False,False
+Income Quintile,1,Other expenditures on health,212.6,False,False
+Income Quintile,2,Other expenditures on health,274.9,False,False
+Income Quintile,3,Other expenditures on health,272.8,False,False
+Income Quintile,4,Other expenditures on health,286.3,False,False
+Income Quintile,5,Other expenditures on health,355.4,False,False
+Income Quintile,Total,Other expenditures on health,280.4,False,False
+Income Quintile,1,Other fresh fruits,4.0,False,False
+Income Quintile,2,Other fresh fruits,3.9,False,False
+Income Quintile,3,Other fresh fruits,4.9,False,False
+Income Quintile,4,Other fresh fruits,8.9,False,False
+Income Quintile,5,Other fresh fruits,12.8,False,False
+Income Quintile,Total,Other fresh fruits,6.9,False,False
+Income Quintile,2,Other health insurance ,2.5,False,False
+Income Quintile,3,Other health insurance ,6.8,False,False
+Income Quintile,4,Other health insurance ,10.2,False,False
+Income Quintile,5,Other health insurance ,10.9,False,False
+Income Quintile,Total,Other health insurance ,6.4,False,False
+Income Quintile,1,Other housing expenditures,37.9,False,False
+Income Quintile,2,Other housing expenditures,73.8,False,False
+Income Quintile,3,Other housing expenditures,76.5,False,False
+Income Quintile,4,Other housing expenditures,157.9,False,False
+Income Quintile,5,Other housing expenditures,305.1,False,False
+Income Quintile,Total,Other housing expenditures,130.3,False,False
+Income Quintile,3,Other kitchen utensils(24),7.9,False,False
+Income Quintile,4,Other kitchen utensils(24),6.6,False,False
+Income Quintile,5,Other kitchen utensils(24),15.0,False,False
+Income Quintile,Total,Other kitchen utensils(24),9.6,False,False
+Income Quintile,1,Other laundry products,15.7,False,False
+Income Quintile,2,Other laundry products,17.3,False,False
+Income Quintile,3,Other laundry products,17.0,False,False
+Income Quintile,4,Other laundry products,17.4,False,False
+Income Quintile,5,Other laundry products,14.6,False,False
+Income Quintile,Total,Other laundry products,16.4,False,False
+Income Quintile,2,Other lessons and courses(28),39.4,False,False
+Income Quintile,3,Other lessons and courses(28),52.0,False,False
+Income Quintile,4,Other lessons and courses(28),90.9,False,False
+Income Quintile,5,Other lessons and courses(28),110.4,False,False
+Income Quintile,Total,Other lessons and courses(28),70.5,False,False
+Income Quintile,2,Other medical items(27),4.3,False,False
+Income Quintile,Total,Other medical items(27),7.5,False,False
+Income Quintile,2,Other milk,4.7,False,False
+Income Quintile,3,Other milk,8.9,False,False
+Income Quintile,4,Other milk,9.5,False,False
+Income Quintile,5,Other milk,7.9,False,False
+Income Quintile,Total,Other milk,6.6,False,False
+Income Quintile,1,Other mixed nuts n.e.c.,15.7,False,False
+Income Quintile,2,Other mixed nuts n.e.c.,20.0,False,False
+Income Quintile,3,Other mixed nuts n.e.c.,14.5,False,False
+Income Quintile,4,Other mixed nuts n.e.c.,10.4,False,False
+Income Quintile,5,Other mixed nuts n.e.c.,13.1,False,False
+Income Quintile,Total,Other mixed nuts n.e.c.,14.7,False,False
+Income Quintile,1,Other parts of chicken and turkey,9.7,False,False
+Income Quintile,2,Other parts of chicken and turkey,11.3,False,False
+Income Quintile,3,Other parts of chicken and turkey,9.1,False,False
+Income Quintile,4,Other parts of chicken and turkey,9.7,False,False
+Income Quintile,5,Other parts of chicken and turkey,8.1,False,False
+Income Quintile,Total,Other parts of chicken and turkey,9.6,False,False
+Income Quintile,3,Other pastry and grain products – frozen(3) ,2.9,False,False
+Income Quintile,5,Other pastry and grain products – frozen(3) ,3.5,False,False
+Income Quintile,Total,Other pastry and grain products – frozen(3) ,3.0,False,False
+Income Quintile,5,Other pickled vegetables ,1.1,False,False
+Income Quintile,Total,Other pickled vegetables ,1.2,False,False
+Income Quintile,1,Other prepared salads ,3.0,False,False
+Income Quintile,2,Other prepared salads ,5.2,False,False
+Income Quintile,3,Other prepared salads ,6.1,False,False
+Income Quintile,4,Other prepared salads ,6.7,False,False
+Income Quintile,5,Other prepared salads ,6.9,False,False
+Income Quintile,Total,Other prepared salads ,5.6,False,False
+Income Quintile,5,Other products ,4.1,False,False
+Income Quintile,Total,Other products ,2.2,False,False
+Income Quintile,2,Other recreation places,13.9,False,False
+Income Quintile,3,Other recreation places,20.6,False,False
+Income Quintile,4,Other recreation places,33.4,False,False
+Income Quintile,5,Other recreation places,30.5,False,False
+Income Quintile,Total,Other recreation places,20.2,False,False
+Income Quintile,1,Other sweets,32.3,False,False
+Income Quintile,2,Other sweets,26.7,False,False
+Income Quintile,3,Other sweets,22.6,False,False
+Income Quintile,4,Other sweets,8.1,False,False
+Income Quintile,5,Other sweets,14.4,False,False
+Income Quintile,Total,Other sweets,20.8,False,False
+Income Quintile,1,Other travel abroad,102.9,False,False
+Income Quintile,2,Other travel abroad,202.5,False,False
+Income Quintile,3,Other travel abroad,299.3,False,False
+Income Quintile,4,Other travel abroad,422.1,False,False
+Income Quintile,5,Other travel abroad,801.2,False,False
+Income Quintile,Total,Other travel abroad,365.7,False,False
+Income Quintile,4,"Painting, sculpture and photography lessons and courses",11.1,False,False
+Income Quintile,5,"Painting, sculpture and photography lessons and courses",12.6,False,False
+Income Quintile,Total,"Painting, sculpture and photography lessons and courses",7.0,False,False
+Income Quintile,1,Parking fees,3.7,False,False
+Income Quintile,3,Parking fees,10.6,False,False
+Income Quintile,4,Parking fees,13.6,False,False
+Income Quintile,5,Parking fees,23.6,False,False
+Income Quintile,Total,Parking fees,12.6,False,False
+Income Quintile,5,Parking subscription(30),1.9,False,False
+Income Quintile,Total,Parking subscription(30),1.5,False,False
+Income Quintile,1,Parsley ,3.5,False,False
+Income Quintile,2,Parsley ,4.3,False,False
+Income Quintile,3,Parsley ,4.0,False,False
+Income Quintile,4,Parsley ,5.6,False,False
+Income Quintile,5,Parsley ,5.1,False,False
+Income Quintile,Total,Parsley ,4.5,False,False
+Income Quintile,1,Pasteurized milk,62.3,False,False
+Income Quintile,2,Pasteurized milk,48.5,False,False
+Income Quintile,3,Pasteurized milk,41.4,False,False
+Income Quintile,4,Pasteurized milk,34.8,False,False
+Income Quintile,5,Pasteurized milk,31.9,False,False
+Income Quintile,Total,Pasteurized milk,43.8,False,False
+Income Quintile,2,Pastry products – frozen(3),4.4,False,False
+Income Quintile,3,Pastry products – frozen(3),3.7,False,False
+Income Quintile,4,Pastry products – frozen(3),3.4,False,False
+Income Quintile,5,Pastry products – frozen(3),3.0,False,False
+Income Quintile,Total,Pastry products – frozen(3),3.4,False,False
+Income Quintile,1,Pastry products – not frozen(3),22.7,False,False
+Income Quintile,2,Pastry products – not frozen(3),26.8,False,False
+Income Quintile,3,Pastry products – not frozen(3),27.2,False,False
+Income Quintile,4,Pastry products – not frozen(3),37.5,False,False
+Income Quintile,5,Pastry products – not frozen(3),25.8,False,False
+Income Quintile,Total,Pastry products – not frozen(3),28.0,False,False
+Income Quintile,4,Payment for electrician,19.2,False,False
+Income Quintile,5,Payment for electrician,8.4,False,False
+Income Quintile,Total,Payment for electrician,10.7,False,False
+Income Quintile,2,"Payment for painter, handyman",21.5,False,False
+Income Quintile,3,"Payment for painter, handyman",30.3,False,False
+Income Quintile,4,"Payment for painter, handyman",33.1,False,False
+Income Quintile,Total,"Payment for painter, handyman",39.5,False,False
+Income Quintile,2,Payment for plumber ,8.9,False,False
+Income Quintile,3,Payment for plumber ,9.3,False,False
+Income Quintile,4,Payment for plumber ,11.1,False,False
+Income Quintile,5,Payment for plumber ,14.6,False,False
+Income Quintile,Total,Payment for plumber ,12.6,False,False
+Income Quintile,1,"Payment to lawyer / real estate agent for buying, selling ",27.8,False,False
+Income Quintile,2,"Payment to lawyer / real estate agent for buying, selling ",48.7,False,False
+Income Quintile,4,"Payment to lawyer / real estate agent for buying, selling ",62.4,False,False
+Income Quintile,5,"Payment to lawyer / real estate agent for buying, selling ",136.6,False,False
+Income Quintile,Total,"Payment to lawyer / real estate agent for buying, selling ",59.8,False,False
+Income Quintile,2,Payments for other maintenance(16),6.0,False,False
+Income Quintile,3,Payments for other maintenance(16),17.9,False,False
+Income Quintile,4,Payments for other maintenance(16),15.6,False,False
+Income Quintile,5,Payments for other maintenance(16),48.8,False,False
+Income Quintile,Total,Payments for other maintenance(16),19.9,False,False
+Income Quintile,2,Payments to managers insurance,16.5,False,False
+Income Quintile,3,Payments to managers insurance,42.9,False,False
+Income Quintile,4,Payments to managers insurance,92.3,False,False
+Income Quintile,5,Payments to managers insurance,177.5,False,False
+Income Quintile,Total,Payments to managers insurance,66.6,False,False
+Income Quintile,1,Payments to pension fund,180.0,False,False
+Income Quintile,2,Payments to pension fund,359.1,False,False
+Income Quintile,3,Payments to pension fund,580.7,False,False
+Income Quintile,4,Payments to pension fund,767.3,False,False
+Income Quintile,5,Payments to pension fund,1081.1,False,False
+Income Quintile,Total,Payments to pension fund,593.7,False,False
+Income Quintile,1,Payments to provident funds,29.0,False,False
+Income Quintile,2,Payments to provident funds,56.4,False,False
+Income Quintile,3,Payments to provident funds,101.2,False,False
+Income Quintile,4,Payments to provident funds,183.4,False,False
+Income Quintile,5,Payments to provident funds,343.8,False,False
+Income Quintile,Total,Payments to provident funds,142.8,False,False
+Income Quintile,1,Payments to training funds,35.4,False,False
+Income Quintile,2,Payments to training funds,97.9,False,False
+Income Quintile,3,Payments to training funds,203.6,False,False
+Income Quintile,4,Payments to training funds,343.0,False,False
+Income Quintile,5,Payments to training funds,601.7,False,False
+Income Quintile,Total,Payments to training funds,256.4,False,False
+Income Quintile,1,"Peaches, nectarines",6.6,False,False
+Income Quintile,2,"Peaches, nectarines",6.4,False,False
+Income Quintile,3,"Peaches, nectarines",7.3,False,False
+Income Quintile,4,"Peaches, nectarines",9.3,False,False
+Income Quintile,5,"Peaches, nectarines",12.1,False,False
+Income Quintile,Total,"Peaches, nectarines",8.4,False,False
+Income Quintile,1,Peanut snacks ,6.8,False,False
+Income Quintile,2,Peanut snacks ,8.5,False,False
+Income Quintile,3,Peanut snacks ,8.3,False,False
+Income Quintile,4,Peanut snacks ,7.9,False,False
+Income Quintile,5,Peanut snacks ,5.2,False,False
+Income Quintile,Total,Peanut snacks ,7.4,False,False
+Income Quintile,3,Peanuts,1.8,False,False
+Income Quintile,4,Peanuts,3.0,False,False
+Income Quintile,5,Peanuts,2.8,False,False
+Income Quintile,Total,Peanuts,2.0,False,False
+Income Quintile,1,Pears,3.8,False,False
+Income Quintile,2,Pears,4.6,False,False
+Income Quintile,3,Pears,4.2,False,False
+Income Quintile,4,Pears,4.8,False,False
+Income Quintile,5,Pears,6.4,False,False
+Income Quintile,Total,Pears,4.8,False,False
+Income Quintile,1,Periodic maintenance,50.8,False,False
+Income Quintile,2,Periodic maintenance,53.6,False,False
+Income Quintile,3,Periodic maintenance,67.2,False,False
+Income Quintile,4,Periodic maintenance,102.7,False,False
+Income Quintile,5,Periodic maintenance,113.0,False,False
+Income Quintile,Total,Periodic maintenance,77.5,False,False
+Income Quintile,1,Persimmons,1.8,False,False
+Income Quintile,2,Persimmons,2.1,False,False
+Income Quintile,3,Persimmons,2.0,False,False
+Income Quintile,4,Persimmons,2.4,False,False
+Income Quintile,5,Persimmons,4.0,False,False
+Income Quintile,Total,Persimmons,2.4,False,False
+Income Quintile,1,Persona services and cosmetics,29.7,False,False
+Income Quintile,2,Persona services and cosmetics,40.0,False,False
+Income Quintile,3,Persona services and cosmetics,75.1,False,False
+Income Quintile,4,Persona services and cosmetics,87.2,False,False
+Income Quintile,5,Persona services and cosmetics,124.6,False,False
+Income Quintile,Total,Persona services and cosmetics,71.3,False,False
+Income Quintile,1,Personal articles and cosmetics,113.7,False,False
+Income Quintile,2,Personal articles and cosmetics,140.0,False,False
+Income Quintile,3,Personal articles and cosmetics,149.9,False,False
+Income Quintile,4,Personal articles and cosmetics,166.1,False,False
+Income Quintile,5,Personal articles and cosmetics,173.7,False,False
+Income Quintile,Total,Personal articles and cosmetics,148.7,False,False
+Income Quintile,1,Pet food,16.4,False,False
+Income Quintile,3,Pet food,30.0,False,False
+Income Quintile,4,Pet food,53.2,False,False
+Income Quintile,Total,Pet food,37.6,False,False
+Income Quintile,1,Pickled cucumbers,7.3,False,False
+Income Quintile,2,Pickled cucumbers,5.4,False,False
+Income Quintile,3,Pickled cucumbers,5.7,False,False
+Income Quintile,4,Pickled cucumbers,6.2,False,False
+Income Quintile,5,Pickled cucumbers,5.3,False,False
+Income Quintile,Total,Pickled cucumbers,6.0,False,False
+Income Quintile,1,"Pictures, mirrors, and other decorations",5.9,False,False
+Income Quintile,2,"Pictures, mirrors, and other decorations",5.4,False,False
+Income Quintile,3,"Pictures, mirrors, and other decorations",6.8,False,False
+Income Quintile,Total,"Pictures, mirrors, and other decorations",10.8,False,False
+Income Quintile,4,Pistachio,2.8,False,False
+Income Quintile,5,Pistachio,4.1,False,False
+Income Quintile,Total,Pistachio,2.3,False,False
+Income Quintile,1,Pitta (oriental bread),43.3,False,False
+Income Quintile,2,Pitta (oriental bread),32.9,False,False
+Income Quintile,3,Pitta (oriental bread),23.7,False,False
+Income Quintile,4,Pitta (oriental bread),20.5,False,False
+Income Quintile,5,Pitta (oriental bread),17.4,False,False
+Income Quintile,Total,Pitta (oriental bread),27.5,False,False
+Income Quintile,1,Plums,1.4,False,False
+Income Quintile,3,Plums,2.2,False,False
+Income Quintile,4,Plums,3.3,False,False
+Income Quintile,5,Plums,2.6,False,False
+Income Quintile,Total,Plums,2.3,False,False
+Income Quintile,1,Pocket money,66.7,False,False
+Income Quintile,2,Pocket money,41.6,False,False
+Income Quintile,3,Pocket money,31.3,False,False
+Income Quintile,Total,Pocket money,37.8,False,False
+Income Quintile,5,Pomegranate ,2.1,False,False
+Income Quintile,Total,Pomegranate ,1.6,False,False
+Income Quintile,4,Pomelo ,2.1,False,False
+Income Quintile,5,Pomelo ,2.2,False,False
+Income Quintile,Total,Pomelo ,1.3,False,False
+Income Quintile,1,Popcorn ,1.8,False,False
+Income Quintile,2,Popcorn ,1.6,False,False
+Income Quintile,3,Popcorn ,2.1,False,False
+Income Quintile,4,Popcorn ,2.3,False,False
+Income Quintile,5,Popcorn ,2.5,False,False
+Income Quintile,Total,Popcorn ,2.0,False,False
+Income Quintile,1,"Poppy seeds, sesame seeds, and minced coconut ",1.0,False,False
+Income Quintile,2,"Poppy seeds, sesame seeds, and minced coconut ",0.9,False,False
+Income Quintile,4,"Poppy seeds, sesame seeds, and minced coconut ",2.0,False,False
+Income Quintile,5,"Poppy seeds, sesame seeds, and minced coconut ",2.3,False,False
+Income Quintile,Total,"Poppy seeds, sesame seeds, and minced coconut ",1.4,False,False
+Income Quintile,1,Portable heater (including for bathroom),3.8,False,False
+Income Quintile,Total,Portable heater (including for bathroom),2.7,False,False
+Income Quintile,1,Post-secondary schools ,75.7,False,False
+Income Quintile,2,Post-secondary schools ,21.6,False,False
+Income Quintile,3,Post-secondary schools ,30.3,False,False
+Income Quintile,4,Post-secondary schools ,32.1,False,False
+Income Quintile,Total,Post-secondary schools ,35.9,False,False
+Income Quintile,1,"Postal services, telephone, and communications",228.7,False,False
+Income Quintile,2,"Postal services, telephone, and communications",252.6,False,False
+Income Quintile,3,"Postal services, telephone, and communications",292.5,False,False
+Income Quintile,4,"Postal services, telephone, and communications",335.8,False,False
+Income Quintile,5,"Postal services, telephone, and communications",344.1,False,False
+Income Quintile,Total,"Postal services, telephone, and communications",290.8,False,False
+Income Quintile,1,Potato products – frozen,6.4,False,False
+Income Quintile,2,Potato products – frozen,4.8,False,False
+Income Quintile,3,Potato products – frozen,4.5,False,False
+Income Quintile,4,Potato products – frozen,5.7,False,False
+Income Quintile,5,Potato products – frozen,4.0,False,False
+Income Quintile,Total,Potato products – frozen,5.1,False,False
+Income Quintile,1,Potato snacks ,10.3,False,False
+Income Quintile,2,Potato snacks ,9.5,False,False
+Income Quintile,3,Potato snacks ,8.9,False,False
+Income Quintile,4,Potato snacks ,7.9,False,False
+Income Quintile,5,Potato snacks ,8.3,False,False
+Income Quintile,Total,Potato snacks ,9.0,False,False
+Income Quintile,1,Potatoes and sweet potatoes,31.1,False,False
+Income Quintile,2,Potatoes and sweet potatoes,29.1,False,False
+Income Quintile,3,Potatoes and sweet potatoes,24.2,False,False
+Income Quintile,4,Potatoes and sweet potatoes,27.6,False,False
+Income Quintile,5,Potatoes and sweet potatoes,27.6,False,False
+Income Quintile,Total,Potatoes and sweet potatoes,27.9,False,False
+Income Quintile,1,Powdered soup and sauces,4.7,False,False
+Income Quintile,2,Powdered soup and sauces,3.7,False,False
+Income Quintile,3,Powdered soup and sauces,4.5,False,False
+Income Quintile,4,Powdered soup and sauces,6.1,False,False
+Income Quintile,5,Powdered soup and sauces,5.9,False,False
+Income Quintile,Total,Powdered soup and sauces,5.0,False,False
+Income Quintile,1,Pre-moistened towelettes,11.8,False,False
+Income Quintile,2,Pre-moistened towelettes,13.8,False,False
+Income Quintile,3,Pre-moistened towelettes,13.1,False,False
+Income Quintile,4,Pre-moistened towelettes,10.0,False,False
+Income Quintile,5,Pre-moistened towelettes,11.1,False,False
+Income Quintile,Total,Pre-moistened towelettes,12.0,False,False
+Income Quintile,1,Prepared sauces for pasta and salad,6.1,False,False
+Income Quintile,2,Prepared sauces for pasta and salad,7.0,False,False
+Income Quintile,3,Prepared sauces for pasta and salad,11.2,False,False
+Income Quintile,4,Prepared sauces for pasta and salad,10.5,False,False
+Income Quintile,5,Prepared sauces for pasta and salad,14.6,False,False
+Income Quintile,Total,Prepared sauces for pasta and salad,9.9,False,False
+Income Quintile,1,Preserved fish,17.7,False,False
+Income Quintile,2,Preserved fish,17.4,False,False
+Income Quintile,3,Preserved fish,18.1,False,False
+Income Quintile,4,Preserved fish,21.7,False,False
+Income Quintile,5,Preserved fish,20.9,False,False
+Income Quintile,Total,Preserved fish,19.2,False,False
+Income Quintile,1,Primary schools,110.8,False,False
+Income Quintile,2,Primary schools,60.6,False,False
+Income Quintile,3,Primary schools,42.7,False,False
+Income Quintile,4,Primary schools,44.9,False,False
+Income Quintile,5,Primary schools,20.2,False,False
+Income Quintile,Total,Primary schools,55.9,False,False
+Income Quintile,5,Printer ink,2.5,False,False
+Income Quintile,Total,Printer ink,1.1,False,False
+Income Quintile,5,Private aesthetic surgery and treatments ,13.6,False,False
+Income Quintile,Total,Private aesthetic surgery and treatments ,14.0,False,False
+Income Quintile,1,Private kindergarten or day care as of age 3,9.0,False,False
+Income Quintile,Total,Private kindergarten or day care as of age 3,2.7,False,False
+Income Quintile,2,"Private nurse, ambulance, and emergency room",3.5,False,False
+Income Quintile,Total,"Private nurse, ambulance, and emergency room",3.7,False,False
+Income Quintile,2,Processed cheese,2.1,False,False
+Income Quintile,4,Processed cheese,3.9,False,False
+Income Quintile,5,Processed cheese,3.5,False,False
+Income Quintile,Total,Processed cheese,2.6,False,False
+Income Quintile,1,Processed fish,4.5,False,False
+Income Quintile,2,Processed fish,6.1,False,False
+Income Quintile,3,Processed fish,6.8,False,False
+Income Quintile,4,Processed fish,7.5,False,False
+Income Quintile,5,Processed fish,7.8,False,False
+Income Quintile,Total,Processed fish,6.5,False,False
+Income Quintile,2,Psychological or psychiatric treatment,11.4,False,False
+Income Quintile,3,Psychological or psychiatric treatment,37.5,False,False
+Income Quintile,4,Psychological or psychiatric treatment,74.0,False,False
+Income Quintile,5,Psychological or psychiatric treatment,109.8,False,False
+Income Quintile,Total,Psychological or psychiatric treatment,49.3,False,False
+Income Quintile,1,Public transport,78.9,False,False
+Income Quintile,2,Public transport,63.7,False,False
+Income Quintile,3,Public transport,43.5,False,False
+Income Quintile,4,Public transport,57.6,False,False
+Income Quintile,5,Public transport,61.7,False,False
+Income Quintile,Total,Public transport,61.1,False,False
+Income Quintile,1,"Pudding mix, gelatin",3.0,False,False
+Income Quintile,2,"Pudding mix, gelatin",2.4,False,False
+Income Quintile,3,"Pudding mix, gelatin",2.1,False,False
+Income Quintile,4,"Pudding mix, gelatin",2.2,False,False
+Income Quintile,5,"Pudding mix, gelatin",2.6,False,False
+Income Quintile,Total,"Pudding mix, gelatin",2.5,False,False
+Income Quintile,1,Pumpkin  ,1.8,False,False
+Income Quintile,2,Pumpkin  ,2.6,False,False
+Income Quintile,3,Pumpkin  ,2.8,False,False
+Income Quintile,4,Pumpkin  ,3.0,False,False
+Income Quintile,5,Pumpkin  ,3.8,False,False
+Income Quintile,Total,Pumpkin  ,2.8,False,False
+Income Quintile,1,"Quilts, blankets, pillows, and cushions",5.9,False,False
+Income Quintile,2,"Quilts, blankets, pillows, and cushions",4.3,False,False
+Income Quintile,3,"Quilts, blankets, pillows, and cushions",5.8,False,False
+Income Quintile,4,"Quilts, blankets, pillows, and cushions",7.6,False,False
+Income Quintile,5,"Quilts, blankets, pillows, and cushions",4.8,False,False
+Income Quintile,Total,"Quilts, blankets, pillows, and cushions",5.7,False,False
+Income Quintile,2,Radishes ,1.1,False,False
+Income Quintile,3,Radishes ,1.1,False,False
+Income Quintile,4,Radishes ,1.5,False,False
+Income Quintile,5,Radishes ,1.7,False,False
+Income Quintile,Total,Radishes ,1.2,False,False
+Income Quintile,5,Raisins,1.5,False,False
+Income Quintile,Total,Raisins,1.0,False,False
+Income Quintile,3,Ravioli(4),3.6,False,False
+Income Quintile,5,Ravioli(4),2.9,False,False
+Income Quintile,Total,Ravioli(4),2.3,False,False
+Income Quintile,1,Recreation and excursions,56.6,False,False
+Income Quintile,2,Recreation and excursions,130.8,False,False
+Income Quintile,3,Recreation and excursions,169.7,False,False
+Income Quintile,4,Recreation and excursions,211.6,False,False
+Income Quintile,5,Recreation and excursions,319.6,False,False
+Income Quintile,Total,Recreation and excursions,177.7,False,False
+Income Quintile,2,Refrigerator and deep freezer,34.5,False,False
+Income Quintile,4,Refrigerator and deep freezer,44.3,False,False
+Income Quintile,5,Refrigerator and deep freezer,48.2,False,False
+Income Quintile,Total,Refrigerator and deep freezer,33.1,False,False
+Income Quintile,Total,Registration fee and change of ownership ,4.6,False,False
+Income Quintile,1,Regular coffee,26.4,False,False
+Income Quintile,2,Regular coffee,26.9,False,False
+Income Quintile,3,Regular coffee,15.1,False,False
+Income Quintile,4,Regular coffee,20.0,False,False
+Income Quintile,5,Regular coffee,16.1,False,False
+Income Quintile,Total,Regular coffee,20.9,False,False
+Income Quintile,5,Rehabilitation aids or medical equipment ,6.1,False,False
+Income Quintile,Total,Rehabilitation aids or medical equipment ,10.7,False,False
+Income Quintile,1,Renovations and Investments in dwelling,254.7,False,False
+Income Quintile,3,Renovations and Investments in dwelling,414.8,False,False
+Income Quintile,4,Renovations and Investments in dwelling,562.2,False,False
+Income Quintile,5,Renovations and Investments in dwelling,880.5,False,False
+Income Quintile,Total,Renovations and Investments in dwelling,505.2,False,False
+Income Quintile,Total,Repair and accessories for phone,11.1,False,False
+Income Quintile,1,Rice,30.3,False,False
+Income Quintile,2,Rice,20.0,False,False
+Income Quintile,3,Rice,14.3,False,False
+Income Quintile,4,Rice,12.1,False,False
+Income Quintile,5,Rice,11.0,False,False
+Income Quintile,Total,Rice,17.5,False,False
+Income Quintile,1,Rice crispies,3.7,False,False
+Income Quintile,2,Rice crispies,3.4,False,False
+Income Quintile,3,Rice crispies,5.0,False,False
+Income Quintile,4,Rice crispies,4.1,False,False
+Income Quintile,5,Rice crispies,6.0,False,False
+Income Quintile,Total,Rice crispies,4.4,False,False
+Income Quintile,5,Rings(33)  ,35.1,False,False
+Income Quintile,Total,Rings(33)  ,17.0,False,False
+Income Quintile,1,Roasted seeds,5.4,False,False
+Income Quintile,2,Roasted seeds,8.3,False,False
+Income Quintile,3,Roasted seeds,4.3,False,False
+Income Quintile,4,Roasted seeds,7.0,False,False
+Income Quintile,5,Roasted seeds,4.6,False,False
+Income Quintile,Total,Roasted seeds,5.9,False,False
+Income Quintile,1,Rolls and bagels,21.4,False,False
+Income Quintile,2,Rolls and bagels,23.7,False,False
+Income Quintile,3,Rolls and bagels,21.5,False,False
+Income Quintile,4,Rolls and bagels,20.9,False,False
+Income Quintile,5,Rolls and bagels,22.1,False,False
+Income Quintile,Total,Rolls and bagels,21.9,False,False
+Income Quintile,2,Rural tourism,20.1,False,False
+Income Quintile,4,Rural tourism,26.7,False,False
+Income Quintile,5,Rural tourism,40.7,False,False
+Income Quintile,Total,Rural tourism,22.1,False,False
+Income Quintile,1,"Sabbath loaf, standard and sweet",10.5,False,False
+Income Quintile,2,"Sabbath loaf, standard and sweet",13.6,False,False
+Income Quintile,3,"Sabbath loaf, standard and sweet",10.7,False,False
+Income Quintile,4,"Sabbath loaf, standard and sweet",11.5,False,False
+Income Quintile,5,"Sabbath loaf, standard and sweet",10.8,False,False
+Income Quintile,Total,"Sabbath loaf, standard and sweet",11.4,False,False
+Income Quintile,Total,"Sailing, off-road vehicles, horseback riding, ",3.3,False,False
+Income Quintile,1,Salt,3.1,False,False
+Income Quintile,2,Salt,2.9,False,False
+Income Quintile,3,Salt,3.1,False,False
+Income Quintile,4,Salt,1.7,False,False
+Income Quintile,5,Salt,1.5,False,False
+Income Quintile,Total,Salt,2.5,False,False
+Income Quintile,1,Salty snacks,31.1,False,False
+Income Quintile,2,Salty snacks,24.3,False,False
+Income Quintile,3,Salty snacks,22.6,False,False
+Income Quintile,4,Salty snacks,21.1,False,False
+Income Quintile,5,Salty snacks,15.3,False,False
+Income Quintile,Total,Salty snacks,22.9,False,False
+Income Quintile,1,Sandwich bags,1.3,False,False
+Income Quintile,2,Sandwich bags,1.6,False,False
+Income Quintile,3,Sandwich bags,1.9,False,False
+Income Quintile,5,Sandwich bags,2.3,False,False
+Income Quintile,Total,Sandwich bags,1.6,False,False
+Income Quintile,1,Sausage and pastrami(9),24.9,False,False
+Income Quintile,2,Sausage and pastrami(9),31.7,False,False
+Income Quintile,3,Sausage and pastrami(9),33.8,False,False
+Income Quintile,4,Sausage and pastrami(9),32.1,False,False
+Income Quintile,5,Sausage and pastrami(9),26.2,False,False
+Income Quintile,Total,Sausage and pastrami(9),29.7,False,False
+Income Quintile,1,"Seasoning greens, incl. root and leafy vegetables(14)",8.2,False,False
+Income Quintile,2,"Seasoning greens, incl. root and leafy vegetables(14)",8.2,False,False
+Income Quintile,3,"Seasoning greens, incl. root and leafy vegetables(14)",7.1,False,False
+Income Quintile,4,"Seasoning greens, incl. root and leafy vegetables(14)",6.5,False,False
+Income Quintile,5,"Seasoning greens, incl. root and leafy vegetables(14)",6.1,False,False
+Income Quintile,Total,"Seasoning greens, incl. root and leafy vegetables(14)",7.2,False,False
+Income Quintile,1,Selected savings items,1492.0,False,False
+Income Quintile,2,Selected savings items,2973.0,False,False
+Income Quintile,3,Selected savings items,3535.0,False,False
+Income Quintile,4,Selected savings items,4798.0,False,False
+Income Quintile,5,Selected savings items,9708.0,False,False
+Income Quintile,Total,Selected savings items,4502.0,False,False
+Income Quintile,3,Semolina,1.0,False,False
+Income Quintile,Total,Semolina,0.9,False,False
+Income Quintile,1,Service and repairs of home electrical equipment,4.2,False,False
+Income Quintile,5,Service and repairs of home electrical equipment,3.9,False,False
+Income Quintile,Total,Service and repairs of home electrical equipment,4.4,False,False
+Income Quintile,1,Sesame oil (tahina),7.3,False,False
+Income Quintile,2,Sesame oil (tahina),7.0,False,False
+Income Quintile,3,Sesame oil (tahina),5.9,False,False
+Income Quintile,4,Sesame oil (tahina),5.8,False,False
+Income Quintile,5,Sesame oil (tahina),9.7,False,False
+Income Quintile,Total,Sesame oil (tahina),7.2,False,False
+Income Quintile,Total,"Sewing, fabrics, and accessories",4.0,False,False
+Income Quintile,Total,Shaving accessories and shaving cream,3.1,False,False
+Income Quintile,1,Sheets,7.9,False,False
+Income Quintile,2,Sheets,10.5,False,False
+Income Quintile,3,Sheets,15.9,False,False
+Income Quintile,4,Sheets,13.3,False,False
+Income Quintile,5,Sheets,15.4,False,False
+Income Quintile,Total,Sheets,12.6,False,False
+Income Quintile,1,Shirt,41.6,False,False
+Income Quintile,2,Shirt,44.7,False,False
+Income Quintile,3,Shirt,50.3,False,False
+Income Quintile,4,Shirt,49.1,False,False
+Income Quintile,5,Shirt,64.9,False,False
+Income Quintile,Total,Shirt,50.1,False,False
+Income Quintile,1,Skirt,4.8,False,False
+Income Quintile,2,Skirt,5.2,False,False
+Income Quintile,3,Skirt,5.4,False,False
+Income Quintile,Total,Skirt,4.3,False,False
+Income Quintile,1,Slacks,24.2,False,False
+Income Quintile,2,Slacks,25.8,False,False
+Income Quintile,3,Slacks,34.1,False,False
+Income Quintile,4,Slacks,36.9,False,False
+Income Quintile,5,Slacks,51.3,False,False
+Income Quintile,Total,Slacks,34.5,False,False
+Income Quintile,1,Sliced bread,13.8,False,False
+Income Quintile,2,Sliced bread,9.4,False,False
+Income Quintile,3,Sliced bread,7.3,False,False
+Income Quintile,4,Sliced bread,3.4,False,False
+Income Quintile,5,Sliced bread,3.0,False,False
+Income Quintile,Total,Sliced bread,7.4,False,False
+Income Quintile,Total,Smart watches ,6.8,False,False
+Income Quintile,1,"Soccer, basketball and other ball classes",7.4,False,False
+Income Quintile,2,"Soccer, basketball and other ball classes",16.0,False,False
+Income Quintile,3,"Soccer, basketball and other ball classes",25.1,False,False
+Income Quintile,4,"Soccer, basketball and other ball classes",28.7,False,False
+Income Quintile,5,"Soccer, basketball and other ball classes",29.4,False,False
+Income Quintile,Total,"Soccer, basketball and other ball classes",21.3,False,False
+Income Quintile,3,Social organization fees ,4.4,False,False
+Income Quintile,4,Social organization fees ,6.4,False,False
+Income Quintile,5,Social organization fees ,7.8,False,False
+Income Quintile,Total,Social organization fees ,4.7,False,False
+Income Quintile,1,Soda water,3.5,False,False
+Income Quintile,2,Soda water,4.6,False,False
+Income Quintile,3,Soda water,3.0,False,False
+Income Quintile,4,Soda water,3.1,False,False
+Income Quintile,5,Soda water,3.1,False,False
+Income Quintile,Total,Soda water,3.5,False,False
+Income Quintile,1,Soft drinks,120.9,False,False
+Income Quintile,2,Soft drinks,93.6,False,False
+Income Quintile,3,Soft drinks,81.7,False,False
+Income Quintile,4,Soft drinks,76.4,False,False
+Income Quintile,5,Soft drinks,67.6,False,False
+Income Quintile,Total,Soft drinks,88.0,False,False
+Income Quintile,1,"Soft drinks, carbonated",55.7,False,False
+Income Quintile,2,"Soft drinks, carbonated",36.1,False,False
+Income Quintile,3,"Soft drinks, carbonated",34.6,False,False
+Income Quintile,4,"Soft drinks, carbonated",32.9,False,False
+Income Quintile,5,"Soft drinks, carbonated",25.6,False,False
+Income Quintile,Total,"Soft drinks, carbonated",37.0,False,False
+Income Quintile,1,"Soft drinks, non-carbonated",33.3,False,False
+Income Quintile,2,"Soft drinks, non-carbonated",28.8,False,False
+Income Quintile,3,"Soft drinks, non-carbonated",22.0,False,False
+Income Quintile,4,"Soft drinks, non-carbonated",17.7,False,False
+Income Quintile,5,"Soft drinks, non-carbonated",14.5,False,False
+Income Quintile,Total,"Soft drinks, non-carbonated",23.3,False,False
+Income Quintile,1,Soft white cheese,27.7,False,False
+Income Quintile,2,Soft white cheese,30.9,False,False
+Income Quintile,3,Soft white cheese,31.3,False,False
+Income Quintile,4,Soft white cheese,33.5,False,False
+Income Quintile,5,Soft white cheese,32.3,False,False
+Income Quintile,Total,Soft white cheese,31.1,False,False
+Income Quintile,1,Soup mandels and croutons ,3.3,False,False
+Income Quintile,2,Soup mandels and croutons ,3.2,False,False
+Income Quintile,3,Soup mandels and croutons ,4.3,False,False
+Income Quintile,4,Soup mandels and croutons ,3.3,False,False
+Income Quintile,5,Soup mandels and croutons ,5.3,False,False
+Income Quintile,Total,Soup mandels and croutons ,3.9,False,False
+Income Quintile,1,Sour cream,7.2,False,False
+Income Quintile,2,Sour cream,6.8,False,False
+Income Quintile,3,Sour cream,5.7,False,False
+Income Quintile,4,Sour cream,5.4,False,False
+Income Quintile,5,Sour cream,4.4,False,False
+Income Quintile,Total,Sour cream,5.9,False,False
+Income Quintile,1,Sour milk products and yogurt,35.9,False,False
+Income Quintile,2,Sour milk products and yogurt,35.1,False,False
+Income Quintile,3,Sour milk products and yogurt,38.7,False,False
+Income Quintile,4,Sour milk products and yogurt,34.5,False,False
+Income Quintile,5,Sour milk products and yogurt,45.0,False,False
+Income Quintile,Total,Sour milk products and yogurt,37.8,False,False
+Income Quintile,1,Special bread,26.4,False,False
+Income Quintile,2,Special bread,26.8,False,False
+Income Quintile,3,Special bread,31.6,False,False
+Income Quintile,4,Special bread,30.2,False,False
+Income Quintile,5,Special bread,38.1,False,False
+Income Quintile,Total,Special bread,30.6,False,False
+Income Quintile,1,Special tutoring for pupils,31.3,False,False
+Income Quintile,2,Special tutoring for pupils,32.8,False,False
+Income Quintile,3,Special tutoring for pupils,38.6,False,False
+Income Quintile,4,Special tutoring for pupils,40.7,False,False
+Income Quintile,5,Special tutoring for pupils,42.5,False,False
+Income Quintile,Total,Special tutoring for pupils,37.2,False,False
+Income Quintile,1,Spices,15.6,False,False
+Income Quintile,2,Spices,15.0,False,False
+Income Quintile,3,Spices,14.3,False,False
+Income Quintile,4,Spices,15.9,False,False
+Income Quintile,5,Spices,12.7,False,False
+Income Quintile,Total,Spices,14.7,False,False
+Income Quintile,1,"Spinach, Swiss chard, and beet leaves ",1.6,False,False
+Income Quintile,2,"Spinach, Swiss chard, and beet leaves ",2.2,False,False
+Income Quintile,3,"Spinach, Swiss chard, and beet leaves ",1.5,False,False
+Income Quintile,4,"Spinach, Swiss chard, and beet leaves ",2.0,False,False
+Income Quintile,5,"Spinach, Swiss chard, and beet leaves ",3.4,False,False
+Income Quintile,Total,"Spinach, Swiss chard, and beet leaves ",2.1,False,False
+Income Quintile,1,Sports and exercise lessons ,23.0,False,False
+Income Quintile,2,Sports and exercise lessons ,26.1,False,False
+Income Quintile,3,Sports and exercise lessons ,46.9,False,False
+Income Quintile,4,Sports and exercise lessons ,97.6,False,False
+Income Quintile,5,Sports and exercise lessons ,132.7,False,False
+Income Quintile,Total,Sports and exercise lessons ,65.3,False,False
+Income Quintile,5,Sports and fitness equipment,13.6,False,False
+Income Quintile,Total,Sports and fitness equipment,8.2,False,False
+Income Quintile,5,Sprouts,1.6,False,False
+Income Quintile,Total,Sprouts,0.8,False,False
+Income Quintile,1,Squash,9.3,False,False
+Income Quintile,2,Squash,6.9,False,False
+Income Quintile,3,Squash,7.2,False,False
+Income Quintile,4,Squash,5.5,False,False
+Income Quintile,5,Squash,9.3,False,False
+Income Quintile,Total,Squash,7.6,False,False
+Income Quintile,1,Standard bread,2.5,False,False
+Income Quintile,Total,Standard bread,1.0,False,False
+Income Quintile,1,"Stove, microwave, and ventilation hood(22)",20.6,False,False
+Income Quintile,2,"Stove, microwave, and ventilation hood(22)",26.4,False,False
+Income Quintile,3,"Stove, microwave, and ventilation hood(22)",22.8,False,False
+Income Quintile,4,"Stove, microwave, and ventilation hood(22)",32.0,False,False
+Income Quintile,5,"Stove, microwave, and ventilation hood(22)",30.1,False,False
+Income Quintile,Total,"Stove, microwave, and ventilation hood(22)",26.4,False,False
+Income Quintile,1,Strawberries,7.3,False,False
+Income Quintile,2,Strawberries,11.0,False,False
+Income Quintile,3,Strawberries,9.9,False,False
+Income Quintile,4,Strawberries,13.3,False,False
+Income Quintile,5,Strawberries,17.2,False,False
+Income Quintile,Total,Strawberries,11.7,False,False
+Income Quintile,3,Subscription for car locator systems ,1.9,False,False
+Income Quintile,4,Subscription for car locator systems ,5.2,False,False
+Income Quintile,5,Subscription for car locator systems ,6.3,False,False
+Income Quintile,Total,Subscription for car locator systems ,3.2,False,False
+Income Quintile,1,Subscription for television broadcasts(29),39.0,False,False
+Income Quintile,2,Subscription for television broadcasts(29),79.4,False,False
+Income Quintile,3,Subscription for television broadcasts(29),115.6,False,False
+Income Quintile,4,Subscription for television broadcasts(29),142.0,False,False
+Income Quintile,5,Subscription for television broadcasts(29),155.3,False,False
+Income Quintile,Total,Subscription for television broadcasts(29),106.3,False,False
+Income Quintile,5,Subscription to cultural performances ,27.5,False,False
+Income Quintile,Total,Subscription to cultural performances ,7.2,False,False
+Income Quintile,1,Subscription to daily newspaper,4.0,False,False
+Income Quintile,2,Subscription to daily newspaper,2.4,False,False
+Income Quintile,3,Subscription to daily newspaper,4.4,False,False
+Income Quintile,4,Subscription to daily newspaper,9.0,False,False
+Income Quintile,5,Subscription to daily newspaper,28.1,False,False
+Income Quintile,Total,Subscription to daily newspaper,9.6,False,False
+Income Quintile,1,Subscription to lottery,2.1,False,False
+Income Quintile,2,Subscription to lottery,4.5,False,False
+Income Quintile,3,Subscription to lottery,9.9,False,False
+Income Quintile,4,Subscription to lottery,14.8,False,False
+Income Quintile,5,Subscription to lottery,14.9,False,False
+Income Quintile,Total,Subscription to lottery,9.3,False,False
+Income Quintile,1,Subscription to periodicals and publications,3.2,False,False
+Income Quintile,2,Subscription to periodicals and publications,2.8,False,False
+Income Quintile,3,Subscription to periodicals and publications,3.1,False,False
+Income Quintile,4,Subscription to periodicals and publications,6.3,False,False
+Income Quintile,5,Subscription to periodicals and publications,12.2,False,False
+Income Quintile,Total,Subscription to periodicals and publications,5.5,False,False
+Income Quintile,2,Subscriptions for websites ,5.6,False,False
+Income Quintile,3,Subscriptions for websites ,8.7,False,False
+Income Quintile,4,Subscriptions for websites ,9.9,False,False
+Income Quintile,5,Subscriptions for websites ,14.4,False,False
+Income Quintile,Total,Subscriptions for websites ,9.2,False,False
+Income Quintile,1,Sugar,13.7,False,False
+Income Quintile,2,Sugar,8.5,False,False
+Income Quintile,3,Sugar,7.6,False,False
+Income Quintile,4,Sugar,5.1,False,False
+Income Quintile,5,Sugar,4.4,False,False
+Income Quintile,Total,Sugar,7.9,False,False
+Income Quintile,1,Sugar and sugar products,102.9,False,False
+Income Quintile,2,Sugar and sugar products,97.0,False,False
+Income Quintile,3,Sugar and sugar products,96.2,False,False
+Income Quintile,4,Sugar and sugar products,82.4,False,False
+Income Quintile,5,Sugar and sugar products,89.9,False,False
+Income Quintile,Total,Sugar and sugar products,93.7,False,False
+Income Quintile,1,Sugar melons,2.8,False,False
+Income Quintile,2,Sugar melons,3.0,False,False
+Income Quintile,3,Sugar melons,2.5,False,False
+Income Quintile,4,Sugar melons,3.0,False,False
+Income Quintile,5,Sugar melons,4.8,False,False
+Income Quintile,Total,Sugar melons,3.2,False,False
+Income Quintile,1,Summer camp for children,14.0,False,False
+Income Quintile,2,Summer camp for children,27.5,False,False
+Income Quintile,3,Summer camp for children,20.4,False,False
+Income Quintile,4,Summer camp for children,18.9,False,False
+Income Quintile,5,Summer camp for children,26.9,False,False
+Income Quintile,Total,Summer camp for children,21.5,False,False
+Income Quintile,2,Sunflower oil(5),3.5,False,False
+Income Quintile,3,Sunflower oil(5),2.5,False,False
+Income Quintile,4,Sunflower oil(5),3.4,False,False
+Income Quintile,Total,Sunflower oil(5),2.8,False,False
+Income Quintile,1,Supervised institutional  kindergarten day care up to age 3 ,121.1,False,False
+Income Quintile,2,Supervised institutional  kindergarten day care up to age 3 ,154.1,False,False
+Income Quintile,3,Supervised institutional  kindergarten day care up to age 3 ,234.8,False,False
+Income Quintile,4,Supervised institutional  kindergarten day care up to age 3 ,277.5,False,False
+Income Quintile,5,Supervised institutional  kindergarten day care up to age 3 ,236.2,False,False
+Income Quintile,Total,Supervised institutional  kindergarten day care up to age 3 ,204.7,False,False
+Income Quintile,Total,Sweater or sleeveless pullover ,4.1,False,False
+Income Quintile,2,"Sweater, sleeveless pullover",4.5,False,False
+Income Quintile,4,"Sweater, sleeveless pullover",5.4,False,False
+Income Quintile,5,"Sweater, sleeveless pullover",10.2,False,False
+Income Quintile,Total,"Sweater, sleeveless pullover",5.8,False,False
+Income Quintile,1,Sweet concentrates,5.6,False,False
+Income Quintile,2,Sweet concentrates,3.4,False,False
+Income Quintile,3,Sweet concentrates,5.7,False,False
+Income Quintile,4,Sweet concentrates,3.3,False,False
+Income Quintile,5,Sweet concentrates,4.1,False,False
+Income Quintile,Total,Sweet concentrates,4.4,False,False
+Income Quintile,1,Sweet cream,6.5,False,False
+Income Quintile,2,Sweet cream,8.6,False,False
+Income Quintile,3,Sweet cream,9.7,False,False
+Income Quintile,4,Sweet cream,12.1,False,False
+Income Quintile,5,Sweet cream,8.5,False,False
+Income Quintile,Total,Sweet cream,9.1,False,False
+Income Quintile,1,Swimming class,9.2,False,False
+Income Quintile,3,Swimming class,9.7,False,False
+Income Quintile,4,Swimming class,13.1,False,False
+Income Quintile,5,Swimming class,19.7,False,False
+Income Quintile,Total,Swimming class,12.4,False,False
+Income Quintile,Total,Tablet,4.6,False,False
+Income Quintile,1,Tangerines and mandarins,4.0,False,False
+Income Quintile,2,Tangerines and mandarins,6.1,False,False
+Income Quintile,3,Tangerines and mandarins,4.6,False,False
+Income Quintile,4,Tangerines and mandarins,5.2,False,False
+Income Quintile,5,Tangerines and mandarins,6.0,False,False
+Income Quintile,Total,Tangerines and mandarins,5.2,False,False
+Income Quintile,1,Tea,9.6,False,False
+Income Quintile,2,Tea,9.1,False,False
+Income Quintile,3,Tea,10.5,False,False
+Income Quintile,4,Tea,12.0,False,False
+Income Quintile,5,Tea,9.8,False,False
+Income Quintile,Total,Tea,10.2,False,False
+Income Quintile,1,"Telephone, current account",16.5,False,False
+Income Quintile,2,"Telephone, current account",17.6,False,False
+Income Quintile,3,"Telephone, current account",17.6,False,False
+Income Quintile,4,"Telephone, current account",22.6,False,False
+Income Quintile,5,"Telephone, current account",27.8,False,False
+Income Quintile,Total,"Telephone, current account",20.4,False,False
+Income Quintile,4,Television,35.9,False,False
+Income Quintile,5,Television,49.5,False,False
+Income Quintile,Total,Television,26.3,False,False
+Income Quintile,Total,Textbooks ,5.2,False,False
+Income Quintile,1,Third party auto insurance,27.6,False,False
+Income Quintile,2,Third party auto insurance,23.7,False,False
+Income Quintile,3,Third party auto insurance,25.2,False,False
+Income Quintile,4,Third party auto insurance,23.3,False,False
+Income Quintile,5,Third party auto insurance,15.3,False,False
+Income Quintile,Total,Third party auto insurance,23.0,False,False
+Income Quintile,1,Toilet paper,24.0,False,False
+Income Quintile,2,Toilet paper,21.3,False,False
+Income Quintile,3,Toilet paper,20.1,False,False
+Income Quintile,4,Toilet paper,19.3,False,False
+Income Quintile,5,Toilet paper,21.5,False,False
+Income Quintile,Total,Toilet paper,21.2,False,False
+Income Quintile,2,Toll road subscription(30),2.5,False,False
+Income Quintile,3,Toll road subscription(30),5.6,False,False
+Income Quintile,4,Toll road subscription(30),8.9,False,False
+Income Quintile,5,Toll road subscription(30),13.1,False,False
+Income Quintile,Total,Toll road subscription(30),6.3,False,False
+Income Quintile,1,Tomato puree(15),9.6,False,False
+Income Quintile,2,Tomato puree(15),11.3,False,False
+Income Quintile,3,Tomato puree(15),12.3,False,False
+Income Quintile,4,Tomato puree(15),13.8,False,False
+Income Quintile,5,Tomato puree(15),10.9,False,False
+Income Quintile,Total,Tomato puree(15),11.6,False,False
+Income Quintile,1,Tomatoes,33.8,False,False
+Income Quintile,2,Tomatoes,33.1,False,False
+Income Quintile,3,Tomatoes,31.4,False,False
+Income Quintile,4,Tomatoes,35.1,False,False
+Income Quintile,5,Tomatoes,43.9,False,False
+Income Quintile,Total,Tomatoes,35.5,False,False
+Income Quintile,1,Tools and materials for dwelling maintenance(17),17.1,False,False
+Income Quintile,2,Tools and materials for dwelling maintenance(17),49.9,False,False
+Income Quintile,3,Tools and materials for dwelling maintenance(17),32.3,False,False
+Income Quintile,4,Tools and materials for dwelling maintenance(17),53.5,False,False
+Income Quintile,5,Tools and materials for dwelling maintenance(17),58.8,False,False
+Income Quintile,Total,Tools and materials for dwelling maintenance(17),42.3,False,False
+Income Quintile,1,Toys,18.8,False,False
+Income Quintile,2,Toys,13.9,False,False
+Income Quintile,3,Toys,20.6,False,False
+Income Quintile,4,Toys,34.9,False,False
+Income Quintile,5,Toys,16.2,False,False
+Income Quintile,Total,Toys,20.9,False,False
+Income Quintile,1,Transfers to other households(1),128.0,False,False
+Income Quintile,2,Transfers to other households(1),245.0,False,False
+Income Quintile,3,Transfers to other households(1),282.0,False,False
+Income Quintile,4,Transfers to other households(1),440.0,False,False
+Income Quintile,5,Transfers to other households(1),1245.0,False,False
+Income Quintile,Total,Transfers to other households(1),468.0,False,False
+Income Quintile,1,Transport and communications,1764.9,False,False
+Income Quintile,2,Transport and communications,2333.4,False,False
+Income Quintile,3,Transport and communications,2981.7,False,False
+Income Quintile,4,Transport and communications,3902.4,False,False
+Income Quintile,5,Transport and communications,5374.0,False,False
+Income Quintile,Total,Transport and communications,3271.6,False,False
+Income Quintile,1,Transport by bus,56.4,False,False
+Income Quintile,2,Transport by bus,44.6,False,False
+Income Quintile,3,Transport by bus,24.8,False,False
+Income Quintile,4,Transport by bus,21.0,False,False
+Income Quintile,5,Transport by bus,17.3,False,False
+Income Quintile,Total,Transport by bus,32.8,False,False
+Income Quintile,5,Transport by special taxi,26.7,False,False
+Income Quintile,Total,Transport by special taxi,17.1,False,False
+Income Quintile,5,Transport by train ,9.0,False,False
+Income Quintile,Total,Transport by train ,4.7,False,False
+Income Quintile,1,Travel abroad,214.0,False,False
+Income Quintile,2,Travel abroad,414.0,False,False
+Income Quintile,3,Travel abroad,664.4,False,False
+Income Quintile,4,Travel abroad,933.6,False,False
+Income Quintile,5,Travel abroad,1752.9,False,False
+Income Quintile,Total,Travel abroad,795.9,False,False
+Income Quintile,1,"Trays, serving dishes, and storage containers",9.8,False,False
+Income Quintile,2,"Trays, serving dishes, and storage containers",10.0,False,False
+Income Quintile,4,"Trays, serving dishes, and storage containers",12.9,False,False
+Income Quintile,5,"Trays, serving dishes, and storage containers",8.5,False,False
+Income Quintile,Total,"Trays, serving dishes, and storage containers",10.0,False,False
+Income Quintile,Total,Treatments for child development ,12.8,False,False
+Income Quintile,1,Trousers,33.8,False,False
+Income Quintile,2,Trousers,38.0,False,False
+Income Quintile,3,Trousers,41.5,False,False
+Income Quintile,4,Trousers,41.7,False,False
+Income Quintile,5,Trousers,48.8,False,False
+Income Quintile,Total,Trousers,40.8,False,False
+Income Quintile,1,"Underwear, sleepwear, and socks",28.5,False,False
+Income Quintile,2,"Underwear, sleepwear, and socks",47.2,False,False
+Income Quintile,3,"Underwear, sleepwear, and socks",33.5,False,False
+Income Quintile,4,"Underwear, sleepwear, and socks",29.5,False,False
+Income Quintile,5,"Underwear, sleepwear, and socks",38.5,False,False
+Income Quintile,Total,"Underwear, sleepwear, and socks",35.4,False,False
+Income Quintile,Total,Upgrade and computer repairs ,5.0,False,False
+Income Quintile,1,Various household articles(19),3.4,False,False
+Income Quintile,3,Various household articles(19),1.9,False,False
+Income Quintile,4,Various household articles(19),4.1,False,False
+Income Quintile,5,Various household articles(19),6.9,False,False
+Income Quintile,Total,Various household articles(19),3.8,False,False
+Income Quintile,1,Vegetable oils and their products,63.8,False,False
+Income Quintile,2,Vegetable oils and their products,80.2,False,False
+Income Quintile,3,Vegetable oils and their products,58.6,False,False
+Income Quintile,4,Vegetable oils and their products,52.3,False,False
+Income Quintile,5,Vegetable oils and their products,53.3,False,False
+Income Quintile,Total,Vegetable oils and their products,61.7,False,False
+Income Quintile,1,Vegetables and fruit,597.8,False,False
+Income Quintile,2,Vegetables and fruit,594.9,False,False
+Income Quintile,3,Vegetables and fruit,557.0,False,False
+Income Quintile,4,Vegetables and fruit,609.8,False,False
+Income Quintile,5,Vegetables and fruit,696.8,False,False
+Income Quintile,Total,Vegetables and fruit,611.3,False,False
+Income Quintile,1,"Vegetables, fresh",226.9,False,False
+Income Quintile,2,"Vegetables, fresh",217.4,False,False
+Income Quintile,3,"Vegetables, fresh",193.8,False,False
+Income Quintile,4,"Vegetables, fresh",221.2,False,False
+Income Quintile,5,"Vegetables, fresh",255.7,False,False
+Income Quintile,Total,"Vegetables, fresh",223.0,False,False
+Income Quintile,1,"Vegetables, frozen",21.3,False,False
+Income Quintile,2,"Vegetables, frozen",16.7,False,False
+Income Quintile,3,"Vegetables, frozen",20.4,False,False
+Income Quintile,4,"Vegetables, frozen",20.2,False,False
+Income Quintile,5,"Vegetables, frozen",25.7,False,False
+Income Quintile,Total,"Vegetables, frozen",20.8,False,False
+Income Quintile,1,"Vegetables, pickled and canned",61.5,False,False
+Income Quintile,2,"Vegetables, pickled and canned",55.7,False,False
+Income Quintile,3,"Vegetables, pickled and canned",59.4,False,False
+Income Quintile,4,"Vegetables, pickled and canned",62.6,False,False
+Income Quintile,5,"Vegetables, pickled and canned",61.7,False,False
+Income Quintile,Total,"Vegetables, pickled and canned",60.2,False,False
+Income Quintile,1,Vinegar,0.9,False,False
+Income Quintile,2,Vinegar,1.3,False,False
+Income Quintile,3,Vinegar,1.6,False,False
+Income Quintile,4,Vinegar,2.3,False,False
+Income Quintile,5,Vinegar,1.8,False,False
+Income Quintile,Total,Vinegar,1.6,False,False
+Income Quintile,1,Wafers,7.3,False,False
+Income Quintile,2,Wafers,8.2,False,False
+Income Quintile,3,Wafers,8.5,False,False
+Income Quintile,4,Wafers,8.2,False,False
+Income Quintile,5,Wafers,5.4,False,False
+Income Quintile,Total,Wafers,7.5,False,False
+Income Quintile,1,"Wallets, bags, suitcases, and baby products",65.2,False,False
+Income Quintile,2,"Wallets, bags, suitcases, and baby products",63.9,False,False
+Income Quintile,3,"Wallets, bags, suitcases, and baby products",49.5,False,False
+Income Quintile,4,"Wallets, bags, suitcases, and baby products",45.9,False,False
+Income Quintile,5,"Wallets, bags, suitcases, and baby products",42.6,False,False
+Income Quintile,Total,"Wallets, bags, suitcases, and baby products",53.4,False,False
+Income Quintile,1,Water,146.4,False,False
+Income Quintile,2,Water,134.7,False,False
+Income Quintile,3,Water,138.3,False,False
+Income Quintile,4,Water,149.4,False,False
+Income Quintile,5,Water,166.6,False,False
+Income Quintile,Total,Water,147.1,False,False
+Income Quintile,1,Water purifier maintenance,8.3,False,False
+Income Quintile,2,Water purifier maintenance,18.0,False,False
+Income Quintile,3,Water purifier maintenance,26.2,False,False
+Income Quintile,4,Water purifier maintenance,29.7,False,False
+Income Quintile,5,Water purifier maintenance,29.3,False,False
+Income Quintile,Total,Water purifier maintenance,22.3,False,False
+Income Quintile,1,Watermelons,13.9,False,False
+Income Quintile,2,Watermelons,9.3,False,False
+Income Quintile,3,Watermelons,8.8,False,False
+Income Quintile,4,Watermelons,7.8,False,False
+Income Quintile,5,Watermelons,11.3,False,False
+Income Quintile,Total,Watermelons,10.2,False,False
+Income Quintile,1,"Wheat groats, quinoa, wheat, and millet(2)",1.4,False,False
+Income Quintile,2,"Wheat groats, quinoa, wheat, and millet(2)",2.0,False,False
+Income Quintile,3,"Wheat groats, quinoa, wheat, and millet(2)",1.8,False,False
+Income Quintile,5,"Wheat groats, quinoa, wheat, and millet(2)",1.6,False,False
+Income Quintile,Total,"Wheat groats, quinoa, wheat, and millet(2)",1.7,False,False
+Income Quintile,1,White flour,8.3,False,False
+Income Quintile,2,White flour,11.3,False,False
+Income Quintile,3,White flour,8.8,False,False
+Income Quintile,4,White flour,6.5,False,False
+Income Quintile,5,White flour,4.0,False,False
+Income Quintile,Total,White flour,7.8,False,False
+Income Quintile,1,Whole chicken and turkey(8),103.9,False,False
+Income Quintile,2,Whole chicken and turkey(8),64.1,False,False
+Income Quintile,3,Whole chicken and turkey(8),39.4,False,False
+Income Quintile,4,Whole chicken and turkey(8),21.8,False,False
+Income Quintile,5,Whole chicken and turkey(8),19.8,False,False
+Income Quintile,Total,Whole chicken and turkey(8),49.8,False,False
+Income Quintile,3,"Whole wheat flour, spelt, rye, and other",5.6,False,False
+Income Quintile,4,"Whole wheat flour, spelt, rye, and other",2.8,False,False
+Income Quintile,5,"Whole wheat flour, spelt, rye, and other",4.7,False,False
+Income Quintile,Total,"Whole wheat flour, spelt, rye, and other",6.0,False,False
+Income Quintile,1,Wine,19.9,False,False
+Income Quintile,2,Wine,15.9,False,False
+Income Quintile,3,Wine,20.5,False,False
+Income Quintile,4,Wine,35.5,False,False
+Income Quintile,5,Wine,52.7,False,False
+Income Quintile,Total,Wine,28.9,False,False
+Income Quintile,3,Women's hairdressing,25.7,False,False
+Income Quintile,4,Women's hairdressing,34.5,False,False
+Income Quintile,5,Women's hairdressing,45.2,False,False
+Income Quintile,Total,Women's hairdressing,25.1,False,False
+Income Quintile,1,Women's outerwear,143.6,False,False
+Income Quintile,2,Women's outerwear,160.3,False,False
+Income Quintile,3,Women's outerwear,165.5,False,False
+Income Quintile,4,Women's outerwear,159.6,False,False
+Income Quintile,5,Women's outerwear,230.1,False,False
+Income Quintile,Total,Women's outerwear,171.8,False,False
+Income Quintile,1,Women's shoes,26.9,False,False
+Income Quintile,2,Women's shoes,36.8,False,False
+Income Quintile,3,Women's shoes,27.3,False,False
+Income Quintile,4,Women's shoes,46.2,False,False
+Income Quintile,5,Women's shoes,53.6,False,False
+Income Quintile,Total,Women's shoes,38.1,False,False
+Income Quintile,Total,Women's socks and hosiery ,3.8,False,False
+Income Quintile,1,Women's sport shoes,13.3,False,False
+Income Quintile,2,Women's sport shoes,12.1,False,False
+Income Quintile,3,Women's sport shoes,21.2,False,False
+Income Quintile,4,Women's sport shoes,24.7,False,False
+Income Quintile,5,Women's sport shoes,22.0,False,False
+Income Quintile,Total,Women's sport shoes,18.7,False,False
+Income Quintile,1,Women's suit and overcoat,10.1,False,False
+Income Quintile,2,Women's suit and overcoat,18.2,False,False
+Income Quintile,3,Women's suit and overcoat,13.6,False,False
+Income Quintile,4,Women's suit and overcoat,17.5,False,False
+Income Quintile,5,Women's suit and overcoat,13.7,False,False
+Income Quintile,Total,Women's suit and overcoat,14.6,False,False
+Income Quintile,1,Women's track suit,6.4,False,False
+Income Quintile,Total,Women's track suit,5.5,False,False
+Income Quintile,2,Women's underwear and nightdress,17.6,False,False
+Income Quintile,Total,Women's underwear and nightdress,12.7,False,False
+Income Quintile,3,Writing and drawing supplies ,6.0,False,False
+Income Quintile,4,Writing and drawing supplies ,7.8,False,False
+Income Quintile,Total,Writing and drawing supplies ,9.4,False,False
+Income Quintile,2,Yemeni bread,2.6,False,False
+Income Quintile,3,Yemeni bread,5.0,False,False
+Income Quintile,4,Yemeni bread,3.1,False,False
+Income Quintile,5,Yemeni bread,2.4,False,False
+Income Quintile,Total,Yemeni bread,3.0,False,False

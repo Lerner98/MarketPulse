@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, TrendingUp, Users, Package, Menu } from 'lucide-react';
+import { LayoutDashboard, Menu } from 'lucide-react';
 import { GLOBAL_STYLES } from '@/lib/globals';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
@@ -12,9 +12,8 @@ interface AppLayoutProps {
 
 const navigation = [
   { name: 'לוח בקרה', href: '/', icon: LayoutDashboard },
-  { name: 'הכנסות', href: '/revenue', icon: TrendingUp },
-  { name: 'לקוחות', href: '/customers', icon: Users },
-  { name: 'מוצרים', href: '/products', icon: Package },
+  // V10: Only dashboard is implemented with normalized star schema
+  // Other pages will be added as needed with V10 architecture
 ];
 
 export const AppLayout = ({ children }: AppLayoutProps) => {

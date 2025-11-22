@@ -1,36 +1,25 @@
 """
-Quick script to refresh materialized views for testing.
+Refresh all materialized views after database update
 """
+from sqlalchemy import create_engine, text
+from dotenv import load_dotenv
+import os
 import sys
+
 sys.stdout.reconfigure(encoding='utf-8')
 
-from models.database import DatabaseManager
-from sqlalchemy import text
+load_dotenv()
+engine = create_engine(os.getenv('DATABASE_URL'))
 
-db = DatabaseManager()
+with engine.connect() as conn:
+    print("Refreshing materialized views...")
 
-print("Refreshing materialized views...")
+    conn.execute(text('REFRESH MATERIALIZED VIEW vw_segment_burn_rate'))
+    conn.commit()
+    print("Refreshed: vw_segment_burn_rate")
 
-with db.engine.begin() as conn:
-    # Check if views exist
-    views = ['mv_quintile_analysis', 'mv_category_performance', 'mv_city_performance', 'mv_daily_revenue']
+    conn.execute(text('REFRESH MATERIALIZED VIEW vw_segment_inequality'))
+    conn.commit()
+    print("Refreshed: vw_segment_inequality")
 
-    for view in views:
-        try:
-            result = conn.execute(text(f"""
-                SELECT EXISTS (
-                    SELECT FROM pg_matviews
-                    WHERE matviewname = '{view}'
-                )
-            """))
-            exists = result.scalar()
-
-            if exists:
-                conn.execute(text(f"REFRESH MATERIALIZED VIEW {view}"))
-                print(f"✓ Refreshed {view}")
-            else:
-                print(f"✗ View {view} does not exist")
-        except Exception as e:
-            print(f"✗ Error with {view}: {e}")
-
-print("\nDone!")
+    print("\nDone! All views refreshed.")
