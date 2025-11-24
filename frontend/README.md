@@ -1,96 +1,73 @@
-# MarketPulse Frontend
+# Welcome to your Lovable project
 
-Modern React frontend for the MarketPulse e-commerce analytics platform.
+## Project info
 
-## Tech Stack
+**URL**: https://lovable.dev/projects/4b796914-279b-4400-82a1-403a7503a43e
 
-- **React 18** - UI framework
-- **TypeScript** - Type safety
-- **Vite** - Fast build tool
-- **Tailwind CSS** - Utility-first styling
-- **React Router** - Client-side routing
-- **Axios** - HTTP client
-- **Recharts** - Chart library
-- **D3.js** - Advanced visualizations
-- **Vitest** - Unit testing
-- **React Testing Library** - Component testing
-- **Playwright** - E2E testing
+## How can I edit this code?
 
-## Getting Started
+There are several ways of editing your application.
 
-### Prerequisites
+**Use Lovable**
 
-- Node.js 18+ and npm
-- Backend API running at `http://localhost:8000`
+Simply visit the [Lovable Project](https://lovable.dev/projects/4b796914-279b-4400-82a1-403a7503a43e) and start prompting.
 
-### Installation
+Changes made via Lovable will be committed automatically to this repo.
 
-```bash
-npm install
-```
+**Use your preferred IDE**
 
-### Development
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-```bash
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000)
+**Edit a file directly in GitHub**
 
-### Build
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-```bash
-npm run build
-```
+**Use GitHub Codespaces**
 
-### Testing
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-```bash
-# Unit and integration tests
-npm test
+## What technologies are used for this project?
 
-# Test UI
-npm run test:ui
+This project is built with:
 
-# E2E tests
-npm run test:e2e
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-# Coverage
-npm run coverage
-```
+## How can I deploy this project?
 
-## Project Structure
+Simply open [Lovable](https://lovable.dev/projects/4b796914-279b-4400-82a1-403a7503a43e) and click on Share -> Publish.
 
-```
-src/
-├── components/       # Reusable UI components
-├── pages/           # Route components
-├── visualizations/  # D3.js visualizations
-├── hooks/           # Custom React hooks
-├── api/             # API client
-├── utils/           # Helper functions
-├── types/           # TypeScript types
-└── test/            # Test utilities
-```
+## Can I connect a custom domain to my Lovable project?
 
-## API Integration
+Yes, you can!
 
-The frontend proxies `/api/*` requests to the backend at `http://localhost:8000`.
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Available endpoints:
-- `GET /api/health` - Health check
-- `GET /api/dashboard` - Dashboard metrics
-- `GET /api/revenue?limit=7` - Revenue data
-- `GET /api/customers?limit=10&sort=total_spent` - Top customers
-- `GET /api/products` - Product performance
-
-## Performance Targets
-
-- Initial load: <2 seconds
-- Time to Interactive: <3 seconds
-- Lighthouse score: 90+
-- Bundle size: <500KB gzipped
-
-## License
-
-MIT
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

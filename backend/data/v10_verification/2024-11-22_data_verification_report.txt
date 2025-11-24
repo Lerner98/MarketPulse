@@ -1,0 +1,44 @@
+================================================================================
+RECORD COUNT BREAKDOWN BY SOURCE FILE
+================================================================================
+
+File: Education.xlsx
+  Segment Type: Religiosity Level
+  Segments: 5
+  Records: 463
+
+File: Household_Size.xlsx
+  Segment Type: Country of Birth
+  Segments: 5
+  Records: 453
+
+File: Household_Size2.xlsx
+  Segment Type: Income Decile (Gross)
+  Segments: 11
+  Records: 1054
+
+File: Income_Decile.xlsx
+  Segment Type: Income Decile (Net)
+  Segments: 11
+  Records: 1057
+
+File: WorkStatus-IncomeSource.xlsx
+  Segment Type: Geographic Region
+  Segments: 14
+  Records: 362
+
+File: WorkStatus-IncomeSource2.xlsx
+  Segment Type: Work Status
+  Segments: 3
+  Records: 288
+
+File: הוצאה_לתצרוכת_למשק_בית_עם_מוצרים_מפורטים.xlsx
+  Segment Type: Income Quintile
+  Segments: 6
+  Records: 2743
+
+================================================================================
+TOTAL RECORDS: 6420
+EXPECTED: 27,456
+DIFFERENCE: 21036 records SHORT
+================================================================================

@@ -1,110 +1,53 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
-import { useRevenue } from '@/hooks/useApi'
-import ErrorMessage from './ErrorMessage'
-import SkeletonLoader from './SkeletonLoader'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, TooltipProps } from 'recharts';
+import { GLOBAL_STYLES } from '@/lib/globals';
+import { formatCurrency } from '@/lib/utils/hebrew';
+import { RevenueData } from '@/lib/types';
 
 interface RevenueChartProps {
-  limit?: number
-  grouping?: 'day' | 'week' | 'month'
+  data: RevenueData[];
+  title?: string;
 }
 
-function RevenueChart({ limit = 7, grouping = 'day' }: RevenueChartProps) {
-  const { data, loading, error, refetch } = useRevenue({ limit, grouping })
-
-  if (loading) {
-    return <SkeletonLoader height="300px" />
-  }
-
-  if (error) {
+const CustomTooltip = ({ active, payload }: TooltipProps<number, string>) => {
+  if (active && payload && payload.length) {
     return (
-      <ErrorMessage
-        message={error.message || 'Failed to load revenue data'}
-        onRetry={refetch}
-      />
-    )
-  }
-
-  if (!data || data.length === 0) {
-    return (
-      <div className="text-center py-20 text-gray-600">
-        No revenue data available
+      <div className="bg-card border border-border rounded-lg shadow-lg p-3">
+        <p className="font-medium text-sm mb-1" dir="rtl">{payload[0].payload.hebrewDate}</p>
+        <p className="text-primary font-semibold" dir="rtl">{formatCurrency(payload[0].value as number)}</p>
       </div>
-    )
+    );
   }
+  return null;
+};
 
-  // Format data for Recharts
-  const chartData = data.map((item) => ({
-    date: new Date(item.date).toLocaleDateString('he-IL', {
-      month: 'short',
-      day: 'numeric',
-    }),
-    revenue: item.revenue,
-    transactions: item.transactions || 0,
-  }))
-
-  // Custom tooltip
-  const CustomTooltip = ({ active, payload }: any) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className="bg-white p-3 rounded-lg shadow-lg border border-gray-200">
-          <p className="font-semibold text-gray-900">{payload[0].payload.date}</p>
-          <p className="text-sm text-primary-600">
-            Revenue: ₪{payload[0].value.toLocaleString()}
-          </p>
-          {payload[1] && (
-            <p className="text-sm text-gray-600">
-              Transactions: {payload[1].value}
-            </p>
-          )}
-        </div>
-      )
-    }
-    return null
-  }
-
+export const RevenueChart = ({ data, title = 'מגמת הכנסות שבועית' }: RevenueChartProps) => {
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <LineChart data={chartData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-        <XAxis
-          dataKey="date"
-          stroke="#6b7280"
-          style={{ fontSize: '12px' }}
-        />
-        <YAxis
-          stroke="#6b7280"
-          style={{ fontSize: '12px' }}
-          tickFormatter={(value) => `₪${value.toLocaleString()}`}
-        />
-        <Tooltip content={<CustomTooltip />} />
-        <Legend
-          wrapperStyle={{ fontSize: '14px' }}
-          iconType="line"
-        />
-        <Line
-          type="monotone"
-          dataKey="revenue"
-          stroke="#0ea5e9"
-          strokeWidth={2}
-          dot={{ fill: '#0ea5e9', r: 4 }}
-          activeDot={{ r: 6 }}
-          name="Revenue (₪)"
-        />
-        {chartData[0]?.transactions !== undefined && (
-          <Line
-            type="monotone"
-            dataKey="transactions"
-            stroke="#64748b"
-            strokeWidth={2}
-            dot={{ fill: '#64748b', r: 4 }}
-            activeDot={{ r: 6 }}
-            name="Transactions"
-            yAxisId={1}
+    <div className={GLOBAL_STYLES.charts.container}>
+      <h3 className={GLOBAL_STYLES.charts.title} dir="rtl">{title}</h3>
+      <ResponsiveContainer width="100%" height={320}>
+        <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+          <XAxis 
+            dataKey="dayName" 
+            stroke="hsl(var(--muted-foreground))"
+            style={{ fontSize: '12px' }}
           />
-        )}
-      </LineChart>
-    </ResponsiveContainer>
-  )
-}
-
-export default RevenueChart
+          <YAxis 
+            stroke="hsl(var(--muted-foreground))"
+            style={{ fontSize: '12px' }}
+            tickFormatter={(value) => `₪${(value / 1000).toFixed(0)}K`}
+          />
+          <Tooltip content={<CustomTooltip />} />
+          <Line 
+            type="monotone" 
+            dataKey="revenue" 
+            stroke={GLOBAL_STYLES.charts.colors.primary}
+            strokeWidth={3}
+            dot={{ fill: GLOBAL_STYLES.charts.colors.primary, r: 5 }}
+            activeDot={{ r: 7 }}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};

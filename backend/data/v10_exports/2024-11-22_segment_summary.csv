@@ -1,0 +1,56 @@
+﻿segment_type,segment_value,item_count,income_rows,consumption_rows
+Country of Birth,325,83,1,1
+Country of Birth,371,85,1,1
+Country of Birth,603,95,1,1
+Country of Birth,649,94,1,1
+Country of Birth,974,96,1,1
+Geographic Region,117,25,1,1
+Geographic Region,132,25,1,1
+Geographic Region,143,25,1,1
+Geographic Region,218,25,1,1
+Geographic Region,230,25,1,1
+Geographic Region,260,25,1,1
+Geographic Region,281,27,1,1
+Geographic Region,323,25,1,1
+Geographic Region,362,26,1,1
+Geographic Region,405,26,1,1
+Geographic Region,421,27,1,1
+Geographic Region,471,27,1,1
+Geographic Region,481,27,1,1
+Geographic Region,551,27,1,1
+Income Decile (Gross),1,86,1,1
+Income Decile (Gross),10,97,1,1
+Income Decile (Gross),2,94,1,1
+Income Decile (Gross),3,97,1,1
+Income Decile (Gross),4,94,1,1
+Income Decile (Gross),5,96,1,1
+Income Decile (Gross),6,98,1,1
+Income Decile (Gross),7,99,1,1
+Income Decile (Gross),8,97,1,1
+Income Decile (Gross),9,96,1,1
+Income Decile (Gross),Total,100,1,1
+Income Decile (Net),1,93,1,1
+Income Decile (Net),10,94,1,1
+Income Decile (Net),2,97,1,1
+Income Decile (Net),3,97,1,1
+Income Decile (Net),4,97,1,1
+Income Decile (Net),5,96,1,1
+Income Decile (Net),6,94,1,1
+Income Decile (Net),7,99,1,1
+Income Decile (Net),8,93,1,1
+Income Decile (Net),9,98,1,1
+Income Decile (Net),Total,99,1,1
+Income Quintile,1,410,1,1
+Income Quintile,2,430,1,1
+Income Quintile,3,429,1,1
+Income Quintile,4,448,1,1
+Income Quintile,5,468,1,1
+Income Quintile,Total,558,1,1
+Religiosity Level,"1,139",97,1,1
+Religiosity Level,127,74,1,1
+Religiosity Level,"2,080",98,1,1
+Religiosity Level,593,98,1,1
+Religiosity Level,645,96,1,1
+Work Status,"1,176",93,1,1
+Work Status,"3,713",99,1,1
+Work Status,589,96,1,1

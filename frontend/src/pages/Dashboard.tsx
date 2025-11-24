@@ -1,167 +1,205 @@
-import { useDashboard } from '@/hooks/useApi'
-import MetricsCard from '@/components/MetricsCard'
-import ErrorMessage from '@/components/ErrorMessage'
-import SkeletonLoader from '@/components/SkeletonLoader'
-import RevenueChart from '@/components/RevenueChart'
-import ProductChart from '@/components/ProductChart'
-import SankeyDiagram from '@/visualizations/SankeyDiagram'
-import { mockCustomerJourneyData } from '@/utils/mockData'
+import { useState } from 'react';
+import { AlertTriangle } from 'lucide-react';
+import { SegmentSelector } from '@/components/segmentation/SegmentSelector';
+import { SegmentSummary } from '@/components/segmentation/SegmentSummary';
+import { MetricCards } from '@/components/segmentation/MetricCards';
+import { SegmentComparisonChart } from '@/components/segmentation/SegmentComparisonChart';
+import { CategoryComparisonChart } from '@/components/segmentation/CategoryComparisonChart';
+import { BurnRateGauge } from '@/components/segmentation/BurnRateGauge';
+import { InsightsList } from '@/components/segmentation/InsightsList';
+import { SEGMENT_DISPLAY_MAP } from '@/utils/segmentDisplayNames';
+import {
+  useSegmentTypes,
+  useInequalityAnalysis,
+  useBurnRateAnalysis,
+} from '@/hooks/useCBSData';
 
-function Dashboard() {
-  const { data: metrics, loading, error, refetch } = useDashboard()
+const Dashboard = () => {
+  // Fetch available segment types
+  const {
+    data: segmentTypesData,
+    isLoading: loadingSegmentTypes,
+    error: errorSegmentTypes,
+  } = useSegmentTypes();
+
+  // State for selected segment type
+  const [selectedSegmentType, setSelectedSegmentType] = useState<string>('Income Decile (Net)');
+
+  // Fetch inequality analysis for selected segment
+  const {
+    data: inequalityData,
+    isLoading: loadingInequality,
+    error: errorInequality,
+  } = useInequalityAnalysis(selectedSegmentType, 10);
+
+  // Fetch burn rate analysis for selected segment type
+  const {
+    data: burnRateData,
+    isLoading: loadingBurnRate,
+    error: errorBurnRate,
+  } = useBurnRateAnalysis(selectedSegmentType);
+
+  const isLoading = loadingSegmentTypes || loadingInequality || loadingBurnRate;
+  const error = errorSegmentTypes || errorInequality || errorBurnRate;
+
+  // Extract segment types from API response
+  const segmentTypes = segmentTypesData?.segment_types.map(st => st.segment_type) || ['Income Decile (Net)'];
+
+  // Handle segment change
+  const handleSegmentChange = (newSegment: string) => {
+    setSelectedSegmentType(newSegment);
+  };
+
+  // Loading state
+  if (loadingSegmentTypes) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground" dir="rtl">
+            טוען סוגי פילוח...
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (errorSegmentTypes) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <AlertTriangle className="h-12 w-12 text-error mx-auto mb-4" />
+          <p className="text-error font-semibold mb-2" dir="rtl">
+            שגיאה בטעינת סוגי פילוח
+          </p>
+          <p className="text-muted-foreground text-sm" dir="rtl">
+            {errorSegmentTypes?.message || 'לא ניתן לטעון את סוגי הפילוח'}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div>
-      <div className="mb-8 flex items-center justify-between">
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900">Dashboard</h2>
-          <p className="text-gray-600 mt-2">
-            Overview of your e-commerce analytics
+    <div className="space-y-8 pb-8">
+      {/* Page Header - Match V9 Style */}
+      <div>
+        <h1 className="text-3xl font-bold mb-2" dir="rtl">
+          ניתוח הוצאות משקי בית ישראליים
+        </h1>
+        <div className="space-y-1" dir="rtl">
+          <p className="text-muted-foreground font-medium">
+            ניתוח דפוסי הוצאות לפי קבוצות אוכלוסייה - נתוני הלמ״ס 2022
+          </p>
+          <p className="text-sm text-muted-foreground">
+            מבוסס על סקר הוצאות משקי הבית של הלמ״ס (6,420 משקי בית)
           </p>
         </div>
-        <button
-          onClick={refetch}
-          disabled={loading}
-          className="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {loading ? 'Refreshing...' : 'Refresh Data'}
-        </button>
       </div>
 
-      {error && (
-        <ErrorMessage
-          message={error.message || 'Failed to load dashboard metrics'}
-          onRetry={refetch}
-          className="mb-6"
+      {/* Segment Selector */}
+      <SegmentSelector
+        segments={segmentTypes}
+        selectedSegment={selectedSegmentType}
+        onSegmentChange={handleSegmentChange}
+        isLoading={isLoading}
+      />
+
+      {/* Segment Summary */}
+      <SegmentSummary segmentType={selectedSegmentType} />
+
+      {/* Key Metrics Cards - Add Visual Variety */}
+      <MetricCards
+        segmentType={selectedSegmentType}
+        data={{
+          inequality: inequalityData?.top_inequality,
+          burnRate: burnRateData?.burn_rates,
+        }}
+      />
+
+      {/* Charts Section - Dynamic Chart Switching */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Dynamic Chart - Line for sequential, Bar for categorical */}
+        {SEGMENT_DISPLAY_MAP[selectedSegmentType]?.preferredChart === 'Line' ? (
+          <SegmentComparisonChart
+            data={burnRateData?.burn_rates || []}
+            segmentType={selectedSegmentType}
+            isLoading={loadingBurnRate}
+          />
+        ) : (
+          <CategoryComparisonChart
+            data={burnRateData?.burn_rates || []}
+            segmentType={selectedSegmentType}
+            isLoading={loadingBurnRate}
+          />
+        )}
+
+        {/* Pie Chart - Burn Rate Distribution */}
+        <BurnRateGauge
+          data={burnRateData?.burn_rates || []}
+          segmentType={selectedSegmentType}
+          isLoading={loadingBurnRate}
         />
+      </div>
+
+      {/* Business Insights */}
+      <div>
+        <h2 className="text-2xl font-bold mb-4" dir="rtl">תובנות עסקיות ומסקנות</h2>
+        <InsightsList
+          segmentType={selectedSegmentType}
+          data={{
+            inequality: inequalityData?.top_inequality,
+            burnRate: burnRateData?.burn_rates,
+          }}
+        />
+      </div>
+
+      {/* Data Source Info - Professional, No Technical Jargon */}
+      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-lg p-6" dir="rtl">
+        <h3 className="text-lg font-semibold mb-3 text-blue-900">
+          📊 אודות הנתונים
+        </h3>
+        <div className="space-y-2 text-sm text-gray-800">
+          <div className="flex justify-between">
+            <span className="font-medium">מקור:</span>
+            <span>הלשכה המרכזית לסטטיסטיקה (הלמ״ס) - סקר הוצאות משקי בית 2022</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="font-medium">היקף המדגם:</span>
+            <span>6,420 משקי בית ישראליים</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="font-medium">אפשרויות ניתוח:</span>
+            <span>{segmentTypes.length} קבוצות אוכלוסייה (הכנסה, גיאוגרפיה, דמוגרפיה)</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="font-medium">איכות נתונים:</span>
+            <span>מעובדים ומנורמלים לניתוח מהיר ומדויק</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Loading/Error Overlays for Data Sections */}
+      {(loadingInequality || loadingBurnRate) && (
+        <div className="fixed bottom-4 right-4 bg-white border border-border rounded-lg p-4 shadow-lg" dir="rtl">
+          <div className="flex items-center gap-2">
+            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"></div>
+            <span className="text-sm text-muted-foreground">טוען נתונים...</span>
+          </div>
+        </div>
       )}
 
-      {/* Metrics Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <MetricsCard
-          title="Total Revenue"
-          value={metrics ? `₪${metrics.total_revenue.toLocaleString()}` : '₪0'}
-          subtitle="All time"
-          loading={loading}
-          icon={
-            <svg
-              className="w-6 h-6 text-primary-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          }
-        />
-
-        <MetricsCard
-          title="Total Customers"
-          value={metrics?.total_customers.toLocaleString() || '0'}
-          subtitle="Active customers"
-          loading={loading}
-          icon={
-            <svg
-              className="w-6 h-6 text-primary-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-              />
-            </svg>
-          }
-        />
-
-        <MetricsCard
-          title="Total Products"
-          value={metrics?.total_products.toLocaleString() || '0'}
-          subtitle="In catalog"
-          loading={loading}
-          icon={
-            <svg
-              className="w-6 h-6 text-primary-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-              />
-            </svg>
-          }
-        />
-
-        <MetricsCard
-          title="Avg Order Value"
-          value={metrics ? `₪${metrics.avg_order_value.toFixed(2)}` : '₪0'}
-          subtitle="Per transaction"
-          loading={loading}
-          icon={
-            <svg
-              className="w-6 h-6 text-primary-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-              />
-            </svg>
-          }
-        />
-      </div>
-
-      {/* Charts Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        <div className="card">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Revenue Trend (Last 7 Days)
-          </h3>
-          <RevenueChart limit={7} grouping="day" />
+      {(errorInequality || errorBurnRate) && (
+        <div className="fixed bottom-4 right-4 bg-red-50 border border-red-200 rounded-lg p-4 shadow-lg" dir="rtl">
+          <div className="flex items-center gap-2">
+            <AlertTriangle className="h-4 w-4 text-red-600" />
+            <span className="text-sm text-red-700">שגיאה בטעינת נתונים</span>
+          </div>
         </div>
-
-        <div className="card">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Top 10 Products by Revenue
-          </h3>
-          <ProductChart limit={10} />
-        </div>
-      </div>
-
-      {/* Customer Journey Section */}
-      <div className="card">
-        <div className="mb-4">
-          <h3 className="text-lg font-semibold text-gray-900">
-            Customer Journey Flow
-          </h3>
-          <p className="text-sm text-gray-600 mt-1">
-            Flow from traffic source → product category → outcome
-          </p>
-        </div>
-        {loading ? (
-          <SkeletonLoader height="400px" />
-        ) : (
-          <SankeyDiagram data={mockCustomerJourneyData} width={1000} height={500} />
-        )}
-      </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

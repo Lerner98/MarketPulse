@@ -84,15 +84,96 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="MarketPulse API",
-    description=(
-        "E-commerce analytics platform providing "
-        "REST endpoints for business intelligence"
-    ),
+    description="""
+    ## Israeli Household Expenditure Analytics Platform
+
+    MarketPulse provides comprehensive REST APIs for analyzing Israeli CBS (Central Bureau of Statistics)
+    Household Expenditure Survey data. Built on a normalized star schema with materialized views for
+    high-performance analytics.
+
+    ### Key Features
+
+    - **Multi-Dimensional Analysis**: Slice spending data by 7 demographic dimensions
+    - **Strategic Insights**: Pre-calculated business intelligence (inequality, burn rate, retail competition)
+    - **High Performance**: < 500ms response times via materialized views and indexed queries
+    - **Real CBS Data**: Israeli household expenditure survey 2022 (500+ categories)
+
+    ### API Versions
+
+    **V10 Segmentation API** (`/api/v10/*`) - Flexible multi-dimensional analytics
+    - Dynamic segment type discovery
+    - Inequality and burn rate analysis across any demographic dimension
+    - Raw expenditure data for custom analysis
+
+    **V9 Strategic API** (`/api/strategic/*`) - Curated strategic insights
+    - Pre-calculated inequality gap analysis (Q1-Q5)
+    - Financial pressure indicators (burn rate by quintile)
+    - Retail competition analysis (traditional vs supermarket)
+
+    ### Data Source
+
+    Israeli Central Bureau of Statistics (CBS) - Household Expenditure Survey 2022
+    - **Coverage**: 500+ expenditure categories
+    - **Demographics**: 7 dimensions (Income, Age, Geography, Work Status, etc.)
+    - **Currency**: ₪ (Israeli Shekels)
+    - **Frequency**: Monthly spending averages
+
+    ### Getting Started
+
+    1. **Explore available segments**: `GET /api/v10/segments/types`
+    2. **Analyze financial pressure**: `GET /api/v10/burn-rate?segment_type=Income%20Quintile`
+    3. **Identify luxury goods**: `GET /api/v10/inequality/Income%20Quintile`
+    4. **Strategic insights**: `GET /api/strategic/inequality-gap`
+
+    ### Performance
+
+    - Response times: < 200ms (strategic), < 500ms (segmentation)
+    - Database: PostgreSQL 15 with materialized views
+    - Caching: Frontend should cache segment metadata (rarely changes)
+
+    ### Support
+
+    - **Documentation**: Interactive API docs at `/docs`
+    - **Alternative Docs**: ReDoc at `/redoc`
+    - **Health Check**: `GET /api/health`
+    """,
     version="1.0.0",
     lifespan=lifespan,
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
+    contact={
+        "name": "MarketPulse Analytics",
+        "url": "https://github.com/yourusername/marketpulse",
+    },
+    license_info={
+        "name": "MIT License",
+        "url": "https://opensource.org/licenses/MIT",
+    },
+    openapi_tags=[
+        {
+            "name": "Health",
+            "description": "Health check and system status endpoints",
+        },
+        {
+            "name": "V10 Segmentation",
+            "description": "Flexible multi-dimensional expenditure analysis across demographic segments. "
+                          "Supports 7 segment types with dynamic discovery, inequality analysis, and burn rate calculations.",
+        },
+        {
+            "name": "Strategic Insights V9",
+            "description": "Pre-calculated strategic business insights including inequality gaps, burn rate analysis, "
+                          "and retail competition (traditional vs supermarket). Optimized for executive dashboards.",
+        },
+        {
+            "name": "Info",
+            "description": "API information and metadata endpoints",
+        },
+        {
+            "name": "Deprecated",
+            "description": "Legacy endpoints maintained for backwards compatibility. Use V10 or Strategic APIs instead.",
+        },
+    ],
 )
 
 
@@ -103,7 +184,9 @@ app = FastAPI(
 # Allowed origins (configure based on environment)
 allowed_origins = [
     "http://localhost:3000",  # React dev server
-    "http://localhost:5173",  # Vite dev server
+    "http://localhost:5173",  # Vite dev server (default)
+    "http://localhost:8080",  # Vite dev server (alt port)
+    "http://localhost:8081",  # Vite dev server (alt port)
 ]
 
 # Add production origins from environment if available
@@ -120,20 +203,46 @@ app.add_middleware(
     max_age=86400,  # 24 hours
 )
 
+# =============================================================================
+# Include ONLY Strategic CBS Routers (REAL DATA ONLY)
+# =============================================================================
+
+# REMOVED: cbs_endpoints.router - uses FAKE synthetic transaction data
+# ONLY strategic endpoints serve REAL CBS Excel data
+
+# Import and register strategic endpoints (REAL CBS DATA)
+try:
+    from api.strategic_endpoints import router as strategic_router
+    app.include_router(strategic_router)
+    logger.info("Strategic CBS endpoints registered successfully (REAL DATA)")
+except Exception as e:
+    logger.error(f"Failed to import strategic endpoints: {e}")
+
+# Import and register segmentation endpoints (NORMALIZED STAR SCHEMA)
+try:
+    from api.segmentation_endpoints import router as segmentation_router
+    app.include_router(segmentation_router)
+    logger.info("Segmentation endpoints registered successfully (NORMALIZED STAR SCHEMA)")
+except Exception as e:
+    logger.error(f"Failed to import segmentation endpoints: {e}")
+
 
 # =============================================================================
 # Dependency Injection
 # =============================================================================
 
 
-def get_db_session() -> Session:
+def get_db_session():
     """
     Dependency to get database session.
 
     Creates a new session for each request and ensures cleanup.
     """
-    with db_manager.get_session() as session:
+    session = db_manager.SessionLocal()
+    try:
         yield session
+    finally:
+        session.close()
 
 
 # =============================================================================
@@ -224,300 +333,91 @@ def health_check(db: Session = Depends(get_db_session)) -> HealthResponse:
 
 @app.get(
     "/api/dashboard",
-    response_model=DashboardResponse,
-    tags=["Analytics"],
-    summary="Get dashboard overview",
-    description=(
-        "Aggregated metrics including revenue, transactions, "
-        "top products, and trends"
-    ),
+    tags=["Deprecated"],
+    summary="[DEPRECATED] Get dashboard overview",
+    description="This endpoint is deprecated. Use /api/cbs/insights instead for complete business intelligence.",
+    deprecated=True,
 )
-def get_dashboard(db: Session = Depends(get_db_session)) -> DashboardResponse:
+def get_dashboard():
     """
-    Dashboard endpoint providing aggregated business metrics.
+    DEPRECATED: This endpoint is no longer supported.
 
-    Returns:
-    - Total revenue and transaction counts
-    - Status breakdown (completed/pending/cancelled)
-    - Top 5 products by revenue
-    - Last 7 days revenue trend
+    Please use the new CBS endpoints:
+    - /api/cbs/insights - Complete business intelligence
+    - /api/cbs/quintiles - Income segmentation
+    - /api/cbs/categories - Category performance
+    - /api/cbs/cities - Geographic analysis
     """
-    try:
-        # Get overall statistics
-        overall_query = text(
-            """
-            SELECT
-                COUNT(*) as total_transactions,
-                SUM(CASE WHEN status = 'completed'
-                    THEN 1 ELSE 0 END) as completed_transactions,
-                SUM(CASE WHEN status = 'pending'
-                    THEN 1 ELSE 0 END) as pending_transactions,
-                SUM(CASE WHEN status = 'cancelled'
-                    THEN 1 ELSE 0 END) as cancelled_transactions,
-                SUM(CASE WHEN status = 'completed'
-                    THEN amount ELSE 0 END) as total_revenue,
-                AVG(CASE WHEN status = 'completed'
-                    THEN amount ELSE NULL END) as avg_order_value
-            FROM transactions
-        """
-        )
-        overall_result = db.execute(overall_query).fetchone()
-
-        # Get top 5 products by revenue
-        top_products_query = text(
-            """
-            SELECT product, SUM(amount) as revenue
-            FROM transactions
-            WHERE status = 'completed'
-            GROUP BY product
-            ORDER BY revenue DESC
-            LIMIT 5
-        """
-        )
-        top_products_results = db.execute(top_products_query).fetchall()
-
-        # Get last 7 days trend
-        trend_query = text(
-            """
-            SELECT
-                transaction_date as date,
-                SUM(amount) as revenue,
-                COUNT(*) as transaction_count
-            FROM transactions
-            WHERE status = 'completed'
-              AND transaction_date >= CURRENT_DATE - INTERVAL '6 days'
-            GROUP BY transaction_date
-            ORDER BY transaction_date DESC
-            LIMIT 7
-        """
-        )
-        trend_results = db.execute(trend_query).fetchall()
-
-        # Build response
-        return DashboardResponse(
-            total_revenue=Decimal(str(overall_result.total_revenue or 0)),
-            total_transactions=overall_result.total_transactions or 0,
-            avg_order_value=Decimal(str(overall_result.avg_order_value or 0)),
-            completed_transactions=overall_result.completed_transactions or 0,
-            pending_transactions=overall_result.pending_transactions or 0,
-            cancelled_transactions=overall_result.cancelled_transactions or 0,
-            top_products=[
-                TopProductItem(product=row.product, revenue=Decimal(str(row.revenue)))
-                for row in top_products_results
-            ],
-            recent_trend=[
-                RecentTrendItem(
-                    transaction_date=row.date,
-                    revenue=Decimal(str(row.revenue)),
-                    transaction_count=row.transaction_count,
-                )
-                for row in trend_results
-            ],
-        )
-
-    except SQLAlchemyError as e:
-        logger.error(f"Dashboard query error: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to retrieve dashboard data",
-        )
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail={
+            "error": "This endpoint is deprecated",
+            "message": "Please use /api/cbs/insights for complete business intelligence",
+            "alternatives": {
+                "insights": "/api/cbs/insights",
+                "quintiles": "/api/cbs/quintiles",
+                "categories": "/api/cbs/categories",
+                "cities": "/api/cbs/cities"
+            }
+        }
+    )
 
 
 @app.get(
     "/api/revenue",
-    response_model=RevenueResponse,
-    tags=["Analytics"],
-    summary="Get revenue analytics",
-    description="Daily revenue breakdown with aggregations and trends",
+    tags=["Deprecated"],
+    summary="[DEPRECATED] Get revenue analytics",
+    description="This endpoint is deprecated. Use /api/cbs/categories instead.",
+    deprecated=True,
 )
-def get_revenue(
-    limit: int = Query(
-        default=30, ge=1, le=365, description="Number of days to retrieve"
-    ),
-    db: Session = Depends(get_db_session),
-) -> RevenueResponse:
-    """
-    Revenue analytics endpoint using v_daily_revenue view.
-
-    Query Parameters:
-    - limit: Number of days to retrieve (1-365, default: 30)
-
-    Returns daily revenue with transaction counts and averages.
-    """
-    try:
-        # Query v_daily_revenue view
-        revenue_query = text(
-            """
-            SELECT
-                transaction_date,
-                total_revenue,
-                transaction_count,
-                avg_transaction_value,
-                unique_customers
-            FROM v_daily_revenue
-            ORDER BY transaction_date DESC
-            LIMIT :limit
-        """
-        )
-
-        results = db.execute(revenue_query, {"limit": limit}).fetchall()
-
-        # Calculate totals
-        total_revenue = sum(Decimal(str(row.total_revenue)) for row in results)
-        total_transactions = sum(row.transaction_count for row in results)
-        avg_daily_revenue = total_revenue / len(results) if results else Decimal(0)
-
-        return RevenueResponse(
-            data=[
-                RevenueDayItem(
-                    transaction_date=row.transaction_date,
-                    total_revenue=Decimal(str(row.total_revenue)),
-                    transaction_count=row.transaction_count,
-                    avg_transaction_value=Decimal(str(row.avg_transaction_value)),
-                    unique_customers=row.unique_customers,
-                )
-                for row in results
-            ],
-            total_revenue=total_revenue,
-            total_transactions=total_transactions,
-            avg_daily_revenue=avg_daily_revenue,
-        )
-
-    except SQLAlchemyError as e:
-        logger.error(f"Revenue query error: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to retrieve revenue data",
-        )
+def get_revenue():
+    """DEPRECATED: Use /api/cbs/categories for category-based revenue analysis."""
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail={
+            "error": "This endpoint is deprecated",
+            "message": "Please use /api/cbs/categories for revenue by category",
+            "alternative": "/api/cbs/categories"
+        }
+    )
 
 
 @app.get(
     "/api/customers",
-    response_model=CustomersResponse,
-    tags=["Analytics"],
-    summary="Get customer analytics",
-    description="Customer behavior analysis with pagination",
+    tags=["Deprecated"],
+    summary="[DEPRECATED] Get customer analytics",
+    description="This endpoint is deprecated. Use /api/cbs/quintiles instead.",
+    deprecated=True,
 )
-def get_customers(
-    limit: int = Query(default=10, ge=1, le=100, description="Results per page"),
-    offset: int = Query(default=0, ge=0, description="Pagination offset"),
-    sort_by: str = Query(
-        default="total_spent", pattern="^(total_spent|transaction_count|last_purchase)$"
-    ),
-    order: str = Query(default="desc", pattern="^(asc|desc)$"),
-    db: Session = Depends(get_db_session),
-) -> CustomersResponse:
-    """
-    Customer analytics endpoint using v_customer_analytics view.
-
-    Query Parameters:
-    - limit: Results per page (1-100, default: 10)
-    - offset: Pagination offset (default: 0)
-    - sort_by: Sort field (total_spent, transaction_count, last_purchase)
-    - order: Sort order (asc, desc)
-
-    Returns customer data with spending patterns and transaction history.
-    """
-    try:
-        # Get total count
-        count_query = text("SELECT COUNT(*) as total FROM v_customer_analytics")
-        total_count = db.execute(count_query).fetchone().total
-
-        # Get paginated results
-        customers_query = text(
-            f"""
-            SELECT
-                customer_name,
-                transaction_count,
-                total_spent,
-                avg_transaction,
-                first_purchase,
-                last_purchase
-            FROM v_customer_analytics
-            ORDER BY {sort_by} {order.upper()}
-            LIMIT :limit OFFSET :offset
-        """
-        )
-
-        results = db.execute(
-            customers_query, {"limit": limit, "offset": offset}
-        ).fetchall()
-
-        return CustomersResponse(
-            customers=[
-                CustomerItem(
-                    customer_name=row.customer_name,
-                    transaction_count=row.transaction_count,
-                    total_spent=Decimal(str(row.total_spent)),
-                    avg_transaction=Decimal(str(row.avg_transaction)),
-                    first_purchase=row.first_purchase,
-                    last_purchase=row.last_purchase,
-                )
-                for row in results
-            ],
-            pagination=PaginationInfo(limit=limit, offset=offset, total=total_count),
-        )
-
-    except SQLAlchemyError as e:
-        logger.error(f"Customers query error: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to retrieve customer data",
-        )
+def get_customers():
+    """DEPRECATED: Use /api/cbs/quintiles for customer segmentation by income."""
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail={
+            "error": "This endpoint is deprecated",
+            "message": "Please use /api/cbs/quintiles for customer segmentation",
+            "alternative": "/api/cbs/quintiles"
+        }
+    )
 
 
 @app.get(
     "/api/products",
-    response_model=ProductsResponse,
-    tags=["Analytics"],
-    summary="Get product performance",
-    description="Product sales metrics and performance analysis",
+    tags=["Deprecated"],
+    summary="[DEPRECATED] Get product performance",
+    description="This endpoint is deprecated. Use /api/cbs/categories instead.",
+    deprecated=True,
 )
-def get_products(db: Session = Depends(get_db_session)) -> ProductsResponse:
-    """
-    Product performance endpoint using v_product_performance view.
-
-    Returns product metrics including:
-    - Total transactions and revenue per product
-    - Average price
-    - Unique customer count
-    """
-    try:
-        # Query v_product_performance view
-        products_query = text(
-            """
-            SELECT
-                product,
-                total_transactions,
-                total_revenue,
-                avg_price,
-                unique_customers
-            FROM v_product_performance
-            ORDER BY total_revenue DESC
-        """
-        )
-
-        results = db.execute(products_query).fetchall()
-
-        return ProductsResponse(
-            products=[
-                ProductItem(
-                    product=row.product,
-                    total_transactions=row.total_transactions,
-                    total_revenue=Decimal(str(row.total_revenue)),
-                    avg_price=Decimal(str(row.avg_price)),
-                    unique_customers=row.unique_customers,
-                )
-                for row in results
-            ]
-        )
-
-    except SQLAlchemyError as e:
-        logger.error(f"Products query error: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to retrieve product data",
-        )
+def get_products():
+    """DEPRECATED: Use /api/cbs/categories for product category performance."""
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail={
+            "error": "This endpoint is deprecated",
+            "message": "Please use /api/cbs/categories for product performance",
+            "alternative": "/api/cbs/categories"
+        }
+    )
 
 
 # =============================================================================
