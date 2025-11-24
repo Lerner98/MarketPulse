@@ -361,11 +361,6 @@ npm install
 npm run dev
 ```
 
-### גישה לאפליקציה
-- **Frontend**: http://localhost:5173
-- **API Docs**: http://localhost:8000/docs
-- **Database**: localhost:5432 (PostgreSQL)
-
 ---
 
 ### 4. ניתוח Burn Rate - ויזואליזציה של יציבות פיננסית
@@ -385,7 +380,7 @@ npm run dev
 
 ---
 
-## 🎓 מה הלמדתי
+## 🎓 מה למדתי
 
 ### Technical Skills
 ✅ **ETL Pipeline Design** - חילוץ, ניקוי, וולידציה של נתונים מורכבים
@@ -411,12 +406,6 @@ Junior Data Analyst & Full-Stack Developer
 📧 [guy.lerner98@gmail.com](mailto:guy.lerner98@gmail.com)
 💼 [LinkedIn](https://linkedin.com/in/guy-lerner)
 🐙 [GitHub](https://github.com/Lerner98)
-
----
-
-## 📄 רישיון
-
-MIT License - ראה [LICENSE](LICENSE)
 
 ---
 
