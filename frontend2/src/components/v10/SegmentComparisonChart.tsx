@@ -77,12 +77,14 @@ export const SegmentComparisonChart = ({ data, segmentType, isLoading = false }:
     );
   }
 
-  // Transform and sort data
-  const sortedData = [...data].sort((a, b) => {
-    const numA = parseInt(a.segment_value.match(/\d+/)?.[0] || '0');
-    const numB = parseInt(b.segment_value.match(/\d+/)?.[0] || '0');
-    return numA - numB;
-  });
+  // Transform and sort data - REMOVE "Total" if present
+  const sortedData = [...data]
+    .filter(item => !item.segment_value.toLowerCase().includes('total') && item.segment_value !== 'Total')
+    .sort((a, b) => {
+      const numA = parseInt(a.segment_value.match(/\d+/)?.[0] || '0');
+      const numB = parseInt(b.segment_value.match(/\d+/)?.[0] || '0');
+      return numA - numB;
+    });
 
   // Prepare Chart.js data
   const chartData = {
@@ -196,7 +198,7 @@ export const SegmentComparisonChart = ({ data, segmentType, isLoading = false }:
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div style={{ height: '450px' }}>
+        <div style={{ height: '450px', position: 'relative' }}>
           <Line data={chartData} options={options} />
         </div>
 

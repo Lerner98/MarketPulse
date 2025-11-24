@@ -183,7 +183,7 @@ export const BurnRateGauge = ({ data, segmentType, isLoading = false }: BurnRate
           </div>
         </div>
 
-        <div style={{ height: '320px' }}>
+        <div style={{ height: '320px', position: 'relative' }}>
           <Pie data={chartData} options={options} />
         </div>
 

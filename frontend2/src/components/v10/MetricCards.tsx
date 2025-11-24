@@ -33,8 +33,18 @@ export const MetricCards = ({ segmentType, data }: MetricCardsProps) => {
 
       const savingsRate = bestSavings ? (100 - bestSavings.burn_rate_pct) : 0;
 
-      // Total households (would need to sum from database, use placeholder for now)
-      const totalHouseholds = 2921; // 623.1K + 1952K + 345.7K = 2920.8K
+      // Financial discipline: Calculate burn rate range (stability indicator)
+      const burnRates = data?.burnRate?.map(item => item.burn_rate_pct) || [];
+      const maxBurnRate = burnRates.length > 0 ? Math.max(...burnRates) : 0;
+      const minBurnRate = burnRates.length > 0 ? Math.min(...burnRates) : 0;
+      const burnRateRange = maxBurnRate - minBurnRate;
+
+      // Find worst financial control (highest burn rate)
+      const worstControl = data?.burnRate && data.burnRate.length > 0
+        ? data.burnRate.reduce((worst, current) =>
+            current.burn_rate_pct > worst.burn_rate_pct ? current : worst
+          )
+        : null;
 
       return [
         {
@@ -55,127 +65,128 @@ export const MetricCards = ({ segmentType, data }: MetricCardsProps) => {
           icon: '💎',
           value: savingsRate > 0 ? `${savingsRate.toFixed(1)}%` : 'טוען...',
           label: 'שיעור חיסכון מקסימלי',
-          subtitle: bestSavings ? `שכירים: ${bestSavings.burn_rate_pct.toFixed(1)}% burn rate` : 'הקבוצה עם החיסכון הגבוה ביותר',
+          subtitle: bestSavings ? `${translateSegmentCode(bestSavings.segment_value, 'Work Status')}: ${bestSavings.burn_rate_pct.toFixed(1)}% burn rate` : 'הקבוצה עם החיסכון הגבוה ביותר',
           color: 'green' as const
         },
         {
-          icon: '👥',
-          value: `${totalHouseholds}K`,
-          label: 'סך משקי בית',
-          subtitle: 'גודל שוק כולל לפי מצב תעסוקתי',
+          icon: '⚖️',
+          value: burnRateRange > 0 ? `${burnRateRange.toFixed(0)}%` : 'טוען...',
+          label: 'פער בשליטה על הוצאות',
+          subtitle: worstControl && bestSavings
+            ? `${translateSegmentCode(bestSavings.segment_value, 'Work Status')} (${bestSavings.burn_rate_pct.toFixed(0)}% burn) vs ${translateSegmentCode(worstControl.segment_value, 'Work Status')} (${worstControl.burn_rate_pct.toFixed(0)}% burn)`
+            : 'מי מצליח לשמור על תקציב ומי לא',
           color: 'amber' as const
         }
       ];
     }
 
-    // Income Quintile - Show average metrics
+    // Income Quintile - Show the dramatic gap story
     if (segmentType === 'Income Quintile') {
-      const topSegment = data?.burnRate?.[data.burnRate.length - 1]; // Highest income
-      const bottomSegment = data?.burnRate?.[0]; // Lowest income
+      const sortedByIncome = data?.burnRate ? [...data.burnRate].sort((a, b) => b.income - a.income) : [];
+      const q5 = sortedByIncome[0]; // Top 20%
+      const q1 = sortedByIncome[sortedByIncome.length - 1]; // Bottom 20%
+
+      const incomeGap = q5 && q1 ? q5.income / q1.income : 0;
+      const spendingGap = q5 && q1 ? q5.spending / q1.spending : 0;
+
+      // Q1 burn rate to show financial stress
+      const q1BurnRate = q1 ? q1.burn_rate_pct : 0;
+
+      // Average income across all quintiles
       const avgIncome = data?.burnRate && data.burnRate.length > 0
         ? data.burnRate.reduce((sum, item) => sum + item.income, 0) / data.burnRate.length
-        : 0;
-      const avgSpending = data?.burnRate && data.burnRate.length > 0
-        ? data.burnRate.reduce((sum, item) => sum + item.spending, 0) / data.burnRate.length
-        : 0;
-      const incomeGap = topSegment && bottomSegment
-        ? topSegment.income / bottomSegment.income
         : 0;
 
       return [
         {
-          icon: '💰',
-          value: avgIncome > 0 ? `₪${(avgIncome / 1000).toFixed(0)}K` : 'טוען...',
-          label: 'הכנסה חודשית ממוצעת',
-          subtitle: 'ממוצע משוקלל לכל הקבוצות',
-          color: 'blue' as const
-        },
-        {
-          icon: '📊',
-          value: avgSpending > 0 ? `₪${(avgSpending / 1000).toFixed(0)}K` : 'טוען...',
-          label: 'הוצאה חודשית ממוצעת',
-          subtitle: 'ממוצע משוקלל לכל הקבוצות',
-          color: 'purple' as const
-        },
-        {
-          icon: '📈',
+          icon: '⚡',
           value: incomeGap > 0 ? `×${incomeGap.toFixed(1)}` : 'טוען...',
-          label: 'פער הכנסות (גבוה/נמוך)',
-          subtitle: topSegment && bottomSegment
-            ? `${topSegment.segment_value} לעומת ${bottomSegment.segment_value}`
-            : 'ההבדל בין הקבוצות',
+          label: 'פער הכנסות Q5/Q1',
+          subtitle: q5 && q1 ? `Q5: ₪${(q5.income / 1000).toFixed(0)}K vs Q1: ₪${(q1.income / 1000).toFixed(0)}K` : 'העשירים מרוויחים פי כמה?',
           color: 'red' as const
         },
         {
           icon: '🎯',
-          value: data?.inequality?.[0]
-            ? `×${data.inequality[0].inequality_ratio.toFixed(1)}`
-            : 'טוען...',
-          label: 'פער הוצאות מקסימלי',
-          subtitle: data?.inequality?.[0] ? translateItemName(data.inequality[0].item_name) : 'הקטגוריה עם הפער הגבוה ביותר',
+          value: spendingGap > 0 ? `×${spendingGap.toFixed(1)}` : 'טוען...',
+          label: 'פער הוצאות Q5/Q1',
+          subtitle: 'העשירים מוציאים פחות יחסית להכנסה',
           color: 'amber' as const
+        },
+        {
+          icon: '📊',
+          value: avgIncome > 0 ? `₪${(avgIncome / 1000).toFixed(1)}K` : 'טוען...',
+          label: 'הכנסה ממוצעת כללית',
+          subtitle: 'ממוצע כל החמישיות - ההכנסה הסטנדרטית',
+          color: 'blue' as const
+        },
+        {
+          icon: '⚠️',
+          value: q1BurnRate > 0 ? `${q1BurnRate.toFixed(0)}%` : 'טוען...',
+          label: 'Burn Rate של Q1',
+          subtitle: q1BurnRate > 100 ? 'מעל 100% - חיים בחובות!' : 'מצוקה כלכלית',
+          color: 'purple' as const
         }
       ];
     }
 
-    // Income Deciles - Show different metrics (median, standard deviation, top 10% share)
-    if (segmentType === 'Income Decile (Net)' || segmentType === 'Income Decile (Gross)') {
-      const sortedIncome = data?.burnRate
-        ? [...data.burnRate].sort((a, b) => a.income - b.income)
-        : [];
+    // Income Deciles - Show the extreme inequality and middle-class story
+    if (segmentType === 'Income Decile (Net)') {
+      const sortedByIncome = data?.burnRate ? [...data.burnRate].sort((a, b) => b.income - a.income) : [];
+      const d10 = sortedByIncome[0]; // Top 10%
+      const d1 = sortedByIncome[sortedByIncome.length - 1]; // Bottom 10%
 
-      // Calculate median income (middle value)
-      const medianIncome = sortedIncome.length > 0
-        ? sortedIncome[Math.floor(sortedIncome.length / 2)].income
-        : 0;
+      const incomeGap = d10 && d1 ? d10.income / d1.income : 0;
 
-      // Calculate standard deviation of income
-      const avgIncome = sortedIncome.length > 0
-        ? sortedIncome.reduce((sum, item) => sum + item.income, 0) / sortedIncome.length
+      // Middle class (D4-D7) - 40% of population
+      const middleClass = sortedByIncome.slice(3, 7); // D4, D5, D6, D7
+      const middleClassAvgIncome = middleClass.length > 0
+        ? middleClass.reduce((sum, item) => sum + item.income, 0) / middleClass.length
         : 0;
-      const variance = sortedIncome.length > 0
-        ? sortedIncome.reduce((sum, item) => sum + Math.pow(item.income - avgIncome, 2), 0) / sortedIncome.length
-        : 0;
-      const stdDeviation = Math.sqrt(variance);
-
-      // Top 10% (D10) income share
-      const topDecile = data?.burnRate?.[data.burnRate.length - 1];
-      const topDecileShare = topDecile && avgIncome > 0
-        ? (topDecile.income / avgIncome)
+      const middleClassAvgBurnRate = middleClass.length > 0
+        ? middleClass.reduce((sum, item) => sum + item.burn_rate_pct, 0) / middleClass.length
         : 0;
 
-      const incomeGap = data?.burnRate && data.burnRate.length > 1
-        ? data.burnRate[data.burnRate.length - 1].income / data.burnRate[0].income
+      // D1 financial stress
+      const d1BurnRate = d1 ? d1.burn_rate_pct : 0;
+
+      // Top 30% (D8-D10) - The affluent class with purchasing power
+      const top30 = sortedByIncome.slice(0, 3); // D10, D9, D8
+      const top30TotalSpending = top30.length > 0
+        ? top30.reduce((sum, item) => sum + item.spending, 0)
         : 0;
+
+      // Calculate what % of total spending comes from top 30%
+      const totalSpending = sortedByIncome.reduce((sum, item) => sum + item.spending, 0);
+      const top30SpendingShare = totalSpending > 0 ? (top30TotalSpending / totalSpending) * 100 : 0;
 
       return [
         {
-          icon: '📊',
-          value: medianIncome > 0 ? `₪${(medianIncome / 1000).toFixed(0)}K` : 'טוען...',
-          label: 'הכנסה חודשית חציונית',
-          subtitle: 'הערך האמצעי (לא ממוצע) - עמיד יותר לקיצוניים',
-          color: 'blue' as const
-        },
-        {
-          icon: '📉',
-          value: stdDeviation > 0 ? `₪${(stdDeviation / 1000).toFixed(0)}K` : 'טוען...',
-          label: 'סטיית תקן של הכנסות',
-          subtitle: 'מידת הפיזור - ערך גבוה = אי-שוויון גדול',
-          color: 'purple' as const
-        },
-        {
-          icon: '🏆',
-          value: topDecileShare > 0 ? `×${topDecileShare.toFixed(1)}` : 'טוען...',
-          label: 'יחס D10 לממוצע',
-          subtitle: topDecile ? `העשירון העליון: ₪${(topDecile.income / 1000).toFixed(0)}K` : '10% העליונים',
+          icon: '💥',
+          value: incomeGap > 0 ? `×${incomeGap.toFixed(0)}` : 'טוען...',
+          label: 'פער נטו D10/D1',
+          subtitle: d10 && d1 ? `D10: ₪${(d10.income / 1000).toFixed(0)}K vs D1: ₪${(d1.income / 1000).toFixed(0)}K` : 'אי-שוויון קיצוני',
           color: 'red' as const
         },
         {
-          icon: '📈',
-          value: incomeGap > 0 ? `×${incomeGap.toFixed(1)}` : 'טוען...',
-          label: 'פער D10/D1',
-          subtitle: 'הפער הקיצוני בין עשיר לעני',
-          color: 'amber' as const
+          icon: '🏛️',
+          value: middleClassAvgIncome > 0 ? `₪${(middleClassAvgIncome / 1000).toFixed(0)}K` : 'טוען...',
+          label: 'הכנסה ממוצעת מעמד הביניים (D4-D7)',
+          subtitle: `40% מהאוכלוסייה, ${middleClassAvgBurnRate.toFixed(0)}% burn rate`,
+          color: 'blue' as const
+        },
+        {
+          icon: '💰',
+          value: top30SpendingShare > 0 ? `${top30SpendingShare.toFixed(0)}%` : 'טוען...',
+          label: 'נתח הוצאות של 30% העליונים',
+          subtitle: `D8-D10 אחראים ל-${top30SpendingShare.toFixed(0)}% מכלל ההוצאות`,
+          color: 'green' as const
+        },
+        {
+          icon: '⚠️',
+          value: d1BurnRate > 0 ? `${d1BurnRate.toFixed(0)}%` : 'טוען...',
+          label: 'Burn Rate של D1',
+          subtitle: d1BurnRate > 100 ? 'מצוקה קיצונית - חיים בחובות' : 'מתחת לקו העוני',
+          color: 'purple' as const
         }
       ];
     }
@@ -249,13 +260,12 @@ export const MetricCards = ({ segmentType, data }: MetricCardsProps) => {
         ? ((ussr1999.income / ussr2000.income - 1) * 100)
         : 0;
 
-      // Cultural adaptation: Israel-born vs all immigrants combined
-      const avgImmigrantIncome = data?.burnRate && data.burnRate.length > 0
-        ? data.burnRate.filter(d => d.segment_value !== '974').reduce((sum, item) => sum + item.income, 0) / data.burnRate.filter(d => d.segment_value !== '974').length
-        : 0;
-
-      const nativeAdvantage = israelBorn && avgImmigrantIncome > 0
-        ? ((israelBorn.income / avgImmigrantIncome - 1) * 100)
+      // Find best and worst spending discipline (burn rate)
+      const sortedByBurnRate = data?.burnRate ? [...data.burnRate].sort((a, b) => a.burn_rate_pct - b.burn_rate_pct) : [];
+      const bestDiscipline = sortedByBurnRate[0]; // Lowest burn rate = best savings
+      const worstDiscipline = sortedByBurnRate[sortedByBurnRate.length - 1]; // Highest burn rate = worst savings
+      const disciplineGap = bestDiscipline && worstDiscipline
+        ? worstDiscipline.burn_rate_pct - bestDiscipline.burn_rate_pct
         : 0;
 
       return [
@@ -277,18 +287,22 @@ export const MetricCards = ({ segmentType, data }: MetricCardsProps) => {
         },
         {
           icon: '📊',
-          value: nativeAdvantage > 0 ? `+${nativeAdvantage.toFixed(0)}%` : nativeAdvantage < 0 ? `${nativeAdvantage.toFixed(0)}%` : 'טוען...',
-          label: 'יתרון ילידים על עולים',
-          subtitle: 'הפער בין ילידי ישראל לממוצע עולים',
-          color: nativeAdvantage > 0 ? 'purple' as const : 'amber' as const
+          value: disciplineGap > 0 ? `${disciplineGap.toFixed(1)}%` : 'טוען...',
+          label: 'פער במשמעת פיננסית',
+          subtitle: bestDiscipline && worstDiscipline
+            ? `${translateSegmentCode(bestDiscipline.segment_value, 'Country of Birth')} (${bestDiscipline.burn_rate_pct.toFixed(0)}% burn) vs ${translateSegmentCode(worstDiscipline.segment_value, 'Country of Birth')} (${worstDiscipline.burn_rate_pct.toFixed(0)}% burn)`
+            : 'הפער בין הקבוצה החוסכת ביותר לבזבזנית ביותר',
+          color: 'purple' as const
         },
         {
           icon: '🎯',
           value: data?.inequality?.[0]
             ? `×${data.inequality[0].inequality_ratio.toFixed(1)}`
             : 'טוען...',
-          label: 'פער צריכה תרבותי מקסימלי',
-          subtitle: data?.inequality?.[0] ? translateItemName(data.inequality[0].item_name) : 'הקטגוריה עם הפער הגבוה ביותר',
+          label: 'פער צריכה מקסימלי',
+          subtitle: data?.inequality?.[0]
+            ? `${translateItemName(data.inequality[0].item_name)}: ${translateSegmentCode(data.inequality[0].high_segment, 'Country of Birth')} vs ${translateSegmentCode(data.inequality[0].low_segment, 'Country of Birth')}`
+            : 'מוצר עם הפער הגבוה ביותר בין קבוצות',
           color: 'red' as const
         }
       ];

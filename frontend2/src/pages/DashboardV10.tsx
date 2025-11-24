@@ -23,7 +23,7 @@ const DashboardV10 = () => {
   } = useSegmentTypes();
 
   // State for selected segment type
-  const [selectedSegmentType, setSelectedSegmentType] = useState<string>('Income Quintile');
+  const [selectedSegmentType, setSelectedSegmentType] = useState<string>('Income Decile (Net)');
 
   // Fetch inequality analysis for selected segment
   const {
@@ -43,7 +43,7 @@ const DashboardV10 = () => {
   const error = errorSegmentTypes || errorInequality || errorBurnRate;
 
   // Extract segment types from API response
-  const segmentTypes = segmentTypesData?.segment_types.map(st => st.segment_type) || ['Income Quintile'];
+  const segmentTypes = segmentTypesData?.segment_types.map(st => st.segment_type) || ['Income Decile (Net)'];
 
   // Handle segment change
   const handleSegmentChange = (newSegment: string) => {

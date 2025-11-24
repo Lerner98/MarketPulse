@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppLayout } from "@/components/AppLayout";
 import DashboardV10 from "./pages/DashboardV10";
+import AllCharts from "./pages/AllCharts";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -18,6 +19,7 @@ const App = () => (
         <AppLayout>
           <Routes>
             <Route path="/" element={<DashboardV10 />} />
+            <Route path="/charts" element={<AllCharts />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AppLayout>

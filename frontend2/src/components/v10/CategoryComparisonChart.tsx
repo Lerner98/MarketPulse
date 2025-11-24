@@ -78,9 +78,9 @@ export const CategoryComparisonChart = ({ data, segmentType, isLoading = false }
   // Determine if labels need rotation (only for Geographic Region with long names)
   const needsRotation = segmentType === 'Geographic Region';
 
-  // Transform and sort data
+  // Transform and sort data - REMOVE "Total" if present
   const sortedData = [...data]
-    .filter(item => item && item.segment_value)
+    .filter(item => item && item.segment_value && !item.segment_value.toLowerCase().includes('total') && item.segment_value !== 'Total')
     .sort((a, b) => b.spending - a.spending);
 
   // Prepare Chart.js data
@@ -191,7 +191,7 @@ export const CategoryComparisonChart = ({ data, segmentType, isLoading = false }
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div style={{ height: `${chartHeight}px` }}>
+        <div style={{ height: `${chartHeight}px`, position: 'relative' }}>
           <Bar data={chartData} options={options} />
         </div>
 

@@ -17,6 +17,36 @@ export const SegmentSelector = ({
   isLoading = false
 }: SegmentSelectorProps) => {
 
+  // Custom sort order: Income segments first, then rest
+  const sortSegments = (a: string, b: string) => {
+    const order = [
+      "Income Decile (Net)",
+      "Income Quintile",
+      "Geographic Region",
+      "Work Status",
+      "Country of Birth",
+      "Religiosity",
+      "Education Level"
+    ];
+
+    const indexA = order.indexOf(a);
+    const indexB = order.indexOf(b);
+
+    // If both are in the order array, sort by their position
+    if (indexA !== -1 && indexB !== -1) {
+      return indexA - indexB;
+    }
+
+    // If only A is in the array, it comes first
+    if (indexA !== -1) return -1;
+
+    // If only B is in the array, it comes first
+    if (indexB !== -1) return 1;
+
+    // If neither is in the array, sort alphabetically
+    return a.localeCompare(b);
+  };
+
   return (
     <div className="flex flex-col gap-2" dir="rtl">
       <label htmlFor="segment-selector" className="text-sm font-medium text-gray-700">
@@ -36,8 +66,10 @@ export const SegmentSelector = ({
         </SelectTrigger>
         <SelectContent dir="rtl">
           {segments
-            // ACTION: Filter out any segment key not found in the map (Eradication Fix)
+            // Filter out any segment key not found in the map
             .filter(segment => SEGMENT_DISPLAY_MAP[segment])
+            // Sort by custom order
+            .sort(sortSegments)
             .map((segment) => (
               <SelectItem
                 key={segment}

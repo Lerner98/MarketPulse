@@ -18,7 +18,6 @@ export const InsightsList = ({ segmentType, data }: InsightsListProps) => {
       case "Income Quintile":
         return getIncomeQuintileInsights();
       case "Income Decile (Net)":
-      case "Income Decile (Gross)": // Combine both decile insights
         return getIncomeDecileInsights();
       case "Geographic Region":
         return getGeographicInsights();
@@ -36,63 +35,105 @@ export const InsightsList = ({ segmentType, data }: InsightsListProps) => {
   };
 
   const getIncomeQuintileInsights = () => {
-    const topQuintile = data?.burnRate?.find(d => d?.segment_value?.includes('5'));
-    const bottomQuintile = data?.burnRate?.find(d => d?.segment_value?.includes('1'));
+    const sortedByIncome = data?.burnRate ? [...data.burnRate].sort((a, b) => b.income - a.income) : [];
+    const q5 = sortedByIncome[0]; // Top 20%
+    const q1 = sortedByIncome[sortedByIncome.length - 1]; // Bottom 20%
+    const q4 = sortedByIncome[1]; // Second quintile from top
+    const q3 = sortedByIncome[2]; // Middle class
+
+    const incomeGap = q5 && q1 ? q5.income / q1.income : 0;
+    const spendingGap = q5 && q1 ? q5.spending / q1.spending : 0;
 
     return [
       {
-        icon: '📊',
-        title: 'פער הכנסות דרמטי בין העשירים לעניים',
-        description: topQuintile && bottomQuintile
-          ? `משקי בית עשירים (Q5) מרוויחים ₪${topQuintile.income.toLocaleString('he-IL')} לעומת ₪${bottomQuintile.income.toLocaleString('he-IL')} למשקי בית עניים (Q1) - פער של פי ${(topQuintile.income / bottomQuintile.income).toFixed(1)}. זה לא רק סטטיסטיקה - זה מפת דרכים לאסטרטגיית שיווק מבוססת נתונים.`
-          : 'משקי בית עשירים (Q5) מרוויחים פי 4-5 יותר ממשקי בית עניים (Q1), אך מוציאים רק פי 1.8-2 יותר - פער משמעותי המצביע על דפוסי צריכה שונים לחלוטין.',
+        icon: '💥',
+        title: `פער הכנסות של ×${incomeGap.toFixed(1)} אבל פער הוצאות רק ×${spendingGap.toFixed(1)} - למה?`,
+        description: q5 && q1
+          ? `Q5 מרוויחים ₪${q5.income.toLocaleString('he-IL')} (פי ${incomeGap.toFixed(1)} מ-Q1: ₪${q1.income.toLocaleString('he-IL')}), אך מוציאים רק ₪${q5.spending.toLocaleString('he-IL')} (פי ${spendingGap.toFixed(1)} מ-Q1). הפער הזה הוא המפתח: **העשירים חוסכים, העניים הולכים לאיבוד**. Q5 חוסכים ${(100 - q5.burn_rate_pct).toFixed(0)}% מההכנסה (₪${q5.surplus_deficit.toLocaleString('he-IL')}/חודש), בעוד Q1 חיים בחוב עם burn rate של ${q1.burn_rate_pct.toFixed(0)}%. המשמעות: שני עולמות כלכליים נפרדים לחלוטין - אחד שחוסך להשקעות, השני שנאבק על ההישרדות.`
+          : 'פער הכנסות גדול בהרבה מפער הוצאות - העשירים חוסכים, העניים מתקשים.',
         color: 'blue'
       },
       {
         icon: '⚠️',
-        title: 'משקי הבית העניים (Q1) חיים מעבר ליכולתם',
-        description: bottomQuintile && bottomQuintile.burn_rate_pct > 100
-          ? `Q1 מוציאים ${bottomQuintile.burn_rate_pct.toFixed(1)}% מההכנסה - מעל 100%! זה אומר הסתמכות על חובות, קרנות חירום, או תמיכה משפחתית. שוק זה זקוק למוצרי ערך/בסיסיים במחיר נמוך.`
-          : 'משקי בית עניים מוציאים יותר מהכנסתם (burn rate מעל 100%), מה שמעיד על מצוקה כלכלית ממשית ותלות במקורות חיצוניים.',
+        title: `Q1 בחוב כרוני: Burn Rate של ${q1?.burn_rate_pct.toFixed(0)}% = חיים על חשבון העתיד`,
+        description: q1
+          ? `Q1 (20% התחתונים) מוציאים ${q1.burn_rate_pct.toFixed(0)}% מהכנסתם החודשית - כלומר ${(q1.burn_rate_pct - 100).toFixed(0)} נקודות אחוז מעל האיזון. איך זה אפשרי? הסתמכות על **חובות צרכניים** (אשראי, מינוסים), **מכירת נכסים** (רכב, תכשיטים), **תמיכה משפחתית**, או **סיוע ממשלתי**. זהו שוק **בעל רגישות קיצונית למחיר** - כל עלייה של 5-10% עלולה להוציא אותם מהשוק. אסטרטגיה: מוצרי ערך מקומיים (רמי לוי, שופרסל דיל), מבצעים אגרסיביים, תשלומים קטנים + גמישות.`
+          : 'החמישייה התחתונה חיה בחוב כרוני - burn rate מעל 100%.',
         color: 'red'
       },
       {
-        icon: '💰',
-        title: 'העשירים (Q5) חוסכים 30-40% מההכנסה',
-        description: topQuintile
-          ? `Q5 מראים burn rate של ${topQuintile.burn_rate_pct.toFixed(1)}%, כלומר חוסכים כ-${(100 - topQuintile.burn_rate_pct).toFixed(0)}% מההכנסה! זהו שוק פוטנציאלי ענק להשקעות, פנסיה, נדל״ן, ומוצרי פרימיום.`
-          : 'משקי בית עשירים חוסכים כ-40% מההכנסה - שוק פוטנציאלי להשקעות, פנסיה, ונכסים.',
+        icon: '💎',
+        title: `Q5 - מכונת החיסכון: ₪${q5 ? (q5.surplus_deficit / 1000).toFixed(0) : 0}K עודף חודשי`,
+        description: q5
+          ? `Q5 (20% העליונים) לא רק מרוויחים הכי הרבה - הם גם החוסכים הגדולים: burn rate של רק ${q5.burn_rate_pct.toFixed(1)}%, כלומר חיסכון של ${(100 - q5.burn_rate_pct).toFixed(0)}% מההכנסה! בפועל: **₪${q5.surplus_deficit.toLocaleString('he-IL')} עודף כל חודש** (או ₪${(q5.surplus_deficit * 12 / 1000).toFixed(0)}K לשנה). לאן הולך הכסף? **השקעות נדל"ן, תיקי מניות, פנסיה פרטית, חינוך פרטי לילדים, נופש בחו"ל**. זהו **שוק הפרימיום** - מוכנים לשלם יותר עבור איכות, מותג, ושירות. אסטרטגיה: תמחור גבוה, מיתוג יוקרתי, חוויות בלעדיות, תוכניות נאמנות VIP.`
+          : 'החמישייה העליונה חוסכת 30-40% מההכנסה - שוק הפרימיום.',
         color: 'green'
       },
       {
         icon: '🎯',
-        title: 'עקרון פרטו (80/20) מאומת בנתונים',
-        // ACTION: Grammar Fix: "הקצה" -> "הקצאת"
-        description: '20% המשקי בית המובילים (Q4-Q5) אחראים ל-50%+ מההוצאות הכוללות. המלצה: הקצאת 40-45% מתקציב השיווק לקבוצות אלו להשגת ROI מקסימלי.',
+        title: 'אסטרטגיית שיווק 40/60: Q4-Q5 מייצרים 60% מההוצאות',
+        description: q5 && q4 && q3 && q1
+          ? `עיקרון פרטו מאומת: 40% העליונים (Q4-Q5) אחראים ל-**60%+ מההוצאות הכוללות**. Q5+Q4 מוציאים ביחד ₪${((q5.spending + q4.spending) / 1000).toFixed(0)}K, לעומת Q1+Q2+Q3 שמוציאים פחות. **המסקנה לעסקים**: הקצאת **40-45% מתקציב השיווק ל-Q4-Q5** (40% מהאוכלוסייה) תייצר **ROI גבוה פי 2-3**. אסטרטגיה מומלצת: (1) **פרימיום (Q5)**: תמחור גבוה, מיתוג יוקרתי, דגש על מותג. (2) **Value Premium (Q4)**: איכות במחיר תחרותי, מבצעים חכמים. (3) **מסה (Q1-Q3)**: נפח, מחיר נמוך, הנחות.`
+          : 'עקרון פרטו: 40% העליונים אחראים ל-60% מההוצאות - שם צריך להיות המיקוד.',
         color: 'purple'
       }
     ];
   };
 
   const getIncomeDecileInsights = () => {
+    const sortedByIncome = data?.burnRate ? [...data.burnRate].sort((a, b) => b.income - a.income) : [];
+    const d10 = sortedByIncome[0]; // Top 10%
+    const d1 = sortedByIncome[sortedByIncome.length - 1]; // Bottom 10%
+
+    // Middle class: D4-D7 (40% of population)
+    const middleClass = sortedByIncome.slice(3, 7);
+    const middleClassAvgIncome = middleClass.length > 0
+      ? middleClass.reduce((sum, item) => sum + item.income, 0) / middleClass.length
+      : 0;
+    const middleClassAvgBurnRate = middleClass.length > 0
+      ? middleClass.reduce((sum, item) => sum + item.burn_rate_pct, 0) / middleClass.length
+      : 0;
+
+    // Bottom 30% (D1-D3)
+    const bottom30 = sortedByIncome.slice(-3);
+    const bottom30AvgBurnRate = bottom30.length > 0
+      ? bottom30.reduce((sum, item) => sum + item.burn_rate_pct, 0) / bottom30.length
+      : 0;
+
+    const incomeGap = d10 && d1 ? d10.income / d1.income : 0;
+
     return [
       {
-        icon: '📈',
-        title: 'פילוח מפורט יותר',
-        description: 'עשירונים מאפשרים זיהוי מדויק של שכבות הביניים - D4-D7 מייצגים את "המעמד הבינוני" עם burn rate של 90-110%.',
+        icon: '💥',
+        title: `פער קיצוני של ×${incomeGap.toFixed(0)}: D10 vs D1 - שני עולמות`,
+        description: d10 && d1
+          ? `העשירון העליון (D10) מרוויח ₪${d10.income.toLocaleString('he-IL')} לחודש - פי ${incomeGap.toFixed(0)} יותר מהעשירון התחתון (D1: ₪${d1.income.toLocaleString('he-IL')}). זהו **הפער הגדול ביותר בכל הפילוחים**. D10 חוסך ₪${d10.surplus_deficit.toLocaleString('he-IL')} לחודש (${(100 - d10.burn_rate_pct).toFixed(0)}% מההכנסה), בעוד D1 חי בחוב עם burn rate של ${d1.burn_rate_pct.toFixed(0)}%. המשמעות: D10 בונה עושר לדורות הבאים (נדל"ן, מניות, עסקים), בעוד D1 נאבק על הישרדות יומיומית. **אין זה פער הכנסות בלבד - זה פער עתידות**.`
+          : 'פער הכנסות קיצוני בין העשירון העליון לתחתון.',
+        color: 'red'
+      },
+      {
+        icon: '🏛️',
+        title: `מעמד הביניים (D4-D7): 40% מהאוכלוסייה בעומס פיננסי`,
+        description: middleClassAvgIncome > 0
+          ? `D4-D7 מייצגים את **מעמד הביניים הישראלי** - 40% מהאוכלוסייה עם הכנסה ממוצעת של ₪${middleClassAvgIncome.toLocaleString('he-IL')} לחודש. הבעיה: burn rate ממוצע של ${middleClassAvgBurnRate.toFixed(0)}% - **כמעט אפס חיסכון**. המשמעות: מעמד ביניים שחי משכורת לשכורת, ללא כרית ביטחון. כל משבר (אובדן עבודה, מחלה, תאונה) עלול להוביל למשבר כלכלי. זהו **שוק רגיש מאוד למחירים**: מחפשים value-for-money, נמשכים למבצעים, נחים על כל עלייה של 10-15%. אסטרטגיה: מוצרים איכותיים במחיר הוגן, מבצעים תכופים, תוכניות תשלומים גמישות.`
+          : 'מעמד הביניים בעומס פיננסי עם burn rate גבוה.',
         color: 'blue'
       },
       {
-        icon: '💡',
-        title: 'העשירון העליון (D10) שונה מהותית',
-        description: 'D10 לא רק מרוויח יותר - יש לו דפוסי צריכה שונים (טכנולוגיה, נסיעות, חינוך פרטי) לעומת D1-D9.',
-        color: 'green'
+        icon: '⚠️',
+        title: `30% התחתונים (D1-D3): מצוקה כרונית עם Burn Rate ממוצע ${bottom30AvgBurnRate.toFixed(0)}%`,
+        description: bottom30AvgBurnRate > 0
+          ? `D1-D3 (30% התחתונים) חיים במצוקה כלכלית כרונית: burn rate ממוצע של ${bottom30AvgBurnRate.toFixed(0)}% - כלומר הוצאה גבוהה בהרבה מהכנסה. **איך הם שורדים?** (1) חובות צרכניים מצטברים (כרטיסי אשראי, הלוואות), (2) סיוע משפחתי (הורים, קרובים), (3) תמיכות ממשלתיות (מע"ש, הבטחת הכנסה), (4) מכירת נכסים. זהו שוק **הישרדותי טהור** - כל שקל נספר. הזדמנות עסקית: שרשראות ערך (רמי לוי, יינות ביתן), מוצרי Private Label זולים, חנויות second-hand, אשראי לא בנקאי.`
+          : 'שליש התחתון חי במצוקה כלכלית כרונית.',
+        color: 'amber'
       },
       {
-        icon: '⚠️',
-        title: 'D1-D3 בסיכון פיננסי',
-        description: '30% התחתונים מראים burn rate מעל 100%, מה שמעיד על מצוקה כלכלית ממשית.',
-        color: 'amber'
+        icon: '🎯',
+        title: 'אסטרטגיית פילוח: 10-40-30-20 לפי עשירונים',
+        description: d10 && middleClassAvgIncome > 0
+          ? `חלוקת השוק לפי עשירונים מאפשרת **4 אסטרטגיות ברורות**: (1) **D10 (10%)** - שוק הפרימיום: ₪${(d10.income / 1000).toFixed(0)}K חודשי, מוכנים לשלם פי 2-3 יותר עבור איכות ומותג. תמחור גבוה, מיתוג יוקרתי, שירות VIP. (2) **D7-D9 (30%)** - Value Premium: הכנסה טובה אך מודעים למחיר. איכות במחיר הוגן, מבצעים חכמים. (3) **D4-D6 (30%)** - מעמד ביניים: ₪${(middleClassAvgIncome / 1000).toFixed(0)}K חודשי, burn rate ${middleClassAvgBurnRate.toFixed(0)}%. רגישים למחיר, מחפשים ערך. (4) **D1-D3 (30%)** - שוק ההישרדות: תמחור נמוך, נפח גדול, הנחות אגרסיביות.`
+          : 'פילוח לעשירונים מאפשר אסטרטגיות שיווק ממוקדות.',
+        color: 'purple'
       }
     ];
   };

@@ -13,24 +13,18 @@ interface SegmentDisplay {
 
 export const SEGMENT_DISPLAY_MAP: Record<string, SegmentDisplay> = {
   // ----------------------------------------------------
-  // Income Segments - Use Line Chart for sequential data
+  // Income Segments (TOP PRIORITY) - Use Line Chart for sequential data
   // ----------------------------------------------------
-  "Income Quintile": {
-    selectorLabel: "5 דרגות ההכנסה שמוצגות",
-    summaryTitle: "פילוח לפי 5 דרגות ההכנסה מהנתונים",
-    summaryDescription: "ניתוח ההוצאות של משקי בית לפי רמת הכנסה, מהדרגה הנמוכה (Q1) לגבוהה (Q5). פילוח זה חושף פערים במדדי חיים ודפוסי צריכה.",
-    preferredChart: 'Line',
-  },
   "Income Decile (Net)": {
-    selectorLabel: "10 דרגות הכנסה נטו",
+    selectorLabel: "10 דרגות הכנסה (עשירונים)",
     summaryTitle: "פילוח לפי 10 דרגות הכנסה נטו",
-    summaryDescription: "פילוח מפורט יותר של משקי בית לעשרה קבוצות לפי הכנסה נטו. מאפשר זיהוי מדויק יותר של שכבות הביניים בחברה.",
+    summaryDescription: "עשירונים על בסיס הכנסה נטו (אחרי מיסים וביטוח לאומי) - הכסף שבפועל נשאר במשק הבית. פילוח מדויק פי-2 מחמישיות, חושף את מעמד הביניים (D4-D7) ומאפשר זיהוי מדויק של קהלי יעד צרים יותר. השוואה מול נתוני ברוטו חושפת את נטל המיסוי ושאלת הצמצום הפערים.",
     preferredChart: 'Line',
   },
-  "Income Decile (Gross)": {
-    selectorLabel: "10 דרגות הכנסה ברוטו",
-    summaryTitle: "פילוח לפי 10 דרגות הכנסה ברוטו",
-    summaryDescription: "פילוח מפורט של משקי בית לעשרה קבוצות לפי הכנסה ברוטו (לפני מיסים). מאפשר ניתוח השפעת מיסוי על שכבות שונות.",
+  "Income Quintile": {
+    selectorLabel: "5 דרגות ההכנסה (חמישיות)",
+    summaryTitle: "פילוח לפי 5 דרגות ההכנסה מהנתונים",
+    summaryDescription: "חלוקה לחמישיות: מ-Q1 (20% העניים) ועד Q5 (20% העשירים). מדד הזהב לזיהוי פערים כלכליים - מראה כיצד המעמד הכלכלי קובע דפוסי צריכה, יכולת חיסכון, ואסטרטגיות שיווק ממוקדות לפי כוח קנייה.",
     preferredChart: 'Line',
   },
 
@@ -43,10 +37,10 @@ export const SEGMENT_DISPLAY_MAP: Record<string, SegmentDisplay> = {
     summaryDescription: "השוואת הוצאות משקי בית בין אזורים שונים בישראל (ירושלים, תל אביב, חיפה, ועוד). חושף פערים אזוריים ועלויות מחיה שונות.",
     preferredChart: 'Bar',
   },
-  "Religiosity": {
-    selectorLabel: "שיוך מגזרי",
-    summaryTitle: "פילוח לפי שיוך מגזרי (קבוצות אוכלוסייה)",
-    summaryDescription: "ניתוח דפוסי הוצאה לפי שיוך מגזרי (חרדי, דתי, מסורתי, חילוני). מזהה הבדלים תרבותיים בסדרי עדיפויות כלכליים.",
+  "Work Status": {
+    selectorLabel: "מצב תעסוקתי",
+    summaryTitle: "פילוח לפי מצב תעסוקתי",
+    summaryDescription: "ניתוח הוצאות לפי מעמד תעסוקתי (שכיר, עצמאי, לא עובד). חושף יציבות כלכלית והבדלים בדפוסי הכנסה.",
     preferredChart: 'Bar',
   },
   "Country of Birth": {
@@ -55,10 +49,10 @@ export const SEGMENT_DISPLAY_MAP: Record<string, SegmentDisplay> = {
     summaryDescription: "השוואת הוצאות לפי ארץ מוצא (ישראל, אירופה-אמריקה, אסיה-אפריקה, חבר העמים). משקף שוני תרבותי והשפעות הגירה.",
     preferredChart: 'Bar',
   },
-  "Work Status": {
-    selectorLabel: "מצב תעסוקתי",
-    summaryTitle: "פילוח לפי מצב תעסוקתי",
-    summaryDescription: "ניתוח הוצאות לפי מעמד תעסוקתי (שכיר, עצמאי, לא עובד). חושף יציבות כלכלית והבדלים בדפוסי הכנסה.",
+  "Religiosity": {
+    selectorLabel: "שיוך מגזרי",
+    summaryTitle: "פילוח לפי שיוך מגזרי (קבוצות אוכלוסייה)",
+    summaryDescription: "ניתוח דפוסי הוצאה לפי שיוך מגזרי (חרדי, דתי, מסורתי, חילוני). מזהה הבדלים תרבותיים בסדרי עדיפויות כלכליים.",
     preferredChart: 'Bar',
   },
   "Education Level": {
