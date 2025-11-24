@@ -84,15 +84,96 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="MarketPulse API",
-    description=(
-        "E-commerce analytics platform providing "
-        "REST endpoints for business intelligence"
-    ),
+    description="""
+    ## Israeli Household Expenditure Analytics Platform
+
+    MarketPulse provides comprehensive REST APIs for analyzing Israeli CBS (Central Bureau of Statistics)
+    Household Expenditure Survey data. Built on a normalized star schema with materialized views for
+    high-performance analytics.
+
+    ### Key Features
+
+    - **Multi-Dimensional Analysis**: Slice spending data by 7 demographic dimensions
+    - **Strategic Insights**: Pre-calculated business intelligence (inequality, burn rate, retail competition)
+    - **High Performance**: < 500ms response times via materialized views and indexed queries
+    - **Real CBS Data**: Israeli household expenditure survey 2022 (500+ categories)
+
+    ### API Versions
+
+    **V10 Segmentation API** (`/api/v10/*`) - Flexible multi-dimensional analytics
+    - Dynamic segment type discovery
+    - Inequality and burn rate analysis across any demographic dimension
+    - Raw expenditure data for custom analysis
+
+    **V9 Strategic API** (`/api/strategic/*`) - Curated strategic insights
+    - Pre-calculated inequality gap analysis (Q1-Q5)
+    - Financial pressure indicators (burn rate by quintile)
+    - Retail competition analysis (traditional vs supermarket)
+
+    ### Data Source
+
+    Israeli Central Bureau of Statistics (CBS) - Household Expenditure Survey 2022
+    - **Coverage**: 500+ expenditure categories
+    - **Demographics**: 7 dimensions (Income, Age, Geography, Work Status, etc.)
+    - **Currency**: ₪ (Israeli Shekels)
+    - **Frequency**: Monthly spending averages
+
+    ### Getting Started
+
+    1. **Explore available segments**: `GET /api/v10/segments/types`
+    2. **Analyze financial pressure**: `GET /api/v10/burn-rate?segment_type=Income%20Quintile`
+    3. **Identify luxury goods**: `GET /api/v10/inequality/Income%20Quintile`
+    4. **Strategic insights**: `GET /api/strategic/inequality-gap`
+
+    ### Performance
+
+    - Response times: < 200ms (strategic), < 500ms (segmentation)
+    - Database: PostgreSQL 15 with materialized views
+    - Caching: Frontend should cache segment metadata (rarely changes)
+
+    ### Support
+
+    - **Documentation**: Interactive API docs at `/docs`
+    - **Alternative Docs**: ReDoc at `/redoc`
+    - **Health Check**: `GET /api/health`
+    """,
     version="1.0.0",
     lifespan=lifespan,
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
+    contact={
+        "name": "MarketPulse Analytics",
+        "url": "https://github.com/yourusername/marketpulse",
+    },
+    license_info={
+        "name": "MIT License",
+        "url": "https://opensource.org/licenses/MIT",
+    },
+    openapi_tags=[
+        {
+            "name": "Health",
+            "description": "Health check and system status endpoints",
+        },
+        {
+            "name": "V10 Segmentation",
+            "description": "Flexible multi-dimensional expenditure analysis across demographic segments. "
+                          "Supports 7 segment types with dynamic discovery, inequality analysis, and burn rate calculations.",
+        },
+        {
+            "name": "Strategic Insights V9",
+            "description": "Pre-calculated strategic business insights including inequality gaps, burn rate analysis, "
+                          "and retail competition (traditional vs supermarket). Optimized for executive dashboards.",
+        },
+        {
+            "name": "Info",
+            "description": "API information and metadata endpoints",
+        },
+        {
+            "name": "Deprecated",
+            "description": "Legacy endpoints maintained for backwards compatibility. Use V10 or Strategic APIs instead.",
+        },
+    ],
 )
 
 
@@ -129,21 +210,21 @@ app.add_middleware(
 # REMOVED: cbs_endpoints.router - uses FAKE synthetic transaction data
 # ONLY strategic endpoints serve REAL CBS Excel data
 
-# Import and register strategic V9 endpoints (REAL CBS DATA - V9 PRODUCTION)
+# Import and register strategic endpoints (REAL CBS DATA)
 try:
-    from api.strategic_endpoints_v9 import router as strategic_router
+    from api.strategic_endpoints import router as strategic_router
     app.include_router(strategic_router)
-    logger.info("Strategic CBS V9 endpoints registered successfully (REAL DATA - V9 PRODUCTION)")
+    logger.info("Strategic CBS endpoints registered successfully (REAL DATA)")
 except Exception as e:
-    logger.error(f"Failed to import strategic V9 endpoints: {e}")
+    logger.error(f"Failed to import strategic endpoints: {e}")
 
-# Import and register V10 segmentation endpoints (NORMALIZED STAR SCHEMA - V10)
+# Import and register segmentation endpoints (NORMALIZED STAR SCHEMA)
 try:
-    from api.segmentation_endpoints_v10 import router as v10_router
-    app.include_router(v10_router)
-    logger.info("V10 segmentation endpoints registered successfully (NORMALIZED STAR SCHEMA)")
+    from api.segmentation_endpoints import router as segmentation_router
+    app.include_router(segmentation_router)
+    logger.info("Segmentation endpoints registered successfully (NORMALIZED STAR SCHEMA)")
 except Exception as e:
-    logger.error(f"Failed to import V10 segmentation endpoints: {e}")
+    logger.error(f"Failed to import segmentation endpoints: {e}")
 
 
 # =============================================================================

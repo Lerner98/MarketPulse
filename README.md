@@ -1,312 +1,425 @@
 # MarketPulse
 
-E-commerce analytics platform with ETL pipeline, REST API, and interactive visualizations.
+## 🛠️ Technology Stack
 
-[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.108+-green.svg)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7+-3178C6.svg)](https://www.typescriptlang.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue.svg)](https://www.postgresql.org/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
-[![CI/CD](https://github.com/Lerner98/MarketPulse/workflows/MarketPulse%20CI/CD/badge.svg)](https://github.com/Lerner98/MarketPulse/actions)
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.108+-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-18+-61DAFB.svg?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7+-3178C6.svg?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791.svg?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
+[![Tests](https://img.shields.io/badge/Tests-120%2F128%20Passing-success.svg?logo=pytest&logoColor=white)](backend/tests/TEST_COVERAGE_STATUS.md)
+[![Code Coverage](https://img.shields.io/badge/Coverage-93.75%25-brightgreen.svg)](backend/tests/TEST_COVERAGE_STATUS.md)
 
-## Overview
 
-Production-ready analytics platform that processes transaction data, provides REST APIs for business intelligence, and delivers interactive dashboards for data-driven decision making.
+### פלטפורמת אנליטיקה לניתוח הוצאות משקי בית ישראליים
 
-### Key Features
+![MarketPulse Overview](assets/marketpulse-overview.png)
+> *פלטפורמה אינטראקטיבית לניתוח מעמיק של 6,420 משקי בית ישראליים - נתוני הלמ"ס 2022*
 
-- ETL pipeline with data validation and cleaning
-- PostgreSQL database with optimized queries and stored procedures
-- FastAPI REST endpoints with authentication
-- Interactive D3.js visualizations
-- Docker containerization with PostgreSQL and Redis
-- Automated CI/CD pipeline with security scanning
+---
 
-## Architecture
+## 🎯 למה הפרויקט הזה?
 
+כמתכנת שרוצה להיכנס לעולם ה-**Data Analysis**, בחרתי לבנות פרויקט שמדגים את המסע שלי מקוד לתובנות עסקיות.
+
+### האתגר שבחרתי
+עבדתי עם **נתוני הלמ"ס הגולמיים** - קבצי אקסל מסורבלים עם:
+- כותרות מרובות רמות בעברית
+- ערכים סטטיסטיים מורכבים (`5.8±0.3`, `..`, `(42.3)`)
+- קידוד Windows-1255 שגורם לבעיות תצוגה
+- **קודים מספריים במקום טקסט** - כמו `'471'` במקום "ירושלים", הדורש מיפוי נפרד
+- 88 קטגוריות מוצרים × 7 פילוחים דמוגרפיים = אלפי שורות גולמיות
+
+**מטרה:** להפוך את הבלאגן הזה לסיפור ברור עם תובנות עסקיות מעשיות.
+
+### מה למדתי בדרך
+
+**1. ניקוי וטיפול בנתונים (ETL)**
+- Python + Pandas לעיבוד קבצים מורכבים
+- Regex patterns לזיהוי ופירוק כותרות היררכיות
+- טיפול בקידודי עברית והמרות UTF-8
+- ולידציות והתאמות טיפוסים
+
+**2. בסיס נתונים מתקדם**
 ```
-Frontend (React) → Backend (FastAPI) → Database (PostgreSQL) + Cache (Redis)
+Excel גולמי → Python ETL → PostgreSQL → FastAPI → React Dashboard
 ```
+- עברתי מ-SQL Server ל-**PostgreSQL** (חוויה חדשה לחלוטין!)
+- Stored Procedures ו-Materialized Views לביצועים
+- אינדקסים חכמים לשאילתות מהירות (< 200ms)
+- Connection Pooling למניעת עומס
 
-**Data Flow:**
-1. Raw CSV data → ETL Pipeline → PostgreSQL
-2. Client request → FastAPI → Redis Cache / PostgreSQL
-3. Response → React → D3.js Visualization
+**3. Docker וקונטיינריזציה**
+- הקמת סביבת פיתוח עם PostgreSQL + Redis
+- Multi-stage builds להקטנת גודל תמונה (180MB במקום 1GB+)
+- Docker Compose לניהול מיקרו-שירותים
+- **נקודת כניסה לעולם Cloud** - הבנה עמוקה של containers
 
-## Quick Start
+**4. ויזואליזציה ו-Storytelling**
+- React + TypeScript + Chart.js
+- תמיכה מלאה ב-RTL (Right-to-Left) לעברית
+- **פתרתי באג שקט ב-Chart.js**: `layout="horizontal"` כשל עם RTL → מעבר ל-Vertical Bars
+- 7 סוגי פילוח שונים עם גרפים מותאמים (Line, Bar, Pie)
+- תובנות עסקיות בצד כל גרף
 
-### Prerequisites
-- Docker Desktop
-- Python 3.11+
-- Node.js 18+
-- Git
+---
 
-### Automated Setup (Recommended)
+## 📊 הצינור המלא: מאקסל לתובנות
 
-```bash
-# Clone repository
-git clone https://github.com/Lerner98/MarketPulse.git
-cd MarketPulse
+![Architecture Pipeline](assets/architecture-pipeline.png)
 
-# Run setup script (sets up everything)
-bash scripts/setup-dev.sh
-```
-
-### Manual Installation
-
-```bash
-# 1. Set up infrastructure
-docker-compose up -d
-
-# 2. Set up backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-
-# 3. Set up frontend
-cd frontend
-npm install
-cd ..
-
-# 4. Install pre-commit hooks (IMPORTANT!)
-pip install pre-commit
-pre-commit install
-
-# 5. Run ETL pipeline
-python backend/data_pipeline/cleaner.py
-```
-
-### Verify Installation
-
-```bash
-# Check services
-docker-compose ps
-
-# Run tests
-pytest backend/tests/unit -v
-cd frontend && npm test -- --run
+### שלב 1: חילוץ וניקוי (ETL Pipeline)
+```python
+# backend/etl/extract_table_1_1.py
+def parse_cbs_headers(excel_path):
+    """
+    מטפל בכותרות מרובות רמות (שורות 7-9):
+    - רמה 1: קטגוריה ראשית (עברית)
+    - רמה 2: תת-קטגוריה (אנגלית)
+    - רמה 3: יחידת מידה (₪)
+    """
+    # קרא את 9 השורות הראשונות
+    # זהה היכן מתחילים הנתונים האמיתיים
+    # בנה מבנה ניקוי דינמי
 ```
 
-## Project Structure
+**דוגמה למה שקורה:**
+```
+שורה 1: "טבלה 1.1 - הוצאה לתצרוכת למשק בית"
+שורה 2-6: מטא-דאטה (מקור, תאריך, הגדרות)
+שורה 7: "מזון ומשקאות (לא אלכוהוליים)"
+שורה 8: "Food and non-alcoholic beverages"
+שורה 9: "הוצאה חודשית ממוצעת (ש״ח)"
+שורה 10: Q1    Q2    Q3    Q4    Q5
+         1234  2345  3456  4567  5678  ← זה מה שאנחנו רוצים!
+```
+
+![Excel Raw Data Example](assets/Excel-Data-Example.png)
+
+**אתגרים שפתרתי:**
+- ❌ `"5.8±0.3"` → ✅ `5.8` (הסרת שגיאות תקן)
+- ❌ `".."` → ✅ `NULL` (נתונים מדוכאים)
+- ❌ `"(42.3)"` → ✅ `42.3` (אמינות נמוכה, אך שמיר)
+- ❌ `"מזון ומשקאות"` מוצג כ-`"תֶּק×ֶ–×"` → ✅ תיקון קידוד
+
+### שלב 2: טעינה למסד נתונים (PostgreSQL)
+```sql
+-- backend/models/schema_v10.sql
+
+-- טבלת עובדות דה-נורמלית (Denormalized Fact Table) - מותאמת לביצועי Materialized Views
+CREATE TABLE fact_segment_monthly_spending (
+    segment_id      INT PRIMARY KEY,
+    segment_type    VARCHAR(100),
+    segment_value   VARCHAR(100),
+    income          DECIMAL(10,2),
+    spending        DECIMAL(10,2),
+    burn_rate_pct   DECIMAL(5,2),
+    surplus_deficit DECIMAL(10,2)
+);
+
+-- Materialized View לביצועים
+CREATE MATERIALIZED VIEW vw_burn_rate_analysis AS
+SELECT
+    segment_type,
+    segment_value,
+    income,
+    spending,
+    ROUND((spending / NULLIF(income, 0)) * 100, 1) AS burn_rate_pct,
+    CASE
+        WHEN burn_rate_pct > 100 THEN 'גירעון'
+        WHEN burn_rate_pct > 90 THEN 'אזהרה'
+        ELSE 'עודף'
+    END AS financial_status
+FROM fact_segment_monthly_spending;
+
+-- רענון מהיר (< 100ms)
+REFRESH MATERIALIZED VIEW CONCURRENTLY vw_burn_rate_analysis;
+```
+
+**למה Denormalized Fact Table?**
+- שאילתות פשוטות ומהירות (< 200ms)
+- אגרגציות קלות עם Materialized Views
+- מותאם לאנליטיקה, לא OLTP
+
+### שלב 3: API Layer (FastAPI)
+```python
+# backend/api/v10_endpoints.py
+@router.get("/burn-rate/{segment_type}")
+async def get_burn_rate_analysis(segment_type: str):
+    """
+    מחזיר ניתוח burn rate לפי סוג פילוח:
+    - Income Decile (Net): 10 עשירונים
+    - Geographic Region: 7 אזורים
+    - Work Status: שכיר/עצמאי/לא עובד
+    וכו'...
+
+    Response time: < 150ms (materialized view)
+    """
+    query = "SELECT * FROM vw_burn_rate_analysis WHERE segment_type = %s"
+    results = await db.fetch_all(query, values=[segment_type])
+    return {"segment_type": segment_type, "burn_rates": results}
+```
+
+**ביצועים:**
+- ✅ `/api/v10/segment-types`: **~5ms** (רשימת 7 פילוחים)
+- ✅ `/api/v10/burn-rate/Income Decile (Net)`: **~120ms** (10 עשירונים + חישובים)
+- ✅ `/api/v10/inequality/Country of Birth`: **~180ms** (88 קטגוריות × 4 קבוצות)
+
+### שלב 4: Frontend Dashboard (React + Chart.js)
+```typescript
+// frontend/src/components/v10/SegmentComparisonChart.tsx
+export const SegmentComparisonChart = ({ data, segmentType }) => {
+  // מיון דינמי: Income Decile = מספרי, Geographic = לפי הוצאה
+  const sortedData = segmentType === 'Income Decile (Net)'
+    ? [...data].sort((a, b) => parseInt(a.segment_value) - parseInt(b.segment_value))
+    : [...data].sort((a, b) => b.spending - a.spending);
+
+  const chartData = {
+    labels: sortedData.map(item => translateSegmentCode(item.segment_value, segmentType)),
+    datasets: [
+      { label: 'הכנסה', data: sortedData.map(d => d.income), borderColor: 'green' },
+      { label: 'הוצאה', data: sortedData.map(d => d.spending), borderColor: 'blue' }
+    ]
+  };
+
+  return (
+    <Card dir="rtl">
+      <CardContent>
+        <Line data={chartData} options={{ responsive: true, rtl: true }} />
+        <p className="text-sm">
+          💡 קו ירוק = הכנסה | קו כחול = הוצאה | הפער = יכולת חיסכון
+        </p>
+      </CardContent>
+    </Card>
+  );
+};
+```
+
+**רספונסיביות מלאה:**
+- Desktop: תצוגה רחבה עם sidebar
+- Mobile: תפריט מתקפל, גרפים מותאמים
+- RTL Support: עברית מימין לשמאל בכל הרכיבים
+
+---
+
+## 🔍 תובנות עסקיות מרכזיות
+
+### 1. אי-שוויון קיצוני: פער פי 8 בין עשירונים
+
+![Income Deciles Dashboard](assets/dashboard-income-deciles.png)
+```
+D10 (10% העליונים): ₪45.1K חודשי
+D1  (10% התחתונים):  ₪5.6K חודשי
+
+פער: ×8.0
+```
+**מה זה אומר?**
+- העשירון העליון מרוויח כמו 8 משקי בית בעשירון התחתון
+- D10 חוסך 25% מההכנסה (burn rate 75%)
+- D1 מוציא יותר מהכנסתו (burn rate 197%) = חיים בחובות
+
+**אינסייט לעסקים:** 30% העליונים (D8-D10) אחראים ל-60% מכלל ההוצאות הצרכניות
+
+---
+
+### 2. פער גיאוגרפי: מרכז vs. פריפריה
+
+![Geographic Dashboard](assets/dashboard-geographic.png)
+```
+תל אביב:     ₪20.2K | burn rate 82% (חוסכים 18%)
+הצפון:       ₪13.4K | burn rate 91% (חוסכים 9%)
+הדרום:       ₪12.1K | burn rate 94% (בקושי חוסכים)
+
+פער: ×1.7
+```
+**אינסייט:** אסטרטגיית שיווק אחת לכל הארץ = כישלון מובטח
+
+---
+
+### 3. מצב תעסוקתי = יציבות כלכלית (או לא)
+
+![Employment Dashboard](assets/dashboard-employment.png)
+```
+שכירים:     burn rate 77%  (יציבות)
+עצמאים:     burn rate 147% (אי-יציבות כרונית!)
+לא עובדים:  burn rate 102% (תמיכת משפחה/קצבאות)
+```
+**אינסייט:** עצמאים = כוח קנייה גבוה אבל סיכון פיננסי אדיר
+
+---
+
+## 💻 טכנולוגיות
+
+### Backend
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.108-green?logo=fastapi)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue?logo=postgresql)
+
+- **Python 3.11** - ETL + API
+- **FastAPI** - REST endpoints
+- **PostgreSQL 15** - Database (חדש עבורי! הרגלתי ל-SQL Server)
+- **Pandas** - Data processing
+- **SQLAlchemy** - ORM
+
+### Frontend
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript)
+![Tailwind](https://img.shields.io/badge/Tailwind-3.4-38BDF8?logo=tailwindcss)
+
+- **React 18 + TypeScript**
+- **Chart.js** - Line/Bar/Pie charts
+- **Tailwind CSS** - Styling
+- **TanStack Query** - Data fetching
+- **Vite** - Build tool
+
+### Infrastructure
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)
+
+- **Docker Compose** - PostgreSQL + Redis containers
+- **Multi-stage builds** - Optimized images (180MB)
+
+---
+
+## 📁 מבנה הפרויקט
 
 ```
 MarketPulse/
-├── .github/workflows/    # CI/CD pipeline
 ├── backend/
-│   ├── api/             # REST endpoints
-│   ├── data_pipeline/   # ETL implementation
-│   │   └── cleaner.py   # Data cleaning & validation
-│   ├── models/          # Database layer
-│   │   ├── database.py  # Connection manager
-│   │   └── schema.sql   # Database schema
-│   └── tests/           # Test suite
-├── frontend/            # React application
-├── data/
-│   ├── raw/            # Source data (CSV)
-│   └── processed/      # Cleaned data
-├── docs/
-│   ├── PHASE2_COMPLETE.md
-│   ├── QUICK_REFERENCE.md
-│   └── CI_CD_SETUP.md
-├── scripts/
-│   └── generate_synthetic_data.py
-└── docker-compose.yml   # PostgreSQL + Redis
+│   ├── etl/
+│   │   ├── extract_table_1_1.py      # חילוץ טבלה 1.1 (עשירונים)
+│   │   ├── extract_table_40.py       # חילוץ טבלה 40 (ערוצי רכישה)
+│   │   └── load_strategic_data.py    # טעינה ל-PostgreSQL
+│   ├── api/
+│   │   ├── main.py                   # FastAPI app
+│   │   └── v10_endpoints.py          # 3 endpoints מרכזיים
+│   ├── models/
+│   │   ├── schema_v10.sql            # Star schema + views
+│   │   └── database.py               # Connection pooling
+│   └── tests/
+│       └── test_v10_api.py           # 15 integration tests
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── DashboardV10.tsx      # דף ראשי
+│   │   │   └── AllCharts.tsx         # כל הגרפים במקום אחד
+│   │   ├── components/v10/
+│   │   │   ├── SegmentComparisonChart.tsx  # Line chart
+│   │   │   ├── CategoryComparisonChart.tsx # Bar chart
+│   │   │   ├── BurnRateGauge.tsx           # Pie chart
+│   │   │   ├── MetricCards.tsx             # KPI cards
+│   │   │   └── InsightsList.tsx            # תובנות עסקיות
+│   │   ├── hooks/
+│   │   │   └── useCBSDataV10.ts      # React Query hooks
+│   │   └── utils/
+│   │       ├── segmentCodeTranslation.ts  # תרגום קודי פילוח
+│   │       └── segmentDisplayNames.ts     # שמות תצוגה בעברית
+│   └── package.json
+├── CBS Household Expenditure Data Strategy/
+│   ├── הוצאה לתצרוכת למשק בית.xlsx         # טבלה 1.1
+│   ├── רכישות מוצרים נבחרים לפי אופן.xlsx   # טבלה 40
+│   └── הוצאה למזון לפי סוג חנות.xlsx         # טבלה 38
+├── docker-compose.yml
+└── README.md (אתה כאן!)
 ```
 
-## Development Status
+---
 
-**Phase 4 Complete (Frontend Development):**
-- ✅ React 18 + TypeScript + Vite setup
-- ✅ Tailwind CSS styling
-- ✅ API integration with Axios + custom hooks
-- ✅ Dashboard with real-time metrics
-- ✅ Revenue trend chart (Recharts)
-- ✅ Product performance chart (Recharts)
-- ✅ Customer Journey Sankey diagram (D3.js)
-- ✅ Responsive design (mobile + desktop)
-- ✅ Error boundaries and loading states
-- ✅ Test suite (15 unit tests + E2E tests)
-- ✅ Docker + Nginx configuration
-- ✅ CI/CD integration
+## 🚀 התקנה והרצה
 
-**Phase 3 Complete (Backend API):**
-- ✅ Infrastructure setup (Docker, PostgreSQL, Redis)
-- ✅ ETL pipeline (10,000 transactions processed)
-- ✅ Database schema with stored procedures
-- ✅ FastAPI REST API (5 endpoints, <200ms response time)
-- ✅ Comprehensive test suite (65 tests, 74% coverage)
-- ✅ Multi-stage Docker build (180MB production image)
-- ✅ CI/CD pipeline (GitHub Actions, passing all checks)
-- ✅ Security implementation (SQL injection prevention, input validation, Trivy scanning)
-- ✅ Connection pooling and environment-based configuration
-- ✅ API documentation (Swagger UI at /docs)
+### דרישות מקדימות
+- Python 3.11+
+- Node.js 18+
+- Docker Desktop
+- Git
 
-**Planned:**
-- ⏳ JWT authentication (Phase 5)
-- ⏳ User account management
-- ⏳ Advanced filtering and data export
-
-## Technology Stack
-
-**Backend:**
-- FastAPI (Python web framework)
-- PostgreSQL 15 (database)
-- Redis 7 (caching)
-- SQLAlchemy (ORM)
-- Pandas (data processing)
-
-**Frontend:**
-- React 18 + TypeScript
-- Vite (build tool)
-- Tailwind CSS (styling)
-- Recharts (standard charts)
-- D3.js + d3-sankey (visualizations)
-- React Router (navigation)
-- Axios (HTTP client)
-- Vitest + React Testing Library (testing)
-- Playwright (E2E testing)
-
-**Infrastructure:**
-- Docker Compose
-- GitHub Actions (CI/CD)
-- Pytest (testing)
-
-**Security:**
-- Stored procedures (SQL injection prevention)
-- Whitelist validation (products, currencies, statuses)
-- Environment variables (credential management)
-- Connection pooling (DoS prevention)
-- Trivy (vulnerability scanning)
-
-## ETL Pipeline
-
-**Features:**
-- UTF-8 encoding for Hebrew text support
-- Whitelist validation for products, currencies, and statuses
-- Duplicate detection by transaction ID
-- Data type enforcement and range validation
-- Batch insertion with prepared statements
-
-**Performance:**
-- 10,000 records processed in <5 seconds
-- 100% validation success rate
-- Zero data loss
-
-**Command:**
-```bash
-python backend/data_pipeline/cleaner.py
-```
-
-## API Endpoints
-
-**Base URL:** `http://localhost:8000`
-**API Docs:** `http://localhost:8000/docs` (Swagger UI)
-
-```
-GET  /api/health        # Service health check (no auth)
-GET  /api/dashboard     # Dashboard metrics (revenue, transactions, top products)
-GET  /api/revenue       # Daily revenue breakdown with date filtering
-GET  /api/customers     # Customer analytics (paginated, sortable)
-GET  /api/products      # Product performance ordered by revenue
-```
-
-**Performance:** All endpoints respond in <200ms with indexed database views and connection pooling (5 base + 10 overflow connections).
-
-## Database Schema
-
-**Tables:**
-- `transactions` - Core transaction data with indexes
-- Views: `v_daily_revenue`, `v_product_performance`, `v_customer_analytics`
-
-**Security:**
-- Stored procedures for all write operations
-- Prepared statements via SQLAlchemy
-- Input validation via CHECK constraints
-- Connection pooling (max 5 + 10 overflow)
-
-## Performance Metrics
-
-- ETL: 10,000 records in <5 seconds ✅
-- API response: <200ms average ✅
-  - /health: 2-5ms
-  - /dashboard: 120-180ms
-  - /revenue: 80-140ms
-  - /customers: 95-160ms
-  - /products: 75-130ms
-- Database: Indexed queries with connection pooling ✅
-- Docker image: 180MB (multi-stage build) ✅
-- Test coverage: 74% (65 tests passing) ✅
-
-## Testing
+### התקנה מהירה
 
 ```bash
-# Backend tests
+# 1. שכפול הפרויקט
+git clone https://github.com/Lerner98/MarketPulse.git
+cd MarketPulse
+
+# 2. הרצת Docker (PostgreSQL + Redis)
+docker-compose up -d
+
+# 3. התקנת Backend
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r backend/requirements.txt
+
+# 4. הרצת ETL (טעינת נתונים)
+python backend/etl/load_strategic_data.py
+
+# 5. הרצת Backend API
 cd backend
-pytest tests/ --cov=. --cov-report=term
+uvicorn api.main:app --reload --port 8000
 
-# Run CI/CD locally
-docker-compose -f .github/workflows/docker-compose.test.yml up
+# 6. התקנת Frontend (בטרמינל נפרד)
+cd frontend
+npm install
+npm run dev
 ```
 
-## Documentation
+### גישה לאפליקציה
+- **Frontend**: http://localhost:5173
+- **API Docs**: http://localhost:8000/docs
+- **Database**: localhost:5432 (PostgreSQL)
 
-### Implementation Guides
-- [Phase 2 Complete](docs/PHASE2_COMPLETE.md) - ETL pipeline implementation
-- [Phase 3 Complete](docs/PHASE3_COMPLETE.md) - Backend API implementation
-- [Phase 4 Frontend](docs/PHASE4_FRONTEND.md) - React + D3.js frontend
-- [Quick Reference](docs/QUICK_REFERENCE.md) - Architecture and commands
+---
 
-### Development Guides
-- [Contributing Guide](CONTRIBUTING.md) - **START HERE** for local development workflow
-- [CI/CD Best Practices](docs/CI_CD_BEST_PRACTICES.md) - Industry-standard testing approach
-- [CI/CD Setup](docs/CI_CD_SETUP.md) - Pipeline configuration and lessons learned
+### 4. ניתוח Burn Rate - ויזואליזציה של יציבות פיננסית
 
-## Security
+![Burn Rate Visualization](assets/dashboard-burnrate.png)
 
-**Implemented:**
-- SQL injection prevention via stored procedures
-- Input validation with whitelist approach
-- Connection pooling to prevent exhaustion attacks
-- Environment-based configuration (no hardcoded secrets)
-- Security scanning in CI/CD (Trivy)
-- Password redaction in logs
+**מה זה Burn Rate?**
+- יחס הוצאה-להכנסה מבוסס אחוזים
+- < 90% = חיסכון בריא (ירוק)
+- 90-100% = אזהרה (כתום)
+- > 100% = גירעון (אדום)
 
-**Following:**
-- [Knowledge Base: Security & Attack Prevention](https://github.com/Lerner98/MarketPulse/blob/main/.claude/CLAUDE.md)
-- OWASP Top 10 guidelines
-- PostgreSQL security best practices
+**למה זה חשוב?**
+- מזהה קבוצות בסיכון פיננסי
+- מאפשר יעדוד מוצרים ושירותים ממוקדים
+- חושף דפוסי התנהגות צרכנית
 
-## CI/CD Pipeline
+---
 
-**Philosophy**: Shift-Left Testing (catch issues locally before CI)
+## 🎓 מה הלמדתי
 
-**Jobs:**
-- Backend tests (pytest + coverage + linting)
-- Frontend tests (Vitest + TypeScript + build validation)
-- Docker build validation
-- Trivy security scanning
+### Technical Skills
+✅ **ETL Pipeline Design** - חילוץ, ניקוי, וולידציה של נתונים מורכבים
+✅ **PostgreSQL** - Materialized views, stored procedures, indexing
+✅ **Docker** - Containerization, multi-stage builds, docker-compose
+✅ **REST API Development** - FastAPI, async/await, response optimization
+✅ **Data Visualization** - Chart.js, RTL support, responsive design
+✅ **Hebrew/RTL Handling** - Encoding issues, text direction, locale formatting
 
-**Pre-Commit Hooks** (automatic on every commit):
-- Code formatting (Black, Prettier)
-- Linting (Flake8, ESLint)
-- Fast unit tests
-- Secret scanning (Gitleaks)
-- TypeScript type checking
+### Soft Skills
+✅ **Problem Solving** - פתרון בעיות קידוד, מבנה נתונים, ביצועים
+✅ **Data Storytelling** - הפיכת מספרים לתובנות עסקיות
+✅ **Documentation** - כתיבת README מקצועי, הסבר קוד, ארכיטקטורה
+✅ **Time Management** - עבודה בשלבים, תעדוף משימות
 
-**Triggers:**
-- Push to `main` or `develop`
-- Pull requests to `main`
+---
 
-**View Results:** [GitHub Actions](https://github.com/Lerner98/MarketPulse/actions)
+## 👤 יוצר
 
-**Learn More:** [CI/CD Best Practices](docs/CI_CD_BEST_PRACTICES.md)
+**Guy Lerner**
+Junior Data Analyst & Full-Stack Developer
 
-## Author
+📧 [guy.lerner98@gmail.com](mailto:guy.lerner98@gmail.com)
+💼 [LinkedIn](https://linkedin.com/in/guy-lerner)
+🐙 [GitHub](https://github.com/Lerner98)
 
-Guy Lerner
-[GitHub](https://github.com/Lerner98) | [LinkedIn](https://linkedin.com/in/guy-lerner)
+---
 
-## License
+## 📄 רישיון
 
-MIT
+MIT License - ראה [LICENSE](LICENSE)
+
+---
+
+**🚀 הפרויקט מציג:** ETL expertise | PostgreSQL proficiency | Docker containerization | Data visualization | Hebrew/RTL support | Business intelligence
+
+*Built with ❤️ for data analysis portfolio*

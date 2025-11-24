@@ -50,18 +50,24 @@ services:
       start_period: 10s
     restart: unless-stopped
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - "3000:80"
-    environment:
-      VITE_API_URL: http://localhost:8000
-    depends_on:
-      backend:
-        condition: service_healthy
-    restart: unless-stopped
+  # Frontend service - Development via npm run dev
+  # Frontend Docker deployment deferred to v1.1 (Portfolio focus: Backend ETL pipeline + API)
+  #
+  # To run frontend locally:
+  #   cd frontend && npm install && npm run dev
+  #
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:80"
+  #   environment:
+  #     VITE_API_URL: http://localhost:8000
+  #   depends_on:
+  #     backend:
+  #       condition: service_healthy
+  #   restart: unless-stopped
 
 volumes:
   postgres_data:

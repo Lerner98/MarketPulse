@@ -69,3 +69,7 @@ yarn-error.log*
 *.temp
 .cache/
 mcp-config.json
+
+# Project-specific exclusions
+/ARCHIVE/
+/.claude/

@@ -1,274 +1,225 @@
 /**
- * CBS API Service - Israeli Household Expenditure Data
+ * CBS API Client V10 - Normalized Star Schema
  *
- * Connects to FastAPI backend CBS endpoints for real-time data
+ * Data Architecture:
+ * - dim_segment: Dimension table (WHO - all demographic types)
+ * - fact_segment_expenditure: Fact table (WHAT + HOW MUCH)
+ *
+ * Key Feature: Dynamic segmentation - same API serves Income, Age, Education, etc.
  */
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
-export interface CBSQuintile {
-  income_quintile: number;
-  transaction_count: number;
-  total_spending: string;
-  avg_transaction: string;
-  median_transaction: string;
-  unique_customers: number;
-  spending_share_pct: string;
-}
-
-export interface CBSQuintileResponse {
-  quintiles: CBSQuintile[];
-  key_insight: string;
-}
-
-export interface CBSCategory {
-  category: string;
-  transaction_count: number;
-  total_revenue: string;
-  avg_transaction: string;
-  unique_customers: number;
-  unique_products: number;
-  market_share_pct: string;
-}
-
-export interface CBSCategoryResponse {
-  categories: CBSCategory[];
-}
-
-export interface CBSCity {
-  city: string;
-  transaction_count: number;
-  total_revenue: string;
-  avg_transaction: string;
-  unique_customers: number;
-  market_share_pct: string;
-}
-
-export interface CBSCityResponse {
-  cities: CBSCity[];
-}
-
-export interface CBSDataQuality {
-  completeness: string;
-  uniqueness: string;
-  validity: string;
-  overall: string;
-  assessment: string;
-}
-
-export interface CBSInsights {
-  metadata: {
-    report_date: string;
-    data_period: string;
-    total_transactions: number;
-    data_quality_score: string;
-  };
-  data_summary: {
-    total_customers: number;
-    total_products: number;
-    total_categories: number;
-    cities_covered: number;
-    currency: string;
-  };
-  quintile_analysis: {
-    q1_avg: string;
-    q5_avg: string;
-    spending_ratio: string;
-    key_finding: string;
-  };
-  top_categories: Array<{
-    category: string;
-    revenue: string;
-    share: string;
-  }>;
-  top_cities: Array<{
-    city: string;
-    revenue: string;
-  }>;
-  business_recommendations: string[];
-  pareto_analysis: {
-    top_20_pct_products_revenue_share: string;
-    top_20_pct_customers_revenue_share: string;
-  };
-  monthly_trend?: {
-    [month: string]: string;
-  };
-}
-
-/**
- * Fetch income quintile analysis
- */
-export async function fetchQuintiles(): Promise<CBSQuintileResponse> {
-  const response = await fetch(`${API_BASE_URL}/api/cbs/quintiles`);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch quintiles: ${response.statusText}`);
-  }
-  return response.json();
-}
-
-/**
- * Fetch category performance
- */
-export async function fetchCategories(): Promise<CBSCategoryResponse> {
-  const response = await fetch(`${API_BASE_URL}/api/cbs/categories`);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch categories: ${response.statusText}`);
-  }
-  return response.json();
-}
-
-/**
- * Fetch city/geographic analysis
- */
-export async function fetchCities(): Promise<CBSCityResponse> {
-  const response = await fetch(`${API_BASE_URL}/api/cbs/cities`);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch cities: ${response.statusText}`);
-  }
-  return response.json();
-}
-
-/**
- * Fetch data quality metrics
- */
-export async function fetchDataQuality(): Promise<CBSDataQuality> {
-  const response = await fetch(`${API_BASE_URL}/api/cbs/data-quality`);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch data quality: ${response.statusText}`);
-  }
-  return response.json();
-}
-
-/**
- * Fetch complete business insights
- */
-export async function fetchInsights(): Promise<CBSInsights> {
-  const response = await fetch(`${API_BASE_URL}/api/cbs/insights`);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch insights: ${response.statusText}`);
-  }
-  return response.json();
-}
-
-/**
- * Health check
- */
-export async function healthCheck(): Promise<{ status: string }> {
-  const response = await fetch(`${API_BASE_URL}/api/health`);
-  if (!response.ok) {
-    throw new Error('Backend is not healthy');
-  }
-  return response.json();
-}
-
 // =============================================================================
-// Strategic CBS Endpoints (V2)
+// TypeScript Interfaces
 // =============================================================================
 
-export interface QuintileGapItem {
-  category: string;
-  quintile_1: number;
-  quintile_2: number;
-  quintile_3: number;
-  quintile_4: number;
-  quintile_5: number;
-  total_spending: number;
-  avg_spending: number;
+export interface SegmentTypeItem {
+  segment_type: string;
+  count: number;
+  example_values: string[];
 }
 
-export interface QuintileGapResponse {
-  ratio: number;
-  q5_total: number;
-  q1_total: number;
+export interface SegmentTypesResponse {
+  total_types: number;
+  segment_types: SegmentTypeItem[];
+}
+
+export interface SegmentValueItem {
+  segment_value: string;
+  segment_order: number | null;
+}
+
+export interface SegmentValuesResponse {
+  segment_type: string;
+  total_values: number;
+  values: SegmentValueItem[];
+}
+
+export interface ExpenditureItem {
+  item_name: string;
+  segment_value: string;
+  expenditure_value: number;
+}
+
+export interface SegmentationResponse {
+  segment_type: string;
+  total_items: number;
+  total_records: number;
+  expenditures: ExpenditureItem[];
+}
+
+export interface InequalityItem {
+  item_name: string;
+  high_segment: string;
+  high_spend: number;
+  low_segment: string;
+  low_spend: number;
+  inequality_ratio: number;
+  avg_spend: number;
+}
+
+export interface InequalityResponse {
+  segment_type: string;
+  total_items: number;
+  top_inequality: InequalityItem[];
   insight: string;
-  categories: QuintileGapItem[];
 }
 
-export interface DigitalMatrixItem {
-  category: string;
-  physical_pct: number;
-  online_israel_pct: number;
-  online_abroad_pct: number;
+export interface BurnRateItem {
+  segment_value: string;
+  income: number;
+  spending: number;
+  burn_rate_pct: number;
+  surplus_deficit: number;
+  financial_status: string;
 }
 
-export interface DigitalMatrixResponse {
-  top_israel_online: Array<{ category: string; online_israel_pct: number }>;
-  top_abroad_online: Array<{ category: string; online_abroad_pct: number }>;
-  most_physical: Array<{ category: string; physical_pct: number }>;
-  categories: DigitalMatrixItem[];
+export interface BurnRateResponse {
+  total_segments: number;
+  burn_rates: BurnRateItem[];
+  insight: string;
 }
 
-export interface RetailBattleItem {
-  category: string;
-  // PERCENTAGES - Store type distribution (values already are %, sum to 100%)
-  other: number;  // % of spending at "other" stores
-  special_shop: number;  // % at wine/specialty shops (was wrongly called "local_market")
-  butcher: number;  // % at butcher shops
-  veg_fruit_shop: number;  // % at vegetable/fruit shops
-  online_supermarket: number;  // % at online supermarkets
-  supermarket_chain: number;  // % at supermarket chains (MAIN RETAIL CHANNEL)
-  market: number;  // % at outdoor markets
-  grocery: number;  // % at corner stores/grocery
-  total: number;  // Should equal 100 (percentage sum)
-  // DUPLICATE percentages (same as above - these are redundant)
-  other_pct: number;
-  special_shop_pct: number;
-  butcher_pct: number;
-  veg_fruit_shop_pct: number;
-  online_supermarket_pct: number;
-  supermarket_chain_pct: number;
-  market_pct: number;
-  grocery_pct: number;
+export interface SegmentProfile {
+  segment_value: string;
+  segment_name: string;
+  total_households: number;
+  monthly_spending_per_hh: number;
+  annual_market_size_b: number;
+  market_share_pct: number;
+  monthly_income: number;
+  monthly_spending: number;
+  savings_rate_pct: number;
+  monthly_surplus_deficit: number;
+  financial_status: string;
+  avg_age: number;
+  avg_household_size: number;
+  lifecycle_stage: string;
 }
 
-export interface RetailBattleResponse {
-  supermarket_chain_share: number;  // Main retail channel share
-  market_share: number;  // Outdoor markets share
-  grocery_share: number;  // Corner stores share
-  special_shop_share: number;  // Wine/specialty shops share
-  supermarket_wins: Array<{
-    category: string;
-    supermarket_chain_pct: number;
-    market_pct: number;
-    grocery_pct: number;
-  }>;
-  market_wins: Array<{
-    category: string;
-    market_pct: number;
-    supermarket_chain_pct: number;
-  }>;
-  categories: RetailBattleItem[];
+export interface CategoryOpportunity {
+  category_name: string;
+  annual_market_b: number;
+  employee_spending: number;
+  self_employed_spending: number;
+  pensioner_spending: number;
+  employee_premium_ratio: number;
+  market_maturity: string;
 }
+
+export interface BusinessIntelligenceResponse {
+  segment_type: string;
+  total_market_b: number;
+  segment_profiles: SegmentProfile[];
+  top_categories: CategoryOpportunity[];
+  executive_summary: string;
+}
+
+// =============================================================================
+// API Client Functions
+// =============================================================================
 
 /**
- * Fetch Quintile Gap Analysis (The 2.62x Rule)
+ * Fetch all available segment types
+ * Returns list of demographic segmentation types (Income Quintile, Age Group, etc.)
  */
-export async function fetchQuintileGap(): Promise<QuintileGapResponse> {
-  const response = await fetch(`${API_BASE_URL}/api/strategic/quintile-gap`);
+export async function fetchSegmentTypes(): Promise<SegmentTypesResponse> {
+  const response = await fetch(`${API_BASE_URL}/api/v10/segments/types`);
+
   if (!response.ok) {
-    throw new Error(`Failed to fetch quintile gap: ${response.statusText}`);
+    throw new Error(`Failed to fetch segment types: ${response.statusText}`);
   }
+
   return response.json();
 }
 
 /**
- * Fetch Digital Opportunity Matrix
+ * Fetch segment values for a specific segment type
+ * @param segmentType - The segment type (e.g., "Income Quintile", "Age Group")
  */
-export async function fetchDigitalMatrix(): Promise<DigitalMatrixResponse> {
-  const response = await fetch(`${API_BASE_URL}/api/strategic/digital-matrix`);
+export async function fetchSegmentValues(segmentType: string): Promise<SegmentValuesResponse> {
+  const encodedType = encodeURIComponent(segmentType);
+  const response = await fetch(`${API_BASE_URL}/api/v10/segments/${encodedType}/values`);
+
   if (!response.ok) {
-    throw new Error(`Failed to fetch digital matrix: ${response.statusText}`);
+    throw new Error(`Failed to fetch segment values for "${segmentType}": ${response.statusText}`);
   }
+
   return response.json();
 }
 
 /**
- * Fetch Retail Battle Analysis
+ * Fetch expenditure data for a specific segment type
+ * @param segmentType - The segment type (e.g., "Income Quintile", "Age Group")
+ * @param limit - Number of expenditure records to return (default: 100)
  */
-export async function fetchRetailBattle(): Promise<RetailBattleResponse> {
-  const response = await fetch(`${API_BASE_URL}/api/strategic/retail-battle`);
+export async function fetchSegmentationData(
+  segmentType: string,
+  limit: number = 100
+): Promise<SegmentationResponse> {
+  const encodedType = encodeURIComponent(segmentType);
+  const response = await fetch(
+    `${API_BASE_URL}/api/v10/segmentation/${encodedType}?limit=${limit}`
+  );
+
   if (!response.ok) {
-    throw new Error(`Failed to fetch retail battle: ${response.statusText}`);
+    throw new Error(`Failed to fetch segmentation data for "${segmentType}": ${response.statusText}`);
   }
+
+  return response.json();
+}
+
+/**
+ * Fetch inequality analysis for a specific segment type
+ * Shows spending disparity between highest and lowest segments
+ * @param segmentType - The segment type (e.g., "Income Quintile", "Age Group")
+ * @param limit - Number of top inequality items to return (default: 10)
+ */
+export async function fetchInequalityAnalysis(
+  segmentType: string,
+  limit: number = 10
+): Promise<InequalityResponse> {
+  const encodedType = encodeURIComponent(segmentType);
+  const response = await fetch(
+    `${API_BASE_URL}/api/v10/inequality/${encodedType}?limit=${limit}`
+  );
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch inequality analysis for "${segmentType}": ${response.statusText}`);
+  }
+
+  return response.json();
+}
+
+/**
+ * Fetch burn rate analysis for any segment type
+ * Shows financial pressure: spending as % of income
+ * @param segmentType - The segment type (e.g., "Income Quintile", "Geographic Region")
+ */
+export async function fetchBurnRateAnalysis(segmentType: string): Promise<BurnRateResponse> {
+  const encodedType = encodeURIComponent(segmentType);
+  const response = await fetch(`${API_BASE_URL}/api/v10/burn-rate?segment_type=${encodedType}`);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch burn rate analysis for "${segmentType}": ${response.statusText}`);
+  }
+
+  return response.json();
+}
+
+/**
+ * Fetch comprehensive business intelligence for a segment type
+ * Returns market sizing, customer profiles, category opportunities, and strategic recommendations
+ * @param segmentType - The segment type (e.g., "Work Status", "Income Quintile")
+ */
+export async function fetchBusinessIntelligence(segmentType: string): Promise<BusinessIntelligenceResponse> {
+  const encodedType = encodeURIComponent(segmentType);
+  const response = await fetch(`${API_BASE_URL}/api/v10/business-intelligence/${encodedType}`);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch business intelligence for "${segmentType}": ${response.statusText}`);
+  }
+
   return response.json();
 }
