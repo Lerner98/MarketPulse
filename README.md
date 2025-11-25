@@ -98,10 +98,10 @@ def parse_cbs_headers(excel_path):
 ![Excel Raw Data Example](assets/Excel-Data-Example.png)
 
 **אתגרים שפתרתי:**
-- ❌ `"5.8±0.3"` → ✅ `5.8` (הסרת שגיאות תקן)
-- ❌ `".."` → ✅ `NULL` (נתונים מדוכאים)
-- ❌ `"(42.3)"` → ✅ `42.3` (אמינות נמוכה, אך שמיר)
-- ❌ `"מזון ומשקאות"` מוצג כ-`"תֶּק×ֶ–×"` → ✅ תיקון קידוד
+- `"5.8±0.3"` ✅ ← ❌ `5.8` (הסרת שגיאות תקן)
+- `".."` ✅ ← ❌ `NULL` (נתונים מדוכאים)
+- `"(42.3)"` ✅ ← ❌ `42.3` (אמינות נמוכה, אך שמיר)
+- `"מזון ומשקאות"` מוצג כ-`"תֶּק×ֶ–×"` ✅ ← ❌ תיקון קידוד
 
 ### שלב 2: טעינה למסד נתונים (PostgreSQL)
 ```sql
@@ -287,38 +287,39 @@ D1  (10% התחתונים):  ₪5.6K חודשי
 MarketPulse/
 ├── backend/
 │   ├── etl/
-│   │   ├── extract_table_1_1.py      # חילוץ טבלה 1.1 (עשירונים)
-│   │   ├── extract_table_40.py       # חילוץ טבלה 40 (ערוצי רכישה)
-│   │   └── load_strategic_data.py    # טעינה ל-PostgreSQL
+│   │   ├── extract_table_1_1.py           # חילוץ טבלת פילוחים דמוגרפיים
+│   │   ├── extract_table_40.py            # חילוץ ערוצי רכישה
+│   │   ├── extract_table_38.py            # חילוץ סוגי חנויות
+│   │   └── load_strategic_data.py         # טעינה ל-PostgreSQL
 │   ├── api/
-│   │   ├── main.py                   # FastAPI app
-│   │   └── v10_endpoints.py          # 3 endpoints מרכזיים
+│   │   ├── main.py                        # FastAPI app
+│   │   └── strategic_endpoints_db.py      # 3 strategic endpoints
 │   ├── models/
-│   │   ├── schema_v10.sql            # Star schema + views
-│   │   └── database.py               # Connection pooling
+│   │   ├── schema_strategic.sql           # Star schema + materialized views
+│   │   └── database.py                    # Connection pooling
 │   └── tests/
-│       └── test_v10_api.py           # 15 integration tests
+│       └── test_strategic_api.py          # 15+ integration tests
 ├── frontend/
 │   ├── src/
 │   │   ├── pages/
-│   │   │   ├── DashboardV10.tsx      # דף ראשי
-│   │   │   └── AllCharts.tsx         # כל הגרפים במקום אחד
-│   │   ├── components/v10/
-│   │   │   ├── SegmentComparisonChart.tsx  # Line chart
-│   │   │   ├── CategoryComparisonChart.tsx # Bar chart
-│   │   │   ├── BurnRateGauge.tsx           # Pie chart
-│   │   │   ├── MetricCards.tsx             # KPI cards
-│   │   │   └── InsightsList.tsx            # תובנות עסקיות
+│   │   │   ├── Dashboard.tsx              # דף ראשי
+│   │   │   ├── Revenue.tsx                # ניתוח קטגוריות
+│   │   │   ├── Customers.tsx              # פילוח עשירונים
+│   │   │   └── Products.tsx               # ביצועי מוצרים
+│   │   ├── components/
+│   │   │   ├── BusinessInsight.tsx        # כרטיסי תובנות
+│   │   │   ├── CategoryPieChart.tsx       # תרשימי עוגה
+│   │   │   └── MetricCard.tsx             # KPI cards
 │   │   ├── hooks/
-│   │   │   └── useCBSDataV10.ts      # React Query hooks
+│   │   │   └── useCBSData.ts              # React Query hooks
 │   │   └── utils/
 │   │       ├── segmentCodeTranslation.ts  # תרגום קודי פילוח
 │   │       └── segmentDisplayNames.ts     # שמות תצוגה בעברית
 │   └── package.json
 ├── CBS Household Expenditure Data Strategy/
-│   ├── הוצאה לתצרוכת למשק בית.xlsx         # טבלה 1.1
-│   ├── רכישות מוצרים נבחרים לפי אופן.xlsx   # טבלה 40
-│   └── הוצאה למזון לפי סוג חנות.xlsx         # טבלה 38
+│   ├── הוצאה לתצרוכת למשק בית עם מוצרים מפורטים.xlsx  # טבלה 1.1
+│   ├── רכישות מוצרים נבחרים לפי אופן.xlsx              # טבלה 40
+│   └── הוצאה למזון ללא ארוחות מחוץ לבית לפי סוג חנות.xlsx # טבלה 38
 ├── docker-compose.yml
 └── README.md (אתה כאן!)
 ```
@@ -349,7 +350,7 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r backend/requirements.txt
 
 # 4. הרצת ETL (טעינת נתונים)
-python backend/etl/load_strategic_data.py
+python backend/etl/load_segmentation.py
 
 # 5. הרצת Backend API
 cd backend
@@ -402,10 +403,6 @@ npm run dev
 
 **Guy Lerner**
 Junior Data Analyst & Full-Stack Developer
-
-📧 [guy.lerner98@gmail.com](mailto:guy.lerner98@gmail.com)
-💼 [LinkedIn](https://linkedin.com/in/guy-lerner)
-🐙 [GitHub](https://github.com/Lerner98)
 
 ---
 
